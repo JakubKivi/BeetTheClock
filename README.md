@@ -1,5 +1,6 @@
 # 🕒 BeetTheClock - Seasonal Produce Tracker
 
+{:width="200px"}
 ![BeetTheClock Icon](./assets/icon.png){:width="250px"}
 
 ## Overview
