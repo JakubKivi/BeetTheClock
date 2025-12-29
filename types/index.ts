@@ -3,6 +3,7 @@ export interface Produce {
   name: string;
   months: number[]; // 0-11
   category: "fruit" | "vegetable";
+  emoji?: string;
 }
 
 export interface UserSettings {
