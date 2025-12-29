@@ -1,21 +1,29 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { UserSettings } from "../types";
 
-const SETTINGS_KEY = "@user_settings";
+const SETTINGS_KEY = "BeetTheClock:settings";
 
-export const saveSettings = async (settings: UserSettings) => {
+export type AppSettings = {
+  phoneNumber: string;
+  notificationsEnabled: boolean;
+  notificationTime?: string; // "HH:MM"
+  favItems: string[];
+};
+
+export const getSettings = async (): Promise<AppSettings | null> => {
   try {
-    await AsyncStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+    const json = await AsyncStorage.getItem(SETTINGS_KEY);
+    if (!json) return null;
+    return JSON.parse(json) as AppSettings;
   } catch (e) {
-    console.error("Failed to save settings", e);
+    console.warn("getSettings error", e);
+    return null;
   }
 };
 
-export const getSettings = async (): Promise<UserSettings | null> => {
+export const saveSettings = async (settings: AppSettings): Promise<void> => {
   try {
-    const data = await AsyncStorage.getItem(SETTINGS_KEY);
-    return data ? JSON.parse(data) : null;
+    await AsyncStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
   } catch (e) {
-    return null;
+    console.warn("saveSettings error", e);
   }
 };
