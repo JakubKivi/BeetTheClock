@@ -16,9 +16,10 @@ const ProduceCard: React.FC<Props> = ({ item, iconUri, onPickImage, onResetIcon,
   return (
     <View style={styles.card}>
       <View style={styles.leftContainer}>
-        {/* IKONA PRODUKTU */}
         <View style={ styles.iconContainer }>
-          <TouchableOpacity onPress={() => onPickImage(item.id)} style={styles.iconSlot}>
+          <TouchableOpacity 
+          testID="pick-image"
+          onPress={() => onPickImage(item.id)} style={styles.iconSlot}>
             {iconUri ? (
               <Image source={{ uri: iconUri }} style={styles.iconImage} />
             ) : item.emoji ? (
@@ -28,9 +29,9 @@ const ProduceCard: React.FC<Props> = ({ item, iconUri, onPickImage, onResetIcon,
             )}
           </TouchableOpacity>
 
-          {/* RESET IKONY */}
           {iconUri && onResetIcon && (
             <TouchableOpacity
+            testID="reset-icon"
               onPress={() => onResetIcon(item.id)}
               style={styles.resetButton}
             >
@@ -45,7 +46,9 @@ const ProduceCard: React.FC<Props> = ({ item, iconUri, onPickImage, onResetIcon,
         </View>
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={onPress}>
+      <TouchableOpacity 
+      testID="share-sms"
+      style={styles.button} onPress={onPress}>
         <Text style={styles.buttonText}>Share SMS</Text>
       </TouchableOpacity>
     </View>
