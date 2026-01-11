@@ -1,27 +1,44 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Produce } from "../types";
 
-interface Props {
+type Props = {
   item: Produce;
+  iconUri?: string;
+  onPickImage: (id: string) => void;
+  onResetIcon?: (id: string) => void;
   onPress: () => void;
-}
+};
 
-const ProduceCard: React.FC<Props> = ({ item, onPress }) => {
-  const hasEmoji = item.emoji && item.emoji.trim().length > 0;
+const ICON_SIZE = 40;
 
+const ProduceCard: React.FC<Props> = ({ item, iconUri, onPickImage, onResetIcon, onPress }) => {
   return (
     <View style={styles.card}>
-      {/* Container for Emoji and Text combined */}
       <View style={styles.leftContainer}>
-        {/* WARUNEK: Jeśli jest emoji, pokaż tekst, jeśli nie - kółko */}
-        {hasEmoji ? (
-          <Text style={styles.emoji}>{item.emoji}</Text>
-        ) : (
-          <View style={styles.emptyCircle} />
-        )}
+        {/* IKONA PRODUKTU */}
+        <View style={ styles.iconContainer }>
+          <TouchableOpacity onPress={() => onPickImage(item.id)} style={styles.iconSlot}>
+            {iconUri ? (
+              <Image source={{ uri: iconUri }} style={styles.iconImage} />
+            ) : item.emoji ? (
+              <Text style={styles.emoji}>{item.emoji}</Text>
+            ) : (
+              <View style={styles.emptyIcon} />
+            )}
+          </TouchableOpacity>
 
-        {/* Container for Name and Category stacked vertically */}
+          {/* RESET IKONY */}
+          {iconUri && onResetIcon && (
+            <TouchableOpacity
+              onPress={() => onResetIcon(item.id)}
+              style={styles.resetButton}
+            >
+              <Text style={styles.resetText}>X</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+
         <View style={styles.textContainer}>
           <Text style={styles.name}>{item.name}</Text>
           <Text style={styles.category}>{item.category.toUpperCase()}</Text>
@@ -41,41 +58,56 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     marginVertical: 8,
-    flexDirection: "row", // Horizontal layout for the whole card
-    justifyContent: "space-between", // Push left content and button apart
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
     borderWidth: 1,
     borderColor: "#eee",
   },
   leftContainer: {
-    flexDirection: "row", // Horizontal layout for emoji and text block
+    flexDirection: "row",
     alignItems: "center",
-    flex: 1, // Take up available space pushing button to the right
+    flex: 1,
   },
-  textContainer: {
-    marginLeft: 12,
+  iconSlot: {
+    width: ICON_SIZE,
+    height: ICON_SIZE,
+    alignItems: "center",
     justifyContent: "center",
   },
-  name: {
-    fontSize: 18,
-    fontWeight: "600",
-    color: "#000",
+  iconImage: {
+    width: ICON_SIZE,
+    height: ICON_SIZE,
+    borderRadius: 6,
+  },
+  iconContainer: {
+  position: "relative", // <--- bardzo ważne
+  width: ICON_SIZE + 10,
+  height: ICON_SIZE + 10,
+  marginRight: 12,
+  justifyContent: "center",
+  alignItems: "center",
+},
+  emptyIcon: {
+    width: ICON_SIZE,
+    height: ICON_SIZE,
+    borderRadius: ICON_SIZE / 2,
+    borderWidth: 4,
+    borderColor: "#6b1d52",
   },
   emoji: {
     fontSize: 30,
   },
-  emptyCircle: {
-    width: 35,
-    height: 35,
-    borderRadius: 17.5, // Połowa width/height robi idealne koło
-    borderWidth: 4, // Grubość linii
-    borderColor: "#6b1d52",
-    backgroundColor: "transparent", // Pusty środek
+  textContainer: {
+    marginLeft: 12,
+  },
+  name: {
+    fontSize: 18,
+    fontWeight: "600",
   },
   category: {
     fontSize: 10,
     color: "#666",
-    marginTop: 2,
   },
   button: {
     backgroundColor: "#6b1d52",
@@ -86,6 +118,23 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 12,
+  },
+  resetButton: {
+    position: "absolute",
+    top: -5,
+    right: -5,
+    backgroundColor: "red",
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 10
+  },
+  resetText: {
+    color: "#fff",
+    fontSize: 12,
+    fontWeight: "bold",
   },
 });
 
