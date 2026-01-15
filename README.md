@@ -28,12 +28,19 @@
 - **Media:** Expo Image Picker (Gallery Access)
 - **Native Modules:** SMS, Notifications, Sharing API
 
-## Installation & Setup
+### Option 1: Download & Install (Recommended)
+To use the app without setting up a development environment:
+1. Go to the [Releases](../../releases) page of this repository.
+2. Find the latest version (e.g., `v1.0.0`) and download the `.apk` file from the **Assets** section.
+3. Transfer the file to your Android device and install it.
+   > **Note:** You may need to allow installation from "Unknown Sources" in your phone settings.
 
+### Option 2: Run from Source (Development)
+To modify the code or run in debug mode:
 1. Clone the repository.
 2. Run `npm install` to install dependencies.
 3. Start the project:
    ```bash
    npx expo start
    ```
-4. Use Expo Go on Android/iOS to scan the QR code.
+4. Use **Expo Go** on Android/iOS to scan the QR code.
