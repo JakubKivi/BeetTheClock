@@ -80,8 +80,12 @@ const SettingsScreen = () => {
               title: "BeetTheClock!",
               body: "Check today's seasonal picks!",
             },
-            trigger: { type: "calendar", hour, minute, repeats: true } as any,
-            //trigger: { type: "timeInterval", seconds: 10, repeats: true } as any//Na androidzie w Expo go nie działa triger callendar, więc testowo co 10 sekund
+            //trigger: { type: "calendar", hour, minute, repeats: true } as any,
+            trigger: {
+              type: "timeInterval",
+              seconds: 10,
+              repeats: true,
+            } as any, //Na androidzie w Expo go nie działa triger callendar, więc testowo co 10 sekund
           });
         }
       } else {
