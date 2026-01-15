@@ -12,7 +12,6 @@ import * as Notifications from "expo-notifications";
 import { requestNotificationPermissions } from "../services/notifications";
 import { Alert, Keyboard } from "react-native";
 
-
 const SettingsScreen = () => {
   const [phone, setPhone] = useState("");
   const [notifs, setNotifs] = useState(false);
@@ -57,48 +56,51 @@ const SettingsScreen = () => {
     }
 
     try {
-    await saveSettings({
-      phoneNumber: phone,
-      notificationsEnabled: notifValue,
-      notificationTime: `${String(hour).padStart(2, "0")}:${String(
-        minute
-      ).padStart(2, "0")}`,
-      favItems: [],
-    });
+      await saveSettings({
+        phoneNumber: phone,
+        notificationsEnabled: notifValue,
+        notificationTime: `${String(hour).padStart(2, "0")}:${String(
+          minute
+        ).padStart(2, "0")}`,
+        favItems: [],
+      });
 
-    if (notifValue) {
-      const granted = await requestNotificationPermissions();
-      if (!granted) {
-        Alert.alert(
-          "Permission required",
-          "Notifications are disabled. Please enable them in system settings."
-        );
+      if (notifValue) {
+        const granted = await requestNotificationPermissions();
+        if (!granted) {
+          Alert.alert(
+            "Permission required",
+            "Notifications are disabled. Please enable them in system settings."
+          );
+        } else {
+          await Notifications.cancelAllScheduledNotificationsAsync();
+
+          await Notifications.scheduleNotificationAsync({
+            content: {
+              title: "BeetTheClock!",
+              body: "Check today's seasonal picks!",
+            },
+            trigger: { type: "calendar", hour, minute, repeats: true } as any,
+            //trigger: { type: "timeInterval", seconds: 10, repeats: true } as any//Na androidzie w Expo go nie działa triger callendar, więc testowo co 10 sekund
+          });
+        }
       } else {
         await Notifications.cancelAllScheduledNotificationsAsync();
-
-        await Notifications.scheduleNotificationAsync({
-          content: {
-            title: "BeetTheClock!",
-            body: "Check today's seasonal picks!",
-          },
-          //trigger: { type: "calendar", hour, minute, repeats: true } as any,
-          trigger: { type: "timeInterval", seconds: 10, repeats: true } as any//Na androidzie w Expo go nie działa triger callendar, więc testowo co 10 sekund
-        });
       }
-    } else {
-      await Notifications.cancelAllScheduledNotificationsAsync();
+      if (showAlert) {
+        Alert.alert(
+          "Settings saved",
+          "Your settings have been saved successfully."
+        );
+      }
+    } catch (error) {
+      console.log("Error saving settings:", error);
+      Keyboard.dismiss();
+      if (showAlert) {
+        Alert.alert("Error", "Failed to save settings");
+      }
     }
-    if (showAlert) {
-      Alert.alert("Settings saved", "Your settings have been saved successfully.");
-    }
-  } catch (error) {
-    console.log("Error saving settings:", error);
-    Keyboard.dismiss();
-    if (showAlert) {
-      Alert.alert("Error", "Failed to save settings");
-    }
-  }
-};
+  };
 
   return (
     <View style={styles.container}>
@@ -108,7 +110,7 @@ const SettingsScreen = () => {
           value={notifs}
           onValueChange={(value) => {
             setNotifs(value);
-            handleSave(value,false);
+            handleSave(value, false);
           }}
         />
       </View>
