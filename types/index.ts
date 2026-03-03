@@ -2,8 +2,10 @@ export interface Produce {
   id: string;
   name: string;
   months: number[]; // 0-11
-  category: "fruit" | "vegetable";
   emoji?: string;
+  best_months?: number[]; // months when best quality available
+  selection_guide?: string; // tips for selecting
+  wikipedia_url?: string; // link to Wikipedia page
 }
 
 export interface UserSettings {

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, StyleSheet, Alert } from "react-native";
+import { useNavigation, NavigationProp, useFocusEffect } from "@react-navigation/native";
+import { RootStackParamList } from "./ProduceDetailsScreen";
 import * as SMS from "expo-sms";
 import * as ImagePicker from "expo-image-picker";
 
@@ -8,18 +10,33 @@ import { Produce } from "../types";
 import { getSettings } from "../services/storage";
 import ProduceCard from "../components/ProduceCard";
 import { getProduceIcons, saveProduceIcon } from "../services/newIcon";
+import { sortProduceList } from "../services/sortProduceList";
 
 const HomeScreen = () => {
   const currentMonth = new Date().getMonth();
   const [targetNumber, setTargetNumber] = useState("");
   const [icons, setIcons] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
+  const handleNavigateToDetails = (item: Produce) => {
+    navigation.navigate("Details", {
+      item,
+      iconUri: icons[item.id],
+      onPickImage: handlePickImage,
+      onResetIcon: handleResetIcon,
+    });
+  };
 
   useEffect(() => {
     const load = async () => {
       try {
         const settings = await getSettings();
         if (settings?.phoneNumber) setTargetNumber(settings.phoneNumber);
+        setFavorites(settings?.favItems || []);
         const storedIcons = await getProduceIcons();
         setIcons(storedIcons);
       } catch (e) {
@@ -30,8 +47,30 @@ const HomeScreen = () => {
     load();
   }, []);
 
+  // Refresh when screen is focused to pick up favorite changes
+  useFocusEffect(
+    React.useCallback(() => {
+      const loadFavorites = async () => {
+        try {
+          const settings = await getSettings();
+          setFavorites(settings?.favItems || []);
+          setRefreshTrigger((prev) => prev + 1);
+        } catch (e) {
+          console.log(e);
+        }
+      };
+      loadFavorites();
+    }, [])
+  );
+
   const seasonalProduce = PRODUCE_DATA.filter((p) =>
     p.months.includes(currentMonth)
+  );
+
+  const sortedAndBadgedProduce = sortProduceList(
+    seasonalProduce,
+    favorites,
+    currentMonth
   );
 
   const handleShare = async (name: string) => {
@@ -56,14 +95,14 @@ const handleResetIcon = async (produceId: string) => {
 };
 
   
-  const handlePickImage = async (produceId: string) => {
+  const handlePickImage = async (produceId: string): Promise<string | null> => {
   try {
     const { status, canAskAgain } = await ImagePicker.getMediaLibraryPermissionsAsync();
     if (status !== "granted") {
       const response = await ImagePicker.requestMediaLibraryPermissionsAsync();
       if (!response.granted) {
         Alert.alert("Permission required", "Access to photos is needed.");
-        return;
+        return null;
       }
     }
 
@@ -73,16 +112,17 @@ const handleResetIcon = async (produceId: string) => {
       quality: 0.7,
     });
 
-    if (result.canceled || !result.assets?.length) return;
+    if (result.canceled || !result.assets?.length) return null;
 
     const uri = result.assets[0].uri;
 
     await saveProduceIcon(produceId, uri);
     setIcons(prev => ({ ...prev, [produceId]: uri }));
-
+    return uri;
   } catch (e) {
     console.log("ImagePicker error:", e);
     Alert.alert("Error", "Could not select image.");
+    return null;
   }
 };
 
@@ -100,15 +140,18 @@ const handleResetIcon = async (produceId: string) => {
     <View style={styles.container}>
       <Text style={styles.title}>In Season Now:</Text>
       <FlatList
-        data={seasonalProduce}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
+        data={sortedAndBadgedProduce}
+        keyExtractor={(item) => item.item.id}
+        extraData={refreshTrigger}
+        renderItem={({ item: { item, statusBadge } }) => (
           <ProduceCard
             item={item}
             iconUri={icons[item.id]}
             onPickImage={handlePickImage}
             onResetIcon={handleResetIcon}
             onPress={() => handleShare(item.name)}
+            onCardPress={() => handleNavigateToDetails(item)}
+            statusBadge={statusBadge}
           />
         )}
       />

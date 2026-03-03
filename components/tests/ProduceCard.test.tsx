@@ -6,7 +6,6 @@ import { Produce } from "../../types";
 const mockProduce: Produce = {
   id: "1",
   name: "Pumpkin",
-  category: "vegetable", // <- WAŻNE
   months: [9, 10],
   emoji: "🎃",
 };
@@ -18,24 +17,39 @@ describe("ProduceCard", () => {
         item={mockProduce}
         onPickImage={jest.fn()}
         onPress={jest.fn()}
-      />
+      />,
     );
 
     expect(getByText("🎃")).toBeTruthy();
   });
 
-  it("calls onPickImage when icon pressed", () => {
-    const onPickImage = jest.fn();
-
-    const { getByText } = render(
+  it("calls onCardPress when the card itself is pressed", () => {
+    const onCardPress = jest.fn();
+    const { getByTestId } = render(
       <ProduceCard
         item={mockProduce}
-        onPickImage={onPickImage}
+        onPickImage={jest.fn()}
         onPress={jest.fn()}
-      />
+        onCardPress={onCardPress}
+      />,
     );
 
-    fireEvent.press(getByText("🎃"));
-    expect(onPickImage).toHaveBeenCalledWith("1");
+    fireEvent.press(getByTestId("card-press"));
+    expect(onCardPress).toHaveBeenCalled();
+  });
+
+  it("does not call onCardPress when share button pressed", () => {
+    const onCardPress = jest.fn();
+    const { getByTestId } = render(
+      <ProduceCard
+        item={mockProduce}
+        onPickImage={jest.fn()}
+        onPress={jest.fn()}
+        onCardPress={onCardPress}
+      />,
+    );
+
+    fireEvent.press(getByTestId("favorite-button"));
+    expect(onCardPress).not.toHaveBeenCalled();
   });
 });

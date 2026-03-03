@@ -3,10 +3,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./screens/HomeScreen";
 import SettingsScreen from "./screens/SettingsScreen";
+import ProduceDetailsScreen from "./screens/ProduceDetailsScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 
-const Stack = createStackNavigator();
+import { RootStackParamList } from "./screens/ProduceDetailsScreen";
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
@@ -38,6 +41,11 @@ export default function App() {
           name="Settings"
           component={SettingsScreen}
           options={{ title: "Settings" }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={ProduceDetailsScreen}
+          options={{ title: "Produce Details" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
