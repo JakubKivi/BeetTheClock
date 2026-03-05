@@ -1,7 +1,6 @@
 import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react-native";
 import HomeScreen from "../HomeScreen";
-import { PRODUCE_DATA } from "../../constants/produce";
 import * as storage from "../../services/storage";
 import * as newIcon from "../../services/newIcon";
 import * as SMS from "expo-sms";
@@ -48,5 +47,18 @@ describe("HomeScreen", () => {
     fireEvent.press(cards[0]);
 
     expect(navigateMock).toHaveBeenCalledWith("Details", expect.any(Object));
+  });
+
+  it("sends an SMS when share button is tapped", async () => {
+    const { getAllByTestId } = render(<HomeScreen />);
+    await waitFor(() => expect(storage.getSettings).toHaveBeenCalled());
+    const shareButtons = getAllByTestId("share-button");
+    expect(shareButtons.length).toBeGreaterThan(0);
+
+    fireEvent.press(shareButtons[0]);
+    expect(SMS.sendSMSAsync).toHaveBeenCalledWith(
+      [mockSettings.phoneNumber],
+      expect.stringContaining("is in season"),
+    );
   });
 });

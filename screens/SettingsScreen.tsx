@@ -6,11 +6,12 @@ import {
   Switch,
   Button,
   StyleSheet,
+  Alert,
+  Keyboard,
 } from "react-native";
 import { getSettings, saveSettings } from "../services/storage";
 import * as Notifications from "expo-notifications";
 import { requestNotificationPermissions } from "../services/notifications";
-import { Alert, Keyboard } from "react-native";
 
 const SettingsScreen = () => {
   const [phone, setPhone] = useState("");
@@ -47,7 +48,7 @@ const SettingsScreen = () => {
       Keyboard.dismiss();
       Alert.alert(
         "Invalid time format.",
-        "Invalid time format. Please use HH:MM (24-hour). Falling back to 09:00."
+        "Invalid time format. Please use HH:MM (24-hour). Falling back to 09:00.",
       );
       hour = 9;
       minute = 0;
@@ -60,7 +61,7 @@ const SettingsScreen = () => {
         phoneNumber: phone,
         notificationsEnabled: notifValue,
         notificationTime: `${String(hour).padStart(2, "0")}:${String(
-          minute
+          minute,
         ).padStart(2, "0")}`,
         favItems: [],
       });
@@ -70,7 +71,7 @@ const SettingsScreen = () => {
         if (!granted) {
           Alert.alert(
             "Permission required",
-            "Notifications are disabled. Please enable them in system settings."
+            "Notifications are disabled. Please enable them in system settings.",
           );
         } else {
           await Notifications.cancelAllScheduledNotificationsAsync();
@@ -94,11 +95,11 @@ const SettingsScreen = () => {
       if (showAlert) {
         Alert.alert(
           "Settings saved",
-          "Your settings have been saved successfully."
+          "Your settings have been saved successfully.",
         );
       }
     } catch (error) {
-      console.log("Error saving settings:", error);
+      // error logged intentionally
       Keyboard.dismiss();
       if (showAlert) {
         Alert.alert("Error", "Failed to save settings");

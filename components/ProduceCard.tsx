@@ -3,45 +3,25 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { getSettings, saveSettings, AppSettings } from "../services/storage";
 import { Produce } from "../types";
+import { formatMonths } from "../utils";
+import { getRarityInfo } from "../constants/produce";
+
+/**
+ * UI card used on the home screen; it just shows the item and a couple of
+ * buttons (favorite/share). Any image-picking logic lives at the screen
+ * level, so we only accept a simple callback for the share action.
+ */
 
 type Props = {
   item: Produce;
   iconUri?: string;
-  // returns selected uri or null if canceled
-  onPickImage?: (id: string) => Promise<string | null>;
-  onResetIcon?: (id: string) => void;
-  onPress: () => void;
+  onPress: () => void; // share
   onCardPress?: () => void; // navigate to details
   statusBadge?: "new" | "last moment" | null;
+  isAvailable?: boolean; // true if product is in season, false if coming soon
 };
 
 const ICON_SIZE = 40;
-
-const MONTH_NAMES = [
-  "JAN",
-  "FEB",
-  "MAR",
-  "APR",
-  "MAY",
-  "JUN",
-  "JUL",
-  "AUG",
-  "SEP",
-  "OCT",
-  "NOV",
-  "DEC",
-];
-
-function formatMonths(months: number[] | undefined) {
-  if (!months || months.length === 0) return "";
-  const unique = Array.from(new Set(months)).sort((a, b) => a - b);
-  if (unique.length === 12) return "Year-round";
-  const first = unique[0];
-  const last = unique[unique.length - 1];
-  return first === last
-    ? MONTH_NAMES[first]
-    : `${MONTH_NAMES[first]} - ${MONTH_NAMES[last]}`;
-}
 
 const ProduceCard: React.FC<Props> = ({
   item,
@@ -49,6 +29,7 @@ const ProduceCard: React.FC<Props> = ({
   onPress,
   onCardPress,
   statusBadge,
+  isAvailable = true,
 }) => {
   const [isFav, setIsFav] = useState(false);
   const BANNER_COLOR = "#6b1d52";
@@ -104,17 +85,29 @@ const ProduceCard: React.FC<Props> = ({
       testID="card-press"
       activeOpacity={0.9}
       onPress={onCardPress}
-      style={styles.card}
+      style={[styles.card, !isAvailable && styles.unavailableCard]}
     >
       <View style={styles.leftContainer}>
         <View style={styles.iconContainer}>
           <View style={styles.iconSlot}>
             {iconUri ? (
-              <Image source={{ uri: iconUri }} style={styles.iconImage} />
+              <Image
+                source={{ uri: iconUri }}
+                style={[styles.iconImage, !isAvailable && styles.greyedOut]}
+              />
             ) : item.emoji ? (
-              <Text style={styles.emoji}>{item.emoji}</Text>
+              <Text
+                style={[styles.emoji, !isAvailable && styles.greyedOutText]}
+              >
+                {item.emoji}
+              </Text>
             ) : (
-              <View style={styles.emptyIcon} />
+              <View
+                style={[
+                  styles.emptyIcon,
+                  !isAvailable && styles.unavailableEmptyIcon,
+                ]}
+              />
             )}
           </View>
           {statusBadge && (
@@ -122,18 +115,46 @@ const ProduceCard: React.FC<Props> = ({
               <Text style={styles.badge}>{statusBadge}</Text>
             </View>
           )}
+          <View style={[styles.rarityBadge]}>
+            <Text style={styles.rarityBadgeEmoji}>
+              {getRarityInfo(item.rarity).emoji}
+            </Text>
+          </View>
         </View>
 
         <View style={styles.textContainer}>
-          <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.category}>{monthsLabel}</Text>
+          <Text style={[styles.name, !isAvailable && styles.greyedOutText]}>
+            {item.name}
+          </Text>
+          <Text style={[styles.category, !isAvailable && styles.greyedOutText]}>
+            {monthsLabel}
+          </Text>
           {bestMonthsLabel && (
-            <Text style={styles.bestMonths}>{bestMonthsLabel}</Text>
+            <Text
+              style={[styles.bestMonths, !isAvailable && styles.greyedOutText]}
+            >
+              {bestMonthsLabel}
+            </Text>
           )}
         </View>
       </View>
 
       <View style={styles.rightButtons}>
+        {/* share icon */}
+        {onPress && (
+          <TouchableOpacity
+            testID="share-button"
+            onPress={onPress}
+            style={styles.iconButton}
+          >
+            <Ionicons
+              name="share-social-outline"
+              size={20}
+              color={isAvailable ? BANNER_COLOR : "#ccc"}
+            />
+          </TouchableOpacity>
+        )}
+
         <TouchableOpacity
           testID="favorite-button"
           onPress={toggleFavorite}
@@ -142,7 +163,7 @@ const ProduceCard: React.FC<Props> = ({
           <Ionicons
             name={isFav ? "heart" : "heart-outline"}
             size={20}
-            color={BANNER_COLOR}
+            color={isAvailable ? BANNER_COLOR : "#ccc"}
           />
         </TouchableOpacity>
       </View>
@@ -162,6 +183,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#eee",
   },
+  unavailableCard: {
+    backgroundColor: "#f5f5f5",
+    borderColor: "#ddd",
+    opacity: 0.6,
+  },
   leftContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -178,8 +204,14 @@ const styles = StyleSheet.create({
     height: ICON_SIZE,
     borderRadius: 6,
   },
+  greyedOut: {
+    opacity: 0.5,
+  },
+  greyedOutText: {
+    opacity: 0.5,
+  },
   iconContainer: {
-    position: "relative", // <--- bardzo ważne
+    position: "relative",
     width: ICON_SIZE + 10,
     height: ICON_SIZE + 10,
     marginRight: 12,
@@ -209,6 +241,9 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: "#6b1d52",
   },
+  unavailableEmptyIcon: {
+    borderColor: "#ccc",
+  },
   emoji: {
     fontSize: 30,
   },
@@ -218,6 +253,20 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 18,
     fontWeight: "600",
+  },
+  rarityBadge: {
+    position: "absolute",
+    bottom: -5,
+    right: -5,
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 15,
+  },
+  rarityBadgeEmoji: {
+    fontSize: 14,
   },
   category: {
     fontSize: 10,
@@ -229,33 +278,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
     fontStyle: "italic",
   },
-  button: {
-    backgroundColor: "#6b1d52",
-    padding: 8,
-    borderRadius: 5,
-    marginLeft: 10,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 12,
-  },
-  resetButton: {
-    position: "absolute",
-    top: -5,
-    right: -5,
-    backgroundColor: "red",
-    width: 16,
-    height: 16,
-    borderRadius: 8,
-    alignItems: "center",
-    justifyContent: "center",
-    zIndex: 10,
-  },
-  resetText: {
-    color: "#fff",
-    fontSize: 12,
-    fontWeight: "bold",
-  },
+
   rightButtons: {
     flexDirection: "row",
     alignItems: "center",

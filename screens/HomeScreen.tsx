@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, StyleSheet, Alert } from "react-native";
-import { useNavigation, NavigationProp, useFocusEffect } from "@react-navigation/native";
+import { View, Text, SectionList, StyleSheet, Alert } from "react-native";
+import {
+  useNavigation,
+  NavigationProp,
+  useFocusEffect,
+} from "@react-navigation/native";
 import { RootStackParamList } from "./ProduceDetailsScreen";
 import * as SMS from "expo-sms";
 import * as ImagePicker from "expo-image-picker";
@@ -40,7 +44,6 @@ const HomeScreen = () => {
         const storedIcons = await getProduceIcons();
         setIcons(storedIcons);
       } catch (e) {
-        console.log(e);
         setError("Failed to load Home screen.");
       }
     };
@@ -56,21 +59,31 @@ const HomeScreen = () => {
           setFavorites(settings?.favItems || []);
           setRefreshTrigger((prev) => prev + 1);
         } catch (e) {
-          console.log(e);
+          // ignore
         }
       };
       loadFavorites();
-    }, [])
+    }, []),
   );
 
   const seasonalProduce = PRODUCE_DATA.filter((p) =>
-    p.months.includes(currentMonth)
+    p.months.includes(currentMonth),
+  );
+
+  const unavailableProduce = PRODUCE_DATA.filter(
+    (p) => !p.months.includes(currentMonth),
   );
 
   const sortedAndBadgedProduce = sortProduceList(
     seasonalProduce,
     favorites,
-    currentMonth
+    currentMonth,
+  );
+
+  const sortedUnavailableProduce = sortProduceList(
+    unavailableProduce,
+    favorites,
+    currentMonth,
   );
 
   const handleShare = async (name: string) => {
@@ -81,52 +94,47 @@ const HomeScreen = () => {
     }
     await SMS.sendSMSAsync(
       [targetNumber],
-      `Hey! ${name} is in season right now!`
+      `Hey! ${name} is in season right now!`,
     );
   };
 
-  // Funkcja resetująca ikonę
-const handleResetIcon = async (produceId: string) => {
-  const newIcons = { ...icons };
-  delete newIcons[produceId]; 
-  setIcons(newIcons);// usuwa URI dla tego produktu
-  await saveProduceIcon(produceId, ""); // zapisuje pusty string w AsyncStorage
-  
-};
+  const handleResetIcon = async (produceId: string) => {
+    const newIcons = { ...icons };
+    delete newIcons[produceId];
+    setIcons(newIcons);
+    await saveProduceIcon(produceId, "");
+  };
 
-  
   const handlePickImage = async (produceId: string): Promise<string | null> => {
-  try {
-    const { status, canAskAgain } = await ImagePicker.getMediaLibraryPermissionsAsync();
-    if (status !== "granted") {
-      const response = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (!response.granted) {
-        Alert.alert("Permission required", "Access to photos is needed.");
-        return null;
+    try {
+      const { status } = await ImagePicker.getMediaLibraryPermissionsAsync();
+      if (status !== "granted") {
+        const response =
+          await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (!response.granted) {
+          Alert.alert("Permission required", "Access to photos is needed.");
+          return null;
+        }
       }
+
+      const result = await ImagePicker.launchImageLibraryAsync({
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 0.7,
+      });
+
+      if (result.canceled || !result.assets?.length) return null;
+
+      const uri = result.assets[0].uri;
+
+      await saveProduceIcon(produceId, uri);
+      setIcons((prev) => ({ ...prev, [produceId]: uri }));
+      return uri;
+    } catch (e) {
+      Alert.alert("Error", "Could not select image.");
+      return null;
     }
-
-    const result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: true,
-      aspect: [1, 1],
-      quality: 0.7,
-    });
-
-    if (result.canceled || !result.assets?.length) return null;
-
-    const uri = result.assets[0].uri;
-
-    await saveProduceIcon(produceId, uri);
-    setIcons(prev => ({ ...prev, [produceId]: uri }));
-    return uri;
-  } catch (e) {
-    console.log("ImagePicker error:", e);
-    Alert.alert("Error", "Could not select image.");
-    return null;
-  }
-};
-
-
+  };
 
   if (error) {
     return (
@@ -136,24 +144,47 @@ const handleResetIcon = async (produceId: string) => {
     );
   }
 
+  // prepare sections so headers can stick when scrolling
+  const sections = [
+    {
+      title: "In Season Now:",
+      data: sortedAndBadgedProduce,
+      isAvailable: true,
+    },
+    {
+      title: "Out of season:",
+      data: sortedUnavailableProduce,
+      isAvailable: false,
+    },
+  ];
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>In Season Now:</Text>
-      <FlatList
-        data={sortedAndBadgedProduce}
-        keyExtractor={(item) => item.item.id}
+      <SectionList
+        sections={sections}
+        keyExtractor={(item, index) => item.item.id + index}
+        stickySectionHeadersEnabled
         extraData={refreshTrigger}
-        renderItem={({ item: { item, statusBadge } }) => (
-          <ProduceCard
-            item={item}
-            iconUri={icons[item.id]}
-            onPickImage={handlePickImage}
-            onResetIcon={handleResetIcon}
-            onPress={() => handleShare(item.name)}
-            onCardPress={() => handleNavigateToDetails(item)}
-            statusBadge={statusBadge}
-          />
+        renderSectionHeader={({ section }) => (
+          <View style={styles.sectionHeaderContainer}>
+            <Text style={styles.sectionTitle}>{section.title}</Text>
+          </View>
         )}
+        renderItem={({ item, section }) => {
+          const produceItem = item.item;
+          const statusBadge = item.statusBadge;
+          const isAvailable = section.isAvailable;
+          return (
+            <ProduceCard
+              item={produceItem}
+              iconUri={icons[produceItem.id]}
+              onPress={() => handleShare(produceItem.name)}
+              onCardPress={() => handleNavigateToDetails(produceItem)}
+              statusBadge={statusBadge}
+              isAvailable={isAvailable}
+            />
+          );
+        }}
       />
     </View>
   );
@@ -161,10 +192,19 @@ const handleResetIcon = async (produceId: string) => {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, backgroundColor: "#fff" },
-  title: {
-    fontSize: 24,
+
+  sectionHeaderContainer: {
+    backgroundColor: "#fff",
+    paddingTop: 20,
+    paddingBottom: 10,
+    marginLeft: -20,
+    marginRight: -20,
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  sectionTitle: {
+    fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 20,
     color: "#6b1d52",
   },
   center: {

@@ -13,11 +13,7 @@ const mockProduce: Produce = {
 describe("ProduceCard", () => {
   it("renders emoji when no iconUri", () => {
     const { getByText } = render(
-      <ProduceCard
-        item={mockProduce}
-        onPickImage={jest.fn()}
-        onPress={jest.fn()}
-      />,
+      <ProduceCard item={mockProduce} onPress={jest.fn()} />,
     );
 
     expect(getByText("🎃")).toBeTruthy();
@@ -28,7 +24,6 @@ describe("ProduceCard", () => {
     const { getByTestId } = render(
       <ProduceCard
         item={mockProduce}
-        onPickImage={jest.fn()}
         onPress={jest.fn()}
         onCardPress={onCardPress}
       />,
@@ -38,12 +33,11 @@ describe("ProduceCard", () => {
     expect(onCardPress).toHaveBeenCalled();
   });
 
-  it("does not call onCardPress when share button pressed", () => {
+  it("does not call onCardPress when favorite button pressed", () => {
     const onCardPress = jest.fn();
     const { getByTestId } = render(
       <ProduceCard
         item={mockProduce}
-        onPickImage={jest.fn()}
         onPress={jest.fn()}
         onCardPress={onCardPress}
       />,
@@ -51,5 +45,15 @@ describe("ProduceCard", () => {
 
     fireEvent.press(getByTestId("favorite-button"));
     expect(onCardPress).not.toHaveBeenCalled();
+  });
+
+  it("calls onPress when share button is pressed", () => {
+    const onShare = jest.fn();
+    const { getByTestId } = render(
+      <ProduceCard item={mockProduce} onPress={onShare} />,
+    );
+
+    fireEvent.press(getByTestId("share-button"));
+    expect(onShare).toHaveBeenCalled();
   });
 });

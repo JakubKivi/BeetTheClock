@@ -13,6 +13,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { RouteProp, useIsFocused } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { Produce } from "../types";
+import { formatMonths } from "../utils";
+import { getRarityInfo } from "../constants/produce";
 
 // define the types for route params
 export type RootStackParamList = {
@@ -44,32 +46,6 @@ type Props = {
 };
 
 const ICON_SIZE = 120;
-
-const MONTH_NAMES = [
-  "JAN",
-  "FEB",
-  "MAR",
-  "APR",
-  "MAY",
-  "JUN",
-  "JUL",
-  "AUG",
-  "SEP",
-  "OCT",
-  "NOV",
-  "DEC",
-];
-
-function formatMonths(months: number[] | undefined) {
-  if (!months || months.length === 0) return "";
-  const unique = Array.from(new Set(months)).sort((a, b) => a - b);
-  if (unique.length === 12) return "Year-round";
-  const first = unique[0];
-  const last = unique[unique.length - 1];
-  return first === last
-    ? MONTH_NAMES[first]
-    : `${MONTH_NAMES[first]} - ${MONTH_NAMES[last]}`;
-}
 
 const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
   const {
@@ -130,39 +106,57 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
     >
       <Text style={styles.name}>{item.name}</Text>
 
-      <View style={styles.iconContainer}>
-        <TouchableOpacity
-          onPress={handlePick}
-          style={styles.iconSlot}
-          testID="details-pick-image"
-        >
-          {iconUri ? (
-            <Image source={{ uri: iconUri }} style={styles.iconImage} />
-          ) : item.emoji ? (
-            <Text style={styles.emoji}>{item.emoji}</Text>
-          ) : (
-            <View style={styles.emptyIcon} />
-          )}
-        </TouchableOpacity>
-        {!iconUri && onPickImage && (
-          <TouchableOpacity
-            testID="details-set-image"
-            style={styles.setImageButton}
-            onPress={handlePick}
-          >
-            <Ionicons name="image-outline" size={22} color="#6b1d52" />
-          </TouchableOpacity>
-        )}
+      <View style={styles.rarityImageRow}>
+        {/* Rarity Circle */}
+        <View style={[styles.rarityCircle]}>
+          <Text style={styles.rarityCircleEmoji}>
+            {getRarityInfo(item.rarity).emoji}
+          </Text>
+        </View>
 
-        {iconUri && onResetIcon && (
-          <TouchableOpacity
-            testID="details-reset-icon"
-            onPress={handleReset}
-            style={styles.resetIconButton}
-          >
-            <Ionicons name="close" size={18} color="#6b1d52" />
+        {/* Image Container */}
+        <View style={styles.iconContainerInRow}>
+          <TouchableOpacity style={styles.iconSlot} testID="details-pick-image">
+            {iconUri ? (
+              <Image source={{ uri: iconUri }} style={styles.iconImage} />
+            ) : item.emoji ? (
+              <Text style={styles.emoji}>{item.emoji}</Text>
+            ) : (
+              <View style={styles.emptyIcon} />
+            )}
           </TouchableOpacity>
-        )}
+          {!iconUri && onPickImage && (
+            <TouchableOpacity
+              testID="details-set-image"
+              style={styles.setImageButton}
+              onPress={handlePick}
+            >
+              <Ionicons name="image-outline" size={22} color="#6b1d52" />
+            </TouchableOpacity>
+          )}
+
+          {iconUri && onResetIcon && (
+            <TouchableOpacity
+              testID="details-reset-icon"
+              onPress={handleReset}
+              style={styles.resetIconButton}
+            >
+              <Ionicons name="close" size={18} color="#6b1d52" />
+            </TouchableOpacity>
+          )}
+        </View>
+
+        {/* Rarity Text */}
+        <View style={styles.rarityTextContainer}>
+          <Text
+            style={[
+              styles.rarityText,
+              { color: getRarityInfo(item.rarity).color },
+            ]}
+          >
+            {getRarityInfo(item.rarity).label}
+          </Text>
+        </View>
       </View>
 
       {/* availability months and best months */}
@@ -278,6 +272,37 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#6b1d52",
     marginTop: 4,
+  },
+  rarityImageRow: {
+    width: "100%",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    marginBottom: 20,
+  },
+  rarityCircle: {
+    width: "33.3%",
+    aspectRatio: 1,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  rarityCircleEmoji: {
+    fontSize: 40,
+  },
+  iconContainerInRow: {
+    width: "33.3%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  rarityTextContainer: {
+    width: "33.3%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  rarityText: {
+    fontSize: 16,
+    fontWeight: "bold",
   },
   setImageButton: {
     position: "absolute",

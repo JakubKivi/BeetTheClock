@@ -2,16 +2,20 @@ import { Produce } from "../types";
 
 export interface SortedProduceItem {
   item: Produce;
-  statusBadge: "new" | "last moment" | null;
+  statusBadge: "new" | "end" | null;
 }
 
 export function sortProduceList(
   produce: Produce[],
   favorites: string[],
-  currentMonth: number
+  currentMonth: number,
 ): SortedProduceItem[] {
   const now = new Date();
-  const daysInMonth = new Date(now.getFullYear(), currentMonth + 1, 0).getDate();
+  const daysInMonth = new Date(
+    now.getFullYear(),
+    currentMonth + 1,
+    0,
+  ).getDate();
   const dayOfMonth = now.getDate();
 
   const calculateDaysUntilSeasonEnd = (months: number[]): number => {
@@ -43,27 +47,54 @@ export function sortProduceList(
     return totalDays;
   };
 
+  const getContinuousGroups = (sorted: number[]): number[][] => {
+    const groups: number[][] = [];
+    let currentGroup: number[] = [];
+    for (let i = 0; i < sorted.length; i++) {
+      if (
+        currentGroup.length === 0 ||
+        sorted[i] === currentGroup[currentGroup.length - 1] + 1
+      ) {
+        currentGroup.push(sorted[i]);
+      } else {
+        groups.push(currentGroup);
+        currentGroup = [sorted[i]];
+      }
+    }
+    if (currentGroup.length > 0) groups.push(currentGroup);
+    return groups;
+  };
+
   const getSeasonStatus = (
-    months: number[]
-  ): { status: "new" | "last moment" | "normal"; daysLeft: number } => {
+    months: number[],
+  ): { status: "new" | "end" | "normal"; daysLeft: number } => {
     const sorted = Array.from(new Set(months)).sort((a, b) => a - b);
-    const firstMonth = sorted[0];
-    const lastMonth = sorted[sorted.length - 1];
     const isYearRound = sorted.length === 12;
-
-    // Check if this is the first month of the season
-    if (firstMonth === currentMonth && !isYearRound) {
-      return { status: "new", daysLeft: 0 };
-    }
-
-    // Check if this is the last month of the season
-    if (lastMonth === currentMonth && !isYearRound) {
-      return { status: "last moment", daysLeft: daysInMonth - dayOfMonth };
-    }
 
     // Year-round items go to the end
     if (isYearRound) {
       return { status: "normal", daysLeft: 999999 };
+    }
+
+    const groups = getContinuousGroups(sorted);
+    let isNew = false;
+    let isLast = false;
+    for (const group of groups) {
+      if (group.includes(currentMonth)) {
+        if (group[0] === currentMonth) {
+          isNew = true;
+        }
+        if (group[group.length - 1] === currentMonth) {
+          isLast = true;
+        }
+      }
+    }
+
+    if (isNew) {
+      return { status: "new", daysLeft: 0 };
+    }
+    if (isLast) {
+      return { status: "end", daysLeft: 0 };
     }
 
     // Calculate days until season ends
@@ -74,14 +105,17 @@ export function sortProduceList(
   // Process items with status
   const processedItems = produce.map((item) => {
     const seasonStatus = getSeasonStatus(item.months);
+    let statusBadge: "new" | "end" | null = null;
+    if (seasonStatus.status === "new") {
+      statusBadge = "new";
+    } else if (seasonStatus.status === "end") {
+      statusBadge = "end";
+    }
+
     return {
       item,
       isFavorite: favorites.includes(item.id),
-      statusBadge: seasonStatus.status === "new"
-        ? ("new" as const)
-        : seasonStatus.status === "last moment"
-        ? ("last moment" as const)
-        : (null as const),
+      statusBadge,
       daysLeft: seasonStatus.daysLeft,
       seasonStatus: seasonStatus.status,
     };
@@ -89,7 +123,7 @@ export function sortProduceList(
 
   // Sort by:
   // 1. Favorites first
-  // 2. Season status (new -> last moment -> others)
+  // 2. Season status (new -> end -> others)
   // 3. Days until season ends
   const sorted = processedItems.sort((a, b) => {
     // Favorites first
@@ -100,7 +134,7 @@ export function sortProduceList(
     // Within same favorite status, sort by season status
     const statusOrder: Record<string, number> = {
       new: 0,
-      "last moment": 1,
+      end: 1,
       normal: 2,
     };
     const statusDiff =
