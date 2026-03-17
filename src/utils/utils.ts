@@ -1,4 +1,5 @@
 // shared utility functions used across the app
+import { useLanguage } from "../contexts/LanguageContext";
 
 const MONTH_NAMES = [
   "JAN",
@@ -15,6 +16,21 @@ const MONTH_NAMES = [
   "DEC",
 ];
 
+const PL_MONTH_NAMES = [
+  "STY",
+  "LUT",
+  "MAR",
+  "KWI",
+  "MAJ",
+  "CZE",
+  "LIP",
+  "SIE",
+  "WRZ",
+  "PAŹ",
+  "LIS",
+  "GRU",
+];
+
 /**
  * Turn an array of month indices into a human‑readable range string.
  *
@@ -22,11 +38,19 @@ const MONTH_NAMES = [
  * If the list contains every month the result is "Year-round".
  */
 export function formatMonths(months?: number[]): string {
+  const { language } = useLanguage();
   if (!months || months.length === 0) return "";
 
   const unique = Array.from(new Set(months)).sort((a, b) => a - b);
-  if (unique.length === 12) return "Year-round";
-  if (unique.length === 1) return MONTH_NAMES[unique[0]];
+  const monthNames = language === "pl" ? PL_MONTH_NAMES : MONTH_NAMES;
+
+  if (language === "pl") {
+    if (unique.length === 12) return "Całoroczny";
+  } else {
+    if (unique.length === 12) return "Year-round";
+  }
+
+  if (unique.length === 1) return monthNames[unique[0]];
 
   const ranges: string[] = [];
   let rangeStart = unique[0];
@@ -35,11 +59,9 @@ export function formatMonths(months?: number[]): string {
     if (unique[i] !== unique[i - 1] + 1) {
       // close current range
       if (rangeStart === unique[i - 1]) {
-        ranges.push(MONTH_NAMES[rangeStart]);
+        ranges.push(monthNames[rangeStart]);
       } else {
-        ranges.push(
-          `${MONTH_NAMES[rangeStart]} - ${MONTH_NAMES[unique[i - 1]]}`,
-        );
+        ranges.push(`${monthNames[rangeStart]} - ${monthNames[unique[i - 1]]}`);
       }
       rangeStart = unique[i];
     }
@@ -47,10 +69,10 @@ export function formatMonths(months?: number[]): string {
 
   // finish last range
   if (rangeStart === unique[unique.length - 1]) {
-    ranges.push(MONTH_NAMES[rangeStart]);
+    ranges.push(monthNames[rangeStart]);
   } else {
     ranges.push(
-      `${MONTH_NAMES[rangeStart]} - ${MONTH_NAMES[unique[unique.length - 1]]}`,
+      `${monthNames[rangeStart]} - ${monthNames[unique[unique.length - 1]]}`,
     );
   }
 

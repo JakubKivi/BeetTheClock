@@ -13,8 +13,10 @@ import { Ionicons } from "@expo/vector-icons";
 import { RouteProp, useIsFocused } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { Produce } from "../types";
-import { formatMonths } from "../utils";
+import { formatMonths } from "../utils/utils";
 import { getRarityInfo } from "../constants/produce";
+import { useLanguage } from "../contexts/LanguageContext";
+import { i18n } from "../services/i18n";
 
 // define the types for route params
 export type RootStackParamList = {
@@ -48,6 +50,7 @@ type Props = {
 const ICON_SIZE = 120;
 
 const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
+  const { language } = useLanguage();
   const {
     item,
     iconUri: initialIconUri,
@@ -56,8 +59,10 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
   } = route.params;
 
   useEffect(() => {
-    navigation.setOptions({ title: item.name });
-  }, [navigation, item.name]);
+    navigation.setOptions({
+      title: language === "pl" ? item.pl_name : item.name,
+    });
+  }, [navigation, language === "pl" ? item.pl_name : item.name]);
   const isFocused = useIsFocused();
 
   const [iconUri, setIconUri] = useState<string | undefined>(initialIconUri);
@@ -81,12 +86,12 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
   const handleReset = () => {
     // ask user before actually clearing the icon
     Alert.alert(
-      "Confirm",
-      "Are you sure?",
+      i18n.t("details.confirmReset"),
+      i18n.t("details.areYouSure"),
       [
-        { text: "Cancel", style: "cancel" },
+        { text: i18n.t("details.cancel"), style: "cancel" },
         {
-          text: "OK",
+          text: i18n.t("details.ok"),
           onPress: () => {
             if (onResetIcon) {
               onResetIcon(item.id);
@@ -104,7 +109,9 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
       style={styles.container}
       contentContainerStyle={styles.contentContainer}
     >
-      <Text style={styles.name}>{item.name}</Text>
+      <Text style={styles.name}>
+        {language === "pl" ? item.pl_name : item.name}
+      </Text>
 
       <View style={styles.rarityImageRow}>
         {/* Rarity Circle */}
@@ -154,7 +161,9 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
               { color: getRarityInfo(item.rarity).color },
             ]}
           >
-            {getRarityInfo(item.rarity).label}
+            {language === "pl"
+              ? getRarityInfo(item.rarity).pl_label
+              : getRarityInfo(item.rarity).label}
           </Text>
         </View>
       </View>
@@ -165,7 +174,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
           <Text style={styles.monthsLabel}>{formatMonths(item.months)}</Text>
           {item.best_months && item.best_months.length > 0 && (
             <Text style={styles.bestMonthsLabel}>
-              Best: {formatMonths(item.best_months)}
+              {i18n.t("details.best")}: {formatMonths(item.best_months)}
             </Text>
           )}
         </View>
@@ -173,8 +182,12 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
 
       {item.selection_guide && (
         <View style={styles.guideSection}>
-          <Text style={styles.guideTitle}>Selection Guide</Text>
-          <Text style={styles.guideText}>{item.selection_guide}</Text>
+          <Text style={styles.guideTitle}>
+            {i18n.t("details.selectionGuide")}
+          </Text>
+          <Text style={styles.guideText}>
+            {language === "pl" ? item.pl_selection_guide : item.selection_guide}
+          </Text>
         </View>
       )}
 
@@ -187,7 +200,9 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
           }}
         >
           <Ionicons name="earth-outline" size={20} color="#fff" />
-          <Text style={styles.wikipediaButtonText}>Wikipedia</Text>
+          <Text style={styles.wikipediaButtonText}>
+            {i18n.t("details.wikipedia")}
+          </Text>
         </TouchableOpacity>
       )}
     </ScrollView>

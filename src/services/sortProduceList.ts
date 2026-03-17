@@ -115,6 +115,7 @@ export function sortProduceList(
     return {
       item,
       isFavorite: favorites.includes(item.id),
+      isAvailable: item.months.includes(currentMonth),
       statusBadge,
       daysLeft: seasonStatus.daysLeft,
       seasonStatus: seasonStatus.status,
@@ -122,11 +123,17 @@ export function sortProduceList(
   });
 
   // Sort by:
-  // 1. Favorites first
-  // 2. Season status (new -> end -> others)
-  // 3. Days until season ends
+  // 1. Available first
+  // 2. Within available/unavailable, favorites first
+  // 3. Within same favorite status, sort by season status (new -> end -> normal)
+  // 4. Within same season status, sort by days left (ascending - shorter seasons first)
   const sorted = processedItems.sort((a, b) => {
-    // Favorites first
+    // Available first
+    if (a.isAvailable !== b.isAvailable) {
+      return a.isAvailable ? -1 : 1;
+    }
+
+    // Within same availability, favorites first
     if (a.isFavorite !== b.isFavorite) {
       return a.isFavorite ? -1 : 1;
     }

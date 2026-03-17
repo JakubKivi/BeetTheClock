@@ -3,22 +3,18 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { getSettings, saveSettings, AppSettings } from "../services/storage";
 import { Produce } from "../types";
-import { formatMonths } from "../utils";
+import { formatMonths } from "../utils/utils";
 import { getRarityInfo } from "../constants/produce";
-
-/**
- * UI card used on the home screen; it just shows the item and a couple of
- * buttons (favorite/share). Any image-picking logic lives at the screen
- * level, so we only accept a simple callback for the share action.
- */
+import { i18n } from "../services/i18n";
+import { useLanguage } from "../contexts/LanguageContext";
 
 type Props = {
   item: Produce;
   iconUri?: string;
-  onPress: () => void; // share
-  onCardPress?: () => void; // navigate to details
-  statusBadge?: "new" | "last moment" | null;
-  isAvailable?: boolean; // true if product is in season, false if coming soon
+  onPress: () => void;
+  onCardPress?: () => void;
+  statusBadge?: "new" | "end" | null;
+  isAvailable?: boolean;
 };
 
 const ICON_SIZE = 40;
@@ -31,6 +27,7 @@ const ProduceCard: React.FC<Props> = ({
   statusBadge,
   isAvailable = true,
 }) => {
+  const { language } = useLanguage();
   const [isFav, setIsFav] = useState(false);
   const BANNER_COLOR = "#6b1d52";
 
@@ -75,108 +72,121 @@ const ProduceCard: React.FC<Props> = ({
       console.warn("toggleFavorite error", e);
     }
   };
+
   const monthsLabel = formatMonths(item.months);
   const bestMonthsLabel = item.best_months
-    ? `Best: ${formatMonths(item.best_months)}`
+    ? `${i18n.t("details.best")}: ${formatMonths(item.best_months)}`
     : null;
 
   return (
-    <TouchableOpacity
-      testID="card-press"
-      activeOpacity={0.9}
-      onPress={onCardPress}
-      style={[styles.card, !isAvailable && styles.unavailableCard]}
-    >
-      <View style={styles.leftContainer}>
-        <View style={styles.iconContainer}>
-          <View style={styles.iconSlot}>
-            {iconUri ? (
-              <Image
-                source={{ uri: iconUri }}
-                style={[styles.iconImage, !isAvailable && styles.greyedOut]}
-              />
-            ) : item.emoji ? (
-              <Text
-                style={[styles.emoji, !isAvailable && styles.greyedOutText]}
-              >
-                {item.emoji}
+    <View style={styles.wrapper}>
+      {statusBadge && (
+        <View style={styles.badgeContainer}>
+          <Text style={styles.badge}>{statusBadge}</Text>
+        </View>
+      )}
+
+      <TouchableOpacity
+        testID="card-press"
+        activeOpacity={0.9}
+        onPress={onCardPress}
+        style={[styles.card, !isAvailable && styles.unavailableCard]}
+      >
+        <View style={styles.leftContainer}>
+          <View style={styles.iconContainer}>
+            <View style={styles.iconSlot}>
+              {iconUri ? (
+                <Image
+                  source={{ uri: iconUri }}
+                  style={[styles.iconImage, !isAvailable && styles.greyedOut]}
+                />
+              ) : item.emoji ? (
+                <Text
+                  style={[styles.emoji, !isAvailable && styles.greyedOutText]}
+                >
+                  {item.emoji}
+                </Text>
+              ) : (
+                <View
+                  style={[
+                    styles.emptyIcon,
+                    !isAvailable && styles.unavailableEmptyIcon,
+                  ]}
+                />
+              )}
+            </View>
+
+            <View style={[styles.rarityBadge]}>
+              <Text style={styles.rarityBadgeEmoji}>
+                {getRarityInfo(item.rarity).emoji}
               </Text>
-            ) : (
-              <View
+            </View>
+          </View>
+
+          <View style={styles.textContainer}>
+            <Text style={[styles.name, !isAvailable && styles.greyedOutText]}>
+              {language === "pl" ? item.pl_name : item.name}
+            </Text>
+            <Text
+              style={[styles.category, !isAvailable && styles.greyedOutText]}
+            >
+              {monthsLabel}
+            </Text>
+            {bestMonthsLabel && (
+              <Text
                 style={[
-                  styles.emptyIcon,
-                  !isAvailable && styles.unavailableEmptyIcon,
+                  styles.bestMonths,
+                  !isAvailable && styles.greyedOutText,
                 ]}
-              />
+              >
+                {bestMonthsLabel}
+              </Text>
             )}
           </View>
-          {statusBadge && (
-            <View style={styles.badgeContainer}>
-              <Text style={styles.badge}>{statusBadge}</Text>
-            </View>
-          )}
-          <View style={[styles.rarityBadge]}>
-            <Text style={styles.rarityBadgeEmoji}>
-              {getRarityInfo(item.rarity).emoji}
-            </Text>
-          </View>
         </View>
 
-        <View style={styles.textContainer}>
-          <Text style={[styles.name, !isAvailable && styles.greyedOutText]}>
-            {item.name}
-          </Text>
-          <Text style={[styles.category, !isAvailable && styles.greyedOutText]}>
-            {monthsLabel}
-          </Text>
-          {bestMonthsLabel && (
-            <Text
-              style={[styles.bestMonths, !isAvailable && styles.greyedOutText]}
+        <View style={styles.rightButtons}>
+          {onPress && (
+            <TouchableOpacity
+              testID="share-button"
+              onPress={onPress}
+              style={styles.iconButton}
             >
-              {bestMonthsLabel}
-            </Text>
+              <Ionicons
+                name="share-social-outline"
+                size={20}
+                color={isAvailable ? BANNER_COLOR : "#ccc"}
+              />
+            </TouchableOpacity>
           )}
-        </View>
-      </View>
 
-      <View style={styles.rightButtons}>
-        {/* share icon */}
-        {onPress && (
           <TouchableOpacity
-            testID="share-button"
-            onPress={onPress}
+            testID="favorite-button"
+            onPress={toggleFavorite}
             style={styles.iconButton}
           >
             <Ionicons
-              name="share-social-outline"
+              name={isFav ? "heart" : "heart-outline"}
               size={20}
               color={isAvailable ? BANNER_COLOR : "#ccc"}
             />
           </TouchableOpacity>
-        )}
-
-        <TouchableOpacity
-          testID="favorite-button"
-          onPress={toggleFavorite}
-          style={styles.iconButton}
-        >
-          <Ionicons
-            name={isFav ? "heart" : "heart-outline"}
-            size={20}
-            color={isAvailable ? BANNER_COLOR : "#ccc"}
-          />
-        </TouchableOpacity>
-      </View>
-    </TouchableOpacity>
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  // Wrapper prevents absolute children from being clipped by TouchableOpacity
+  wrapper: {
+    marginVertical: 8,
+    position: "relative",
+  },
   card: {
     backgroundColor: "#f9f9f9",
     padding: 15,
     borderRadius: 10,
-    marginVertical: 8,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -220,19 +230,20 @@ const styles = StyleSheet.create({
   },
   badgeContainer: {
     position: "absolute",
-    top: -5,
-    left: -5,
+    top: -10,
+    left: -10,
     backgroundColor: "#6b1d52",
-    paddingHorizontal: 6,
-    paddingVertical: 2,
-    borderRadius: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
     zIndex: 10,
+    elevation: 3,
+    transform: [{ rotate: "-15deg" }],
   },
   badge: {
     color: "#fff",
     fontSize: 9,
     fontWeight: "bold",
-    transform: [{ rotate: "-15deg" }],
   },
   emptyIcon: {
     width: ICON_SIZE,
@@ -278,7 +289,6 @@ const styles = StyleSheet.create({
     marginTop: 2,
     fontStyle: "italic",
   },
-
   rightButtons: {
     flexDirection: "row",
     alignItems: "center",

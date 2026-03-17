@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, SectionList, StyleSheet, Alert } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  SectionList,
+  StyleSheet,
+  Alert,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
 import {
   useNavigation,
   NavigationProp,
@@ -15,14 +24,20 @@ import { getSettings } from "../services/storage";
 import ProduceCard from "../components/ProduceCard";
 import { getProduceIcons, saveProduceIcon } from "../services/newIcon";
 import { sortProduceList } from "../services/sortProduceList";
+import { Ionicons } from "@expo/vector-icons";
+import { useLanguage } from "../contexts/LanguageContext";
+import { i18n } from "../services/i18n";
 
 const HomeScreen = () => {
+  const { language } = useLanguage();
   const currentMonth = new Date().getMonth();
   const [targetNumber, setTargetNumber] = useState("");
   const [icons, setIcons] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
@@ -44,7 +59,7 @@ const HomeScreen = () => {
         const storedIcons = await getProduceIcons();
         setIcons(storedIcons);
       } catch (e) {
-        setError("Failed to load Home screen.");
+        setError(i18n.t("home.errorMessage"));
       }
     };
     load();
@@ -66,11 +81,88 @@ const HomeScreen = () => {
     }, []),
   );
 
-  const seasonalProduce = PRODUCE_DATA.filter((p) =>
+  const closeSearch = () => {
+    setIsSearching(false);
+    setSearchQuery("");
+  };
+
+  useEffect(() => {
+    if (isSearching) {
+      navigation.setOptions({
+        headerTitle: () => (
+          <TextInput
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            placeholder={i18n.t("home.searchPlaceholder")}
+            placeholderTextColor="rgba(255,255,255,0.7)"
+            style={{
+              flex: 1,
+              height: 40,
+              backgroundColor: "transparent",
+              borderRadius: 5,
+              paddingHorizontal: 10,
+              color: "#fff",
+              fontSize: 16,
+            }}
+            autoFocus={true}
+          />
+        ),
+        headerRight: () => (
+          <TouchableOpacity onPress={closeSearch} style={{ marginRight: 10 }}>
+            <Ionicons name="close" size={24} color="#fff" />
+          </TouchableOpacity>
+        ),
+      });
+    } else {
+      navigation.setOptions({
+        headerLeft: () => (
+          <Image
+            source={require("../../assets/adaptive-icon.png")}
+            style={{
+              width: 50,
+              height: 50,
+              marginLeft: 15,
+              tintColor: "#fff",
+            }}
+            resizeMode="contain"
+          />
+        ),
+        headerTitle: "Beet The Clock",
+        headerRight: () => (
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <TouchableOpacity
+              onPress={() => setIsSearching(true)}
+              style={{ marginRight: 10 }}
+            >
+              <Ionicons name="search" size={24} color="#fff" />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Settings")}
+              style={{ marginRight: 10 }}
+            >
+              <Ionicons name="settings-sharp" size={24} color="#fff" />
+            </TouchableOpacity>
+          </View>
+        ),
+      });
+    }
+  }, [navigation, isSearching, searchQuery, language]);
+
+  const filteredProduce = PRODUCE_DATA.filter((p) => {
+    const query = searchQuery.toLowerCase();
+    // Check if name contains query AND pl_name does NOT contain query
+    if (language === "pl") {
+      return p.pl_name.toLowerCase().includes(query);
+    } else {
+      return p.name.toLowerCase().includes(query);
+    }
+  });
+
+  const seasonalProduce = filteredProduce.filter((p) =>
     p.months.includes(currentMonth),
   );
 
-  const unavailableProduce = PRODUCE_DATA.filter(
+  const unavailableProduce = filteredProduce.filter(
     (p) => !p.months.includes(currentMonth),
   );
 
@@ -86,15 +178,17 @@ const HomeScreen = () => {
     currentMonth,
   );
 
-  const handleShare = async (name: string) => {
+  const handleShare = async (produce: any) => {
     const isAvailable = await SMS.isAvailableAsync();
     if (!isAvailable) {
-      Alert.alert("Error", "SMS not available");
+      Alert.alert("Error", i18n.t("home.smsError"));
       return;
     }
     await SMS.sendSMSAsync(
       [targetNumber],
-      `Hey! ${name} is in season right now!`,
+      language === "pl"
+        ? `Hej! ${produce.pl_name} jest teraz w sezonie! Jeśli chcesz wiedzieć, co jest w sezonie, sprawdź aplikację Beet The Clock!`
+        : `Hey! ${produce.name} is in season right now! If you want to know what's in season, check out the Beet The Clock app!`,
     );
   };
 
@@ -112,7 +206,10 @@ const HomeScreen = () => {
         const response =
           await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (!response.granted) {
-          Alert.alert("Permission required", "Access to photos is needed.");
+          Alert.alert(
+            i18n.t("home.permissionRequired"),
+            i18n.t("home.photoAccessError"),
+          );
           return null;
         }
       }
@@ -131,7 +228,7 @@ const HomeScreen = () => {
       setIcons((prev) => ({ ...prev, [produceId]: uri }));
       return uri;
     } catch (e) {
-      Alert.alert("Error", "Could not select image.");
+      Alert.alert("Error", i18n.t("home.imageSelectError"));
       return null;
     }
   };
@@ -147,12 +244,12 @@ const HomeScreen = () => {
   // prepare sections so headers can stick when scrolling
   const sections = [
     {
-      title: "In Season Now:",
+      title: i18n.t("home.inSeason"),
       data: sortedAndBadgedProduce,
       isAvailable: true,
     },
     {
-      title: "Out of season:",
+      title: i18n.t("home.outOfSeason"),
       data: sortedUnavailableProduce,
       isAvailable: false,
     },
@@ -178,7 +275,7 @@ const HomeScreen = () => {
             <ProduceCard
               item={produceItem}
               iconUri={icons[produceItem.id]}
-              onPress={() => handleShare(produceItem.name)}
+              onPress={() => handleShare(produceItem)}
               onCardPress={() => handleNavigateToDetails(produceItem)}
               statusBadge={statusBadge}
               isAvailable={isAvailable}
@@ -191,7 +288,11 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: "#fff" },
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "#fff",
+  },
 
   sectionHeaderContainer: {
     backgroundColor: "#fff",

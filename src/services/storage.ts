@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Language } from "./i18n";
 
 const SETTINGS_KEY = "BeetTheClock:settings";
 
@@ -7,6 +8,7 @@ export type AppSettings = {
   notificationsEnabled: boolean;
   notificationTime?: string; // "HH:MM"
   favItems: string[];
+  language?: Language;
 };
 
 export const getSettings = async (): Promise<AppSettings | null> => {
