@@ -255,6 +255,22 @@ const HomeScreen = () => {
     },
   ];
 
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  const handleRefresh = async () => {
+    setIsRefreshing(true);
+
+    try {
+      // Refresh the produce data from storage
+      const settings = await getSettings();
+      setFavorites(settings?.favItems || []);
+      const storedIcons = await getProduceIcons();
+      setIcons(storedIcons);
+    } finally {
+      setIsRefreshing(false);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <SectionList
@@ -262,6 +278,8 @@ const HomeScreen = () => {
         keyExtractor={(item, index) => item.item.id + index}
         stickySectionHeadersEnabled
         extraData={refreshTrigger}
+        refreshing={isRefreshing}
+        onRefresh={handleRefresh}
         renderSectionHeader={({ section }) => (
           <View style={styles.sectionHeaderContainer}>
             <Text style={styles.sectionTitle}>{section.title}</Text>
