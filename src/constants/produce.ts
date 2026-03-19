@@ -36,6 +36,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm, smooth skin, intact taproot. For greens attached, leaves should be fresh not wilted.",
     pl_selection_guide:
       "Twarda, gładka skórka, nienaruszony korzeń główny. Jeśli ma liście, powinny być świeże, a nie zwiędnięte.",
+    storage_guide:
+      "Remove greens leaving 1 inch of stem. Store unwashed in a perforated plastic bag in the fridge crisper.",
+    pl_storage_guide:
+      "Odciąć liście zostawiając 2-3 cm łodygi. Przechowywać nieumyte w perforowanym plastikowym worku w szufladzie lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Beetroot",
     rarity: 1,
   },
@@ -49,6 +53,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm, bright orange, smooth skin. Avoid cracks or rubbery texture.",
     pl_selection_guide:
       "Twarda, jasnopomarańczowa, gładka skórka. Unikaj pęknięć i gumowatej konsystencji.",
+    storage_guide:
+      "Remove greens. Submerge completely in water in a sealed container in the fridge. Change water every few days.",
+    pl_storage_guide:
+      "Odciąć nać. Przechowywać całkowicie zanurzone w wodzie w szczelnym pojemniku w lodówce. Zmieniać wodę co kilka dni.",
     emoji: "🥕",
     wikipedia_url: "https://en.wikipedia.org/wiki/Carrot",
     rarity: 1,
@@ -62,6 +70,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Heavy for its size, firm, no soft spots. Smaller roots tend to be less woody.",
     pl_selection_guide:
       "Ciężki jak na swój rozmiar, twardy, bez miękkich plam. Mniejsze korzenie są zazwyczaj mniej zdrewniałe.",
+    storage_guide:
+      "Store unwashed and loosely wrapped in a plastic bag in the fridge crisper drawer.",
+    pl_storage_guide:
+      "Przechowywać nieumyty, luźno owinięty w plastikową torbę w szufladzie na warzywa w lodówce.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Celeriac",
     rarity: 1,
   },
@@ -73,6 +85,10 @@ export const PRODUCE_DATA: Produce[] = [
     selection_guide: "Firm, white/beige skin. Avoid rusty spots or limp roots.",
     pl_selection_guide:
       "Twarda, biała/beżowa skórka. Unikaj rdzawych plam i wiotkich korzeni.",
+    storage_guide:
+      "Remove greens. Wrap the root in a lightly damp paper towel and store in an airtight container or bag in the fridge.",
+    pl_storage_guide:
+      "Odciąć nać. Zawinąć korzeń w lekko wilgotny ręcznik papierowy i trzymać w szczelnym pojemniku lub torbie w lodówce.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Parsley#Root_parsley",
     rarity: 1,
   },
@@ -86,6 +102,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm, smooth skin, no green tints or sprouts. New potatoes should have flaky skin.",
     pl_selection_guide:
       "Twarda, gładka skórka, bez zielonych odcieni i kiełków. Młode ziemniaki powinny mieć łuszczącą się skórkę.",
+    storage_guide:
+      "Keep in a cool, dark, dry, well-ventilated place (like a paper bag in a pantry). Do not refrigerate. Keep away from onions.",
+    pl_storage_guide:
+      "Trzymać w chłodnym, ciemnym, suchym i dobrze wentylowanym miejscu (np. w papierowej torbie w spiżarni). Nie w lodówce. Trzymać z dala od cebuli.",
     emoji: "🥔",
     wikipedia_url: "https://en.wikipedia.org/wiki/Potato",
     rarity: 1,
@@ -99,6 +119,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm, ivory color. Avoid very large roots as they can be woody cores.",
     pl_selection_guide:
       "Twardy, w kolorze kości słoniowej. Unikaj bardzo dużych korzeni, ponieważ mogą mieć zdrewniały środek.",
+    storage_guide:
+      "Store unwashed in a perforated plastic bag in the vegetable drawer of the fridge.",
+    pl_storage_guide:
+      "Przechowywać nieumyty w perforowanym plastikowym worku w szufladzie na warzywa w lodówce.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Parsnip",
     rarity: 3,
   },
@@ -111,6 +135,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm, not shriveled. Knobby is normal, but avoid soft spots/mold.",
     pl_selection_guide:
       "Twardy, niepomarszczony. Guzkowaty kształt to norma, ale unikaj miękkich plam i pleśni.",
+    storage_guide:
+      "Wrap unwashed tubers in a paper towel inside a loose plastic bag in the fridge crisper.",
+    pl_storage_guide:
+      "Owinąć nieumyte bulwy w ręcznik papierowy wewnątrz luźnej plastikowej torby w szufladzie lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Jerusalem_artichoke",
     rarity: 4,
   },
@@ -122,6 +150,10 @@ export const PRODUCE_DATA: Produce[] = [
     selection_guide: "Very hard and firm. Avoid shriveled roots or soft ends.",
     pl_selection_guide:
       "Bardzo twardy i jędrny. Unikaj pomarszczonych korzeni lub miękkich końcówek.",
+    storage_guide:
+      "Wrap the unwashed root loosely in plastic wrap or keep in a perforated bag in the crisper drawer.",
+    pl_storage_guide:
+      "Owinąć nieumyty korzeń luźno w folię spożywczą lub trzymać w perforowanej torbie w szufladzie lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Horseradish",
     rarity: 2,
   },
@@ -135,6 +167,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm, smooth, bright color. If leaves are attached, they should be green and crisp.",
     pl_selection_guide:
       "Twarda, gładka, o jasnym kolorze. Jeśli ma liście, powinny być zielone i chrupiące.",
+    storage_guide:
+      "Remove greens immediately. Store roots submerged in a jar of water in the fridge to keep them crisp.",
+    pl_storage_guide:
+      "Odciąć natychmiast liście. Przechowywać korzenie zanurzone w słoiku z wodą w lodówce, aby pozostały chrupiące.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Radish",
     rarity: 1,
   },
@@ -149,6 +185,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Hard, dry, papery skin. Avoid sprouting necks or soft spots.",
     pl_selection_guide:
       "Twarda, sucha, papierowa skórka. Unikaj kiełkujących końcówek i miękkich plam.",
+    storage_guide:
+      "Store in a cool, dark, dry, and well-ventilated spot (like a wire basket). Do not refrigerate or put in plastic. Keep away from potatoes.",
+    pl_storage_guide:
+      "Przechowywać w chłodnym, ciemnym, suchym i przewiewnym miejscu (np. w koszyku). Nie wkładać do lodówki ani do folii. Trzymać z dala od ziemniaków.",
     emoji: "🧅",
     wikipedia_url: "https://en.wikipedia.org/wiki/Onion",
     rarity: 1,
@@ -162,6 +202,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm, tight skin, heavy for size. Avoid if cloves feel hollow or soft.",
     pl_selection_guide:
       "Twarda, ciasna skórka, ciężki jak na swój rozmiar. Unikaj główek z pustymi lub miękkimi ząbkami.",
+    storage_guide:
+      "Keep in a dry, dark, well-ventilated space at room temperature. A mesh bag or open basket is ideal.",
+    pl_storage_guide:
+      "Trzymać w suchym, ciemnym, dobrze wentylowanym miejscu w temperaturze pokojowej. Najlepsza będzie siatka lub otwarty koszyk.",
     emoji: "🧄",
     wikipedia_url: "https://en.wikipedia.org/wiki/Garlic",
     rarity: 1,
@@ -175,6 +219,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Crisp white and light green parts. Avoid yellowing or slimy leaves.",
     pl_selection_guide:
       "Chrupiące białe i jasnozielone części. Unikaj żółknących lub oślizgłych liści.",
+    storage_guide:
+      "Store unwashed and untrimmed, loosely wrapped in a plastic bag in the crisper drawer of the fridge.",
+    pl_storage_guide:
+      "Przechowywać nieumyty i nieprzycięty, luźno owinięty w plastikową torbę w szufladzie lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Leek",
     rarity: 1,
   },
@@ -186,6 +234,10 @@ export const PRODUCE_DATA: Produce[] = [
     selection_guide: "Bright green, crisp stalks. Avoid slimy or wilting tips.",
     pl_selection_guide:
       "Jasnozielone, chrupiące łodygi. Unikaj oślizgłych lub więdnących końcówek.",
+    storage_guide:
+      "Stand them upright in a jar with an inch of water at the bottom, loosely covered with a plastic bag in the fridge.",
+    pl_storage_guide:
+      "Postawić pionowo w słoiku z odrobiną wody na dnie, luźno przykryć plastikową torbą i wstawić do lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Scallion",
     rarity: 1,
   },
@@ -201,6 +253,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Heavy for size, tight leaves. Young cabbage is looser and greener.",
     pl_selection_guide:
       "Ciężka jak na swój rozmiar, zwarte liście. Młoda kapusta jest luźniejsza i bardziej zielona.",
+    storage_guide:
+      "Do not wash. Keep the whole head wrapped tightly in plastic wrap in the crisper drawer.",
+    pl_storage_guide:
+      "Nie myć. Trzymać całą główkę ciasno owiniętą folią spożywczą w szufladzie lodówki.",
     emoji: "🥬",
     wikipedia_url: "https://en.wikipedia.org/wiki/Cabbage",
     rarity: 1,
@@ -215,6 +271,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Tight, small, bright green heads. Avoid yellow leaves or loose structure.",
     pl_selection_guide:
       "Zwarte, małe, jasnozielone główki. Unikaj żółtych liści i luźnej struktury.",
+    storage_guide:
+      "Leave on the stalk if possible. Otherwise, store unwashed in a loose plastic bag in the fridge crisper.",
+    pl_storage_guide:
+      "Najlepiej trzymać na łodydze. W przeciwnym razie przechowywać nieumyte w luźnej plastikowej torbie w szufladzie lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Brussels_sprout",
     rarity: 2,
   },
@@ -227,6 +287,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Compact, creamy white curds. No dark spots. Leaves should be fresh green.",
     pl_selection_guide:
       "Zwarty, kremowobiały kwiatostan. Bez ciemnych plam. Liście powinny być świeżo zielone.",
+    storage_guide:
+      "Store stem-side down in a loosely sealed plastic bag with a dry paper towel to absorb moisture in the fridge.",
+    pl_storage_guide:
+      "Przechowywać łodygą do dołu w luźno zamkniętej plastikowej torbie z suchym ręcznikiem papierowym pochłaniającym wilgoć w lodówce.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Cauliflower",
     rarity: 1,
   },
@@ -239,6 +303,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm stalks, tight dark green florets. Avoid yellowing buds.",
     pl_selection_guide:
       "Twarde łodygi, zwarte ciemnozielone różyczki. Unikaj żółknących pąków.",
+    storage_guide:
+      "Mist the head lightly, wrap loosely in damp paper towels, and keep in an unsealed bag in the fridge.",
+    pl_storage_guide:
+      "Lekko zrosić główkę wodą, luźno owinąć wilgotnym ręcznikiem papierowym i trzymać w otwartej torbie w lodówce.",
     emoji: "🥦",
     wikipedia_url: "https://en.wikipedia.org/wiki/Broccoli",
     rarity: 1,
@@ -253,6 +321,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Small to medium size (tennis ball). Heavy and firm. Large ones can be woody inside.",
     pl_selection_guide:
       "Mała do średniej wielkości (wielkość piłki tenisowej). Ciężka i twarda. Duże sztuki mogą być wewnątrz zdrewniałe.",
+    storage_guide:
+      "Remove leaves. Store the unwashed bulb loose or in a perforated bag in the crisper drawer.",
+    pl_storage_guide:
+      "Odciąć liście. Przechowywać nieumytą bulwę luźno lub w perforowanej torbie w szufladzie lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Kohlrabi",
     rarity: 1,
   },
@@ -265,6 +337,10 @@ export const PRODUCE_DATA: Produce[] = [
     selection_guide: "Dark green, crisp leaves. Avoid yellow or mushy spots.",
     pl_selection_guide:
       "Ciemnozielone, chrupiące liście. Unikaj żółtych lub papkowatych miejsc.",
+    storage_guide:
+      "Wrap unwashed leaves in dry paper towels and store in a sealed plastic bag in the fridge.",
+    pl_storage_guide:
+      "Owinąć nieumyte liście w suchy ręcznik papierowy i przechowywać w szczelnej plastikowej torbie w lodówce.",
     emoji: "🥬",
     wikipedia_url: "https://en.wikipedia.org/wiki/Kale",
     rarity: 1,
@@ -278,6 +354,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Vibrant green, fresh looking. Avoid slimy or wilted leaves.",
     pl_selection_guide:
       "Żywo zielony, świeżo wyglądający. Unikaj oślizgłych lub zwiędniętych liści.",
+    storage_guide:
+      "Store unwashed in a hard, airtight container lined with dry paper towels to absorb excess moisture.",
+    pl_storage_guide:
+      "Przechowywać nieumyty w twardym, szczelnym pojemniku wyłożonym suchym ręcznikiem papierowym, aby pochłaniał wilgoć.",
     emoji: "🥬",
     wikipedia_url: "https://en.wikipedia.org/wiki/Spinach",
     rarity: 1,
@@ -291,6 +371,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm, straight stalks with closed, tight tips. Ends should be moist, not dry.",
     pl_selection_guide:
       "Twarde, proste łodygi z zamkniętymi, zwartymi główkami. Końcówki powinny być wilgotne, nie suche.",
+    storage_guide:
+      "Trim the ends and stand stalks upright in a glass with an inch of water. Loosely cover the tips with a plastic bag in the fridge.",
+    pl_storage_guide:
+      "Przyciąć końcówki i postawić pionowo w szklance z odrobiną wody. Luźno przykryć główki plastikową torbą i trzymać w lodówce.",
     emoji: "bi",
     wikipedia_url: "https://en.wikipedia.org/wiki/Asparagus",
     rarity: 2,
@@ -304,6 +388,10 @@ export const PRODUCE_DATA: Produce[] = [
     selection_guide: "Firm, crisp stalks. Avoid limp or rubbery ones.",
     pl_selection_guide:
       "Twarde, chrupiące łodygi. Unikaj wiotkich lub gumowatych.",
+    storage_guide:
+      "Wrap unwashed stalks tightly in aluminum foil and store in the crisper drawer of the fridge.",
+    pl_storage_guide:
+      "Szczelnie owinąć nieumyte łodygi w folię aluminiową i przechowywać w szufladzie lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Rhubarb",
     rarity: 2,
   },
@@ -319,6 +407,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Fragrant, rich color, slightly yielding to pressure. Heavy for size.",
     pl_selection_guide:
       "Pachnący, o głębokim kolorze, lekko ustępujący pod naciskiem. Ciężki jak na swój rozmiar.",
+    storage_guide:
+      "Keep stem-side down at room temperature, out of direct sunlight. Never refrigerate.",
+    pl_storage_guide:
+      "Trzymać szypułką do dołu w temperaturze pokojowej, z dala od bezpośredniego słońca. Nigdy nie wkładać do lodówki.",
     emoji: "🍅",
     wikipedia_url: "https://en.wikipedia.org/wiki/Tomato",
     rarity: 1,
@@ -333,6 +425,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm along entire length. Avoid shriveled ends or soft spots.",
     pl_selection_guide:
       "Twardy na całej długości. Unikaj pomarszczonych końcówek i miękkich plam.",
+    storage_guide:
+      "Wrap individually in paper towels, place in a plastic bag, and store towards the front of the fridge shelf where it's warmer.",
+    pl_storage_guide:
+      "Każdy osobno owinąć ręcznikiem papierowym, włożyć do plastikowej torby i trzymać z przodu półki w lodówce, gdzie jest cieplej.",
     emoji: "🥒",
     wikipedia_url: "https://en.wikipedia.org/wiki/Cucumber",
     rarity: 1,
@@ -345,6 +441,10 @@ export const PRODUCE_DATA: Produce[] = [
     selection_guide: "Glossy, taut skin, firm stem. Heavy for size.",
     pl_selection_guide:
       "Błyszcząca, napięta skórka, twarda szypułka. Ciężka jak na swój rozmiar.",
+    storage_guide:
+      "Store unwashed in a loosely tied plastic bag in the crisper drawer. Keep them completely dry.",
+    pl_storage_guide:
+      "Przechowywać nieumytą, w luźno zawiązanej plastikowej torbie w szufladzie lodówki. Należy ją chronić przed wilgocią.",
     emoji: "🫑",
     wikipedia_url: "https://en.wikipedia.org/wiki/Bell_pepper",
     rarity: 1,
@@ -358,6 +458,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Shiny, smooth skin. Firm but bounces back slightly when pressed. Heavy.",
     pl_selection_guide:
       "Błyszcząca, gładka skórka. Twardy, ale lekko sprężysty przy naciśnięciu. Ciężki.",
+    storage_guide:
+      "Store at cool room temperature away from bananas/tomatoes. If refrigerating, wrap in paper towel in the crisper and use quickly.",
+    pl_storage_guide:
+      "Trzymać w chłodnej temperaturze pokojowej z dala od bananów i pomidorów. Jeśli w lodówce, owinąć w ręcznik papierowy i szybko zużyć.",
     emoji: "🍆",
     wikipedia_url: "https://en.wikipedia.org/wiki/Eggplant",
     rarity: 1,
@@ -371,6 +475,10 @@ export const PRODUCE_DATA: Produce[] = [
     selection_guide: "Small to medium size, shiny skin. Avoid soft spots.",
     pl_selection_guide:
       "Mały do średniego rozmiaru, błyszcząca skórka. Unikaj miękkich plam.",
+    storage_guide:
+      "Keep dry and unwashed. Store in a paper bag or loose plastic bag with a paper towel in the crisper drawer.",
+    pl_storage_guide:
+      "Chronić przed wilgocią, nie myć. Trzymać w papierowej torbie lub luźnej folii z ręcznikiem papierowym w szufladzie lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Zucchini",
     rarity: 1,
   },
@@ -383,6 +491,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Hard rind (cannot be punctured with a fingernail), hollow sound when tapped. Stem should be dry.",
     pl_selection_guide:
       "Twarda skóra (nie da się jej przebić paznokciem), głuchy dźwięk przy pukaniu. Łodyga powinna być sucha.",
+    storage_guide:
+      "Store whole pumpkins in a cool, dark, dry, and well-ventilated place. Once cut, wrap tightly in plastic and refrigerate.",
+    pl_storage_guide:
+      "Przechowywać w całości w chłodnym, ciemnym, suchym i dobrze wentylowanym miejscu. Po rozkrojeniu ciasno owinąć folią i schować do lodówki.",
     emoji: "🎃",
     wikipedia_url: "https://en.wikipedia.org/wiki/Pumpkin",
     rarity: 2,
@@ -397,6 +509,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Bright green husk, golden silk (not dried black). Kernels should look plump and release milky juice when punctured.",
     pl_selection_guide:
       "Jasnozielone liście, złociste znamiona (nie suche i czarne). Ziarna powinny wyglądać na pękate i uwalniać mleczny sok po przekłuciu.",
+    storage_guide:
+      "Keep unhusked in a loosely closed plastic bag in the fridge. Consume as soon as possible, as sugars quickly turn to starch.",
+    pl_storage_guide:
+      "Trzymać w liściach w luźno zamkniętej plastikowej torbie w lodówce. Zjeść jak najszybciej, gdyż cukry szybko zamieniają się w skrobię.",
     emoji: "🌽",
     wikipedia_url: "https://en.wikipedia.org/wiki/Sweet_corn",
     rarity: 1,
@@ -411,6 +527,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Pods should be green and filled, but not bulging excessively (indicates old/hard beans).",
     pl_selection_guide:
       "Strąki powinny być zielone i pełne, ale nie nadmiernie wybrzuszone (oznacza to stare/twarde nasiona).",
+    storage_guide:
+      "Store unshelled in a paper bag or perforated plastic bag in the crisper drawer for up to a few days.",
+    pl_storage_guide:
+      "Przechowywać w łupinach, w papierowej torbie lub perforowanym worku w szufladzie lodówki maksymalnie przez kilka dni.",
     emoji: "🫘",
     wikipedia_url: "https://en.wikipedia.org/wiki/Vicia_faba",
     rarity: 2,
@@ -424,6 +544,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Bright color, snaps easily when bent. Avoid tough or stringy pods.",
     pl_selection_guide:
       "Jasny kolor, łatwo pęka przy zginaniu. Unikaj twardych lub łykowatych strąków.",
+    storage_guide:
+      "Keep unwashed. Wrap in a dry paper towel and place inside a reusable plastic bag in the fridge crisper.",
+    pl_storage_guide:
+      "Nie myć. Zawinąć w suchy ręcznik papierowy i włożyć do plastikowej torebki w szufladzie lodówki.",
     emoji: "🫘",
     wikipedia_url: "https://en.wikipedia.org/wiki/Green_bean",
     rarity: 1,
@@ -439,6 +563,10 @@ export const PRODUCE_DATA: Produce[] = [
     selection_guide: "Firm, unbruised, skin should be tight not wrinkled.",
     pl_selection_guide:
       "Twarde, bez obić, skórka powinna być napięta, nie pomarszczona.",
+    storage_guide:
+      "Store in the crisper drawer, ideally in a perforated plastic bag. Keep separate from other sensitive vegetables.",
+    pl_storage_guide:
+      "Trzymać w szufladzie lodówki, najlepiej w perforowanej plastikowej torbie. Przechowywać osobno od wrażliwych warzyw.",
     emoji: "🍎",
     wikipedia_url: "https://en.wikipedia.org/wiki/Apple",
     rarity: 1,
@@ -452,6 +580,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Check the neck: if it yields to gentle pressure, it is ripe. Body can be firm.",
     pl_selection_guide:
       "Sprawdź szyjkę: jeśli ustępuje pod delikatnym naciskiem, jest dojrzała. Reszta owocu może być twarda.",
+    storage_guide:
+      "Ripen at room temperature. Once the neck yields to pressure, move to the fridge to halt ripening.",
+    pl_storage_guide:
+      "Dojrzewać w temperaturze pokojowej. Gdy szyjka lekko zmięknie, schować do lodówki, aby zatrzymać dojrzewanie.",
     emoji: "🍐",
     wikipedia_url: "https://en.wikipedia.org/wiki/Pear",
     rarity: 1,
@@ -465,6 +597,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Slightly soft at the tip, rich color, dusty bloom on skin is good.",
     pl_selection_guide:
       "Lekko miękkie na czubku, nasycony kolor, pożądany jest matowy nalot na skórce.",
+    storage_guide:
+      "Leave at room temperature in a paper bag to ripen. Once soft, transfer unwashed to the fridge.",
+    pl_storage_guide:
+      "Zostawić w temperaturze pokojowej w papierowej torbie do dojrzewania. Gdy zmiękną, przenieść nieumyte do lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Plum",
     rarity: 1,
   },
@@ -477,6 +613,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Green, flexible stems. Fruit should be shiny, plump and dark.",
     pl_selection_guide:
       "Zielone, elastyczne ogonki. Owoce powinny być błyszczące, pękate i ciemne.",
+    storage_guide:
+      "Store unwashed with stems attached. Keep loosely packed in a paper-towel-lined container in the fridge.",
+    pl_storage_guide:
+      "Przechowywać nieumyte, bez odrywania ogonków. Trzymać luźno w pojemniku wyłożonym ręcznikiem papierowym w lodówce.",
     emoji: "🍒",
     wikipedia_url: "https://en.wikipedia.org/wiki/Cherry",
     rarity: 1,
@@ -491,6 +631,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Bright red all over, fresh green cap, strong sweet smell. Avoid white shoulders.",
     pl_selection_guide:
       "Całkowicie jaskrawoczerwone, świeża zielona szypułka, silny słodki zapach. Unikaj białych wierzchołków.",
+    storage_guide:
+      "Store unwashed in a single layer inside an airtight container lined with a dry paper towel in the fridge.",
+    pl_storage_guide:
+      "Przechowywać nieumyte, ułożone pojedynczą warstwą w szczelnym pojemniku wyłożonym suchym ręcznikiem papierowym w lodówce.",
     emoji: "🍓",
     wikipedia_url: "https://en.wikipedia.org/wiki/Strawberry",
     rarity: 1,
@@ -504,6 +648,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Dry, plump, bright color. Check container bottom for juice (sign of crushing).",
     pl_selection_guide:
       "Suche, pękate, jasny kolor. Sprawdź spód pojemnika pod kątem soku (oznaka zgniecenia).",
+    storage_guide:
+      "Do not wash until eating. Store in a wide, shallow container lined with paper towels, slightly open for airflow in the fridge.",
+    pl_storage_guide:
+      "Nie myć przed zjedzeniem. Trzymać w szerokim, płytkim pojemniku wyłożonym papierem, lekko otwartym dla przepływu powietrza w lodówce.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Raspberry",
     rarity: 1,
   },
@@ -516,6 +664,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Firm, dusty blue color (bloom). Avoid soft or shriveled berries.",
     pl_selection_guide:
       "Twarde, o zakurzonym, niebieskim kolorze (nalot). Unikaj miękkich lub pomarszczonych jagód.",
+    storage_guide:
+      "Pick out any moldy ones first. Store unwashed in a breathable or vented container in the fridge.",
+    pl_storage_guide:
+      "Najpierw wyrzucić spleśniałe sztuki. Przechowywać nieumyte w wentylowanym lub oddychającym pojemniku w lodówce.",
     emoji: "🫐",
     wikipedia_url: "https://en.wikipedia.org/wiki/Blueberry",
     rarity: 1,
@@ -529,6 +681,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Intense aroma is key. Very delicate, buy only if dry and not squashed.",
     pl_selection_guide:
       "Intensywny aromat to podstawa. Bardzo delikatne, kupuj tylko wtedy, gdy są suche i niezgniecione.",
+    storage_guide:
+      "Highly perishable. Eat immediately or store unwashed in a single layer in the fridge for no more than a day.",
+    pl_storage_guide:
+      "Bardzo nietrwałe. Zjeść natychmiast lub schować nieumyte w jednej warstwie do lodówki na maksymalnie jeden dzień.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Fragaria_vesca",
     rarity: 5,
   },
@@ -541,6 +697,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Dark, almost black, distinct aroma. Will stain hands. Must be dry.",
     pl_selection_guide:
       "Ciemne, prawie czarne, wyraźny aromat. Brudzą dłonie. Muszą być suche.",
+    storage_guide:
+      "Pick out crushed berries. Store unwashed in a shallow container in the fridge. Wash just before eating.",
+    pl_storage_guide:
+      "Usunąć zgniecione owoce. Przechowywać nieumyte w płytkim pojemniku w lodówce. Myć bezpośrednio przed jedzeniem.",
     emoji: "🫐",
     wikipedia_url: "https://en.wikipedia.org/wiki/Bilberry",
     rarity: 4,
@@ -554,6 +714,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Plump, firmly attached to green stems. Avoid wrinkled berries.",
     pl_selection_guide:
       "Pękate, mocno osadzone na zielonych gałązkach. Unikaj pomarszczonych owoców.",
+    storage_guide:
+      "Keep unwashed in their original ventilated bag or a perforated plastic bag in the fridge crisper.",
+    pl_storage_guide:
+      "Trzymać nieumyte w oryginalnej perforowanej torbie z otworami wentylacyjnymi w szufladzie lodówki.",
     emoji: "🍇",
     wikipedia_url: "https://en.wikipedia.org/wiki/Grape",
     rarity: 4,
@@ -570,6 +734,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Heavy for size, hollow sound when tapped. Look for a creamy yellow spot (field spot) where it sat on ground.",
     pl_selection_guide:
       "Ciężki jak na swój rozmiar, głuchy dźwięk przy pukaniu. Szukaj kremowo-żółtej plamy w miejscu, gdzie leżał na ziemi.",
+    storage_guide:
+      "Keep whole watermelons at room temperature. Once cut, wrap the exposed flesh tightly with plastic wrap and refrigerate.",
+    pl_storage_guide:
+      "Arbuzy w całości trzymać w temperaturze pokojowej. Po rozkrojeniu szczelnie owinąć odsłonięty miąższ folią i wstawić do lodówki.",
     emoji: "🍉",
     wikipedia_url: "https://en.wikipedia.org/wiki/Watermelon",
     rarity: 1,
@@ -583,6 +751,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Sweet fragrance at the stem end. Slightly soft at the blossom end (opposite stem).",
     pl_selection_guide:
       "Słodki zapach od strony łodygi. Lekko miękki po stronie kwiatu (przeciwnej do łodygi).",
+    storage_guide:
+      "Ripen at room temperature. Once ripe, store whole in the fridge. Cut melon must be refrigerated in an airtight container.",
+    pl_storage_guide:
+      "Dojrzewać w temp. pokojowej. Gdy dojrzeje, trzymać w całości w lodówce. Przekrojonego melona przechowywać w szczelnym pojemniku w lodówce.",
     emoji: "🍈",
     wikipedia_url: "https://en.wikipedia.org/wiki/Melon",
     rarity: 1,
@@ -597,6 +769,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Heavy for its size (means juicy). Firm, finely textured skin.",
     pl_selection_guide:
       "Ciężka jak na swój rozmiar (oznacza to, że jest soczysta). Twarda, drobnoziarnista skórka.",
+    storage_guide:
+      "Store loose in the crisper drawer of the fridge for maximum freshness (up to a month). Room temp is fine for a few days.",
+    pl_storage_guide:
+      "Najdłuższą świeżość (do miesiąca) zachowa luźno włożona do szuflady lodówki. W temperaturze pokojowej wytrzyma kilka dni.",
     emoji: "🍊",
     wikipedia_url: "https://en.wikipedia.org/wiki/Orange_(fruit)",
     rarity: 1,
@@ -611,6 +787,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Bright orange, skin feels slightly loose (easy to peel) but fruit should be heavy.",
     pl_selection_guide:
       "Jasnopomarańczowa, skórka wydaje się lekko luźna (łatwa do obrania), ale owoc powinien być ciężki.",
+    storage_guide:
+      "Keep them loose in the crisper drawer of the fridge to prevent them from drying out quickly.",
+    pl_storage_guide:
+      "Trzymać luźno w szufladzie lodówki, by zapobiec szybkiemu wysychaniu.",
     emoji: "🍊",
     wikipedia_url: "https://en.wikipedia.org/wiki/Tangerine",
     rarity: 1,
@@ -624,6 +804,10 @@ export const PRODUCE_DATA: Produce[] = [
     selection_guide: "Bright yellow, heavy. Thin-skinned lemons are juicier.",
     pl_selection_guide:
       "Jasnożółta, ciężka. Cytryny o cienkiej skórce są bardziej soczyste.",
+    storage_guide:
+      "Store submerged in water in an airtight container in the fridge to keep them firm and juicy for weeks.",
+    pl_storage_guide:
+      "Przechowywać w całości zalane wodą w szczelnym pojemniku w lodówce. Dzięki temu zachowają jędrność i sok przez wiele tygodni.",
     emoji: "🍋",
     wikipedia_url: "https://en.wikipedia.org/wiki/Lemon",
     rarity: 1,
@@ -638,6 +822,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Heavy for size, firm but slightly springy. Flat ends usually indicate good ripeness.",
     pl_selection_guide:
       "Ciężki jak na swój rozmiar, twardy, ale lekko sprężysty. Płaskie końce zazwyczaj oznaczają dobrą dojrzałość.",
+    storage_guide:
+      "Store loose in the fridge crisper drawer to maximize shelf life.",
+    pl_storage_guide:
+      "Aby zmaksymalizować trwałość, należy przechowywać luźno w szufladzie lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Grapefruit",
     rarity: 1,
   },
@@ -651,6 +839,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Heavy, angular shape (not perfectly round means seeds are full), dark red skin.",
     pl_selection_guide:
       "Ciężki, kanciasty kształt (nie do końca okrągły oznacza, że nasiona są pełne), ciemnoczerwona skórka.",
+    storage_guide:
+      "Keep whole fruits in the fridge crisper drawer. Extracted seeds should go in an airtight container.",
+    pl_storage_guide:
+      "Całe owoce trzymać w szufladzie lodówki. Wyłuskane nasiona należy schować do szczelnego pojemnika.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Pomegranate",
     rarity: 1,
   },
@@ -664,6 +856,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Bright orange. 'Sharon' variety can be eaten hard, standard Kaki must be jelly-soft to avoid astringency.",
     pl_selection_guide:
       "Jasnopomarańczowe. Odmianę 'Sharon' można jeść twardą, standardowe Kaki musi być miękkie jak galaretka, aby uniknąć cierpkości.",
+    storage_guide:
+      "Ripen at room temperature. Once fully soft and jelly-like, store in the fridge.",
+    pl_storage_guide:
+      "Zostawić do dojrzenia w temp. pokojowej. Gdy owoc będzie miękki jak galaretka, włożyć do lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Persimmon",
     rarity: 1,
   },
@@ -676,6 +872,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Soft to touch, neck should droop. Small splits in skin indicate peak ripeness.",
     pl_selection_guide:
       "Miękka w dotyku, szyjka powinna opadać. Małe pęknięcia na skórce wskazują na szczytową dojrzałość.",
+    storage_guide:
+      "Place unwashed in a single layer on a paper towel-lined plate, covered loosely with plastic wrap in the fridge.",
+    pl_storage_guide:
+      "Ułożyć nieumyte jednowarstwowo na talerzu wyłożonym papierem, przykryć luźno folią spożywczą i wstawić do lodówki.",
     wikipedia_url: "https://en.wikipedia.org/wiki/Fig",
     rarity: 2,
   },
@@ -689,6 +889,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Vibrant color (ignore red blush, look at background color - should be yellow not green). Slight give along the seam.",
     pl_selection_guide:
       "Żywy kolor (zignoruj czerwony rumieniec, spójrz na kolor tła - powinien być żółty, nie zielony). Lekko ustępuje wzdłuż szwu.",
+    storage_guide:
+      "Ripen stem-side down at room temperature. Once ripe and fragrant, store in the fridge crisper.",
+    pl_storage_guide:
+      "Dojrzewać szypułką do dołu w temp. pokojowej. Kiedy będą pachnące i miękkie, przełożyć do lodówki.",
     emoji: "🍑",
     wikipedia_url: "https://en.wikipedia.org/wiki/Peach",
     rarity: 1,
@@ -702,6 +906,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Yields to gentle thumb pressure. Avoid rock hard (unripe) or mushy (overripe).",
     pl_selection_guide:
       "Ustępuje pod delikatnym naciskiem kciuka. Unikaj twardych jak kamień (niedojrzałych) lub papkowatych (przejrzałych).",
+    storage_guide:
+      "Leave firm kiwis at room temp to ripen. Once soft, transfer to a plastic bag in the fridge.",
+    pl_storage_guide:
+      "Twarde owoce trzymać w temperaturze pokojowej aż dojrzeją. Gdy zmiękną, przenieść w plastikowej torebce do lodówki.",
     emoji: "🥝",
     wikipedia_url: "https://en.wikipedia.org/wiki/Kiwifruit",
     rarity: 1,
@@ -715,6 +923,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Hass: Dark skin, yields gently to pressure. Green skins: Firm but not rock hard, skin stays green.",
     pl_selection_guide:
       "Hass: Ciemna skórka, delikatnie ustępuje pod naciskiem. Zielone skórki: Twarde, ale nie jak kamień, skórka pozostaje zielona.",
+    storage_guide:
+      "Ripen at room temperature. Once it yields gently, store whole in the fridge to pause ripening. For cut halves, squeeze lemon juice and wrap tightly in plastic.",
+    pl_storage_guide:
+      "Dojrzewać w temp. pokojowej. Kiedy lekko zmięknie, wstawić do lodówki. Przekrojone połówki skropić cytryną i ciasno owinąć folią.",
     emoji: "🥑",
     wikipedia_url: "https://en.wikipedia.org/wiki/Avocado",
     rarity: 1,
@@ -729,6 +941,10 @@ export const PRODUCE_DATA: Produce[] = [
       "Slightly soft to touch, fruity aroma at stem. Color is not a reliable indicator of ripeness.",
     pl_selection_guide:
       "Lekko miękkie w dotyku, owocowy aromat przy łodydze. Kolor nie jest wiarygodnym wskaźnikiem dojrzałości.",
+    storage_guide:
+      "Ripen at room temperature. Once ripe, move to the fridge to extend its shelf life by a few days.",
+    pl_storage_guide:
+      "Zostawić w temperaturze pokojowej do osiągnięcia dojrzałości. Potem przełożyć do lodówki, by zachować świeżość na kilka dni dłużej.",
     emoji: "🥭",
     wikipedia_url: "https://en.wikipedia.org/wiki/Mango",
     rarity: 1,

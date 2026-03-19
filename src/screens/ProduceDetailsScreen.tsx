@@ -109,10 +109,6 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
       style={styles.container}
       contentContainerStyle={styles.contentContainer}
     >
-      <Text style={styles.name}>
-        {language === "pl" ? item.pl_name : item.name}
-      </Text>
-
       <View style={styles.rarityImageRow}>
         {/* Rarity Circle */}
         <View style={[styles.rarityCircle]}>
@@ -187,6 +183,17 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
           </Text>
           <Text style={styles.guideText}>
             {language === "pl" ? item.pl_selection_guide : item.selection_guide}
+          </Text>
+        </View>
+      )}
+
+      {item.storage_guide && (
+        <View style={styles.guideSection}>
+          <Text style={styles.guideTitle}>
+            {i18n.t("details.storageGuide")}
+          </Text>
+          <Text style={styles.guideText}>
+            {language === "pl" ? item.pl_storage_guide : item.storage_guide}
           </Text>
         </View>
       )}

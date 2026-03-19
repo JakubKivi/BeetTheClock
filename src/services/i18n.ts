@@ -44,6 +44,7 @@ const translations: Translations = {
 
     // ProduceDetailsScreen
     "details.selectionGuide": "Selection Guide",
+    "details.storageGuide": "Storage Guide",
     "details.wikipedia": "Wikipedia",
     "details.confirmReset": "Confirm",
     "details.areYouSure": "Are you sure?",
@@ -92,6 +93,7 @@ const translations: Translations = {
 
     // ProduceDetailsScreen
     "details.selectionGuide": "Na co zwrócić uwagę",
+    "details.storageGuide": "Jak przechowywać",
     "details.wikipedia": "Wikipedia",
     "details.confirmReset": "Potwierdź",
     "details.areYouSure": "Jesteś pewny?",

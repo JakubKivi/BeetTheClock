@@ -7,6 +7,8 @@ export interface Produce {
   best_months?: number[]; // months when best quality available
   selection_guide?: string; // tips for selecting
   pl_selection_guide?: string; // tips for selecting in Polish
+  storage_guide?: string; // tips for storing
+  pl_storage_guide?: string; // tips for storing in Polish
   wikipedia_url?: string; // link to Wikipedia page
   rarity: 1 | 2 | 3 | 4 | 5; // 1=common, 2=uncommon, 3=rare, 4=epic, 5=legendary
 }
