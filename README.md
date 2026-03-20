@@ -28,8 +28,6 @@ BeetTheClock is a React Native/Expo (TypeScript) app for tracking seasonal produ
 
 - React Native (Expo)
 - TypeScript
-- React Navigation
-- AsyncStorage
 
 ### Download
 
