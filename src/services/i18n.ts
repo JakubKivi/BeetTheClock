@@ -24,16 +24,6 @@ const translations: Translations = {
     "home.imageSelectError": "Could not select image.",
 
     // SettingsScreen
-    "settings.dailyReminders": "Daily Reminders",
-    "settings.reminderTime": "Reminder Time (HH:MM)",
-    "settings.timeFormat": "09:00",
-    "settings.saveButton": "Save Settings",
-    "settings.invalidTimeError": "Invalid time format.",
-    "settings.invalidTimeMessage":
-      "Invalid time format. Please use HH:MM (24-hour). Falling back to 09:00.",
-    "settings.permissionRequiredTitle": "Permission required",
-    "settings.notificationsDisabledMessage":
-      "Notifications are disabled. Please enable them in system settings.",
     "settings.settingsSaved": "Settings saved",
     "settings.settingsSavedMessage":
       "Your settings have been saved successfully.",
@@ -41,6 +31,7 @@ const translations: Translations = {
     "settings.errorMessage": "Failed to save settings",
     "settings.language": "Language",
     "settings.selectLanguage": "Select Language",
+    "settings.contact": "Contact",
 
     // ProduceDetailsScreen
     "details.selectionGuide": "Selection Guide",
@@ -73,16 +64,6 @@ const translations: Translations = {
     "home.imageSelectError": "Nie można wybrać obrazu.",
 
     // SettingsScreen
-    "settings.dailyReminders": "Codzienne przypomnienia",
-    "settings.reminderTime": "Czas przypomnienia (HH:MM)",
-    "settings.timeFormat": "09:00",
-    "settings.saveButton": "Zapisz ustawienia",
-    "settings.invalidTimeError": "Nieprawidłowy format czasu.",
-    "settings.invalidTimeMessage":
-      "Nieprawidłowy format czasu. Proszę użyć HH:MM (format 24-godzinny). Powrót do 09:00.",
-    "settings.permissionRequiredTitle": "Wymagane uprawnienie",
-    "settings.notificationsDisabledMessage":
-      "Powiadomienia są wyłączone. Proszę włączyć je w ustawieniach systemowych.",
     "settings.settingsSaved": "Ustawienia zapisane",
     "settings.settingsSavedMessage":
       "Twoje ustawienia zostały pomyślnie zapisane.",
@@ -90,9 +71,10 @@ const translations: Translations = {
     "settings.errorMessage": "Nie udało się zapisać ustawień",
     "settings.language": "Język",
     "settings.selectLanguage": "Wybierz język",
+    "settings.contact": "Kontakt",
 
     // ProduceDetailsScreen
-    "details.selectionGuide": "Na co zwrócić uwagę",
+    "details.selectionGuide": "Jak wybierać",
     "details.storageGuide": "Jak przechowywać",
     "details.wikipedia": "Wikipedia",
     "details.confirmReset": "Potwierdź",

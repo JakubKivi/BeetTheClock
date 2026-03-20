@@ -10,13 +10,14 @@ import {
   Keyboard,
   Modal,
   TouchableOpacity,
-  FlatList,
+  Linking,
 } from "react-native";
 import { getSettings, saveSettings } from "../services/storage";
 import * as Notifications from "expo-notifications";
 import { requestNotificationPermissions } from "../services/notifications";
 import { useLanguage } from "../contexts/LanguageContext";
 import { i18n, Language } from "../services/i18n";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 const SettingsScreen = () => {
   const { language, setLanguage } = useLanguage();
@@ -134,6 +135,25 @@ const SettingsScreen = () => {
             {language === "en" ? "English" : "Polski"}
           </Text>
         </TouchableOpacity>
+        <View
+          style={{
+            width: "100%",
+            alignItems: "center",
+            marginTop: "auto",
+          }}
+        >
+          <TouchableOpacity
+            style={styles.contactButton}
+            onPress={() => {
+              Linking.openURL("https://jakubkivi.github.io#contact");
+            }}
+          >
+            <MaterialIcons name="contact-support" size={20} color="#fff" />
+            <Text style={styles.contactButtonText}>
+              {i18n.t("settings.contact")}
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <Modal
@@ -256,6 +276,23 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#333",
     fontWeight: "600",
+  },
+  contactButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#6b1d52",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    marginTop: 20,
+    maxWidth: 150,
+  },
+  contactButtonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "600",
+    marginLeft: 8,
   },
 });
 
