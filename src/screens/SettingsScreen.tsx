@@ -31,6 +31,7 @@ import {
   syncScheduledNotifications,
 } from "../services/notifications";
 import { useLanguage } from "../contexts/LanguageContext";
+import { CONTACT_URL } from "../constants/links";
 
 const LANGUAGE_OPTIONS: { label: string; value: Language }[] = [
   { label: "English", value: "en" },
@@ -51,13 +52,13 @@ const FREQUENCY_OPTIONS: {
 ];
 
 const WEEKDAY_OPTIONS: { label: string; value: NotificationWeekday }[] = [
-  { label: "settings.weekdaySunday", value: 1 },
-  { label: "settings.weekdayMonday", value: 2 },
-  { label: "settings.weekdayTuesday", value: 3 },
-  { label: "settings.weekdayWednesday", value: 4 },
-  { label: "settings.weekdayThursday", value: 5 },
-  { label: "settings.weekdayFriday", value: 6 },
-  { label: "settings.weekdaySaturday", value: 7 },
+  { label: "settings.weekdayMonday", value: 1 },
+  { label: "settings.weekdayTuesday", value: 2 },
+  { label: "settings.weekdayWednesday", value: 3 },
+  { label: "settings.weekdayThursday", value: 4 },
+  { label: "settings.weekdayFriday", value: 5 },
+  { label: "settings.weekdaySaturday", value: 6 },
+  { label: "settings.weekdaySunday", value: 7 },
 ];
 
 const SettingsScreen = () => {
@@ -151,7 +152,7 @@ const SettingsScreen = () => {
 
   const handleOpenContact = async () => {
     try {
-      await Linking.openURL("https://jakubkivi.github.io#contact");
+      await Linking.openURL(CONTACT_URL);
     } catch (error) {
       console.warn("Failed to open contact page", error);
       Alert.alert(
@@ -270,7 +271,7 @@ const SettingsScreen = () => {
                   accessibilityRole="radio"
                   accessibilityState={{
                     checked:
-                      (settings.notificationWeekday ?? 2) === option.value,
+                      (settings.notificationWeekday ?? 1) === option.value,
                     disabled: !settings.notificationsEnabled,
                   }}
                   disabled={!settings.notificationsEnabled}
@@ -279,7 +280,7 @@ const SettingsScreen = () => {
                   }
                   style={[
                     styles.weekdayOption,
-                    (settings.notificationWeekday ?? 2) === option.value &&
+                    (settings.notificationWeekday ?? 1) === option.value &&
                       styles.selectedFrequencyOption,
                     !settings.notificationsEnabled && styles.disabledOption,
                   ]}
@@ -287,7 +288,7 @@ const SettingsScreen = () => {
                   <Text
                     style={[
                       styles.frequencyOptionText,
-                      (settings.notificationWeekday ?? 2) === option.value &&
+                      (settings.notificationWeekday ?? 1) === option.value &&
                         styles.selectedFrequencyText,
                     ]}
                   >

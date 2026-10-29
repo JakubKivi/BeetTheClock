@@ -36,7 +36,7 @@ export function isValidNotificationTime(value: string): boolean {
 export function createNotificationTrigger(
   frequency: NonNullable<AppSettings["notificationFrequency"]>,
   notificationTime: string,
-  weekday = 2,
+  weekday = 1,
 ): Notifications.SchedulableNotificationTriggerInput {
   if (!isValidNotificationTime(notificationTime)) {
     throw new Error("Notification time must use HH:MM 24-hour format.");
@@ -56,7 +56,7 @@ export function createNotificationTrigger(
     }
     return {
       type: Notifications.SchedulableTriggerInputTypes.WEEKLY,
-      weekday,
+      weekday: (weekday % 7) + 1,
       hour,
       minute,
     };
@@ -85,7 +85,7 @@ export async function syncScheduledNotifications(
 
   const frequency = settings.notificationFrequency ?? "monthly";
   const notificationTime = settings.notificationTime ?? "09:00";
-  const weekday = settings.notificationWeekday ?? 2;
+  const weekday = settings.notificationWeekday ?? 1;
   const onlyFavorites = settings.notificationsOnlyFavorites ?? false;
   const favoriteProduce = onlyFavorites
     ? PRODUCE_DATA.filter((produce) => settings.favItems.includes(produce.id))

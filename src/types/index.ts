@@ -5,11 +5,28 @@ export const REGIONS = {
 export type RegionCode = (typeof REGIONS)[keyof typeof REGIONS];
 export type MonthOfYear = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
 export type NotificationFrequency = "monthly" | "weekly" | "daily";
+// Monday = 1 through Sunday = 7.
 export type NotificationWeekday = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 export interface RegionalSeasonality {
+  // Estimated fresh retail availability in the region, including imports and storage.
   months: MonthOfYear[];
+  // Local harvest peak, or the exporter-region peak for import-only produce.
   bestMonths?: MonthOfYear[];
+}
+
+export interface Recipe {
+  id: string;
+  name: string;
+  plName?: string;
+  instructions: string;
+  plInstructions?: string;
+  note?: string;
+}
+
+export interface NutritionNote {
+  en: string;
+  pl: string;
 }
 
 export interface Produce {
@@ -24,6 +41,8 @@ export interface Produce {
   plStorageGuide?: string;
   wikipediaUrl?: string;
   nutritionalInfo?: string;
-  recipes?: string[];
+  plNutritionalInfo?: string;
+  nutritionNote?: NutritionNote;
+  recipes?: Recipe[];
   rarity: 1 | 2 | 3 | 4 | 5;
 }

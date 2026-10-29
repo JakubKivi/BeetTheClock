@@ -30,7 +30,13 @@ describe("notification scheduling", () => {
     });
     expect(createNotificationTrigger("weekly", "08:30", 5)).toEqual({
       type: "weekly",
-      weekday: 5,
+      weekday: 6,
+      hour: 8,
+      minute: 30,
+    });
+    expect(createNotificationTrigger("weekly", "08:30", 7)).toEqual({
+      type: "weekly",
+      weekday: 1,
       hour: 8,
       minute: 30,
     });

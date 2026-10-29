@@ -1,4 +1,5 @@
 import { Produce, REGIONS } from "../types";
+import { formatNutrition, PRODUCE_CONTENT } from "./produceContent";
 
 export const RARITY_LEVELS: Record<
   1 | 2 | 3 | 4 | 5,
@@ -24,18 +25,16 @@ export const RARITY_LEVELS: Record<
 export const getRarityInfo = (rarity: 1 | 2 | 3 | 4 | 5) =>
   RARITY_LEVELS[rarity];
 
-export const PRODUCE_DATA: Produce[] = [
+const PRODUCE_BASE_DATA: Produce[] = [
   // --- Root Vegetables & Tubers ---
   {
     id: "1",
     name: "Beetroot",
     plName: "Burak",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-        bestMonths: [5, 6],
+        bestMonths: [8, 9, 10, 11],
       },
     },
     selectionGuide:
@@ -53,12 +52,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "4",
     name: "Carrot",
     plName: "Marchew",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-        bestMonths: [5, 6, 7],
+        bestMonths: [6, 7, 8, 9, 10, 11],
       },
     },
     selectionGuide:
@@ -77,11 +74,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "34",
     name: "Celery Root",
     plName: "Seler korzeniowy",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [8, 9, 10, 11],
       },
     },
     selectionGuide:
@@ -99,11 +95,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "35",
     name: "Parsley Root",
     plName: "Pietruszka korzeniowa",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [8, 9, 10, 11],
       },
     },
     selectionGuide: "Firm, white/beige skin. Avoid rusty spots or limp roots.",
@@ -120,12 +115,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "5",
     name: "Potato",
     plName: "Ziemniak",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-        bestMonths: [5, 6],
+        bestMonths: [5, 6, 7, 8],
       },
     },
     selectionGuide:
@@ -144,11 +137,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "45",
     name: "Parsnip",
     plName: "Pasternak",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 1, 2, 9, 10, 11],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [8, 9, 10, 11],
       },
     },
     selectionGuide:
@@ -166,11 +158,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "49",
     name: "Jerusalem Artichoke",
     plName: "Topinambur",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 1, 2, 9, 10, 11],
+        months: [0, 1, 2, 3, 8, 9, 10, 11],
+        bestMonths: [0, 1, 2, 9, 10, 11],
       },
     },
     selectionGuide:
@@ -188,11 +179,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "51",
     name: "Horseradish",
     plName: "Chrzan",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [0, 1, 2, 9, 10, 11],
       },
     },
     selectionGuide: "Very hard and firm. Avoid shriveled roots or soft ends.",
@@ -209,12 +199,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "8",
     name: "Radish",
     plName: "Rzodkiewka",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [2, 3, 4, 5, 6, 7, 8, 9],
-        bestMonths: [3, 4, 8, 9],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [3, 4, 5, 8, 9],
       },
     },
     selectionGuide:
@@ -234,11 +222,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "20",
     name: "Onion",
     plName: "Cebula",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [7, 8, 9],
       },
     },
     selectionGuide:
@@ -257,11 +244,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "20b",
     name: "Garlic",
     plName: "Czosnek",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [6, 7, 8],
       },
     },
     selectionGuide:
@@ -280,11 +266,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "36",
     name: "Leek",
     plName: "Por",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [0, 1, 2, 8, 9, 10, 11],
       },
     },
     selectionGuide:
@@ -302,11 +287,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "52",
     name: "Spring Onion",
     plName: "Dymka",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [2, 3, 4, 5, 6, 7, 8, 9],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [3, 4, 5, 6, 7, 8],
       },
     },
     selectionGuide: "Bright green, crisp stalks. Avoid slimy or wilting tips.",
@@ -325,12 +309,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "15",
     name: "Cabbage (White)",
     plName: "Kapusta (Biała)",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-        bestMonths: [4, 5, 6],
+        bestMonths: [5, 6, 7, 8, 9, 10],
       },
     },
     selectionGuide:
@@ -349,12 +331,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "16",
     name: "Brussels Sprouts",
     plName: "Brukselka",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 1, 9, 10, 11],
-        bestMonths: [10, 11, 0],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [0, 1, 9, 10, 11],
       },
     },
     selectionGuide:
@@ -372,11 +352,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "9",
     name: "Cauliflower",
     plName: "Kalafior",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [4, 5, 6, 7, 8, 9, 10],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [5, 6, 7, 8, 9],
       },
     },
     selectionGuide:
@@ -394,11 +373,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "10",
     name: "Broccoli",
     plName: "Brokuł",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [5, 6, 7, 8, 9, 10],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [5, 6, 7, 8, 9],
       },
     },
     selectionGuide:
@@ -417,12 +395,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "37",
     name: "Kohlrabi",
     plName: "Kalarepa",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [4, 5, 6, 7, 8, 9],
-        bestMonths: [4, 5, 8, 9],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [3, 4, 5, 6, 7, 8],
       },
     },
     selectionGuide:
@@ -440,12 +416,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "17",
     name: "Kale",
     plName: "Jarmuż",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 1, 2, 7, 8, 9, 10, 11],
-        bestMonths: [10, 11, 0, 1],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [0, 1, 8, 9, 10, 11],
       },
     },
     selectionGuide: "Dark green, crisp leaves. Avoid yellow or mushy spots.",
@@ -463,11 +437,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "18",
     name: "Spinach",
     plName: "Szpinak",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [2, 3, 4, 5, 7, 8, 9, 10],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [2, 3, 4, 5, 8, 9, 10],
       },
     },
     selectionGuide:
@@ -486,11 +459,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "2",
     name: "Asparagus",
     plName: "Szparagi",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [4, 5],
+        months: [1, 2, 3, 4, 5, 6, 7],
+        bestMonths: [3, 4, 5],
       },
     },
     selectionGuide:
@@ -501,7 +473,6 @@ export const PRODUCE_DATA: Produce[] = [
       "Trim the ends and stand stalks upright in a glass with an inch of water. Loosely cover the tips with a plastic bag in the fridge.",
     plStorageGuide:
       "Przyciąć końcówki i postawić pionowo w szklance z odrobiną wody. Luźno przykryć główki plastikową torbą i trzymać w lodówce.",
-    emoji: "bi",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Asparagus",
     rarity: 2,
   },
@@ -509,12 +480,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "19",
     name: "Rhubarb",
     plName: "Rabarbar",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [3, 4, 5],
-        bestMonths: [3, 4],
+        months: [2, 3, 4, 5, 6],
+        bestMonths: [3, 4, 5],
       },
     },
     selectionGuide: "Firm, crisp stalks. Avoid limp or rubbery ones.",
@@ -533,12 +502,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "6",
     name: "Tomato",
     plName: "Pomidor",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [3, 4, 5, 6, 7, 8, 9, 10],
-        bestMonths: [6, 7, 8],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [5, 6, 7, 8, 9],
       },
     },
     selectionGuide:
@@ -546,9 +513,9 @@ export const PRODUCE_DATA: Produce[] = [
     plSelectionGuide:
       "Pachnący, o głębokim kolorze, lekko ustępujący pod naciskiem. Ciężki jak na swój rozmiar.",
     storageGuide:
-      "Keep stem-side down at room temperature, out of direct sunlight. Never refrigerate.",
+      "Keep stem-side down at room temperature, out of direct sunlight for best flavor. Refrigeration can slow deterioration of ripe tomatoes, but may affect flavor and texture.",
     plStorageGuide:
-      "Trzymać szypułką do dołu w temperaturze pokojowej, z dala od bezpośredniego słońca. Nigdy nie wkładać do lodówki.",
+      "Aby zachować najlepszy smak, trzymać szypułką do dołu w temperaturze pokojowej, z dala od bezpośredniego słońca. Chłodzenie dojrzałych pomidorów może spowolnić ich psucie, ale wpłynąć na smak i konsystencję.",
     emoji: "🍅",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Tomato",
     rarity: 1,
@@ -557,12 +524,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "7",
     name: "Cucumber",
     plName: "Ogórek",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [2, 3, 4, 5, 6, 7, 8, 9],
-        bestMonths: [6, 7, 8],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [4, 5, 6, 7, 8, 9],
       },
     },
     selectionGuide:
@@ -581,11 +546,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "12",
     name: "Pepper",
     plName: "Papryka",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [6, 7, 8, 9, 10],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [6, 7, 8, 9],
       },
     },
     selectionGuide: "Glossy, taut skin, firm stem. Heavy for size.",
@@ -603,11 +567,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "39",
     name: "Eggplant",
     plName: "Bakłażan",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [7, 8, 9],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [6, 7, 8, 9],
       },
     },
     selectionGuide:
@@ -626,12 +589,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "11",
     name: "Zucchini",
     plName: "Cukinia",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [5, 6, 7, 8, 9],
-        bestMonths: [6, 7, 8],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [5, 6, 7, 8],
       },
     },
     selectionGuide: "Small to medium size, shiny skin. Avoid soft spots.",
@@ -640,7 +601,7 @@ export const PRODUCE_DATA: Produce[] = [
     storageGuide:
       "Keep dry and unwashed. Store in a paper bag or loose plastic bag with a paper towel in the crisper drawer.",
     plStorageGuide:
-      "Chronić przed wilgocią, nie myć. Trzymać w papierowej torbie lub luźnej folii z ręcznikiem papierowym w szufladzie lodówki.",
+      "Chronić przed wilgocią, nie myć. Trzymać w papierowej torbie lub luźnej plastikowej torbie z ręcznikiem papierowym w szufladzie lodówki.",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Zucchini",
     rarity: 1,
   },
@@ -648,11 +609,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "3",
     name: "Pumpkin",
     plName: "Dynia",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 1, 8, 9, 10, 11],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [8, 9, 10],
       },
     },
     selectionGuide:
@@ -671,12 +631,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "70",
     name: "Corn",
     plName: "Kukurydza",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [7, 8, 9],
-        bestMonths: [7, 8],
+        months: [3, 4, 5, 6, 7, 8, 9, 10],
+        bestMonths: [6, 7, 8],
       },
     },
     selectionGuide:
@@ -695,12 +653,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "13",
     name: "Beans (Broad)",
     plName: "Bób",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [5, 6],
-        bestMonths: [5],
+        months: [3, 4, 5, 6, 7, 8],
+        bestMonths: [4, 5, 6],
       },
     },
     selectionGuide:
@@ -719,11 +675,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "14",
     name: "Beans (Green)",
     plName: "Fasolka szparagowa",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [6, 7, 8],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [5, 6, 7, 8],
       },
     },
     selectionGuide:
@@ -744,12 +699,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "22",
     name: "Apples",
     plName: "Jabłka",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-        bestMonths: [8, 9, 10],
+        bestMonths: [7, 8, 9, 10],
       },
     },
     selectionGuide: "Firm, unbruised, skin should be tight not wrinkled.",
@@ -767,11 +720,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "23",
     name: "Pears",
     plName: "Gruszki",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 1, 2, 7, 8, 9, 10, 11],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [7, 8, 9, 10],
       },
     },
     selectionGuide:
@@ -790,11 +742,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "24",
     name: "Plums",
     plName: "Śliwki",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [6, 7, 8, 9],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [6, 7, 8],
       },
     },
     selectionGuide:
@@ -812,11 +763,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "25",
     name: "Cherries (Sweet)",
     plName: "Czereśnie",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [5, 6],
+        months: [0, 1, 2, 5, 6, 7],
+        bestMonths: [5, 6],
       },
     },
     selectionGuide:
@@ -835,12 +785,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "21",
     name: "Strawberries",
     plName: "Truskawki",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [4, 5, 6, 7, 8],
-        bestMonths: [5, 6],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [4, 5, 6],
       },
     },
     selectionGuide:
@@ -859,11 +807,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "27",
     name: "Raspberries",
     plName: "Maliny",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [5, 6, 7, 8, 9],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [5, 6, 7, 8, 9],
       },
     },
     selectionGuide:
@@ -881,11 +828,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "28",
     name: "Blueberries",
     plName: "Borówki",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [6, 7, 8],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [6, 7, 8],
       },
     },
     selectionGuide:
@@ -904,11 +850,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "63",
     name: "Wild Strawberries",
     plName: "Poziomki",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [5, 6, 7],
+        bestMonths: [5, 6],
       },
     },
     selectionGuide:
@@ -926,11 +871,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "41",
     name: "Wild Bilberries",
     plName: "Jagody (Leśne)",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [5, 6],
+        months: [5, 6, 7, 8],
+        bestMonths: [6, 7],
       },
     },
     selectionGuide:
@@ -947,13 +891,12 @@ export const PRODUCE_DATA: Produce[] = [
   },
   {
     id: "32",
-    name: "Grapes (Local)",
-    plName: "Winogrona (Lokalne)",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
+    name: "Grapes",
+    plName: "Winogrona",
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [8, 9],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [8, 9],
       },
     },
     selectionGuide:
@@ -974,12 +917,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "71",
     name: "Watermelon",
     plName: "Arbuz",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [5, 6, 7, 8],
-        bestMonths: [6, 7],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [6, 7, 8],
       },
     },
     selectionGuide:
@@ -998,11 +939,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "72",
     name: "Melon (Cantaloupe/Honeydew)",
     plName: "Melon",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [5, 6, 7, 8, 9],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [5, 6, 7, 8],
       },
     },
     selectionGuide:
@@ -1021,12 +961,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "73",
     name: "Orange",
     plName: "Pomarańcza",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 1, 2, 10, 11],
-        bestMonths: [11, 0, 1],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [0, 1, 2, 3, 4, 10, 11],
       },
     },
     selectionGuide:
@@ -1045,12 +983,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "74",
     name: "Tangerine/Clementine",
     plName: "Mandarynka / Klementynka",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 1, 10, 11],
-        bestMonths: [11, 0],
+        months: [0, 1, 2, 3, 8, 9, 10, 11],
+        bestMonths: [0, 1, 2, 9, 10, 11],
       },
     },
     selectionGuide:
@@ -1069,12 +1005,9 @@ export const PRODUCE_DATA: Produce[] = [
     id: "75",
     name: "Lemon",
     plName: "Cytryna",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-        bestMonths: [11, 0, 1, 2],
       },
     },
     selectionGuide: "Bright yellow, heavy. Thin-skinned lemons are juicier.",
@@ -1092,12 +1025,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "76",
     name: "Grapefruit",
     plName: "Grejpfrut",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 1, 2, 3, 4, 10, 11],
-        bestMonths: [0, 1, 2],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [0, 1, 2, 3, 4, 5, 11],
       },
     },
     selectionGuide:
@@ -1115,12 +1046,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "77",
     name: "Pomegranate",
     plName: "Granat",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 9, 10, 11],
-        bestMonths: [10, 11],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [0, 1, 9, 10, 11],
       },
     },
     selectionGuide:
@@ -1138,22 +1067,20 @@ export const PRODUCE_DATA: Produce[] = [
     id: "78",
     name: "Persimmon (Kaki)",
     plName: "Kaki (Persymona)",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 9, 10, 11],
-        bestMonths: [10, 11],
+        months: [0, 1, 2, 3, 9, 10, 11],
+        bestMonths: [0, 1, 9, 10, 11],
       },
     },
     selectionGuide:
-      "Bright orange. 'Sharon' variety can be eaten hard, standard Kaki must be jelly-soft to avoid astringency.",
+      "Astringent types (such as Hachiya) must soften fully before eating; non-astringent types (such as Fuyu) can be eaten while firm.",
     plSelectionGuide:
-      "Jasnopomarańczowe. Odmianę 'Sharon' można jeść twardą, standardowe Kaki musi być miękkie jak galaretka, aby uniknąć cierpkości.",
+      "Odmiany cierpkie (np. Hachiya) muszą całkowicie zmięknąć przed jedzeniem; odmiany niecierpkie (np. Fuyu) można jeść, gdy są twarde.",
     storageGuide:
-      "Ripen at room temperature. Once fully soft and jelly-like, store in the fridge.",
+      "Ripen at room temperature. Astringent varieties must soften fully before eating; refrigerate ripe fruit.",
     plStorageGuide:
-      "Zostawić do dojrzenia w temp. pokojowej. Gdy owoc będzie miękki jak galaretka, włożyć do lodówki.",
+      "Zostawić do dojrzenia w temperaturze pokojowej. Odmiany cierpkie jeść dopiero po całkowitym zmięknięciu; dojrzałe owoce przechowywać w lodówce.",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Persimmon",
     rarity: 1,
   },
@@ -1161,11 +1088,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "79",
     name: "Fig",
     plName: "Figa",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [7, 8, 9, 10],
+        months: [4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [6, 7, 8, 9],
       },
     },
     selectionGuide:
@@ -1181,20 +1107,18 @@ export const PRODUCE_DATA: Produce[] = [
   },
   {
     id: "80",
-    name: "Nectarine/Peach (Imported)",
-    plName: "Nektarynka / Brzoskwinia (Importowana)",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
+    name: "Nectarine/Peach",
+    plName: "Nektarynka / Brzoskwinia",
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [5, 6, 7, 8, 9],
-        bestMonths: [6, 7, 8],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [5, 6, 7, 8],
       },
     },
     selectionGuide:
-      "Vibrant color (ignore red blush, look at background color - should be yellow not green). Slight give along the seam.",
+      "Ignore the red blush; the background color should be non-green (yellow or cream/white, depending on variety). The fruit should yield slightly along the seam.",
     plSelectionGuide:
-      "Żywy kolor (zignoruj czerwony rumieniec, spójrz na kolor tła - powinien być żółty, nie zielony). Lekko ustępuje wzdłuż szwu.",
+      "Zignoruj czerwony rumieniec; kolor tła powinien być niezielony (żółty lub kremowy/biały, zależnie od odmiany). Owoc powinien lekko ustępować wzdłuż szwu.",
     storageGuide:
       "Ripen stem-side down at room temperature. Once ripe and fragrant, store in the fridge crisper.",
     plStorageGuide:
@@ -1207,11 +1131,10 @@ export const PRODUCE_DATA: Produce[] = [
     id: "81",
     name: "Kiwi",
     plName: "Kiwi",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
-        months: [0, 1, 2, 3, 10, 11],
+        months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        bestMonths: [4, 5, 6, 7, 8, 9],
       },
     },
     selectionGuide:
@@ -1230,8 +1153,6 @@ export const PRODUCE_DATA: Produce[] = [
     id: "82",
     name: "Avocado",
     plName: "Awokado",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -1253,12 +1174,9 @@ export const PRODUCE_DATA: Produce[] = [
     id: "83",
     name: "Mango",
     plName: "Mango",
-    nutritionalInfo: "[sample text]",
-    recipes: ["[sample text]"],
     seasonalityByRegion: {
       [REGIONS.POLAND]: {
         months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-        bestMonths: [11, 0, 1],
       },
     },
     selectionGuide:
@@ -1274,3 +1192,28 @@ export const PRODUCE_DATA: Produce[] = [
     rarity: 1,
   },
 ];
+
+export const PRODUCE_DATA: Produce[] = PRODUCE_BASE_DATA.map((produce) => {
+  const content = PRODUCE_CONTENT[produce.id];
+  if (!content) {
+    throw new Error(
+      `Missing nutrition and recipe content for produce ${produce.id}.`,
+    );
+  }
+
+  return {
+    ...produce,
+    nutritionalInfo: formatNutrition(content.nutrition, "en"),
+    plNutritionalInfo: formatNutrition(content.nutrition, "pl"),
+    ...(content.nutritionNote && { nutritionNote: content.nutritionNote }),
+    recipes: [
+      {
+        id: `default-${produce.id}`,
+        name: `Classic ${produce.name} recipe`,
+        plName: `Podstawowy przepis: ${produce.plName}`,
+        instructions: content.recipe.en,
+        plInstructions: content.recipe.pl,
+      },
+    ],
+  };
+});

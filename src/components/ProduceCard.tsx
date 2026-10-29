@@ -9,6 +9,8 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { DEFAULT_REGION, getSeasonality } from "../services/produceSeasonality";
 import { COLORS } from "../constants/theme";
 
+const APP_LOGO = require("../../assets/icon.png");
+
 type Props = {
   item: Produce;
   iconUri?: string;
@@ -72,17 +74,14 @@ const ProduceCard: React.FC<Props> = ({
                   source={{ uri: iconUri }}
                   style={[styles.iconImage, !isAvailable && styles.greyedOut]}
                 />
-              ) : item.emoji ? (
-                <Text
-                  style={[styles.emoji, !isAvailable && styles.greyedOutText]}
-                >
-                  {item.emoji}
-                </Text>
               ) : (
-                <View
+                <Image
+                  testID="produce-default-logo"
+                  source={APP_LOGO}
+                  resizeMode="contain"
                   style={[
-                    styles.emptyIcon,
-                    !isAvailable && styles.unavailableEmptyIcon,
+                    styles.defaultLogo,
+                    !isAvailable && styles.greyedOut,
                   ]}
                 />
               )}
@@ -217,18 +216,9 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontWeight: "bold",
   },
-  emptyIcon: {
-    width: ICON_SIZE,
-    height: ICON_SIZE,
-    borderRadius: ICON_SIZE / 2,
-    borderWidth: 4,
-    borderColor: COLORS.primary,
-  },
-  unavailableEmptyIcon: {
-    borderColor: COLORS.disabled,
-  },
-  emoji: {
-    fontSize: 30,
+  defaultLogo: {
+    width: 32,
+    height: 32,
   },
   textContainer: {
     marginLeft: 12,

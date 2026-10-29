@@ -9,13 +9,25 @@ const mockProduce: Produce = {
   id: "1",
   name: "Pumpkin",
   plName: "Dynia",
+  rarity: 1,
   seasonalityByRegion: {
     PL: { months: [9, 10] },
   },
   emoji: "🎃",
   wikipediaUrl: "https://en.wikipedia.org/wiki/Pumpkin",
-  nutritionalInfo: "[sample text]",
-  recipes: ["[sample text]"],
+  nutritionalInfo:
+    "Per 100 g raw: 26 kcal; carbohydrates 6.5 g; fiber 0.5 g; protein 1 g.",
+  plNutritionalInfo:
+    "Na 100 g surowego produktu: 26 kcal; węglowodany 6.5 g; błonnik 0.5 g; białko 1 g.",
+  recipes: [
+    {
+      id: "default-1",
+      name: "Roasted pumpkin",
+      plName: "Pieczona dynia",
+      instructions: "Roast pumpkin with olive oil.",
+      plInstructions: "Upiecz dynię z oliwą.",
+    },
+  ],
 };
 
 describe("ProduceDetailsScreen", () => {
@@ -37,7 +49,13 @@ describe("ProduceDetailsScreen", () => {
 
     expect(tree.getByText("Pumpkin")).toBeTruthy();
     expect(tree.getByText("🎃")).toBeTruthy();
-    expect(tree.getAllByText("[sample text]")).toHaveLength(2);
+    expect(tree.queryByTestId("recipe-note-default-1")).toBeNull();
+    expect(
+      tree.getByText(
+        "Per 100 g raw: 26 kcal; carbohydrates 6.5 g; fiber 0.5 g; protein 1 g.",
+      ),
+    ).toBeTruthy();
+    expect(tree.getByText("Roast pumpkin with olive oil.")).toBeTruthy();
 
     // availability months should appear based on data
     expect(tree.getByText("OCT - NOV")).toBeTruthy();
@@ -151,6 +169,34 @@ describe("ProduceDetailsScreen", () => {
 
     fireEvent.press(getByTestId("details-wikipedia"));
     expect(openSpy).toHaveBeenCalledWith("https://en.wikipedia.org/wiki/Pumpkin");
+
+    openSpy.mockRestore();
+  });
+
+  it("opens the contact page from the report-error button", async () => {
+    const route = {
+      params: {
+        item: mockProduce,
+        iconUri: undefined,
+        onPickImage: jest.fn(),
+        onResetIcon: jest.fn(),
+      },
+    } as any;
+    const openSpy = jest
+      .spyOn(require("react-native").Linking, "openURL")
+      .mockResolvedValue(true);
+
+    const { getByTestId, getByText } = render(
+      <NavigationContainer>
+        <ProduceDetailsScreen route={route} navigation={undefined as any} />
+      </NavigationContainer>,
+    );
+
+    expect(getByText("Report an error")).toBeTruthy();
+    await act(async () => {
+      fireEvent.press(getByTestId("details-report-error"));
+    });
+    expect(openSpy).toHaveBeenCalledWith("https://jakubkivi.github.io#contact");
 
     openSpy.mockRestore();
   });

@@ -12,11 +12,11 @@ BeetTheClock is a React Native/Expo (TypeScript) app for tracking seasonal produ
 
 - **Mainly:** See what's currently in season this month.
 - **Favorites**
-- **Custom images:** Replace default icon with your own from the gallery. Items even have rarity levels – 'Gotta catch them all' xd.
+- **Custom images:** Replace the default app logo on a produce card with an image from the gallery. Items even have rarity levels – 'Gotta catch them all' xd.
 - **Smart buying & Storage:** Get tips on what to look out for when buying and how to properly store your produce.
-- **Languages & Region:** Available in English and Polish. $\color{#ab5d82}{\textsf{Disclaimer: The seasonal data is currently accurate for Poland only.}}$
+- **Languages & Region:** Available in English and Polish. Seasonality estimates currently cover Poland only.
 - **Notifications:** Choose monthly, weekly, or daily seasonal reminders, optionally limited to favorites.
-- **Nutrition & recipes:** Product details include starter fields ready to be filled in.
+- **Nutrition & recipes:** Product details include approximate nutrition references and starter recipes.
 - **SMS:** Share seasonal picks with friends... And about the app...
 
 ### Road to v1.0 (Ideas)
@@ -29,10 +29,22 @@ BeetTheClock is a React Native/Expo (TypeScript) app for tracking seasonal produ
 Contributions are welcome! I am open to pull requests, especially for additional
 regional seasonality data, nutrition information, recipes, and translations.
 
-The region selector currently offers Poland only. Notification reminders can be
-scheduled for the start of each month, on a selected weekday, or daily, at a
-chosen local time. Product nutrition and recipe fields are currently
-placeholders (`[sample text]`).
+The region selector currently offers Poland only. Notification reminders can
+be scheduled for the start of each month, on a selected weekday, or daily, at a
+chosen local time. Nutrition values are approximate USDA FoodData Central
+references where available; recipes are starter suggestions.
+
+Seasonality months estimate fresh retail availability in Poland, including
+imports, greenhouse crops, and stored domestic produce. `bestMonths` indicates
+the domestic fresh-harvest peak when there is a local crop, or a broad
+exporter-region peak for import-only produce. These are seasonal estimates,
+not guarantees of product origin or availability in every shop; imports and
+retail supply vary by year. The estimates are informed by a
+[Polish produce seasonality calendar](https://piknikofresh.pl/kalendarz-sezonowosci-warzyw-i-owocow/),
+[Statistics Poland agriculture data](https://stat.gov.pl/en/topics/agriculture-forestry/agriculture/),
+and [Eurostat Comext trade data](https://ec.europa.eu/eurostat/web/international-trade-in-goods/database).
+We have not analyzed product-by-origin monthly import flows; trade and harvest
+data do not guarantee availability or origin in a specific shop.
 
 ### Tech Stack
 
@@ -43,8 +55,9 @@ placeholders (`[sample text]`).
 
 Each produce entry stores availability and best months under
 `seasonalityByRegion`, keyed by a region code from `REGIONS`. The current
-`PL` entries preserve the existing Poland dataset. Month values are zero-based
-(`0` = January, `11` = December); `bestMonths` is optional for each region.
+`PL` entries estimate fresh retail availability in Poland. Month values are
+zero-based (`0` = January, `11` = December); `bestMonths` is optional for each
+region.
 
 To add another region, add its code to `REGIONS` in `src/types/index.ts` and
 provide that region's `months` and optional `bestMonths` for each product in

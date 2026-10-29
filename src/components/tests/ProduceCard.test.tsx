@@ -3,10 +3,13 @@ import { render, fireEvent } from "@testing-library/react-native";
 import ProduceCard from "../ProduceCard";
 import { Produce } from "../../types";
 
+jest.mock("../../../assets/icon.png", () => "app-logo");
+
 const mockProduce: Produce = {
   id: "1",
   name: "Pumpkin",
   plName: "Dynia",
+  rarity: 1,
   seasonalityByRegion: {
     PL: { months: [9, 10] },
   },
@@ -14,8 +17,8 @@ const mockProduce: Produce = {
 };
 
 describe("ProduceCard", () => {
-  it("renders emoji when no iconUri", () => {
-    const { getByText } = render(
+  it("renders the app logo instead of the produce emoji by default", () => {
+    const { getByTestId, queryByText } = render(
       <ProduceCard
         item={mockProduce}
         isFavorite={false}
@@ -24,7 +27,8 @@ describe("ProduceCard", () => {
       />,
     );
 
-    expect(getByText("🎃")).toBeTruthy();
+    expect(getByTestId("produce-default-logo").props.source).toBe("app-logo");
+    expect(queryByText("🎃")).toBeNull();
   });
 
   it("calls onCardPress when the card itself is pressed", () => {
