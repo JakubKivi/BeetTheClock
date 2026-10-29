@@ -6,14 +6,22 @@ import { Produce } from "../../types";
 const mockProduce: Produce = {
   id: "1",
   name: "Pumpkin",
-  months: [9, 10],
+  plName: "Dynia",
+  seasonalityByRegion: {
+    PL: { months: [9, 10] },
+  },
   emoji: "🎃",
 };
 
 describe("ProduceCard", () => {
   it("renders emoji when no iconUri", () => {
     const { getByText } = render(
-      <ProduceCard item={mockProduce} onPress={jest.fn()} />,
+      <ProduceCard
+        item={mockProduce}
+        isFavorite={false}
+        onPress={jest.fn()}
+        onFavoritePress={jest.fn()}
+      />,
     );
 
     expect(getByText("🎃")).toBeTruthy();
@@ -24,8 +32,10 @@ describe("ProduceCard", () => {
     const { getByTestId } = render(
       <ProduceCard
         item={mockProduce}
+        isFavorite={false}
         onPress={jest.fn()}
         onCardPress={onCardPress}
+        onFavoritePress={jest.fn()}
       />,
     );
 
@@ -35,22 +45,31 @@ describe("ProduceCard", () => {
 
   it("does not call onCardPress when favorite button pressed", () => {
     const onCardPress = jest.fn();
+    const onFavoritePress = jest.fn();
     const { getByTestId } = render(
       <ProduceCard
         item={mockProduce}
+        isFavorite={false}
         onPress={jest.fn()}
         onCardPress={onCardPress}
+        onFavoritePress={onFavoritePress}
       />,
     );
 
     fireEvent.press(getByTestId("favorite-button"));
     expect(onCardPress).not.toHaveBeenCalled();
+    expect(onFavoritePress).toHaveBeenCalled();
   });
 
   it("calls onPress when share button is pressed", () => {
     const onShare = jest.fn();
     const { getByTestId } = render(
-      <ProduceCard item={mockProduce} onPress={onShare} />,
+      <ProduceCard
+        item={mockProduce}
+        isFavorite={false}
+        onPress={onShare}
+        onFavoritePress={jest.fn()}
+      />,
     );
 
     fireEvent.press(getByTestId("share-button"));

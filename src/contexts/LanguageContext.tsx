@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Language, i18n } from "../services/i18n";
-import { getSettings, saveSettings } from "../services/storage";
+import {
+  DEFAULT_SETTINGS,
+  getSettings,
+  saveSettings,
+} from "../services/storage";
 
 type LanguageContextType = {
   language: Language;
@@ -40,12 +44,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
       i18n.setLanguage(lang);
 
       const settings = await getSettings();
-      if (settings) {
-        await saveSettings({
-          ...settings,
-          language: lang,
-        });
-      }
+      await saveSettings({
+        ...DEFAULT_SETTINGS,
+        ...settings,
+        language: lang,
+      });
     } catch (e) {
       console.warn("Failed to save language setting", e);
     }

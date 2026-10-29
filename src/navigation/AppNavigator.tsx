@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import ProduceDetailsScreen from "../screens/ProduceDetailsScreen";
@@ -8,8 +8,9 @@ import ProduceDetailsScreen from "../screens/ProduceDetailsScreen";
 import { RootStackParamList } from "../screens/ProduceDetailsScreen";
 import { useLanguage } from "../contexts/LanguageContext";
 import { i18n } from "../services/i18n";
+import { COLORS } from "../constants/theme";
 
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const AppNavigator = () => {
   const { language } = useLanguage();
@@ -23,8 +24,8 @@ const AppNavigator = () => {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerStyle: { backgroundColor: "#6b1d52" },
-          headerTintColor: "#fff",
+          headerStyle: { backgroundColor: COLORS.primary },
+          headerTintColor: COLORS.white,
         }}
       >
         <Stack.Screen

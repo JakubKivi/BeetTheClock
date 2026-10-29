@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { getSettings, saveSettings, AppSettings } from "../services/storage";
-import { Produce } from "../types";
+import { Produce, RegionCode } from "../types";
 import { formatMonths } from "../utils/utils";
 import { getRarityInfo } from "../constants/produce";
 import { i18n } from "../services/i18n";
 import { useLanguage } from "../contexts/LanguageContext";
+import { DEFAULT_REGION, getSeasonality } from "../services/produceSeasonality";
+import { COLORS } from "../constants/theme";
 
 type Props = {
   item: Produce;
   iconUri?: string;
+  region?: RegionCode;
+  isFavorite: boolean;
   onPress: () => void;
   onCardPress?: () => void;
+  onFavoritePress: () => void;
   statusBadge?: "new" | "end" | null;
   isAvailable?: boolean;
 };
@@ -22,67 +26,35 @@ const ICON_SIZE = 40;
 const ProduceCard: React.FC<Props> = ({
   item,
   iconUri,
+  region = DEFAULT_REGION,
+  isFavorite,
   onPress,
   onCardPress,
+  onFavoritePress,
   statusBadge,
   isAvailable = true,
 }) => {
   const { language } = useLanguage();
-  const [isFav, setIsFav] = useState(false);
-  const BANNER_COLOR = "#6b1d52";
+  const seasonality = getSeasonality(item, region);
 
-  useEffect(() => {
-    let mounted = true;
-    (async () => {
-      try {
-        const settings = await getSettings();
-        if (!mounted) return;
-        setIsFav(!!settings?.favItems?.includes(item.id));
-      } catch (e) {
-        console.warn("Failed to load favorites", e);
-      }
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, [item.id]);
-
-  const toggleFavorite = async () => {
-    try {
-      const settings =
-        (await getSettings()) ||
-        ({
-          phoneNumber: "",
-          notificationsEnabled: false,
-          favItems: [],
-        } as AppSettings);
-      const favs = new Set(settings.favItems || []);
-      if (favs.has(item.id)) {
-        favs.delete(item.id);
-      } else {
-        favs.add(item.id);
-      }
-      const newSettings: AppSettings = {
-        ...settings,
-        favItems: Array.from(favs),
-      };
-      await saveSettings(newSettings);
-      setIsFav(favs.has(item.id));
-    } catch (e) {
-      console.warn("toggleFavorite error", e);
-    }
-  };
-
-  const monthsLabel = formatMonths(item.months);
-  const bestMonthsLabel = item.best_months
-    ? `${i18n.t("details.best")}: ${formatMonths(item.best_months)}`
+  const monthsLabel = formatMonths(seasonality?.months, language);
+  const bestMonthsLabel = seasonality?.bestMonths?.length
+    ? `${i18n.t("details.best", language)}: ${formatMonths(
+        seasonality.bestMonths,
+        language,
+      )}`
     : null;
 
   return (
     <View style={styles.wrapper}>
       {statusBadge && (
         <View style={styles.badgeContainer}>
-          <Text style={styles.badge}>{statusBadge}</Text>
+          <Text style={styles.badge}>
+            {i18n.t(
+              statusBadge === "new" ? "season.new" : "season.end",
+              language,
+            )}
+          </Text>
         </View>
       )}
 
@@ -116,7 +88,7 @@ const ProduceCard: React.FC<Props> = ({
               )}
             </View>
 
-            <View style={[styles.rarityBadge]}>
+            <View style={styles.rarityBadge}>
               <Text style={styles.rarityBadgeEmoji}>
                 {getRarityInfo(item.rarity).emoji}
               </Text>
@@ -125,7 +97,7 @@ const ProduceCard: React.FC<Props> = ({
 
           <View style={styles.textContainer}>
             <Text style={[styles.name, !isAvailable && styles.greyedOutText]}>
-              {language === "pl" ? item.pl_name : item.name}
+              {language === "pl" ? item.plName : item.name}
             </Text>
             <Text
               style={[styles.category, !isAvailable && styles.greyedOutText]}
@@ -155,20 +127,20 @@ const ProduceCard: React.FC<Props> = ({
               <Ionicons
                 name="share-social-outline"
                 size={20}
-                color={isAvailable ? BANNER_COLOR : "#ccc"}
+                color={isAvailable ? COLORS.primary : COLORS.disabled}
               />
             </TouchableOpacity>
           )}
 
           <TouchableOpacity
             testID="favorite-button"
-            onPress={toggleFavorite}
+            onPress={onFavoritePress}
             style={styles.iconButton}
           >
             <Ionicons
-              name={isFav ? "heart" : "heart-outline"}
+              name={isFavorite ? "heart" : "heart-outline"}
               size={20}
-              color={isAvailable ? BANNER_COLOR : "#ccc"}
+              color={isAvailable ? COLORS.primary : COLORS.disabled}
             />
           </TouchableOpacity>
         </View>
@@ -184,17 +156,17 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   card: {
-    backgroundColor: "#f9f9f9",
+    backgroundColor: COLORS.surface,
     padding: 10,
     borderRadius: 6,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "#eee",
+    borderColor: COLORS.border,
   },
   unavailableCard: {
-    backgroundColor: "#f5f5f5",
+    backgroundColor: COLORS.mutedSurface,
     borderColor: "#ddd",
     opacity: 0.6,
   },
@@ -232,7 +204,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 5,
     left: 3,
-    backgroundColor: "#6b1d52",
+    backgroundColor: COLORS.primary,
     paddingHorizontal: 6,
     paddingVertical: 3,
     borderRadius: 3,
@@ -241,7 +213,7 @@ const styles = StyleSheet.create({
     transform: [{ rotate: "-20deg" }],
   },
   badge: {
-    color: "#fff",
+    color: COLORS.white,
     fontSize: 8,
     fontWeight: "bold",
   },
@@ -250,10 +222,10 @@ const styles = StyleSheet.create({
     height: ICON_SIZE,
     borderRadius: ICON_SIZE / 2,
     borderWidth: 4,
-    borderColor: "#6b1d52",
+    borderColor: COLORS.primary,
   },
   unavailableEmptyIcon: {
-    borderColor: "#ccc",
+    borderColor: COLORS.disabled,
   },
   emoji: {
     fontSize: 30,
@@ -281,11 +253,11 @@ const styles = StyleSheet.create({
   },
   category: {
     fontSize: 10,
-    color: "#666",
+    color: COLORS.secondaryText,
   },
   bestMonths: {
     fontSize: 9,
-    color: "#999",
+    color: COLORS.mutedText,
     marginTop: 2,
     fontStyle: "italic",
   },

@@ -1,21 +1,35 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./src/screens/HomeScreen";
-import SettingsScreen from "./src/screens/SettingsScreen";
-import ProduceDetailsScreen from "./src/screens/ProduceDetailsScreen";
-import { Ionicons } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native";
-
-import { RootStackParamList } from "./src/screens/ProduceDetailsScreen";
+import React, { useEffect } from "react";
 import { LanguageProvider } from "./src/contexts/LanguageContext";
 import AppNavigator from "./src/navigation/AppNavigator";
+import { getSettings } from "./src/services/storage";
+import { syncScheduledNotifications } from "./src/services/notifications";
+import { useLanguage } from "./src/contexts/LanguageContext";
 
-const Stack = createStackNavigator<RootStackParamList>();
+function NotificationSetup() {
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    const synchronize = async () => {
+      try {
+        const settings = await getSettings();
+        if (settings) {
+          await syncScheduledNotifications(settings, language);
+        }
+      } catch (error) {
+        console.warn("Failed to synchronize scheduled notifications", error);
+      }
+    };
+
+    void synchronize();
+  }, [language]);
+
+  return null;
+}
 
 export default function App() {
   return (
     <LanguageProvider>
+      <NotificationSetup />
       <AppNavigator />
     </LanguageProvider>
   );

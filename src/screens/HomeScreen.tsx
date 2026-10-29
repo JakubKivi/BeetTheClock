@@ -19,25 +19,37 @@ import * as SMS from "expo-sms";
 import * as ImagePicker from "expo-image-picker";
 
 import { PRODUCE_DATA } from "../constants/produce";
-import { Produce } from "../types";
-import { getSettings } from "../services/storage";
+import { MonthOfYear, Produce, RegionCode } from "../types";
+import { COLORS } from "../constants/theme";
+import {
+  DEFAULT_SETTINGS,
+  getSettings,
+  saveSettings,
+} from "../services/storage";
 import ProduceCard from "../components/ProduceCard";
 import { getProduceIcons, saveProduceIcon } from "../services/newIcon";
 import { sortProduceList } from "../services/sortProduceList";
 import { Ionicons } from "@expo/vector-icons";
 import { useLanguage } from "../contexts/LanguageContext";
 import { i18n } from "../services/i18n";
+import {
+  DEFAULT_REGION,
+  getSeasonality,
+  isAvailableInRegion,
+} from "../services/produceSeasonality";
+import { syncScheduledNotifications } from "../services/notifications";
 
 const HomeScreen = () => {
   const { language } = useLanguage();
-  const currentMonth = new Date().getMonth();
+  const currentMonth = new Date().getMonth() as MonthOfYear;
+  const [currentRegion, setCurrentRegion] = useState<RegionCode>(DEFAULT_REGION);
   const [targetNumber, setTargetNumber] = useState("");
   const [icons, setIcons] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
-  const [refreshTrigger, setRefreshTrigger] = useState(0);
   const [isSearching, setIsSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
@@ -45,6 +57,7 @@ const HomeScreen = () => {
     navigation.navigate("Details", {
       item,
       iconUri: icons[item.id],
+      region: currentRegion,
       onPickImage: handlePickImage,
       onResetIcon: handleResetIcon,
     });
@@ -56,6 +69,7 @@ const HomeScreen = () => {
         const settings = await getSettings();
         if (settings?.phoneNumber) setTargetNumber(settings.phoneNumber);
         setFavorites(settings?.favItems || []);
+        setCurrentRegion(settings?.regionCode ?? DEFAULT_REGION);
         const storedIcons = await getProduceIcons();
         setIcons(storedIcons);
       } catch (e) {
@@ -72,9 +86,9 @@ const HomeScreen = () => {
         try {
           const settings = await getSettings();
           setFavorites(settings?.favItems || []);
-          setRefreshTrigger((prev) => prev + 1);
+          setCurrentRegion(settings?.regionCode ?? DEFAULT_REGION);
         } catch (e) {
-          // ignore
+          console.warn("Failed to refresh favorites", e);
         }
       };
       loadFavorites();
@@ -95,21 +109,16 @@ const HomeScreen = () => {
             onChangeText={setSearchQuery}
             placeholder={i18n.t("home.searchPlaceholder")}
             placeholderTextColor="rgba(255,255,255,0.7)"
-            style={{
-              flex: 1,
-              height: 40,
-              backgroundColor: "transparent",
-              borderRadius: 5,
-              paddingHorizontal: 10,
-              color: "#fff",
-              fontSize: 16,
-            }}
-            autoFocus={true}
+            style={styles.searchInput}
+            autoFocus
           />
         ),
         headerRight: () => (
-          <TouchableOpacity onPress={closeSearch} style={{ marginRight: 10 }}>
-            <Ionicons name="close" size={24} color="#fff" />
+          <TouchableOpacity
+            onPress={closeSearch}
+            style={styles.headerAction}
+          >
+            <Ionicons name="close" size={24} color={COLORS.white} />
           </TouchableOpacity>
         ),
       });
@@ -118,29 +127,24 @@ const HomeScreen = () => {
         headerLeft: () => (
           <Image
             source={require("../../assets/adaptive-icon.png")}
-            style={{
-              width: 50,
-              height: 50,
-              marginLeft: 15,
-              tintColor: "#fff",
-            }}
+            style={styles.logo}
             resizeMode="contain"
           />
         ),
         headerTitle: "Beet The Clock",
         headerRight: () => (
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <View style={styles.headerActions}>
             <TouchableOpacity
               onPress={() => setIsSearching(true)}
-              style={{ marginRight: 10 }}
+              style={styles.headerAction}
             >
-              <Ionicons name="search" size={24} color="#fff" />
+              <Ionicons name="search" size={24} color={COLORS.white} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate("Settings")}
-              style={{ marginRight: 10 }}
+              style={styles.headerAction}
             >
-              <Ionicons name="settings-sharp" size={24} color="#fff" />
+              <Ionicons name="settings-sharp" size={24} color={COLORS.white} />
             </TouchableOpacity>
           </View>
         ),
@@ -148,48 +152,52 @@ const HomeScreen = () => {
     }
   }, [navigation, isSearching, searchQuery, language]);
 
-  const filteredProduce = PRODUCE_DATA.filter((p) => {
+  const filteredProduce = PRODUCE_DATA.filter((produce) => {
     const query = searchQuery.toLowerCase();
-    // Check if name contains query AND pl_name does NOT contain query
     if (language === "pl") {
-      return p.pl_name.toLowerCase().includes(query);
+      return produce.plName.toLowerCase().includes(query);
     } else {
-      return p.name.toLowerCase().includes(query);
+      return produce.name.toLowerCase().includes(query);
     }
   });
 
-  const seasonalProduce = filteredProduce.filter((p) =>
-    p.months.includes(currentMonth),
+  const seasonalProduce = filteredProduce.filter((produce) =>
+    isAvailableInRegion(produce, currentRegion, currentMonth),
   );
 
-  const unavailableProduce = filteredProduce.filter(
-    (p) => !p.months.includes(currentMonth),
-  );
+  const unavailableProduce = filteredProduce.filter((produce) => {
+    const seasonality = getSeasonality(produce, currentRegion);
+    return (
+      seasonality !== undefined &&
+      !seasonality.months.includes(currentMonth)
+    );
+  });
 
   const sortedAndBadgedProduce = sortProduceList(
     seasonalProduce,
     favorites,
     currentMonth,
+    currentRegion,
   );
 
   const sortedUnavailableProduce = sortProduceList(
     unavailableProduce,
     favorites,
     currentMonth,
+    currentRegion,
   );
 
-  const handleShare = async (produce: any) => {
+  const handleShare = async (produce: Produce) => {
     const isAvailable = await SMS.isAvailableAsync();
     if (!isAvailable) {
-      Alert.alert("Error", i18n.t("home.smsError"));
+      Alert.alert(i18n.t("settings.errorTitle"), i18n.t("home.smsError"));
       return;
     }
-    await SMS.sendSMSAsync(
-      [targetNumber],
-      language === "pl"
-        ? `Hej! ${produce.pl_name} jest teraz w sezonie! Jeśli chcesz wiedzieć, co jest w sezonie, sprawdź aplikację Beet The Clock!`
-        : `Hey! ${produce.name} is in season right now! If you want to know what's in season, check out the Beet The Clock app!`,
-    );
+    const produceName = language === "pl" ? produce.plName : produce.name;
+    const message = i18n
+      .t("home.shareMessage", language)
+      .replace("{name}", produceName);
+    await SMS.sendSMSAsync([targetNumber], message);
   };
 
   const handleResetIcon = async (produceId: string) => {
@@ -228,7 +236,7 @@ const HomeScreen = () => {
       setIcons((prev) => ({ ...prev, [produceId]: uri }));
       return uri;
     } catch (e) {
-      Alert.alert("Error", i18n.t("home.imageSelectError"));
+      Alert.alert(i18n.t("settings.errorTitle"), i18n.t("home.imageSelectError"));
       return null;
     }
   };
@@ -236,12 +244,11 @@ const HomeScreen = () => {
   if (error) {
     return (
       <View style={styles.center}>
-        <Text style={{ color: "red" }}>{error}</Text>
+        <Text style={styles.errorText}>{error}</Text>
       </View>
     );
   }
 
-  // prepare sections so headers can stick when scrolling
   const sections = [
     {
       title: i18n.t("home.inSeason"),
@@ -255,19 +262,57 @@ const HomeScreen = () => {
     },
   ];
 
-  const [isRefreshing, setIsRefreshing] = useState(false);
-
   const handleRefresh = async () => {
     setIsRefreshing(true);
 
     try {
-      // Refresh the produce data from storage
       const settings = await getSettings();
       setFavorites(settings?.favItems || []);
       const storedIcons = await getProduceIcons();
       setIcons(storedIcons);
+    } catch (error) {
+      console.warn("Failed to refresh Home screen", error);
+      Alert.alert(i18n.t("settings.errorTitle"), i18n.t("home.errorMessage"));
     } finally {
       setIsRefreshing(false);
+    }
+  };
+
+  const handleFavoritePress = async (produceId: string) => {
+    try {
+      const settings = await getSettings();
+      const nextFavorites = new Set(settings?.favItems ?? []);
+      if (nextFavorites.has(produceId)) {
+        nextFavorites.delete(produceId);
+      } else {
+        nextFavorites.add(produceId);
+      }
+
+      const favoriteItems = Array.from(nextFavorites);
+      const updatedSettings = {
+        ...DEFAULT_SETTINGS,
+        ...settings,
+        phoneNumber: settings?.phoneNumber ?? "",
+        notificationsEnabled: settings?.notificationsEnabled ?? false,
+        favItems: favoriteItems,
+      };
+      await saveSettings(updatedSettings);
+      setFavorites(favoriteItems);
+      await handleRefresh();
+      if (updatedSettings.notificationsEnabled) {
+        try {
+          await syncScheduledNotifications(updatedSettings, language);
+        } catch (error) {
+          console.warn("Failed to update favorite notifications", error);
+          Alert.alert(
+            i18n.t("settings.errorTitle"),
+            i18n.t("settings.errorMessage"),
+          );
+        }
+      }
+    } catch (error) {
+      console.warn("Failed to update favorites", error);
+      Alert.alert(i18n.t("settings.errorTitle"), i18n.t("settings.errorMessage"));
     }
   };
 
@@ -275,9 +320,8 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <SectionList
         sections={sections}
-        keyExtractor={(item, index) => item.item.id + index}
+        keyExtractor={(item) => item.item.id}
         stickySectionHeadersEnabled
-        extraData={refreshTrigger}
         refreshing={isRefreshing}
         onRefresh={handleRefresh}
         renderSectionHeader={({ section }) => (
@@ -293,8 +337,11 @@ const HomeScreen = () => {
             <ProduceCard
               item={produceItem}
               iconUri={icons[produceItem.id]}
+              region={currentRegion}
+              isFavorite={favorites.includes(produceItem.id)}
               onPress={() => handleShare(produceItem)}
               onCardPress={() => handleNavigateToDetails(produceItem)}
+              onFavoritePress={() => handleFavoritePress(produceItem.id)}
               statusBadge={statusBadge}
               isAvailable={isAvailable}
             />
@@ -309,11 +356,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.background,
   },
 
   sectionHeaderContainer: {
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.background,
     paddingTop: 20,
     paddingBottom: 10,
     marginLeft: -20,
@@ -324,11 +371,36 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#6b1d52",
+    color: COLORS.primary,
   },
   center: {
     flex: 1,
     justifyContent: "center",
+    alignItems: "center",
+  },
+  errorText: {
+    color: "red",
+  },
+  searchInput: {
+    flex: 1,
+    height: 40,
+    backgroundColor: "transparent",
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    color: COLORS.white,
+    fontSize: 16,
+  },
+  headerAction: {
+    marginRight: 10,
+  },
+  logo: {
+    width: 50,
+    height: 50,
+    marginLeft: 15,
+    tintColor: COLORS.white,
+  },
+  headerActions: {
+    flexDirection: "row",
     alignItems: "center",
   },
 });

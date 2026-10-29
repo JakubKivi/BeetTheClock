@@ -11,12 +11,14 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { RouteProp, useIsFocused } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { Produce } from "../types";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { Produce, RegionCode } from "../types";
 import { formatMonths } from "../utils/utils";
 import { getRarityInfo } from "../constants/produce";
 import { useLanguage } from "../contexts/LanguageContext";
 import { i18n } from "../services/i18n";
+import { DEFAULT_REGION, getSeasonality } from "../services/produceSeasonality";
+import { COLORS } from "../constants/theme";
 
 // define the types for route params
 export type RootStackParamList = {
@@ -25,6 +27,7 @@ export type RootStackParamList = {
   Details: {
     item: Produce;
     iconUri?: string;
+    region?: RegionCode;
     // callback invoked when the user wants to choose a custom icon;
     // returns a promise resolving to the selected URI (or null if
     // the operation was cancelled).  Made optional so callers who
@@ -37,7 +40,7 @@ export type RootStackParamList = {
 
 type DetailsScreenRouteProp = RouteProp<RootStackParamList, "Details">;
 
-type DetailsScreenNavigationProp = StackNavigationProp<
+type DetailsScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "Details"
 >;
@@ -54,15 +57,17 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
   const {
     item,
     iconUri: initialIconUri,
+    region = DEFAULT_REGION,
     onPickImage,
     onResetIcon,
   } = route.params;
+  const seasonality = getSeasonality(item, region);
 
   useEffect(() => {
     navigation.setOptions({
-      title: language === "pl" ? item.pl_name : item.name,
+      title: language === "pl" ? item.plName : item.name,
     });
-  }, [navigation, language === "pl" ? item.pl_name : item.name]);
+  }, [navigation, language, item.plName, item.name]);
   const isFocused = useIsFocused();
 
   const [iconUri, setIconUri] = useState<string | undefined>(initialIconUri);
@@ -104,6 +109,12 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
     );
   };
 
+  const handleOpenWikipedia = () => {
+    if (item.wikipediaUrl) {
+      void Linking.openURL(item.wikipediaUrl);
+    }
+  };
+
   return (
     <ScrollView
       style={styles.container}
@@ -111,7 +122,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
     >
       <View style={styles.rarityImageRow}>
         {/* Rarity Circle */}
-        <View style={[styles.rarityCircle]}>
+        <View style={styles.rarityCircle}>
           <Text style={styles.rarityCircleEmoji}>
             {getRarityInfo(item.rarity).emoji}
           </Text>
@@ -134,7 +145,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
               style={styles.setImageButton}
               onPress={handlePick}
             >
-              <Ionicons name="image-outline" size={22} color="#6b1d52" />
+              <Ionicons name="image-outline" size={22} color={COLORS.primary} />
             </TouchableOpacity>
           )}
 
@@ -144,7 +155,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
               onPress={handleReset}
               style={styles.resetIconButton}
             >
-              <Ionicons name="close" size={18} color="#6b1d52" />
+              <Ionicons name="close" size={18} color={COLORS.primary} />
             </TouchableOpacity>
           )}
         </View>
@@ -158,55 +169,78 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
             ]}
           >
             {language === "pl"
-              ? getRarityInfo(item.rarity).pl_label
+              ? getRarityInfo(item.rarity).plLabel
               : getRarityInfo(item.rarity).label}
           </Text>
         </View>
       </View>
 
       {/* availability months and best months */}
-      {item.months && item.months.length > 0 && (
+      {seasonality?.months.length ? (
         <View style={styles.monthsSection}>
-          <Text style={styles.monthsLabel}>{formatMonths(item.months)}</Text>
-          {item.best_months && item.best_months.length > 0 && (
+          <Text style={styles.monthsLabel}>
+            {formatMonths(seasonality.months, language)}
+          </Text>
+          {seasonality.bestMonths?.length ? (
             <Text style={styles.bestMonthsLabel}>
-              {i18n.t("details.best")}: {formatMonths(item.best_months)}
+              {i18n.t("details.best", language)}:{" "}
+              {formatMonths(seasonality.bestMonths, language)}
             </Text>
-          )}
+          ) : null}
         </View>
-      )}
+      ) : null}
 
-      {item.selection_guide && (
+      {(language === "pl" ? item.plSelectionGuide : item.selectionGuide) && (
         <View style={styles.guideSection}>
           <Text style={styles.guideTitle}>
             {i18n.t("details.selectionGuide")}
           </Text>
           <Text style={styles.guideText}>
-            {language === "pl" ? item.pl_selection_guide : item.selection_guide}
+            {language === "pl" ? item.plSelectionGuide : item.selectionGuide}
           </Text>
         </View>
       )}
 
-      {item.storage_guide && (
+      {(language === "pl" ? item.plStorageGuide : item.storageGuide) && (
         <View style={styles.guideSection}>
           <Text style={styles.guideTitle}>
             {i18n.t("details.storageGuide")}
           </Text>
           <Text style={styles.guideText}>
-            {language === "pl" ? item.pl_storage_guide : item.storage_guide}
+            {language === "pl" ? item.plStorageGuide : item.storageGuide}
           </Text>
         </View>
       )}
 
-      {item.wikipedia_url && (
+      {item.nutritionalInfo && (
+        <View style={styles.guideSection}>
+          <Text style={styles.guideTitle}>
+            {i18n.t("details.nutrition", language)}
+          </Text>
+          <Text style={styles.guideText}>{item.nutritionalInfo}</Text>
+        </View>
+      )}
+
+      {item.recipes?.length ? (
+        <View style={styles.guideSection}>
+          <Text style={styles.guideTitle}>
+            {i18n.t("details.recipes", language)}
+          </Text>
+          {item.recipes.map((recipe, index) => (
+            <Text key={`${recipe}-${index}`} style={styles.guideText}>
+              {recipe}
+            </Text>
+          ))}
+        </View>
+      ) : null}
+
+      {item.wikipediaUrl && (
         <TouchableOpacity
           testID="details-wikipedia"
           style={styles.wikipediaButton}
-          onPress={() => {
-            Linking.openURL(item.wikipedia_url!);
-          }}
+          onPress={handleOpenWikipedia}
         >
-          <Ionicons name="earth-outline" size={20} color="#fff" />
+          <Ionicons name="earth-outline" size={20} color={COLORS.white} />
           <Text style={styles.wikipediaButtonText}>
             {i18n.t("details.wikipedia")}
           </Text>
@@ -217,7 +251,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff" },
+  container: { flex: 1, backgroundColor: COLORS.background },
   contentContainer: { alignItems: "center", padding: 20, paddingBottom: 40 },
   name: { fontSize: 28, fontWeight: "bold", marginBottom: 30 },
   iconSlot: {
@@ -227,7 +261,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: COLORS.inputBorder,
     backgroundColor: "#fafafa",
   },
   iconContainer: {
@@ -244,7 +278,7 @@ const styles = StyleSheet.create({
     height: ICON_SIZE,
     borderRadius: ICON_SIZE / 2,
     borderWidth: 4,
-    borderColor: "#6b1d52",
+    borderColor: COLORS.primary,
   },
   emoji: {
     fontSize: 60,
@@ -258,14 +292,14 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.white,
     borderWidth: 1,
-    borderColor: "#eee",
+    borderColor: COLORS.border,
     zIndex: 30,
   },
   guideSection: {
     width: "100%",
-    backgroundColor: "#f5f5f5",
+    backgroundColor: COLORS.mutedSurface,
     borderRadius: 8,
     padding: 15,
     marginTop: 20,
@@ -273,12 +307,12 @@ const styles = StyleSheet.create({
   guideTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#6b1d52",
+    color: COLORS.primary,
     marginBottom: 10,
   },
   guideText: {
     fontSize: 14,
-    color: "#333",
+    color: COLORS.text,
     lineHeight: 20,
   },
   monthsSection: {
@@ -288,11 +322,11 @@ const styles = StyleSheet.create({
   },
   monthsLabel: {
     fontSize: 14,
-    color: "#333",
+    color: COLORS.text,
   },
   bestMonthsLabel: {
     fontSize: 14,
-    color: "#6b1d52",
+    color: COLORS.primary,
     marginTop: 4,
   },
   rarityImageRow: {
@@ -333,25 +367,25 @@ const styles = StyleSheet.create({
     width: 36,
     height: 36,
     borderRadius: 18,
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.white,
     alignItems: "center",
     justifyContent: "center",
     borderWidth: 1,
-    borderColor: "#eee",
+    borderColor: COLORS.border,
     zIndex: 20,
   },
   wikipediaButton: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#6b1d52",
+    backgroundColor: COLORS.primary,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 8,
     marginTop: 20,
   },
   wikipediaButtonText: {
-    color: "#fff",
+    color: COLORS.white,
     fontSize: 16,
     fontWeight: "600",
     marginLeft: 8,

@@ -8,9 +8,14 @@ import { Produce } from "../../types";
 const mockProduce: Produce = {
   id: "1",
   name: "Pumpkin",
-  months: [9, 10],
+  plName: "Dynia",
+  seasonalityByRegion: {
+    PL: { months: [9, 10] },
+  },
   emoji: "🎃",
-  wikipedia_url: "https://en.wikipedia.org/wiki/Pumpkin",
+  wikipediaUrl: "https://en.wikipedia.org/wiki/Pumpkin",
+  nutritionalInfo: "[sample text]",
+  recipes: ["[sample text]"],
 };
 
 describe("ProduceDetailsScreen", () => {
@@ -32,13 +37,19 @@ describe("ProduceDetailsScreen", () => {
 
     expect(tree.getByText("Pumpkin")).toBeTruthy();
     expect(tree.getByText("🎃")).toBeTruthy();
+    expect(tree.getAllByText("[sample text]")).toHaveLength(2);
 
     // availability months should appear based on data
     expect(tree.getByText("OCT - NOV")).toBeTruthy();
   });
 
-  it("includes best months text when best_months provided", () => {
-    const itemWithBest: Produce = { ...mockProduce, best_months: [10] };
+  it("includes best months text when best months are provided", () => {
+    const itemWithBest: Produce = {
+      ...mockProduce,
+      seasonalityByRegion: {
+        PL: { months: [9, 10], bestMonths: [10] },
+      },
+    };
     const route = {
       params: {
         item: itemWithBest,

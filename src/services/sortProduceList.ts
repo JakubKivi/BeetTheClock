@@ -1,161 +1,137 @@
-import { Produce } from "../types";
+import { MonthOfYear, Produce, RegionCode } from "../types";
+import { getSeasonality } from "./produceSeasonality";
 
 export interface SortedProduceItem {
   item: Produce;
   statusBadge: "new" | "end" | null;
 }
 
+type SeasonStatus = "new" | "end" | "normal";
+
+function getSeasonGroups(months: MonthOfYear[]): MonthOfYear[][] {
+  const sorted = [...new Set(months)].sort((a, b) => a - b);
+  const groups: MonthOfYear[][] = [];
+
+  for (const month of sorted) {
+    const currentGroup = groups[groups.length - 1];
+    if (currentGroup && month === currentGroup[currentGroup.length - 1] + 1) {
+      currentGroup.push(month);
+    } else {
+      groups.push([month]);
+    }
+  }
+
+  if (groups.length > 1 && sorted[0] === 0 && sorted[sorted.length - 1] === 11) {
+    const firstGroup = groups.shift()!;
+    const lastGroup = groups.pop()!;
+    groups.unshift([...lastGroup, ...firstGroup]);
+  }
+
+  return groups;
+}
+
+function getDaysUntilNextSeasonEnd(
+  seasonGroups: MonthOfYear[][],
+  currentMonth: MonthOfYear,
+  today: Date,
+): number {
+  const todayUtc = Date.UTC(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate(),
+  );
+  const daysUntilEnds = seasonGroups.map((group) => {
+    const endMonth = group[group.length - 1];
+    const endYear =
+      endMonth < currentMonth ? today.getFullYear() + 1 : today.getFullYear();
+    const seasonEnd = new Date(endYear, endMonth + 1, 0);
+    const seasonEndUtc = Date.UTC(
+      seasonEnd.getFullYear(),
+      seasonEnd.getMonth(),
+      seasonEnd.getDate(),
+    );
+    return Math.max(
+      0,
+      Math.round((seasonEndUtc - todayUtc) / (24 * 60 * 60 * 1000)),
+    );
+  });
+
+  return Math.min(...daysUntilEnds);
+}
+
+function getSeasonStatus(
+  months: MonthOfYear[],
+  currentMonth: MonthOfYear,
+  today: Date,
+): { status: SeasonStatus; daysLeft: number } {
+  const seasonGroups = getSeasonGroups(months);
+  if (seasonGroups.length === 1 && seasonGroups[0].length === 12) {
+    return { status: "normal", daysLeft: Number.MAX_SAFE_INTEGER };
+  }
+
+  const currentSeason = seasonGroups.find((group) =>
+    group.includes(currentMonth),
+  );
+  if (currentSeason?.[0] === currentMonth) {
+    return { status: "new", daysLeft: 0 };
+  }
+  if (currentSeason?.[currentSeason.length - 1] === currentMonth) {
+    return { status: "end", daysLeft: 0 };
+  }
+
+  return {
+    status: "normal",
+    daysLeft: getDaysUntilNextSeasonEnd(seasonGroups, currentMonth, today),
+  };
+}
+
 export function sortProduceList(
   produce: Produce[],
   favorites: string[],
-  currentMonth: number,
+  currentMonth: MonthOfYear,
+  region: RegionCode,
 ): SortedProduceItem[] {
-  const now = new Date();
-  const daysInMonth = new Date(
-    now.getFullYear(),
-    currentMonth + 1,
-    0,
-  ).getDate();
-  const dayOfMonth = now.getDate();
-
-  const calculateDaysUntilSeasonEnd = (months: number[]): number => {
-    // Find the last month in the season
-    const sorted = Array.from(new Set(months)).sort((a, b) => a - b);
-    const lastMonthInSeason = sorted[sorted.length - 1];
-
-    // If the season ends this month
-    if (lastMonthInSeason === currentMonth) {
-      return daysInMonth - dayOfMonth;
-    }
-
-    // If the season already ended (we're still seeing it via months array)
-    if (lastMonthInSeason < currentMonth) {
-      // Calculate days until next year's season end
-      const daysLeftThisYear = 365 - (now.getFullYear() * 365 + dayOfMonth);
-      return daysLeftThisYear;
-    }
-
-    // Season ends in a future month
-    const monthsDiff = lastMonthInSeason - currentMonth;
-    const daysLeftThisMonth = daysInMonth - dayOfMonth;
-    // Add days from remaining months
-    let totalDays = daysLeftThisMonth;
-    for (let i = 1; i < monthsDiff; i++) {
-      const monthToAdd = (currentMonth + i) % 12;
-      totalDays += new Date(now.getFullYear(), monthToAdd + 1, 0).getDate();
-    }
-    return totalDays;
+  const today = new Date();
+  const statusOrder: Record<SeasonStatus, number> = {
+    new: 0,
+    end: 1,
+    normal: 2,
   };
 
-  const getContinuousGroups = (sorted: number[]): number[][] => {
-    const groups: number[][] = [];
-    let currentGroup: number[] = [];
-    for (let i = 0; i < sorted.length; i++) {
-      if (
-        currentGroup.length === 0 ||
-        sorted[i] === currentGroup[currentGroup.length - 1] + 1
-      ) {
-        currentGroup.push(sorted[i]);
-      } else {
-        groups.push(currentGroup);
-        currentGroup = [sorted[i]];
-      }
-    }
-    if (currentGroup.length > 0) groups.push(currentGroup);
-    return groups;
-  };
+  const processedItems = produce.flatMap((item) => {
+    const seasonality = getSeasonality(item, region);
+    if (!seasonality?.months.length) return [];
 
-  const getSeasonStatus = (
-    months: number[],
-  ): { status: "new" | "end" | "normal"; daysLeft: number } => {
-    const sorted = Array.from(new Set(months)).sort((a, b) => a - b);
-    const isYearRound = sorted.length === 12;
-
-    // Year-round items go to the end
-    if (isYearRound) {
-      return { status: "normal", daysLeft: 999999 };
-    }
-
-    const groups = getContinuousGroups(sorted);
-    let isNew = false;
-    let isLast = false;
-    for (const group of groups) {
-      if (group.includes(currentMonth)) {
-        if (group[0] === currentMonth) {
-          isNew = true;
-        }
-        if (group[group.length - 1] === currentMonth) {
-          isLast = true;
-        }
-      }
-    }
-
-    if (isNew) {
-      return { status: "new", daysLeft: 0 };
-    }
-    if (isLast) {
-      return { status: "end", daysLeft: 0 };
-    }
-
-    // Calculate days until season ends
-    const daysLeft = calculateDaysUntilSeasonEnd(months);
-    return { status: "normal", daysLeft };
-  };
-
-  // Process items with status
-  const processedItems = produce.map((item) => {
-    const seasonStatus = getSeasonStatus(item.months);
-    let statusBadge: "new" | "end" | null = null;
-    if (seasonStatus.status === "new") {
-      statusBadge = "new";
-    } else if (seasonStatus.status === "end") {
-      statusBadge = "end";
-    }
+    const seasonStatus = getSeasonStatus(
+      seasonality.months,
+      currentMonth,
+      today,
+    );
+    const statusBadge =
+      seasonStatus.status === "normal" ? null : seasonStatus.status;
 
     return {
       item,
       isFavorite: favorites.includes(item.id),
-      isAvailable: item.months.includes(currentMonth),
+      isAvailable: seasonality.months.includes(currentMonth),
       statusBadge,
       daysLeft: seasonStatus.daysLeft,
       seasonStatus: seasonStatus.status,
     };
   });
 
-  // Sort by:
-  // 1. Available first
-  // 2. Within available/unavailable, favorites first
-  // 3. Within same favorite status, sort by season status (new -> end -> normal)
-  // 4. Within same season status, sort by days left (ascending - shorter seasons first)
-  const sorted = processedItems.sort((a, b) => {
-    // Available first
-    if (a.isAvailable !== b.isAvailable) {
-      return a.isAvailable ? -1 : 1;
-    }
+  return processedItems
+    .sort((a, b) => {
+      if (a.isAvailable !== b.isAvailable) {
+        return a.isAvailable ? -1 : 1;
+      }
+      if (a.isFavorite !== b.isFavorite) {
+        return a.isFavorite ? -1 : 1;
+      }
 
-    // Within same availability, favorites first
-    if (a.isFavorite !== b.isFavorite) {
-      return a.isFavorite ? -1 : 1;
-    }
-
-    // Within same favorite status, sort by season status
-    const statusOrder: Record<string, number> = {
-      new: 0,
-      end: 1,
-      normal: 2,
-    };
-    const statusDiff =
-      statusOrder[a.seasonStatus] - statusOrder[b.seasonStatus];
-    if (statusDiff !== 0) {
-      return statusDiff;
-    }
-
-    // Within same season status, sort by days left (ascending - shorter seasons first)
-    return a.daysLeft - b.daysLeft;
-  });
-
-  return sorted.map(({ item, statusBadge }) => ({
-    item,
-    statusBadge,
-  }));
+      const statusDiff =
+        statusOrder[a.seasonStatus] - statusOrder[b.seasonStatus];
+      return statusDiff || a.daysLeft - b.daysLeft;
+    })
+    .map(({ item, statusBadge }) => ({ item, statusBadge }));
 }

@@ -1,96 +1,51 @@
-// shared utility functions used across the app
-import { useLanguage } from "../contexts/LanguageContext";
-
-const MONTH_NAMES = [
-  "JAN",
-  "FEB",
-  "MAR",
-  "APR",
-  "MAY",
-  "JUN",
-  "JUL",
-  "AUG",
-  "SEP",
-  "OCT",
-  "NOV",
-  "DEC",
-];
-
-const PL_MONTH_NAMES = [
-  "STY",
-  "LUT",
-  "MAR",
-  "KWI",
-  "MAJ",
-  "CZE",
-  "LIP",
-  "SIE",
-  "WRZ",
-  "PAŹ",
-  "LIS",
-  "GRU",
-];
+import { Language, i18n } from "../services/i18n";
+import { MonthOfYear } from "../types";
 
 /**
- * Turn an array of month indices into a human‑readable range string.
- *
- * Handles wrap‑around seasons (e.g. [10, 11, 0, 1] -> "NOV - FEB").
- * If the list contains every month the result is "Year-round".
+ * Formats month indices using the selected language. Month indices use the
+ * JavaScript convention: January is 0 and December is 11.
  */
-export function formatMonths(months?: number[]): string {
-  const { language } = useLanguage();
+export function formatMonths(
+  months: MonthOfYear[] | undefined,
+  language: Language,
+): string {
   if (!months || months.length === 0) return "";
 
   const unique = Array.from(new Set(months)).sort((a, b) => a - b);
-  const monthNames = language === "pl" ? PL_MONTH_NAMES : MONTH_NAMES;
 
-  if (language === "pl") {
-    if (unique.length === 12) return "Całoroczny";
-  } else {
-    if (unique.length === 12) return "Year-round";
-  }
+  if (unique.length === 12) return i18n.t("months.yearRound", language);
 
-  if (unique.length === 1) return monthNames[unique[0]];
+  const monthNames = new Intl.DateTimeFormat(
+    language === "pl" ? "pl-PL" : "en-US",
+    { month: "short", timeZone: "UTC" },
+  );
+  const getMonthName = (month: MonthOfYear) =>
+    monthNames
+      .format(new Date(Date.UTC(2020, month, 1)))
+      .replace(/\.$/, "")
+      .toLocaleUpperCase(language === "pl" ? "pl-PL" : "en-US");
 
-  const ranges: string[] = [];
-  let rangeStart = unique[0];
-
-  for (let i = 1; i < unique.length; i++) {
-    if (unique[i] !== unique[i - 1] + 1) {
-      // close current range
-      if (rangeStart === unique[i - 1]) {
-        ranges.push(monthNames[rangeStart]);
-      } else {
-        ranges.push(`${monthNames[rangeStart]} - ${monthNames[unique[i - 1]]}`);
-      }
-      rangeStart = unique[i];
+  const groups: MonthOfYear[][] = [];
+  for (const month of unique) {
+    const currentGroup = groups[groups.length - 1];
+    if (currentGroup && month === currentGroup[currentGroup.length - 1] + 1) {
+      currentGroup.push(month);
+    } else {
+      groups.push([month]);
     }
   }
 
-  // finish last range
-  if (rangeStart === unique[unique.length - 1]) {
-    ranges.push(monthNames[rangeStart]);
-  } else {
-    ranges.push(
-      `${monthNames[rangeStart]} - ${monthNames[unique[unique.length - 1]]}`,
-    );
+  if (groups.length > 1 && unique[0] === 0 && unique[unique.length - 1] === 11) {
+    const firstGroup = groups.shift()!;
+    const lastGroup = groups.pop()!;
+    groups.unshift([...lastGroup, ...firstGroup]);
   }
 
-  // merge wrap‑around ranges (e.g. NOV-FEB)
-  if (
-    ranges.length > 1 &&
-    unique[0] <= 6 &&
-    unique[unique.length - 1] >= 7 &&
-    12 - unique[unique.length - 1] + unique[0] === 1
-  ) {
-    const lastRange = ranges.pop()!;
-    const firstRange = ranges.shift()!;
-    const lastStart = lastRange.split(" - ")[0];
-    const firstEnd = firstRange.includes(" - ")
-      ? firstRange.split(" - ")[1]
-      : firstRange;
-    ranges.unshift(`${lastStart} - ${firstEnd}`);
-  }
-
-  return ranges.join(", ");
+  return groups
+    .map((group) => {
+      const start = getMonthName(group[0]);
+      const end = getMonthName(group[group.length - 1]);
+      return group.length === 1 ? start : `${start} - ${end}`;
+    })
+    .join(", ");
 }
