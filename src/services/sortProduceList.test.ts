@@ -1,8 +1,9 @@
 import { describe, expect, it } from "@jest/globals";
 import { MonthOfYear, Produce, REGIONS } from "../types";
+import { SEASON_REFERENCE_DATE } from "./produceSeasonality";
 import { sortProduceList } from "./sortProduceList";
 
-const currentMonth = new Date().getMonth() as MonthOfYear;
+const currentMonth = SEASON_REFERENCE_DATE.getMonth() as MonthOfYear;
 const produce: Produce = {
   id: "in-season",
   name: "Seasonal crop",
@@ -24,14 +25,13 @@ describe("sortProduceList", () => {
     expect(
       sortProduceList(
         [withoutRegionalData, produce],
-        [],
         currentMonth,
         REGIONS.POLAND,
       ).map(({ item }) => item.id),
     ).toEqual(["in-season"]);
   });
 
-  it("puts favorites before other products in the same availability group", () => {
+  it("preserves input order for products with the same season status", () => {
     const otherProduce: Produce = {
       ...produce,
       id: "other",
@@ -40,11 +40,10 @@ describe("sortProduceList", () => {
     expect(
       sortProduceList(
         [otherProduce, produce],
-        ["in-season"],
         currentMonth,
         REGIONS.POLAND,
       ).map(({ item }) => item.id),
-    ).toEqual(["in-season", "other"]);
+    ).toEqual(["other", "in-season"]);
   });
 
   it("treats a season spanning December and January as one season", () => {
@@ -56,10 +55,10 @@ describe("sortProduceList", () => {
     };
 
     expect(
-      sortProduceList([winterProduce], [], 10, REGIONS.POLAND)[0].statusBadge,
+      sortProduceList([winterProduce], 10, REGIONS.POLAND)[0].statusBadge,
     ).toBe("new");
     expect(
-      sortProduceList([winterProduce], [], 1, REGIONS.POLAND)[0].statusBadge,
+      sortProduceList([winterProduce], 1, REGIONS.POLAND)[0].statusBadge,
     ).toBe("end");
   });
 });

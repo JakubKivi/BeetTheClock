@@ -1,9 +1,20 @@
 import { describe, expect, it } from "@jest/globals";
 import { PRODUCE_DATA } from "../constants/produce";
+import { NUTRIENT_INFO } from "../constants/nutrition";
 import { REGIONS } from "../types";
-import { getSeasonality, isAvailableInRegion } from "./produceSeasonality";
+import {
+  getSeasonality,
+  isAvailableInRegion,
+  SEASON_REFERENCE_DATE,
+  USE_DEVICE_DATE,
+} from "./produceSeasonality";
 
 describe("regional produce seasonality", () => {
+  it("uses the existing fixed reference date by default", () => {
+    expect(USE_DEVICE_DATE).toBe(false);
+    expect(SEASON_REFERENCE_DATE).toEqual(new Date(2026, 8, 1));
+  });
+
   it("defines Poland retail availability and its domestic best months", () => {
     const beetroot = PRODUCE_DATA.find((produce) => produce.id === "1");
 
@@ -44,6 +55,7 @@ describe("regional produce seasonality", () => {
         (produce) =>
           produce.nutritionalInfo?.startsWith("Per 100 g raw:") &&
           produce.plNutritionalInfo?.startsWith("Na 100 g surowego produktu:") &&
+          (produce.nutritionItems?.length ?? 0) > 4 &&
           produce.recipes?.length === 1 &&
           !produce.nutritionalInfo.includes("[sample text]") &&
           Boolean(produce.recipes[0].name && produce.recipes[0].plName) &&
@@ -51,6 +63,17 @@ describe("regional produce seasonality", () => {
           !produce.recipes[0].plInstructions?.includes("[sample text]"),
       ),
     ).toBe(true);
+  });
+
+  it("provides localized labels for selected micronutrients", () => {
+    const carrot = PRODUCE_DATA.find((produce) => produce.id === "4");
+
+    expect(carrot?.nutritionItems?.map(({ nutrient }) => nutrient)).toContain(
+      "vitaminA",
+    );
+    expect(carrot?.nutritionItems?.map(({ nutrient }) => nutrient)).toContain(
+      "potassium",
+    );
   });
 
   it("labels nutrition values that represent only one of multiple varieties", () => {
@@ -61,5 +84,18 @@ describe("regional produce seasonality", () => {
         return Boolean(produce?.nutritionNote?.en && produce.nutritionNote.pl);
       }),
     ).toBe(true);
+  });
+
+  it("provides concise descriptions of each nutrient in both languages", () => {
+    expect(
+      Object.values(NUTRIENT_INFO).every(({ description }) =>
+        [description.en, description.pl].every(
+          (text) => (text.match(/[.!?](?:\s|$)/g) ?? []).length <= 3,
+        ),
+      ),
+    ).toBe(true);
+
+    expect(NUTRIENT_INFO.carbohydrates.description.pl).toContain("glukozy");
+    expect(NUTRIENT_INFO.carbohydrates.description.pl).toContain("mózgowi");
   });
 });

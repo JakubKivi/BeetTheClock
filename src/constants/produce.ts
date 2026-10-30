@@ -1,5 +1,9 @@
 import { Produce, REGIONS } from "../types";
-import { formatNutrition, PRODUCE_CONTENT } from "./produceContent";
+import {
+  formatNutrition,
+  getNutritionItems,
+  PRODUCE_CONTENT,
+} from "./produceContent";
 
 export const RARITY_LEVELS: Record<
   1 | 2 | 3 | 4 | 5,
@@ -66,7 +70,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Remove greens. Submerge completely in water in a sealed container in the fridge. Change water every few days.",
     plStorageGuide:
       "Odciąć nać. Przechowywać całkowicie zanurzone w wodzie w szczelnym pojemniku w lodówce. Zmieniać wodę co kilka dni.",
-    emoji: "🥕",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Carrot",
     rarity: 1,
   },
@@ -129,7 +132,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Keep in a cool, dark, dry, well-ventilated place (like a paper bag in a pantry). Do not refrigerate. Keep away from onions.",
     plStorageGuide:
       "Trzymać w chłodnym, ciemnym, suchym i dobrze wentylowanym miejscu (np. w papierowej torbie w spiżarni). Nie w lodówce. Trzymać z dala od cebuli.",
-    emoji: "🥔",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Potato",
     rarity: 1,
   },
@@ -152,7 +154,7 @@ const PRODUCE_BASE_DATA: Produce[] = [
     plStorageGuide:
       "Przechowywać nieumyty w perforowanym plastikowym worku w szufladzie na warzywa w lodówce.",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Parsnip",
-    rarity: 3,
+    rarity: 2,
   },
   {
     id: "49",
@@ -173,7 +175,7 @@ const PRODUCE_BASE_DATA: Produce[] = [
     plStorageGuide:
       "Owinąć nieumyte bulwy w ręcznik papierowy wewnątrz luźnej plastikowej torby w szufladzie lodówki.",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Jerusalem_artichoke",
-    rarity: 4,
+    rarity: 3,
   },
   {
     id: "51",
@@ -236,7 +238,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store in a cool, dark, dry, and well-ventilated spot (like a wire basket). Do not refrigerate or put in plastic. Keep away from potatoes.",
     plStorageGuide:
       "Przechowywać w chłodnym, ciemnym, suchym i przewiewnym miejscu (np. w koszyku). Nie wkładać do lodówki ani do folii. Trzymać z dala od ziemniaków.",
-    emoji: "🧅",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Onion",
     rarity: 1,
   },
@@ -258,7 +259,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Keep in a dry, dark, well-ventilated space at room temperature. A mesh bag or open basket is ideal.",
     plStorageGuide:
       "Trzymać w suchym, ciemnym, dobrze wentylowanym miejscu w temperaturze pokojowej. Najlepsza będzie siatka lub otwarty koszyk.",
-    emoji: "🧄",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Garlic",
     rarity: 1,
   },
@@ -323,7 +323,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Do not wash. Keep the whole head wrapped tightly in plastic wrap in the crisper drawer.",
     plStorageGuide:
       "Nie myć. Trzymać całą główkę ciasno owiniętą folią spożywczą w szufladzie lodówki.",
-    emoji: "🥬",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Cabbage",
     rarity: 1,
   },
@@ -346,7 +345,7 @@ const PRODUCE_BASE_DATA: Produce[] = [
     plStorageGuide:
       "Najlepiej trzymać na łodydze. W przeciwnym razie przechowywać nieumyte w luźnej plastikowej torbie w szufladzie lodówki.",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Brussels_sprout",
-    rarity: 2,
+    rarity: 1,
   },
   {
     id: "9",
@@ -387,7 +386,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Mist the head lightly, wrap loosely in damp paper towels, and keep in an unsealed bag in the fridge.",
     plStorageGuide:
       "Lekko zrosić główkę wodą, luźno owinąć wilgotnym ręcznikiem papierowym i trzymać w otwartej torbie w lodówce.",
-    emoji: "🥦",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Broccoli",
     rarity: 1,
   },
@@ -429,9 +427,8 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Wrap unwashed leaves in dry paper towels and store in a sealed plastic bag in the fridge.",
     plStorageGuide:
       "Owinąć nieumyte liście w suchy ręcznik papierowy i przechowywać w szczelnej plastikowej torbie w lodówce.",
-    emoji: "🥬",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Kale",
-    rarity: 1,
+    rarity: 2,
   },
   {
     id: "18",
@@ -451,7 +448,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store unwashed in a hard, airtight container lined with dry paper towels to absorb excess moisture.",
     plStorageGuide:
       "Przechowywać nieumyty w twardym, szczelnym pojemniku wyłożonym suchym ręcznikiem papierowym, aby pochłaniał wilgoć.",
-    emoji: "🥬",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Spinach",
     rarity: 1,
   },
@@ -516,7 +512,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Keep stem-side down at room temperature, out of direct sunlight for best flavor. Refrigeration can slow deterioration of ripe tomatoes, but may affect flavor and texture.",
     plStorageGuide:
       "Aby zachować najlepszy smak, trzymać szypułką do dołu w temperaturze pokojowej, z dala od bezpośredniego słońca. Chłodzenie dojrzałych pomidorów może spowolnić ich psucie, ale wpłynąć na smak i konsystencję.",
-    emoji: "🍅",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Tomato",
     rarity: 1,
   },
@@ -538,7 +533,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Wrap individually in paper towels, place in a plastic bag, and store towards the front of the fridge shelf where it's warmer.",
     plStorageGuide:
       "Każdy osobno owinąć ręcznikiem papierowym, włożyć do plastikowej torby i trzymać z przodu półki w lodówce, gdzie jest cieplej.",
-    emoji: "🥒",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Cucumber",
     rarity: 1,
   },
@@ -559,7 +553,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store unwashed in a loosely tied plastic bag in the crisper drawer. Keep them completely dry.",
     plStorageGuide:
       "Przechowywać nieumytą, w luźno zawiązanej plastikowej torbie w szufladzie lodówki. Należy ją chronić przed wilgocią.",
-    emoji: "🫑",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Bell_pepper",
     rarity: 1,
   },
@@ -581,7 +574,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store at cool room temperature away from bananas/tomatoes. If refrigerating, wrap in paper towel in the crisper and use quickly.",
     plStorageGuide:
       "Trzymać w chłodnej temperaturze pokojowej z dala od bananów i pomidorów. Jeśli w lodówce, owinąć w ręcznik papierowy i szybko zużyć.",
-    emoji: "🍆",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Eggplant",
     rarity: 1,
   },
@@ -623,7 +615,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store whole pumpkins in a cool, dark, dry, and well-ventilated place. Once cut, wrap tightly in plastic and refrigerate.",
     plStorageGuide:
       "Przechowywać w całości w chłodnym, ciemnym, suchym i dobrze wentylowanym miejscu. Po rozkrojeniu ciasno owinąć folią i schować do lodówki.",
-    emoji: "🎃",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Pumpkin",
     rarity: 2,
   },
@@ -645,9 +636,8 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Keep unhusked in a loosely closed plastic bag in the fridge. Consume as soon as possible, as sugars quickly turn to starch.",
     plStorageGuide:
       "Trzymać w liściach w luźno zamkniętej plastikowej torbie w lodówce. Zjeść jak najszybciej, gdyż cukry szybko zamieniają się w skrobię.",
-    emoji: "🌽",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Sweet_corn",
-    rarity: 1,
+    rarity: 2,
   },
   {
     id: "13",
@@ -667,7 +657,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store unshelled in a paper bag or perforated plastic bag in the crisper drawer for up to a few days.",
     plStorageGuide:
       "Przechowywać w łupinach, w papierowej torbie lub perforowanym worku w szufladzie lodówki maksymalnie przez kilka dni.",
-    emoji: "🫘",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Vicia_faba",
     rarity: 2,
   },
@@ -689,7 +678,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Keep unwashed. Wrap in a dry paper towel and place inside a reusable plastic bag in the fridge crisper.",
     plStorageGuide:
       "Nie myć. Zawinąć w suchy ręcznik papierowy i włożyć do plastikowej torebki w szufladzie lodówki.",
-    emoji: "🫘",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Green_bean",
     rarity: 1,
   },
@@ -712,7 +700,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store in the crisper drawer, ideally in a perforated plastic bag. Keep separate from other sensitive vegetables.",
     plStorageGuide:
       "Trzymać w szufladzie lodówki, najlepiej w perforowanej plastikowej torbie. Przechowywać osobno od wrażliwych warzyw.",
-    emoji: "🍎",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Apple",
     rarity: 1,
   },
@@ -734,7 +721,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Ripen at room temperature. Once the neck yields to pressure, move to the fridge to halt ripening.",
     plStorageGuide:
       "Dojrzewać w temperaturze pokojowej. Gdy szyjka lekko zmięknie, schować do lodówki, aby zatrzymać dojrzewanie.",
-    emoji: "🍐",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Pear",
     rarity: 1,
   },
@@ -777,7 +763,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store unwashed with stems attached. Keep loosely packed in a paper-towel-lined container in the fridge.",
     plStorageGuide:
       "Przechowywać nieumyte, bez odrywania ogonków. Trzymać luźno w pojemniku wyłożonym ręcznikiem papierowym w lodówce.",
-    emoji: "🍒",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Cherry",
     rarity: 1,
   },
@@ -799,7 +784,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store unwashed in a single layer inside an airtight container lined with a dry paper towel in the fridge.",
     plStorageGuide:
       "Przechowywać nieumyte, ułożone pojedynczą warstwą w szczelnym pojemniku wyłożonym suchym ręcznikiem papierowym w lodówce.",
-    emoji: "🍓",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Strawberry",
     rarity: 1,
   },
@@ -842,7 +826,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Pick out any moldy ones first. Store unwashed in a breathable or vented container in the fridge.",
     plStorageGuide:
       "Najpierw wyrzucić spleśniałe sztuki. Przechowywać nieumyte w wentylowanym lub oddychającym pojemniku w lodówce.",
-    emoji: "🫐",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Blueberry",
     rarity: 1,
   },
@@ -885,7 +868,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Pick out crushed berries. Store unwashed in a shallow container in the fridge. Wash just before eating.",
     plStorageGuide:
       "Usunąć zgniecione owoce. Przechowywać nieumyte w płytkim pojemniku w lodówce. Myć bezpośrednio przed jedzeniem.",
-    emoji: "🫐",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Bilberry",
     rarity: 4,
   },
@@ -907,9 +889,8 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Keep unwashed in their original ventilated bag or a perforated plastic bag in the fridge crisper.",
     plStorageGuide:
       "Trzymać nieumyte w oryginalnej perforowanej torbie z otworami wentylacyjnymi w szufladzie lodówki.",
-    emoji: "🍇",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Grape",
-    rarity: 4,
+    rarity: 1,
   },
 
   // --- Imported Seasonal Fruits ---
@@ -931,7 +912,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Keep whole watermelons at room temperature. Once cut, wrap the exposed flesh tightly with plastic wrap and refrigerate.",
     plStorageGuide:
       "Arbuzy w całości trzymać w temperaturze pokojowej. Po rozkrojeniu szczelnie owinąć odsłonięty miąższ folią i wstawić do lodówki.",
-    emoji: "🍉",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Watermelon",
     rarity: 1,
   },
@@ -953,7 +933,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Ripen at room temperature. Once ripe, store whole in the fridge. Cut melon must be refrigerated in an airtight container.",
     plStorageGuide:
       "Dojrzewać w temp. pokojowej. Gdy dojrzeje, trzymać w całości w lodówce. Przekrojonego melona przechowywać w szczelnym pojemniku w lodówce.",
-    emoji: "🍈",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Melon",
     rarity: 1,
   },
@@ -975,7 +954,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store loose in the crisper drawer of the fridge for maximum freshness (up to a month). Room temp is fine for a few days.",
     plStorageGuide:
       "Najdłuższą świeżość (do miesiąca) zachowa luźno włożona do szuflady lodówki. W temperaturze pokojowej wytrzyma kilka dni.",
-    emoji: "🍊",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Orange_(fruit)",
     rarity: 1,
   },
@@ -997,7 +975,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Keep them loose in the crisper drawer of the fridge to prevent them from drying out quickly.",
     plStorageGuide:
       "Trzymać luźno w szufladzie lodówki, by zapobiec szybkiemu wysychaniu.",
-    emoji: "🍊",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Tangerine",
     rarity: 1,
   },
@@ -1017,7 +994,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Store submerged in water in an airtight container in the fridge to keep them firm and juicy for weeks.",
     plStorageGuide:
       "Przechowywać w całości zalane wodą w szczelnym pojemniku w lodówce. Dzięki temu zachowają jędrność i sok przez wiele tygodni.",
-    emoji: "🍋",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Lemon",
     rarity: 1,
   },
@@ -1061,7 +1037,7 @@ const PRODUCE_BASE_DATA: Produce[] = [
     plStorageGuide:
       "Całe owoce trzymać w szufladzie lodówki. Wyłuskane nasiona należy schować do szczelnego pojemnika.",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Pomegranate",
-    rarity: 1,
+    rarity: 2,
   },
   {
     id: "78",
@@ -1082,7 +1058,7 @@ const PRODUCE_BASE_DATA: Produce[] = [
     plStorageGuide:
       "Zostawić do dojrzenia w temperaturze pokojowej. Odmiany cierpkie jeść dopiero po całkowitym zmięknięciu; dojrzałe owoce przechowywać w lodówce.",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Persimmon",
-    rarity: 1,
+    rarity: 2,
   },
   {
     id: "79",
@@ -1103,7 +1079,7 @@ const PRODUCE_BASE_DATA: Produce[] = [
     plStorageGuide:
       "Ułożyć nieumyte jednowarstwowo na talerzu wyłożonym papierem, przykryć luźno folią spożywczą i wstawić do lodówki.",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Fig",
-    rarity: 2,
+    rarity: 3,
   },
   {
     id: "80",
@@ -1123,7 +1099,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Ripen stem-side down at room temperature. Once ripe and fragrant, store in the fridge crisper.",
     plStorageGuide:
       "Dojrzewać szypułką do dołu w temp. pokojowej. Kiedy będą pachnące i miękkie, przełożyć do lodówki.",
-    emoji: "🍑",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Peach",
     rarity: 1,
   },
@@ -1145,7 +1120,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Leave firm kiwis at room temp to ripen. Once soft, transfer to a plastic bag in the fridge.",
     plStorageGuide:
       "Twarde owoce trzymać w temperaturze pokojowej aż dojrzeją. Gdy zmiękną, przenieść w plastikowej torebce do lodówki.",
-    emoji: "🥝",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Kiwifruit",
     rarity: 1,
   },
@@ -1166,7 +1140,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Ripen at room temperature. Once it yields gently, store whole in the fridge to pause ripening. For cut halves, squeeze lemon juice and wrap tightly in plastic.",
     plStorageGuide:
       "Dojrzewać w temp. pokojowej. Kiedy lekko zmięknie, wstawić do lodówki. Przekrojone połówki skropić cytryną i ciasno owinąć folią.",
-    emoji: "🥑",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Avocado",
     rarity: 1,
   },
@@ -1187,7 +1160,6 @@ const PRODUCE_BASE_DATA: Produce[] = [
       "Ripen at room temperature. Once ripe, move to the fridge to extend its shelf life by a few days.",
     plStorageGuide:
       "Zostawić w temperaturze pokojowej do osiągnięcia dojrzałości. Potem przełożyć do lodówki, by zachować świeżość na kilka dni dłużej.",
-    emoji: "🥭",
     wikipediaUrl: "https://en.wikipedia.org/wiki/Mango",
     rarity: 1,
   },
@@ -1205,6 +1177,7 @@ export const PRODUCE_DATA: Produce[] = PRODUCE_BASE_DATA.map((produce) => {
     ...produce,
     nutritionalInfo: formatNutrition(content.nutrition, "en"),
     plNutritionalInfo: formatNutrition(content.nutrition, "pl"),
+    nutritionItems: getNutritionItems(content.nutrition, content.micronutrients),
     ...(content.nutritionNote && { nutritionNote: content.nutritionNote }),
     recipes: [
       {

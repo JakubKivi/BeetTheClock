@@ -10,6 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@expo-google-fonts/lato": "^0.4.1",
+    "@expo-google-fonts/sansation": "^0.4.0",
     "@expo/vector-icons": "^15.0.3",
     "@react-native-async-storage/async-storage": "2.2.0",
     "@react-native-picker/picker": "2.11.4",
@@ -26,10 +28,11 @@
     "react-native": "0.88.1",
     "react-native-gesture-handler": "~3.3.0",
     "react-native-safe-area-context": "~5.10.1",
-    "react-native-screens": "~4.30.0"
+    "react-native-screens": "~4.30.0",
+    "react-native-svg": "15.16.0"
   },
   "overrides": {
-    "react-test-renderer": "19.1.0"
+    "react-test-renderer": "19.3.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.28.5",
@@ -42,8 +45,7 @@
     "babel-preset-expo": "~58.0.0",
     "jest": "~30.5.2",
     "jest-expo": "~58.0.13",
-    "react-test-renderer": "19.1.0",
-    "ts-jest": "^29.4.6",
+    "react-test-renderer": "19.3.0",
     "typescript": "~6.0.3"
   },
   "jest": {
@@ -51,7 +53,7 @@
     "setupFilesAfterEnv": [
       "<rootDir>/jest.setup.ts"
     ],
-    "preset": "ts-jest",
+    "preset": "jest-expo",
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -63,9 +65,6 @@
     "testMatch": [
       "**/__tests__/**/*.ts?(x)",
       "**/?(*.)+(spec|test).ts?(x)"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|@react-native|expo|@expo)/)"
     ]
   },
   "private": true

@@ -1,5 +1,8 @@
 import { MonthOfYear, Produce, RegionCode } from "../types";
-import { getSeasonality } from "./produceSeasonality";
+import {
+  getSeasonality,
+  SEASON_REFERENCE_DATE,
+} from "./produceSeasonality";
 
 export interface SortedProduceItem {
   item: Produce;
@@ -87,11 +90,10 @@ function getSeasonStatus(
 
 export function sortProduceList(
   produce: Produce[],
-  favorites: string[],
   currentMonth: MonthOfYear,
   region: RegionCode,
 ): SortedProduceItem[] {
-  const today = new Date();
+  const today = SEASON_REFERENCE_DATE;
   const statusOrder: Record<SeasonStatus, number> = {
     new: 0,
     end: 1,
@@ -112,7 +114,6 @@ export function sortProduceList(
 
     return {
       item,
-      isFavorite: favorites.includes(item.id),
       isAvailable: seasonality.months.includes(currentMonth),
       statusBadge,
       daysLeft: seasonStatus.daysLeft,
@@ -124,9 +125,6 @@ export function sortProduceList(
     .sort((a, b) => {
       if (a.isAvailable !== b.isAvailable) {
         return a.isAvailable ? -1 : 1;
-      }
-      if (a.isFavorite !== b.isFavorite) {
-        return a.isFavorite ? -1 : 1;
       }
 
       const statusDiff =

@@ -1,20 +1,7 @@
 import 'react-native-gesture-handler/jestSetup';
 
-// Mock react-native modules
-jest.mock('react-native', () => ({
-  View: 'View',
-  Text: 'Text',
-  Image: 'Image',
-  TouchableOpacity: 'TouchableOpacity',
-  StyleSheet: {
-    create: (styles: any) => styles,
-    flatten: (style: any) => {
-      if (Array.isArray(style)) {
-        return style.reduce((acc, item) => ({ ...acc, ...item }), {});
-      }
-      return style || {};
-    }
-  }
+jest.mock("@expo/vector-icons", () => ({
+  Ionicons: "Ionicons",
 }));
 
 // Mock Expo modules before any imports
@@ -28,6 +15,7 @@ jest.mock('expo-file-system', () => ({
 
 jest.mock('expo-notifications', () => ({
   __esModule: true,
+  setNotificationHandler: jest.fn(),
 }));
 
 jest.mock('expo-image-picker', () => ({

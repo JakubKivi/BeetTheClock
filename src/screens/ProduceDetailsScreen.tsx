@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   View,
-  Text,
   StyleSheet,
   Image,
   TouchableOpacity,
@@ -9,18 +8,20 @@ import {
   Alert,
   Linking,
   Modal,
-  TextInput,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Svg, { Defs, Ellipse, RadialGradient, Stop } from "react-native-svg";
 import { RouteProp, useIsFocused } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Produce, Recipe, RegionCode } from "../types";
 import { formatMonths } from "../utils/utils";
-import { getRarityInfo } from "../constants/produce";
+import { NUTRIENT_INFO } from "../constants/nutrition";
+import type { NutrientKey } from "../constants/nutrition";
 import { useLanguage } from "../contexts/LanguageContext";
 import { i18n } from "../services/i18n";
 import { DEFAULT_REGION, getSeasonality } from "../services/produceSeasonality";
 import { COLORS } from "../constants/theme";
+import { getRarityInfo } from "../constants/produce";
 import { CONTACT_URL } from "../constants/links";
 import {
   addCustomRecipe,
@@ -30,6 +31,10 @@ import {
   saveProduceNote,
   updateCustomRecipe,
 } from "../services/storage";
+import {
+  AppText as Text,
+  AppTextInput as TextInput,
+} from "../components/Typography";
 
 // define the types for route params
 export type RootStackParamList = {
@@ -61,7 +66,42 @@ type Props = {
   navigation: DetailsScreenNavigationProp;
 };
 
-const ICON_SIZE = 120;
+const ICON_SIZE = 204;
+const ICON_FRAME_SIZE = 224;
+const ICON_AURA_SIZE = ICON_SIZE * 1.75;
+const PRODUCE_LOGO = require("../../assets/beet_mini.png");
+
+const NUTRIENT_GROUPS: {
+  id: "energy" | "macros" | "vitamins" | "minerals";
+  nutrients: NutrientKey[];
+  color: string;
+}[] = [
+  { id: "energy", nutrients: ["energy"], color: COLORS.nutritionEnergy },
+  {
+    id: "macros",
+    nutrients: ["fiber", "carbohydrates", "protein", "fat"],
+    color: COLORS.nutritionMacros,
+  },
+  {
+    id: "vitamins",
+    nutrients: ["vitaminA", "vitaminB1", "vitaminB6", "vitaminC", "vitaminK", "folate"],
+    color: COLORS.nutritionVitamins,
+  },
+  {
+    id: "minerals",
+    nutrients: [
+      "calcium",
+      "copper",
+      "iron",
+      "magnesium",
+      "manganese",
+      "phosphorus",
+      "potassium",
+      "selenium",
+    ],
+    color: COLORS.nutritionMinerals,
+  },
+];
 
 const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
   const { language } = useLanguage();
@@ -73,6 +113,8 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
     onResetIcon,
   } = route.params;
   const seasonality = getSeasonality(item, region);
+  const nutritionItems = item.nutritionItems ?? [];
+  const rarityInfo = getRarityInfo(item.rarity);
 
   useEffect(() => {
     navigation.setOptions({
@@ -86,6 +128,8 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
   const [produceNote, setProduceNote] = useState<string | null>(null);
   const [noteDraft, setNoteDraft] = useState("");
   const [showNoteForm, setShowNoteForm] = useState(false);
+  const [selectedNutrient, setSelectedNutrient] =
+    useState<NutrientKey | null>(null);
   const [isSavingNote, setIsSavingNote] = useState(false);
   const [showRecipeForm, setShowRecipeForm] = useState(false);
   const [recipeName, setRecipeName] = useState("");
@@ -315,6 +359,20 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
     }
   };
 
+  const handleOpenNutrientWikipedia = async () => {
+    if (!selectedNutrient) return;
+
+    try {
+      await Linking.openURL(NUTRIENT_INFO[selectedNutrient].wikipediaUrl);
+    } catch (error) {
+      console.warn("Failed to open nutrient Wikipedia page", error);
+      Alert.alert(
+        i18n.t("settings.errorTitle", language),
+        i18n.t("details.nutrientWikipediaError", language),
+      );
+    }
+  };
+
   const handleReportError = async () => {
     try {
       await Linking.openURL(CONTACT_URL);
@@ -332,32 +390,90 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
       style={styles.container}
       contentContainerStyle={styles.contentContainer}
     >
-      <View style={styles.rarityImageRow}>
-        {/* Rarity Circle */}
-        <View style={styles.rarityCircle}>
-          <Text style={styles.rarityCircleEmoji}>
-            {getRarityInfo(item.rarity).emoji}
-          </Text>
-        </View>
-
-        {/* Image Container */}
+      <View style={styles.iconHeader}>
         <View style={styles.iconContainerInRow}>
-          <TouchableOpacity style={styles.iconSlot} testID="details-pick-image">
-            {iconUri ? (
-              <Image source={{ uri: iconUri }} style={styles.iconImage} />
-            ) : item.emoji ? (
-              <Text style={styles.emoji}>{item.emoji}</Text>
-            ) : (
-              <View style={styles.emptyIcon} />
+          <View style={styles.produceImageFrame}>
+            {item.rarity > 1 && (
+              <>
+                <View
+                  testID="details-rarity-glow"
+                  pointerEvents="none"
+                  style={[
+                    styles.rarityGlow,
+                    { shadowColor: rarityInfo.color },
+                  ]}
+                />
+                <Svg
+                  testID="details-rarity-aura"
+                  pointerEvents="none"
+                  width={ICON_AURA_SIZE}
+                  height={ICON_AURA_SIZE}
+                  viewBox="0 0 357 357"
+                  style={styles.rarityAura}
+                >
+                  <Defs>
+                    <RadialGradient
+                      id="detailsRarityAura"
+                      cx="50%"
+                      cy="50%"
+                      rx="50%"
+                      ry="50%"
+                    >
+                      <Stop
+                        offset="0%"
+                        stopColor={rarityInfo.color}
+                        stopOpacity={0.38}
+                      />
+                      <Stop
+                        offset="58%"
+                        stopColor={rarityInfo.color}
+                        stopOpacity={0.2}
+                      />
+                      <Stop
+                        offset="100%"
+                        stopColor={rarityInfo.color}
+                        stopOpacity={0}
+                      />
+                    </RadialGradient>
+                  </Defs>
+                  <Ellipse
+                    cx="178.5"
+                    cy="178.5"
+                    rx="178.5"
+                    ry="178.5"
+                    fill="url(#detailsRarityAura)"
+                  />
+                </Svg>
+              </>
             )}
-          </TouchableOpacity>
+            <View style={styles.iconSlot} testID="details-pick-image">
+              {iconUri ? (
+                <Image
+                  testID="details-produce-image"
+                  source={{ uri: iconUri }}
+                  style={styles.iconImage}
+                />
+              ) : (
+                <Image
+                  testID="details-default-image"
+                  source={PRODUCE_LOGO}
+                  resizeMode="contain"
+                  style={styles.defaultImage}
+                />
+              )}
+            </View>
+          </View>
           {!iconUri && onPickImage && (
             <TouchableOpacity
               testID="details-set-image"
-              style={styles.setImageButton}
+              style={styles.imagePickerButton}
               onPress={handlePick}
             >
-              <Ionicons name="image-outline" size={22} color={COLORS.primary} />
+              <Ionicons
+                name="images-sharp"
+                size={22}
+                color={COLORS.A_primaryDark}
+              />
             </TouchableOpacity>
           )}
 
@@ -367,24 +483,16 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
               onPress={handleReset}
               style={styles.resetIconButton}
             >
-              <Ionicons name="close" size={18} color={COLORS.primary} />
+              <Ionicons name="close" size={18} color={COLORS.A_primaryDark} />
             </TouchableOpacity>
           )}
         </View>
-
-        {/* Rarity Text */}
-        <View style={styles.rarityTextContainer}>
-          <Text
-            style={[
-              styles.rarityText,
-              { color: getRarityInfo(item.rarity).color },
-            ]}
-          >
-            {language === "pl"
-              ? getRarityInfo(item.rarity).plLabel
-              : getRarityInfo(item.rarity).label}
-          </Text>
-        </View>
+        <Text
+          testID="details-rarity"
+          style={[styles.rarityLabel, { color: rarityInfo.color }]}
+        >
+          {(language === "pl" ? rarityInfo.plLabel : rarityInfo.label).toUpperCase()}
+        </Text>
       </View>
 
       {/* availability months and best months */}
@@ -429,11 +537,65 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
           <Text style={styles.guideTitle}>
             {i18n.t("details.nutrition", language)}
           </Text>
-          <Text style={styles.guideText}>
-            {language === "pl"
-              ? item.plNutritionalInfo ?? item.nutritionalInfo
-              : item.nutritionalInfo}
-          </Text>
+          {nutritionItems.length ? (
+            <>
+              <Text style={styles.guideText}>
+                {i18n.t("details.nutritionServing", language)}
+              </Text>
+              {NUTRIENT_GROUPS.map(({ id, nutrients, color }) => {
+                const entries = nutrients.flatMap((nutrientKey) =>
+                  nutritionItems.filter((entry) => entry.nutrient === nutrientKey),
+                );
+
+                if (!entries.length) return null;
+
+                return (
+                  <View
+                    key={id}
+                    testID={`details-nutrition-group-${id}`}
+                    style={styles.nutritionGroup}
+                  >
+                    {entries.map((entry) => {
+                      const nutrient = NUTRIENT_INFO[entry.nutrient];
+                      const label = nutrient.label[language];
+                      const amount =
+                        entry.amount === undefined
+                          ? ""
+                          : ` ${entry.amount.toLocaleString(
+                              language === "pl" ? "pl-PL" : "en-US",
+                              { maximumFractionDigits: 1 },
+                            )} ${entry.unit ?? ""}`;
+
+                      return (
+                        <TouchableOpacity
+                          accessibilityRole="button"
+                          accessibilityLabel={`${label}${amount}`}
+                          key={entry.nutrient}
+                          testID={`details-nutrient-${entry.nutrient}`}
+                          onPress={() => setSelectedNutrient(entry.nutrient)}
+                          style={[
+                            styles.nutrientButton,
+                            { backgroundColor: color, borderColor: color },
+                          ]}
+                        >
+                          <Text style={styles.nutrientText}>
+                            {label}
+                            {amount}
+                          </Text>
+                        </TouchableOpacity>
+                      );
+                    })}
+                  </View>
+                );
+              })}
+            </>
+          ) : (
+            <Text style={styles.guideText}>
+              {language === "pl"
+                ? item.plNutritionalInfo ?? item.nutritionalInfo
+                : item.nutritionalInfo}
+            </Text>
+          )}
           <Text style={styles.sourceText}>
             {i18n.t("details.nutritionSource", language)}
           </Text>
@@ -473,7 +635,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
                       <Ionicons
                         name="create-outline"
                         size={20}
-                        color={COLORS.primary}
+                        color={COLORS.A_primaryDark}
                       />
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -489,7 +651,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
                       <Ionicons
                         name="trash-outline"
                         size={20}
-                        color={COLORS.primary}
+                        color={COLORS.A_primaryDark}
                       />
                     </TouchableOpacity>
                   </View>
@@ -514,19 +676,19 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
           style={styles.addRecipeButton}
           onPress={openNewRecipeForm}
         >
-          <Ionicons name="add-circle-outline" size={22} color={COLORS.primary} />
+          <Ionicons name="add-circle-outline" size={22} color={COLORS.A_primaryDark} />
           <Text style={styles.addRecipeText}>
             {i18n.t("details.addRecipe", language)}
           </Text>
         </TouchableOpacity>
       </View>
 
-      <View style={styles.guideSection}>
-        <View style={styles.produceNoteHeading}>
-          <Text style={styles.guideTitle}>
-            {i18n.t("details.produceNote", language)}
-          </Text>
-          {produceNote ? (
+      {produceNote ? (
+        <View style={styles.guideSection}>
+          <View style={styles.produceNoteHeading}>
+            <Text style={styles.guideTitle}>
+              {i18n.t("details.produceNote", language)}
+            </Text>
             <View style={styles.recipeActions}>
               <TouchableOpacity
                 accessibilityRole="button"
@@ -538,7 +700,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
                 <Ionicons
                   name="create-outline"
                   size={20}
-                  color={COLORS.primary}
+                  color={COLORS.A_primaryDark}
                 />
               </TouchableOpacity>
               <TouchableOpacity
@@ -551,34 +713,32 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
                 <Ionicons
                   name="trash-outline"
                   size={20}
-                  color={COLORS.primary}
+                  color={COLORS.A_primaryDark}
                 />
               </TouchableOpacity>
             </View>
-          ) : null}
-        </View>
-        {produceNote ? (
+          </View>
           <Text testID="details-produce-note" style={styles.guideText}>
             {produceNote}
           </Text>
-        ) : (
-          <TouchableOpacity
-            accessibilityRole="button"
-            testID="details-add-produce-note"
-            onPress={openProduceNoteForm}
-            style={styles.addRecipeButton}
-          >
-            <Ionicons
-              name="add-circle-outline"
-              size={22}
-              color={COLORS.primary}
-            />
-            <Text style={styles.addRecipeText}>
-              {i18n.t("details.addProduceNote", language)}
-            </Text>
-          </TouchableOpacity>
-        )}
-      </View>
+        </View>
+      ) : (
+        <TouchableOpacity
+          accessibilityRole="button"
+          testID="details-add-produce-note"
+          onPress={openProduceNoteForm}
+          style={styles.addRecipeButton}
+        >
+          <Ionicons
+            name="add-circle-outline"
+            size={22}
+            color={COLORS.A_primaryDark}
+          />
+          <Text style={styles.addRecipeText}>
+            {i18n.t("details.addProduceNote", language)}
+          </Text>
+        </TouchableOpacity>
+      )}
 
       <Modal
         visible={showRecipeForm}
@@ -653,7 +813,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
                 <Ionicons
                   name="add-circle-outline"
                   size={20}
-                  color={COLORS.primary}
+                  color={COLORS.A_primaryDark}
                 />
                 <Text style={styles.noteToggleText}>
                   {i18n.t("details.addRecipeNote", language)}
@@ -740,6 +900,55 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
         </View>
       </Modal>
 
+      <Modal
+        visible={selectedNutrient !== null}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setSelectedNutrient(null)}
+      >
+        <View style={styles.modalOverlay}>
+          {selectedNutrient && (
+            <View
+              accessibilityViewIsModal
+              style={styles.nutrientModal}
+              testID="details-nutrient-modal"
+            >
+              <Text accessibilityRole="header" style={styles.modalTitle}>
+                {NUTRIENT_INFO[selectedNutrient].label[language]}
+              </Text>
+              <Text style={styles.guideText}>
+                {NUTRIENT_INFO[selectedNutrient].description[language]}
+              </Text>
+              <TouchableOpacity
+                accessibilityRole="link"
+                testID="details-nutrient-wikipedia"
+                style={styles.nutrientWikipediaButton}
+                onPress={() => void handleOpenNutrientWikipedia()}
+              >
+                <Ionicons
+                  name="open-outline"
+                  size={18}
+                  color={COLORS.A_primaryDark}
+                />
+                <Text style={styles.nutrientWikipediaText}>
+                  {i18n.t("details.nutrientWikipedia", language)}
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                accessibilityRole="button"
+                testID="details-nutrient-close"
+                style={styles.modalCloseButton}
+                onPress={() => setSelectedNutrient(null)}
+              >
+                <Text style={styles.modalCloseButtonText}>
+                  {i18n.t("details.close", language)}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          )}
+        </View>
+      </Modal>
+
       <View style={styles.linkButtonsRow}>
         {item.wikipediaUrl && (
           <TouchableOpacity
@@ -772,34 +981,55 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background },
   contentContainer: { alignItems: "center", padding: 20, paddingBottom: 40 },
   name: { fontSize: 28, fontWeight: "bold", marginBottom: 30 },
-  iconSlot: {
-    width: ICON_SIZE,
-    height: ICON_SIZE,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: COLORS.inputBorder,
-    backgroundColor: "#fafafa",
-  },
-  iconContainer: {
-    position: "relative",
-    marginBottom: 20,
-  },
   iconImage: {
     width: ICON_SIZE,
     height: ICON_SIZE,
-    borderRadius: 12,
+    borderRadius: ICON_SIZE / 2,
+    backgroundColor: COLORS.surface,
   },
-  emptyIcon: {
+  produceImageFrame: {
+    width: ICON_FRAME_SIZE,
+    height: ICON_FRAME_SIZE,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  rarityGlow: {
+    position: "absolute",
     width: ICON_SIZE,
     height: ICON_SIZE,
     borderRadius: ICON_SIZE / 2,
-    borderWidth: 4,
-    borderColor: COLORS.primary,
+    backgroundColor: "transparent",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.55,
+    shadowRadius: 48,
+    elevation: 18,
   },
-  emoji: {
-    fontSize: 60,
+  rarityAura: {
+    position: "absolute",
+    width: ICON_AURA_SIZE,
+    height: ICON_AURA_SIZE,
+    top: (ICON_FRAME_SIZE - ICON_AURA_SIZE) / 2,
+    left: (ICON_FRAME_SIZE - ICON_AURA_SIZE) / 2,
+  },
+  defaultImage: {
+    width: 132,
+    height: 132,
+    zIndex: 1,
+  },
+  rarityLabel: {
+    fontSize: 11,
+    fontWeight: "500",
+    marginTop: 7,
+  },
+  iconSlot: {
+    width: ICON_SIZE,
+    height: ICON_SIZE,
+    borderRadius: ICON_SIZE / 2,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: COLORS.surface,
+    overflow: "hidden",
+    zIndex: 1,
   },
   resetIconButton: {
     position: "absolute",
@@ -825,13 +1055,35 @@ const styles = StyleSheet.create({
   guideTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    color: COLORS.primary,
+    color: COLORS.A_primaryDark,
     marginBottom: 10,
   },
   guideText: {
     fontSize: 14,
     color: COLORS.text,
     lineHeight: 20,
+  },
+  nutritionGroup: {
+    alignItems: "flex-start",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginTop: 6,
+    width: "100%",
+  },
+  nutrientButton: {
+    backgroundColor: COLORS.white,
+    borderColor: COLORS.border,
+    borderRadius: 16,
+    borderWidth: 1,
+    marginBottom: 8,
+    marginRight: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
+  nutrientText: {
+    color: COLORS.A_primaryDark,
+    fontSize: 14,
+    textDecorationLine: "underline",
   },
   recipe: {
     marginBottom: 12,
@@ -874,7 +1126,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   addRecipeText: {
-    color: COLORS.primary,
+    color: COLORS.A_primaryDark,
     fontWeight: "600",
     marginLeft: 8,
   },
@@ -890,6 +1142,26 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 20,
     width: "100%",
+  },
+  nutrientModal: {
+    backgroundColor: COLORS.white,
+    borderRadius: 12,
+    maxWidth: 420,
+    padding: 20,
+    width: "100%",
+  },
+  nutrientWikipediaButton: {
+    alignItems: "center",
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    marginTop: 18,
+    paddingVertical: 8,
+  },
+  nutrientWikipediaText: {
+    color: COLORS.A_primaryDark,
+    fontWeight: "600",
+    marginLeft: 6,
+    textDecorationLine: "underline",
   },
   modalTitle: {
     color: COLORS.text,
@@ -923,13 +1195,13 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
   },
   noteToggleText: {
-    color: COLORS.primary,
+    color: COLORS.A_primaryDark,
     fontWeight: "600",
     marginLeft: 6,
   },
   saveRecipeButton: {
     alignItems: "center",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.A_primaryDark,
     borderRadius: 8,
     padding: 12,
   },
@@ -957,49 +1229,31 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   monthsLabel: {
-    fontSize: 14,
+    fontSize: 15,
+    fontWeight: "500",
     color: COLORS.text,
   },
   bestMonthsLabel: {
-    fontSize: 14,
-    color: COLORS.primary,
+    fontSize: 10,
+    color: COLORS.A_darkGrey,
     marginTop: 4,
   },
-  rarityImageRow: {
+  iconHeader: {
     width: "100%",
-    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
     marginBottom: 20,
   },
-  rarityCircle: {
-    width: "33.3%",
-    aspectRatio: 1,
-    borderRadius: 999,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  rarityCircleEmoji: {
-    fontSize: 40,
-  },
   iconContainerInRow: {
-    width: "33.3%",
+    position: "relative",
+    width: ICON_FRAME_SIZE,
+    height: ICON_FRAME_SIZE,
     alignItems: "center",
     justifyContent: "center",
   },
-  rarityTextContainer: {
-    width: "33.3%",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  rarityText: {
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  setImageButton: {
+  imagePickerButton: {
     position: "absolute",
-    right: -6,
-    bottom: -6,
+    right: 3,
+    bottom: 3,
     width: 36,
     height: 36,
     borderRadius: 18,
@@ -1023,7 +1277,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.A_primaryDark,
     paddingVertical: 10,
     paddingHorizontal: 8,
     borderRadius: 8,

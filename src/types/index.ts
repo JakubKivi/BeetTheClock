@@ -1,3 +1,5 @@
+import type { NutritionEntry } from "../constants/nutrition";
+
 export const REGIONS = {
   POLAND: "PL",
 } as const;
@@ -34,7 +36,6 @@ export interface Produce {
   name: string;
   plName: string;
   seasonalityByRegion: Partial<Record<RegionCode, RegionalSeasonality>>;
-  emoji?: string;
   selectionGuide?: string;
   plSelectionGuide?: string;
   storageGuide?: string;
@@ -42,6 +43,7 @@ export interface Produce {
   wikipediaUrl?: string;
   nutritionalInfo?: string;
   plNutritionalInfo?: string;
+  nutritionItems?: NutritionEntry[];
   nutritionNote?: NutritionNote;
   recipes?: Recipe[];
   rarity: 1 | 2 | 3 | 4 | 5;

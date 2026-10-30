@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Produce, RegionCode } from "../types";
 import { formatMonths } from "../utils/utils";
@@ -8,8 +8,9 @@ import { i18n } from "../services/i18n";
 import { useLanguage } from "../contexts/LanguageContext";
 import { DEFAULT_REGION, getSeasonality } from "../services/produceSeasonality";
 import { COLORS } from "../constants/theme";
+import { AppText as Text } from "./Typography";
 
-const APP_LOGO = require("../../assets/icon.png");
+const PRODUCE_LOGO = require("../../assets/beet_mini.png");
 
 type Props = {
   item: Produce;
@@ -41,73 +42,96 @@ const ProduceCard: React.FC<Props> = ({
 
   const monthsLabel = formatMonths(seasonality?.months, language);
   const bestMonthsLabel = seasonality?.bestMonths?.length
-    ? `${i18n.t("details.best", language)}: ${formatMonths(
+    ? `${i18n.t("details.best", language).toUpperCase()}: ${formatMonths(
         seasonality.bestMonths,
         language,
       )}`
     : null;
+  const statusColor =
+    statusBadge === "new"
+      ? COLORS.seasonNew
+      : statusBadge === "end"
+        ? COLORS.seasonEnd
+        : undefined;
+  const rarityGlow =
+    item.rarity > 1
+      ? {
+          color: getRarityInfo(item.rarity).color,
+        }
+      : undefined;
 
   return (
-    <View style={styles.wrapper}>
-      {statusBadge && (
-        <View style={styles.badgeContainer}>
-          <Text style={styles.badge}>
-            {i18n.t(
-              statusBadge === "new" ? "season.new" : "season.end",
-              language,
-            )}
-          </Text>
-        </View>
-      )}
-
+    <View
+      testID="produce-card-wrapper"
+      style={[styles.wrapper, statusBadge && styles.badgedWrapper]}
+    >
       <TouchableOpacity
         testID="card-press"
         activeOpacity={0.9}
         onPress={onCardPress}
-        style={[styles.card, !isAvailable && styles.unavailableCard]}
+        style={[
+          styles.card,
+          statusBadge === "new" && styles.newCard,
+          statusBadge === "end" && styles.endCard,
+        ]}
       >
         <View style={styles.leftContainer}>
-          <View style={styles.iconContainer}>
+          <View testID="produce-icon-container" style={styles.iconContainer}>
+            {rarityGlow && (
+              <View
+                testID="rarity-glow"
+                pointerEvents="none"
+                style={[
+                  styles.rarityGlow,
+                  {
+                    shadowColor: rarityGlow.color,
+                  },
+                ]}
+              />
+            )}
             <View style={styles.iconSlot}>
               {iconUri ? (
                 <Image
+                  testID="produce-image"
                   source={{ uri: iconUri }}
-                  style={[styles.iconImage, !isAvailable && styles.greyedOut]}
+                  style={styles.iconImage}
                 />
               ) : (
                 <Image
                   testID="produce-default-logo"
-                  source={APP_LOGO}
+                  source={PRODUCE_LOGO}
                   resizeMode="contain"
-                  style={[
-                    styles.defaultLogo,
-                    !isAvailable && styles.greyedOut,
-                  ]}
+                  style={styles.defaultLogo}
                 />
               )}
             </View>
-
-            <View style={styles.rarityBadge}>
-              <Text style={styles.rarityBadgeEmoji}>
-                {getRarityInfo(item.rarity).emoji}
-              </Text>
-            </View>
           </View>
 
-          <View style={styles.textContainer}>
-            <Text style={[styles.name, !isAvailable && styles.greyedOutText]}>
+          <View testID="produce-text-container" style={styles.textContainer}>
+            <Text
+              testID="produce-name"
+              numberOfLines={1}
+              adjustsFontSizeToFit
+              minimumFontScale={0.75}
+              style={[styles.name, !isAvailable && styles.unavailableText]}
+            >
               {language === "pl" ? item.plName : item.name}
             </Text>
             <Text
-              style={[styles.category, !isAvailable && styles.greyedOutText]}
+              testID="produce-category"
+              style={[
+                styles.category,
+                !isAvailable && styles.unavailableText,
+              ]}
             >
               {monthsLabel}
             </Text>
             {bestMonthsLabel && (
               <Text
+                testID="best-months-label"
                 style={[
                   styles.bestMonths,
-                  !isAvailable && styles.greyedOutText,
+                  !isAvailable && styles.unavailableText,
                 ]}
               >
                 {bestMonthsLabel}
@@ -126,7 +150,7 @@ const ProduceCard: React.FC<Props> = ({
               <Ionicons
                 name="share-social-outline"
                 size={20}
-                color={isAvailable ? COLORS.primary : COLORS.disabled}
+                color={COLORS.A_primaryDark}
               />
             </TouchableOpacity>
           )}
@@ -137,13 +161,29 @@ const ProduceCard: React.FC<Props> = ({
             style={styles.iconButton}
           >
             <Ionicons
+              testID="favorite-icon"
               name={isFavorite ? "heart" : "heart-outline"}
               size={20}
-              color={isAvailable ? COLORS.primary : COLORS.disabled}
+              color="#6B3255"
             />
           </TouchableOpacity>
         </View>
       </TouchableOpacity>
+
+      {statusBadge && (
+        <View
+          testID="season-badge"
+          pointerEvents="none"
+          style={[styles.badgeContainer, { backgroundColor: statusColor }]}
+        >
+          <Text style={styles.badge}>
+            {i18n.t(
+              statusBadge === "new" ? "season.new" : "season.end",
+              language,
+            )}
+          </Text>
+        </View>
+      )}
     </View>
   );
 };
@@ -151,23 +191,31 @@ const ProduceCard: React.FC<Props> = ({
 const styles = StyleSheet.create({
   // Wrapper prevents absolute children from being clipped by TouchableOpacity
   wrapper: {
-    marginVertical: 8,
+    marginVertical: 3,
     position: "relative",
+    overflow: "visible",
+  },
+  badgedWrapper: {
+    zIndex: 10,
+    elevation: 10,
   },
   card: {
-    backgroundColor: COLORS.surface,
+    backgroundColor: COLORS.homeCard,
     padding: 10,
-    borderRadius: 6,
+    borderRadius: 10,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    borderWidth: 1,
-    borderColor: COLORS.border,
+    borderWidth: 0.3,
+    borderColor: COLORS.A_Grey,
   },
-  unavailableCard: {
-    backgroundColor: COLORS.mutedSurface,
-    borderColor: "#ddd",
-    opacity: 0.6,
+  newCard: {
+    borderColor: COLORS.seasonNew,
+    borderWidth: 2,
+  },
+  endCard: {
+    borderColor: COLORS.seasonEnd,
+    borderWidth: 2,
   },
   leftContainer: {
     flexDirection: "row",
@@ -180,40 +228,45 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  rarityGlow: {
+    position: "absolute",
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: "transparent",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.55,
+    shadowRadius: 10,
+    elevation: 6,
+  },
   iconImage: {
     width: ICON_SIZE,
     height: ICON_SIZE,
-    borderRadius: 6,
-  },
-  greyedOut: {
-    opacity: 0.5,
-  },
-  greyedOutText: {
-    opacity: 0.5,
+    borderRadius: ICON_SIZE / 2,
   },
   iconContainer: {
     position: "relative",
-    width: ICON_SIZE + 10,
-    height: ICON_SIZE + 10,
-    marginRight: 12,
+    width: ICON_SIZE,
+    height: ICON_SIZE,
     justifyContent: "center",
     alignItems: "center",
   },
   badgeContainer: {
     position: "absolute",
-    top: 5,
-    left: 3,
-    backgroundColor: COLORS.primary,
+    top: -8,
+    left: 1,
+    backgroundColor: COLORS.A_primaryDark,
     paddingHorizontal: 6,
     paddingVertical: 3,
-    borderRadius: 3,
+    borderRadius: 8,
     zIndex: 2,
     elevation: 3,
     transform: [{ rotate: "-20deg" }],
   },
   badge: {
     color: COLORS.white,
-    fontSize: 8,
+    fontSize: 10,
+    lineHeight: 13,
     fontWeight: "bold",
   },
   defaultLogo: {
@@ -221,43 +274,36 @@ const styles = StyleSheet.create({
     height: 32,
   },
   textContainer: {
-    marginLeft: 12,
+    flex: 1,
+    minWidth: 0,
+    marginLeft: 10,
   },
   name: {
     fontSize: 18,
     fontWeight: "600",
+    lineHeight: 20,
+    marginBottom: 3,
   },
-  rarityBadge: {
-    position: "absolute",
-    bottom: -5,
-    right: -5,
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    alignItems: "center",
-    justifyContent: "center",
-    zIndex: 15,
-  },
-  rarityBadgeEmoji: {
-    fontSize: 14,
+  unavailableText: {
+    color: COLORS.A_darkGrey,
   },
   category: {
     fontSize: 10,
     color: COLORS.secondaryText,
+    lineHeight: 12,
   },
   bestMonths: {
     fontSize: 9,
-    color: COLORS.mutedText,
-    marginTop: 2,
-    fontStyle: "italic",
+    color: COLORS.A_darkGrey,
+    lineHeight: 11,
   },
   rightButtons: {
     flexDirection: "row",
     alignItems: "center",
+    flexShrink: 0,
   },
   iconButton: {
     padding: 6,
-    marginRight: 8,
     borderRadius: 6,
   },
 });

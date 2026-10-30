@@ -4,6 +4,16 @@ import AppNavigator from "./src/navigation/AppNavigator";
 import { getSettings } from "./src/services/storage";
 import { syncScheduledNotifications } from "./src/services/notifications";
 import { useLanguage } from "./src/contexts/LanguageContext";
+import { useFonts } from "expo-font";
+import {
+  Lato_300Light,
+  Lato_400Regular,
+  Lato_700Bold,
+} from "@expo-google-fonts/lato";
+import {
+  Sansation_400Regular,
+  Sansation_700Bold,
+} from "@expo-google-fonts/sansation";
 
 function NotificationSetup() {
   const { language } = useLanguage();
@@ -27,6 +37,17 @@ function NotificationSetup() {
 }
 
 export default function App() {
+  const [fontsLoaded, fontError] = useFonts({
+    Lato_300Light,
+    Lato_400Regular,
+    Lato_700Bold,
+    Sansation_400Regular,
+    Sansation_700Bold,
+  });
+
+  if (fontError) throw fontError;
+  if (!fontsLoaded) return null;
+
   return (
     <LanguageProvider>
       <NotificationSetup />

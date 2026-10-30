@@ -14,8 +14,9 @@ const translations: Translations = {
     "app.produceDetails": "Produce Details",
 
     // HomeScreen
-    "home.inSeason": "In Season Now:",
-    "home.outOfSeason": "Out of season:",
+    "home.inSeason": "Available",
+    "home.outOfSeason": "Unavailable",
+    "home.favoritesOnly": "Show favorites only",
     "home.searchPlaceholder": "Search produce...",
     "home.errorMessage": "Failed to load Home screen.",
     "home.smsError": "SMS not available",
@@ -74,6 +75,10 @@ const translations: Translations = {
     "details.nutrition": "Nutritional information",
     "details.nutritionSource":
       "Approximate raw values per 100 g; source: USDA FoodData Central. Values vary by variety.",
+    "details.nutritionServing": "Per 100 g raw:",
+    "details.nutrientWikipedia": "Read more on Wikipedia",
+    "details.nutrientWikipediaError": "Could not open the Wikipedia page.",
+    "details.close": "Close",
     "details.recipes": "Recipes",
     "details.addRecipe": "Add a recipe",
     "details.recipeName": "Recipe name",
@@ -113,8 +118,9 @@ const translations: Translations = {
     "app.produceDetails": "Szczegóły produktu",
 
     // HomeScreen
-    "home.inSeason": "Dostępne teraz:",
-    "home.outOfSeason": "Niedostępne:",
+    "home.inSeason": "Dostępne",
+    "home.outOfSeason": "Niedostępne",
+    "home.favoritesOnly": "Pokaż tylko ulubione",
     "home.searchPlaceholder": "Szukaj produktu...",
     "home.errorMessage": "Nie udało się załadować ekranu domowego.",
     "home.smsError": "SMS jest niedostępny",
@@ -173,6 +179,10 @@ const translations: Translations = {
     "details.nutrition": "Wartości odżywcze",
     "details.nutritionSource":
       "Przybliżone wartości dla 100 g surowego produktu; źródło: USDA FoodData Central. Wartości zależą od odmiany.",
+    "details.nutritionServing": "Na 100 g surowego produktu:",
+    "details.nutrientWikipedia": "Więcej w Wikipedii",
+    "details.nutrientWikipediaError": "Nie udało się otworzyć strony Wikipedii.",
+    "details.close": "Zamknij",
     "details.recipes": "Przepisy",
     "details.addRecipe": "Dodaj przepis",
     "details.recipeName": "Nazwa przepisu",
@@ -196,9 +206,9 @@ const translations: Translations = {
     "details.deleteProduceNote": "Usuń notatkę",
     "details.confirmDeleteProduceNote": "Usunąć tę notatkę?",
     "details.recipeRequired": "Podaj nazwę przepisu i sposób przygotowania.",
-    "season.new": "Nowy",
+    "season.new": "Nowe",
     "season.end": "Koniec",
-    "months.yearRound": "Całoroczny",
+    "months.yearRound": "Całoroczne",
 
     // Notifications
     "notifications.title": "BeetTheClock!",

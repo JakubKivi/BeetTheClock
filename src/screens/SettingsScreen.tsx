@@ -6,8 +6,6 @@ import {
   ScrollView,
   StyleSheet,
   Switch,
-  Text,
-  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -32,6 +30,10 @@ import {
 } from "../services/notifications";
 import { useLanguage } from "../contexts/LanguageContext";
 import { CONTACT_URL } from "../constants/links";
+import {
+  AppText as Text,
+  AppTextInput as TextInput,
+} from "../components/Typography";
 
 const LANGUAGE_OPTIONS: { label: string; value: Language }[] = [
   { label: "English", value: "en" },
@@ -210,7 +212,7 @@ const SettingsScreen = () => {
             onValueChange={(value) =>
               updateSetting("notificationsEnabled", value)
             }
-            trackColor={{ true: COLORS.primary }}
+            trackColor={{ true: COLORS.A_primaryDark }}
           />
         </View>
 
@@ -224,7 +226,7 @@ const SettingsScreen = () => {
               updateSetting("notificationsOnlyFavorites", value)
             }
             disabled={!settings.notificationsEnabled}
-            trackColor={{ true: COLORS.primary }}
+            trackColor={{ true: COLORS.A_primaryDark }}
           />
         </View>
 
@@ -446,7 +448,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   sectionTitle: {
-    color: COLORS.primary,
+    color: COLORS.A_primaryDark,
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 12,
@@ -500,7 +502,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   selectedFrequencyOption: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.A_primaryDark,
   },
   frequencyOptionText: {
     color: COLORS.text,
@@ -522,7 +524,7 @@ const styles = StyleSheet.create({
   },
   saveButton: {
     alignItems: "center",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.A_primaryDark,
     borderRadius: 8,
     marginTop: 16,
     padding: 12,
@@ -536,7 +538,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.A_primaryDark,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 8,
@@ -578,7 +580,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   selectedOption: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.A_primaryDark,
   },
   modalOptionText: {
     fontSize: 16,

@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import {
   View,
-  Text,
   Image,
   SectionList,
   StyleSheet,
   Alert,
   TouchableOpacity,
-  TextInput,
 } from "react-native";
 import {
   useNavigation,
@@ -20,7 +18,7 @@ import * as ImagePicker from "expo-image-picker";
 
 import { PRODUCE_DATA } from "../constants/produce";
 import { MonthOfYear, Produce, RegionCode } from "../types";
-import { COLORS } from "../constants/theme";
+import { COLORS, FONTS } from "../constants/theme";
 import {
   DEFAULT_SETTINGS,
   getSettings,
@@ -36,17 +34,23 @@ import {
   DEFAULT_REGION,
   getSeasonality,
   isAvailableInRegion,
+  SEASON_REFERENCE_DATE,
 } from "../services/produceSeasonality";
 import { syncScheduledNotifications } from "../services/notifications";
+import {
+  AppText as Text,
+  AppTextInput as TextInput,
+} from "../components/Typography";
 
 const HomeScreen = () => {
   const { language } = useLanguage();
-  const currentMonth = new Date().getMonth() as MonthOfYear;
+  const currentMonth = SEASON_REFERENCE_DATE.getMonth() as MonthOfYear;
   const [currentRegion, setCurrentRegion] = useState<RegionCode>(DEFAULT_REGION);
   const [targetNumber, setTargetNumber] = useState("");
   const [icons, setIcons] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -118,18 +122,20 @@ const HomeScreen = () => {
             onPress={closeSearch}
             style={styles.headerAction}
           >
-            <Ionicons name="close" size={24} color={COLORS.white} />
+            <Ionicons name="close-outline" size={25} color={COLORS.white} />
           </TouchableOpacity>
         ),
       });
     } else {
       navigation.setOptions({
         headerLeft: () => (
-          <Image
-            source={require("../../assets/adaptive-icon.png")}
-            style={styles.logo}
-            resizeMode="contain"
-          />
+          <View>
+            <Image
+              source={require("../../assets/beet_outline.png")}
+              style={styles.logo}
+              resizeMode="contain"
+            />
+          </View>
         ),
         headerTitle: "Beet The Clock",
         headerRight: () => (
@@ -138,13 +144,13 @@ const HomeScreen = () => {
               onPress={() => setIsSearching(true)}
               style={styles.headerAction}
             >
-              <Ionicons name="search" size={24} color={COLORS.white} />
+              <Ionicons name="search-outline" size={25} color={COLORS.white} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate("Settings")}
               style={styles.headerAction}
             >
-              <Ionicons name="settings-sharp" size={24} color={COLORS.white} />
+              <Ionicons name="settings-outline" size={25} color={COLORS.white} />
             </TouchableOpacity>
           </View>
         ),
@@ -175,17 +181,21 @@ const HomeScreen = () => {
 
   const sortedAndBadgedProduce = sortProduceList(
     seasonalProduce,
-    favorites,
     currentMonth,
     currentRegion,
   );
 
   const sortedUnavailableProduce = sortProduceList(
     unavailableProduce,
-    favorites,
     currentMonth,
     currentRegion,
   );
+  const visibleSeasonalProduce = favoritesOnly
+    ? sortedAndBadgedProduce.filter(({ item }) => favorites.includes(item.id))
+    : sortedAndBadgedProduce;
+  const visibleUnavailableProduce = favoritesOnly
+    ? sortedUnavailableProduce.filter(({ item }) => favorites.includes(item.id))
+    : sortedUnavailableProduce;
 
   const handleShare = async (produce: Produce) => {
     const isAvailable = await SMS.isAvailableAsync();
@@ -252,12 +262,12 @@ const HomeScreen = () => {
   const sections = [
     {
       title: i18n.t("home.inSeason"),
-      data: sortedAndBadgedProduce,
+      data: visibleSeasonalProduce,
       isAvailable: true,
     },
     {
       title: i18n.t("home.outOfSeason"),
-      data: sortedUnavailableProduce,
+      data: visibleUnavailableProduce,
       isAvailable: false,
     },
   ];
@@ -298,7 +308,6 @@ const HomeScreen = () => {
       };
       await saveSettings(updatedSettings);
       setFavorites(favoriteItems);
-      await handleRefresh();
       if (updatedSettings.notificationsEnabled) {
         try {
           await syncScheduledNotifications(updatedSettings, language);
@@ -321,12 +330,35 @@ const HomeScreen = () => {
       <SectionList
         sections={sections}
         keyExtractor={(item) => item.item.id}
+        removeClippedSubviews={false}
         stickySectionHeadersEnabled
         refreshing={isRefreshing}
         onRefresh={handleRefresh}
         renderSectionHeader={({ section }) => (
-          <View style={styles.sectionHeaderContainer}>
+          <View
+            testID="home-section-header"
+            style={styles.sectionHeaderContainer}
+          >
             <Text style={styles.sectionTitle}>{section.title}</Text>
+            {section.isAvailable && (
+              <TouchableOpacity
+                testID="favorites-filter"
+                accessibilityRole="switch"
+                accessibilityLabel={i18n.t("home.favoritesOnly", language)}
+                accessibilityState={{ checked: favoritesOnly }}
+                onPress={() => setFavoritesOnly((enabled) => !enabled)}
+                style={[
+                  styles.favoritesFilter,
+                  favoritesOnly && styles.favoritesFilterActive,
+                ]}
+              >
+                <Ionicons
+                  name={favoritesOnly ? "heart" : "heart-outline"}
+                  size={19}
+                  color={favoritesOnly ? COLORS.white : COLORS.A_primaryDark}
+                />
+              </TouchableOpacity>
+            )}
           </View>
         )}
         renderItem={({ item, section }) => {
@@ -355,23 +387,39 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: COLORS.background,
+    paddingHorizontal: 20,
+    paddingTop: 8,
+    paddingBottom: 20,
+    backgroundColor: COLORS.homeBackground,
   },
-
   sectionHeaderContainer: {
-    backgroundColor: COLORS.background,
-    paddingTop: 20,
-    paddingBottom: 10,
+    backgroundColor: COLORS.homeBackground,
+    paddingTop: 6,
+    paddingBottom: 8,
     marginLeft: -20,
     marginRight: -20,
     paddingLeft: 20,
     paddingRight: 20,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   sectionTitle: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold",
-    color: COLORS.primary,
+    color: COLORS.A_primaryDark,
+  },
+  favoritesFilter: {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    borderWidth: 1.5,
+    borderColor: COLORS.A_primaryDark,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  favoritesFilterActive: {
+    backgroundColor: COLORS.A_primaryDark,
   },
   center: {
     flex: 1,
@@ -389,15 +437,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     color: COLORS.white,
     fontSize: 16,
+    fontFamily: FONTS.navigation,
   },
   headerAction: {
-    marginRight: 10,
+    width: 44,
+    height: 44,
+    alignItems: "center",
+    justifyContent: "center",
   },
   logo: {
-    width: 50,
-    height: 50,
-    marginLeft: 15,
-    tintColor: COLORS.white,
+    width: 42,
+    height: 42,
+    marginLeft: 12,
+    marginBottom: 4,
   },
   headerActions: {
     flexDirection: "row",

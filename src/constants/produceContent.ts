@@ -1,12 +1,52 @@
+import { NutrientKey, NutritionEntry } from "./nutrition";
+
+type Vitamin = "A" | "B1" | "B6" | "C" | "K" | "folate";
+type Mineral =
+  | "calcium"
+  | "copper"
+  | "iron"
+  | "magnesium"
+  | "manganese"
+  | "phosphorus"
+  | "potassium"
+  | "selenium";
+
+type Micronutrients = {
+  vitamins: Vitamin[];
+  minerals: Mineral[];
+};
+
 type ProduceContent = {
   nutrition: [kcal: number, carbohydrate: number, fiber: number, protein: number];
+  micronutrients: Micronutrients;
   nutritionNote?: { en: string; pl: string };
   recipe: { en: string; pl: string };
+};
+
+const VITAMIN_KEYS: Record<Vitamin, NutrientKey> = {
+  A: "vitaminA",
+  B1: "vitaminB1",
+  B6: "vitaminB6",
+  C: "vitaminC",
+  K: "vitaminK",
+  folate: "folate",
+};
+
+const MINERAL_KEYS: Record<Mineral, NutrientKey> = {
+  calcium: "calcium",
+  copper: "copper",
+  iron: "iron",
+  magnesium: "magnesium",
+  manganese: "manganese",
+  phosphorus: "phosphorus",
+  potassium: "potassium",
+  selenium: "selenium",
 };
 
 export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   "1": {
     nutrition: [43, 9.6, 2.8, 1.6],
+    micronutrients: { vitamins: ["folate"], minerals: ["manganese", "potassium"] },
     recipe: {
       en: "Roast beet wedges with olive oil, thyme, and a little vinegar until tender.",
       pl: "Upiecz cząstki buraka z oliwą, tymiankiem i odrobiną octu do miękkości.",
@@ -14,6 +54,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "4": {
     nutrition: [41, 9.6, 2.8, 0.9],
+    micronutrients: { vitamins: ["A", "K"], minerals: ["potassium"] },
     recipe: {
       en: "Simmer sliced carrots with vegetable stock, then blend with ginger for soup.",
       pl: "Gotuj pokrojoną marchew w bulionie warzywnym, a następnie zmiksuj z imbirem na zupę.",
@@ -21,6 +62,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "34": {
     nutrition: [42, 9.2, 1.8, 1.5],
+    micronutrients: { vitamins: ["C", "K"], minerals: ["potassium", "phosphorus"] },
     recipe: {
       en: "Roast celeriac cubes with oil and rosemary; serve with a lemon dressing.",
       pl: "Upiecz kostki selera z olejem i rozmarynem; podawaj z sosem cytrynowym.",
@@ -28,6 +70,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "35": {
     nutrition: [55, 12.3, 4.3, 2.3],
+    micronutrients: { vitamins: ["C", "folate"], minerals: ["potassium"] },
     recipe: {
       en: "Grate parsley root into a slaw with apple, lemon juice, and yogurt.",
       pl: "Zetrzyj pietruszkę korzeniową do surówki z jabłkiem, sokiem z cytryny i jogurtem.",
@@ -35,6 +78,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "5": {
     nutrition: [77, 17.5, 2.2, 2.0],
+    micronutrients: { vitamins: ["C", "B6"], minerals: ["potassium"] },
     recipe: {
       en: "Boil potatoes until tender and toss with dill, spring onion, and yogurt.",
       pl: "Ugotuj ziemniaki do miękkości i wymieszaj z koperkiem, dymką i jogurtem.",
@@ -42,6 +86,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "45": {
     nutrition: [75, 18.0, 4.9, 1.2],
+    micronutrients: { vitamins: ["C", "folate"], minerals: ["potassium"] },
     recipe: {
       en: "Roast parsnip batons with oil and cumin until golden.",
       pl: "Upiecz słupki pasternaku z olejem i kuminem, aż się zarumienią.",
@@ -49,6 +94,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "49": {
     nutrition: [73, 17.4, 1.6, 2.0],
+    micronutrients: { vitamins: ["B1"], minerals: ["iron", "potassium"] },
     recipe: {
       en: "Roast scrubbed Jerusalem artichokes with garlic and olive oil until soft.",
       pl: "Upiecz wyszorowane topinambury z czosnkiem i oliwą do miękkości.",
@@ -56,6 +102,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "51": {
     nutrition: [48, 11.3, 3.3, 1.2],
+    micronutrients: { vitamins: ["C"], minerals: ["calcium", "potassium"] },
     recipe: {
       en: "Mix freshly grated horseradish with yogurt, lemon, and a pinch of salt for a sauce.",
       pl: "Wymieszaj świeżo starty chrzan z jogurtem, cytryną i szczyptą soli na sos.",
@@ -63,6 +110,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "8": {
     nutrition: [16, 3.4, 1.6, 0.7],
+    micronutrients: { vitamins: ["C", "folate"], minerals: ["potassium"] },
     recipe: {
       en: "Thinly slice radishes and toss with butter, lemon, and chopped herbs.",
       pl: "Pokrój rzodkiewki w cienkie plasterki i wymieszaj z masłem, cytryną i ziołami.",
@@ -70,6 +118,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "20": {
     nutrition: [40, 9.3, 1.7, 1.1],
+    micronutrients: { vitamins: ["C", "B6"], minerals: ["potassium"] },
     recipe: {
       en: "Cook sliced onions slowly until golden and serve on toast with thyme.",
       pl: "Duś pokrojoną cebulę powoli do zarumienienia i podawaj na grzance z tymiankiem.",
@@ -77,6 +126,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "20b": {
     nutrition: [149, 33.1, 2.1, 6.4],
+    micronutrients: { vitamins: ["C", "B6"], minerals: ["manganese", "selenium"] },
     recipe: {
       en: "Roast a whole garlic bulb until soft; squeeze the cloves into mashed potatoes.",
       pl: "Upiecz całą główkę czosnku do miękkości; wyciśnięte ząbki dodaj do purée ziemniaczanego.",
@@ -84,6 +134,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "36": {
     nutrition: [61, 14.2, 1.8, 1.5],
+    micronutrients: { vitamins: ["A", "K", "folate"], minerals: ["manganese"] },
     recipe: {
       en: "Simmer sliced leek and potato in stock, then blend into a smooth soup.",
       pl: "Gotuj pokrojony por i ziemniaki w bulionie, a następnie zmiksuj na krem.",
@@ -91,6 +142,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "52": {
     nutrition: [32, 7.3, 2.6, 1.8],
+    micronutrients: { vitamins: ["C", "K", "folate"], minerals: ["potassium"] },
     recipe: {
       en: "Stir-fry chopped spring onions briefly and fold into scrambled eggs.",
       pl: "Krótko podsmaż posiekaną dymkę i dodaj do jajecznicy.",
@@ -98,6 +150,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "15": {
     nutrition: [25, 5.8, 2.5, 1.3],
+    micronutrients: { vitamins: ["C", "K", "folate"], minerals: ["potassium"] },
     recipe: {
       en: "Finely shred cabbage and dress with grated carrot, yogurt, and vinegar.",
       pl: "Drobno poszatkuj kapustę i połącz z tartą marchewką, jogurtem i octem.",
@@ -105,6 +158,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "16": {
     nutrition: [43, 9.0, 3.8, 3.4],
+    micronutrients: { vitamins: ["C", "K", "folate"], minerals: ["potassium"] },
     recipe: {
       en: "Roast halved Brussels sprouts with oil until browned; finish with lemon.",
       pl: "Upiecz przekrojoną brukselkę z olejem do zarumienienia; skrop cytryną.",
@@ -112,6 +166,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "9": {
     nutrition: [25, 5.0, 2.0, 1.9],
+    micronutrients: { vitamins: ["C", "K", "folate"], minerals: ["potassium"] },
     recipe: {
       en: "Steam cauliflower florets and serve with a sauce of yogurt, garlic, and herbs.",
       pl: "Ugotuj różyczki kalafiora na parze i podawaj z sosem z jogurtu, czosnku i ziół.",
@@ -119,6 +174,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "10": {
     nutrition: [34, 6.6, 2.6, 2.8],
+    micronutrients: { vitamins: ["C", "K", "folate"], minerals: ["potassium"] },
     recipe: {
       en: "Steam broccoli until just tender and toss with lemon and toasted almonds.",
       pl: "Ugotuj brokuł na parze do miękkości i wymieszaj z cytryną oraz prażonymi migdałami.",
@@ -126,6 +182,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "37": {
     nutrition: [27, 6.2, 3.6, 1.7],
+    micronutrients: { vitamins: ["C", "B6"], minerals: ["potassium"] },
     recipe: {
       en: "Cut kohlrabi into sticks and serve raw with a yogurt and dill dip.",
       pl: "Pokrój kalarepę w słupki i podawaj na surowo z dipem jogurtowo-koperkowym.",
@@ -133,6 +190,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "17": {
     nutrition: [49, 8.8, 3.6, 4.3],
+    micronutrients: { vitamins: ["A", "C", "K"], minerals: ["manganese"] },
     recipe: {
       en: "Massage chopped kale with olive oil and lemon, then top with seeds.",
       pl: "Wymieszaj posiekany jarmuż z oliwą i cytryną, a następnie posyp pestkami.",
@@ -140,6 +198,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "18": {
     nutrition: [23, 3.6, 2.2, 2.9],
+    micronutrients: { vitamins: ["A", "K", "folate"], minerals: ["iron", "magnesium"] },
     recipe: {
       en: "Wilt spinach in a pan with garlic and serve as a warm side dish.",
       pl: "Podduś szpinak na patelni z czosnkiem i podawaj jako ciepły dodatek.",
@@ -147,6 +206,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "2": {
     nutrition: [20, 3.9, 2.1, 2.2],
+    micronutrients: { vitamins: ["K", "folate"], minerals: ["copper"] },
     recipe: {
       en: "Roast asparagus spears with olive oil; finish with lemon zest.",
       pl: "Upiecz szparagi z oliwą; na koniec dodaj skórkę z cytryny.",
@@ -154,6 +214,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "19": {
     nutrition: [21, 4.5, 1.8, 0.9],
+    micronutrients: { vitamins: ["K"], minerals: ["calcium", "potassium"] },
     recipe: {
       en: "Stew chopped rhubarb with a little sugar and orange zest; serve over yogurt.",
       pl: "Duś rabarbar z niewielką ilością cukru i skórką pomarańczową; podawaj z jogurtem.",
@@ -161,6 +222,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "6": {
     nutrition: [18, 3.9, 1.2, 0.9],
+    micronutrients: { vitamins: ["C", "K"], minerals: ["potassium"] },
     recipe: {
       en: "Bake tomato halves with olive oil, garlic, and herbs until soft.",
       pl: "Piecz połówki pomidorów z oliwą, czosnkiem i ziołami do miękkości.",
@@ -168,6 +230,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "7": {
     nutrition: [15, 3.6, 0.5, 0.7],
+    micronutrients: { vitamins: ["K", "C"], minerals: ["potassium"] },
     recipe: {
       en: "Dice cucumber and mix with yogurt, dill, and a little lemon juice.",
       pl: "Pokrój ogórka w kostkę i wymieszaj z jogurtem, koperkiem i odrobiną soku z cytryny.",
@@ -175,6 +238,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "12": {
     nutrition: [31, 6.0, 2.1, 1.0],
+    micronutrients: { vitamins: ["C", "A", "B6"], minerals: ["potassium"] },
     recipe: {
       en: "Fill pepper halves with cooked rice, herbs, and beans, then bake until tender.",
       pl: "Napełnij połówki papryki ugotowanym ryżem, ziołami i fasolą, a następnie upiecz do miękkości.",
@@ -182,6 +246,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "39": {
     nutrition: [25, 5.9, 3.0, 1.0],
+    micronutrients: { vitamins: ["B6", "folate"], minerals: ["manganese", "potassium"] },
     recipe: {
       en: "Roast eggplant slices with olive oil and garlic; serve with tomato sauce.",
       pl: "Upiecz plastry bakłażana z oliwą i czosnkiem; podawaj z sosem pomidorowym.",
@@ -189,6 +254,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "11": {
     nutrition: [17, 3.1, 1.0, 1.2],
+    micronutrients: { vitamins: ["C", "B6"], minerals: ["potassium"] },
     recipe: {
       en: "Grate zucchini into fritters with egg, flour, and herbs; pan-fry until golden.",
       pl: "Zetrzyj cukinię na placki z jajkiem, mąką i ziołami; smaż do zarumienienia.",
@@ -196,6 +262,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "3": {
     nutrition: [26, 6.5, 0.5, 1.0],
+    micronutrients: { vitamins: ["A", "C"], minerals: ["potassium"] },
     recipe: {
       en: "Roast pumpkin cubes with oil and spices, then blend with stock into soup.",
       pl: "Upiecz kostki dyni z olejem i przyprawami, a następnie zmiksuj z bulionem na zupę.",
@@ -203,6 +270,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "70": {
     nutrition: [86, 19.0, 2.7, 3.3],
+    micronutrients: { vitamins: ["B1", "folate"], minerals: ["magnesium", "phosphorus"] },
     recipe: {
       en: "Boil or grill corn on the cob and serve with butter and chopped herbs.",
       pl: "Ugotuj lub ugrilluj kolby kukurydzy i podawaj z masłem oraz posiekanymi ziołami.",
@@ -210,6 +278,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "13": {
     nutrition: [88, 17.6, 7.5, 7.9],
+    micronutrients: { vitamins: ["folate", "B1"], minerals: ["iron", "manganese"] },
     recipe: {
       en: "Boil shelled broad beans until tender and toss with mint and lemon.",
       pl: "Ugotuj wyłuskany bób do miękkości i wymieszaj z miętą oraz cytryną.",
@@ -217,6 +286,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "14": {
     nutrition: [31, 7.0, 2.7, 1.8],
+    micronutrients: { vitamins: ["C", "K", "folate"], minerals: ["manganese"] },
     recipe: {
       en: "Steam green beans until crisp-tender and toss with garlic and olive oil.",
       pl: "Ugotuj fasolkę szparagową na parze al dente i wymieszaj z czosnkiem oraz oliwą.",
@@ -224,6 +294,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "22": {
     nutrition: [52, 13.8, 2.4, 0.3],
+    micronutrients: { vitamins: ["C", "K"], minerals: ["potassium"] },
     recipe: {
       en: "Bake sliced apples with cinnamon and oats until soft for a simple crumble.",
       pl: "Zapiekaj plasterki jabłek z cynamonem i płatkami owsianymi do miękkości.",
@@ -231,6 +302,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "23": {
     nutrition: [57, 15.2, 3.1, 0.4],
+    micronutrients: { vitamins: ["C", "K"], minerals: ["potassium"] },
     recipe: {
       en: "Poach pear halves gently with cinnamon and serve with plain yogurt.",
       pl: "Delikatnie ugotuj połówki gruszki z cynamonem i podawaj z jogurtem naturalnym.",
@@ -238,6 +310,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "24": {
     nutrition: [46, 11.4, 1.4, 0.7],
+    micronutrients: { vitamins: ["C", "K"], minerals: ["potassium"] },
     recipe: {
       en: "Simmer chopped plums with cinnamon into a quick compote.",
       pl: "Gotuj pokrojone śliwki z cynamonem, aż powstanie szybki kompot.",
@@ -245,6 +318,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "25": {
     nutrition: [63, 16.0, 2.1, 1.1],
+    micronutrients: { vitamins: ["C"], minerals: ["potassium"] },
     recipe: {
       en: "Pit sweet cherries and fold into oatmeal with a spoonful of yogurt.",
       pl: "Wydryluj czereśnie i dodaj do owsianki z łyżką jogurtu.",
@@ -252,6 +326,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "21": {
     nutrition: [32, 7.7, 2.0, 0.7],
+    micronutrients: { vitamins: ["C", "folate"], minerals: ["manganese"] },
     recipe: {
       en: "Slice strawberries and mix with oats, yogurt, and a little lemon zest.",
       pl: "Pokrój truskawki i wymieszaj z płatkami owsianymi, jogurtem i skórką z cytryny.",
@@ -259,6 +334,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "27": {
     nutrition: [52, 11.9, 6.5, 1.2],
+    micronutrients: { vitamins: ["C"], minerals: ["manganese"] },
     recipe: {
       en: "Mash raspberries with lemon juice and spoon over pancakes or yogurt.",
       pl: "Rozgnieć maliny z sokiem z cytryny i podawaj do naleśników lub jogurtu.",
@@ -266,6 +342,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "28": {
     nutrition: [57, 14.5, 2.4, 0.7],
+    micronutrients: { vitamins: ["C", "K"], minerals: ["manganese"] },
     recipe: {
       en: "Warm blueberries briefly with lemon to make a topping for porridge.",
       pl: "Krótko podgrzej borówki z cytryną i podawaj jako dodatek do owsianki.",
@@ -273,6 +350,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "63": {
     nutrition: [32, 7.7, 2.0, 0.7],
+    micronutrients: { vitamins: ["C", "folate"], minerals: ["manganese"] },
     nutritionNote: {
       en: "Reference values are for cultivated strawberries; wild strawberries may differ.",
       pl: "Wartości referencyjne dotyczą truskawek uprawnych; poziomki mogą się różnić.",
@@ -284,6 +362,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "41": {
     nutrition: [57, 14.5, 2.4, 0.7],
+    micronutrients: { vitamins: ["C", "K"], minerals: ["manganese"] },
     nutritionNote: {
       en: "Reference values are for cultivated blueberries; bilberries may differ.",
       pl: "Wartości referencyjne dotyczą borówek uprawnych; jagody leśne mogą się różnić.",
@@ -295,6 +374,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "32": {
     nutrition: [69, 18.1, 0.9, 0.7],
+    micronutrients: { vitamins: ["K", "C"], minerals: ["copper"] },
     recipe: {
       en: "Roast halved grapes with thyme and serve with soft cheese and bread.",
       pl: "Upiecz przekrojone winogrona z tymiankiem i podawaj z miękkim serem oraz pieczywem.",
@@ -302,6 +382,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "71": {
     nutrition: [30, 7.6, 0.4, 0.6],
+    micronutrients: { vitamins: ["A", "C"], minerals: ["potassium"] },
     recipe: {
       en: "Dice watermelon and toss with mint and lime for a chilled fruit salad.",
       pl: "Pokrój arbuza w kostkę i wymieszaj z miętą oraz limonką na sałatkę owocową.",
@@ -309,6 +390,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "72": {
     nutrition: [34, 8.2, 0.9, 0.8],
+    micronutrients: { vitamins: ["A", "C"], minerals: ["potassium"] },
     nutritionNote: {
       en: "Reference values are for cantaloupe; honeydew melon differs.",
       pl: "Wartości referencyjne dotyczą kantalupy; melon miodowy ma inne wartości.",
@@ -320,6 +402,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "73": {
     nutrition: [47, 11.8, 2.4, 0.9],
+    micronutrients: { vitamins: ["C", "folate"], minerals: ["potassium"] },
     recipe: {
       en: "Add orange segments to a salad with fennel and a light olive-oil dressing.",
       pl: "Dodaj cząstki pomarańczy do sałatki z koprem włoskim i lekkim sosem oliwnym.",
@@ -327,6 +410,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "74": {
     nutrition: [53, 13.3, 1.8, 0.8],
+    micronutrients: { vitamins: ["C", "A"], minerals: ["potassium"] },
     nutritionNote: {
       en: "Reference values are for tangerines; clementines may differ.",
       pl: "Wartości referencyjne dotyczą mandarynek; klementynki mogą się różnić.",
@@ -338,6 +422,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "75": {
     nutrition: [29, 9.3, 2.8, 1.1],
+    micronutrients: { vitamins: ["C"], minerals: ["potassium"] },
     recipe: {
       en: "Mix lemon juice and zest with olive oil and herbs for a bright dressing.",
       pl: "Wymieszaj sok i skórkę z cytryny z oliwą oraz ziołami na wyrazisty sos.",
@@ -345,6 +430,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "76": {
     nutrition: [42, 10.7, 1.6, 0.8],
+    micronutrients: { vitamins: ["C", "A"], minerals: ["potassium"] },
     recipe: {
       en: "Broil grapefruit halves briefly and serve warm with a little honey.",
       pl: "Krótko zapiecz połówki grejpfruta i podawaj na ciepło z odrobiną miodu.",
@@ -352,6 +438,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "77": {
     nutrition: [83, 18.7, 4.0, 1.7],
+    micronutrients: { vitamins: ["C", "K"], minerals: ["potassium"] },
     recipe: {
       en: "Scatter pomegranate seeds over roasted vegetables and a yogurt dressing.",
       pl: "Posyp pieczone warzywa pestkami granatu i polej sosem jogurtowym.",
@@ -359,6 +446,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "78": {
     nutrition: [70, 18.6, 3.6, 0.6],
+    micronutrients: { vitamins: ["A", "C"], minerals: ["manganese"] },
     recipe: {
       en: "Slice ripe persimmon and serve with yogurt, toasted nuts, and cinnamon.",
       pl: "Pokrój dojrzałą persymonę i podawaj z jogurtem, prażonymi orzechami i cynamonem.",
@@ -366,6 +454,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "79": {
     nutrition: [74, 19.2, 2.9, 0.8],
+    micronutrients: { vitamins: ["K"], minerals: ["calcium", "potassium"] },
     recipe: {
       en: "Bake halved figs with a little honey and serve with soft cheese.",
       pl: "Upiecz połówki fig z odrobiną miodu i podawaj z miękkim serem.",
@@ -373,6 +462,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "80": {
     nutrition: [39, 9.5, 1.5, 0.9],
+    micronutrients: { vitamins: ["A", "C"], minerals: ["potassium"] },
     nutritionNote: {
       en: "Reference values are for peaches; nectarines may differ.",
       pl: "Wartości referencyjne dotyczą brzoskwiń; nektarynki mogą się różnić.",
@@ -384,6 +474,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "81": {
     nutrition: [61, 14.7, 3.0, 1.1],
+    micronutrients: { vitamins: ["C", "K"], minerals: ["potassium"] },
     recipe: {
       en: "Slice kiwi over porridge or yogurt and add a handful of oats.",
       pl: "Pokrój kiwi na owsiankę lub jogurt i dodaj garść płatków owsianych.",
@@ -391,6 +482,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "82": {
     nutrition: [160, 8.5, 6.7, 2.0],
+    micronutrients: { vitamins: ["K", "folate"], minerals: ["potassium", "magnesium"] },
     recipe: {
       en: "Mash avocado with lime, chopped tomato, and a pinch of salt for a quick spread.",
       pl: "Rozgnieć awokado z limonką, posiekanym pomidorem i szczyptą soli na szybką pastę.",
@@ -398,6 +490,7 @@ export const PRODUCE_CONTENT: Record<string, ProduceContent> = {
   },
   "83": {
     nutrition: [60, 15.0, 1.6, 0.8],
+    micronutrients: { vitamins: ["C", "A", "folate"], minerals: ["potassium"] },
     recipe: {
       en: "Blend mango with plain yogurt and lime for a simple chilled smoothie.",
       pl: "Zblenduj mango z jogurtem naturalnym i limonką na prosty, schłodzony koktajl.",
@@ -417,4 +510,23 @@ export const formatNutrition = (
   return language === "pl"
     ? `Na 100 g surowego produktu: ${formatNumber(kcal)} kcal; węglowodany ${formatNumber(carbohydrate)} g; błonnik ${formatNumber(fiber)} g; białko ${formatNumber(protein)} g.`
     : `Per 100 g raw: ${formatNumber(kcal)} kcal; carbohydrates ${formatNumber(carbohydrate)} g; fiber ${formatNumber(fiber)} g; protein ${formatNumber(protein)} g.`;
+};
+
+export const getNutritionItems = (
+  nutrition: ProduceContent["nutrition"],
+  micronutrients: Micronutrients,
+): NutritionEntry[] => {
+  const [kcal, carbohydrate, fiber, protein] = nutrition;
+  return [
+    { nutrient: "energy", amount: kcal, unit: "kcal" },
+    { nutrient: "carbohydrates", amount: carbohydrate, unit: "g" },
+    { nutrient: "fiber", amount: fiber, unit: "g" },
+    { nutrient: "protein", amount: protein, unit: "g" },
+    ...micronutrients.vitamins.map((vitamin) => ({
+      nutrient: VITAMIN_KEYS[vitamin],
+    })),
+    ...micronutrients.minerals.map((mineral) => ({
+      nutrient: MINERAL_KEYS[mineral],
+    })),
+  ];
 };

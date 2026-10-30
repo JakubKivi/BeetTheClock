@@ -1,7 +1,7 @@
 # 🕒 BeetTheClock - Seasonal Produce Tracker
 
 <p align="center">
-  <img src="./assets/icon.png" width="200" alt="BeetTheClock Logo">
+  <img src="./assets/beet.png" width="200" alt="BeetTheClock Logo">
 </p>
 
 ## Overview
@@ -13,6 +13,7 @@ BeetTheClock is a React Native/Expo (TypeScript) app for tracking seasonal produ
 - **Mainly:** See what's currently in season this month.
 - **Favorites**
 - **Custom images:** Replace the default app logo on a produce card with an image from the gallery. Items even have rarity levels – 'Gotta catch them all' xd.
+- **Shelf availability:** Rarity estimates how hard fresh produce is to find in Polish shops; higher levels mean harder to find.
 - **Smart buying & Storage:** Get tips on what to look out for when buying and how to properly store your produce.
 - **Languages & Region:** Available in English and Polish. Seasonality estimates currently cover Poland only.
 - **Notifications:** Choose monthly, weekly, or daily seasonal reminders, optionally limited to favorites.

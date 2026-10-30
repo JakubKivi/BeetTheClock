@@ -8,7 +8,7 @@ import ProduceDetailsScreen from "../screens/ProduceDetailsScreen";
 import { RootStackParamList } from "../screens/ProduceDetailsScreen";
 import { useLanguage } from "../contexts/LanguageContext";
 import { i18n } from "../services/i18n";
-import { COLORS } from "../constants/theme";
+import { COLORS, FONTS } from "../constants/theme";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -24,8 +24,14 @@ const AppNavigator = () => {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerStyle: { backgroundColor: COLORS.primary },
+          headerStyle: { backgroundColor: COLORS.A_primaryDark },
           headerTintColor: COLORS.white,
+          headerTitleAlign: "left",
+          headerTitleStyle: {
+            fontFamily: FONTS.navigationBold,
+            fontSize: 20,
+            fontWeight: "700",
+          },
         }}
       >
         <Stack.Screen
