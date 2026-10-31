@@ -22,14 +22,13 @@ obejmuje Polskę, a interfejs jest dostępny po polsku i angielsku.
 - **Poradniki:** sprawdź, jak wybierać i przechowywać produkty, oraz poznaj ich
   wartości odżywcze i przepisy.
 - **Własne notatki i przepisy:** dodawaj je do poszczególnych produktów.
-- **Powiadomienia:** ustaw przypomnienia miesięczne, cotygodniowe lub codzienne,
-  także tylko o ulubionych produktach.
+- **Powiadomienia:** ustaw opcjonalne przypomnienia miesięczne, cotygodniowe lub codzienne.
 - **Dodatkowe języki i regiony:** importuj tłumaczenia oraz dane sezonowe.
 
 ## Sezonowość
 
 Miesiące sezonu szacują dostępność świeżych produktów w polskich sklepach,
-uwzględniając import, uprawy szklarniowe i krajowe zapasy. `bestMonths` oznacza
+uwzględniając import, uprawy szklarniowe i krajowe zapasy. Aplikacja oznacza także
 szacowany szczyt krajowych zbiorów albo — dla produktów dostępnych wyłącznie
 z importu — przybliżony szczyt sezonu w regionach eksportujących. Szacunki nie
 gwarantują pochodzenia ani dostępności produktu w konkretnym sklepie.
