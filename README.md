@@ -1,82 +1,63 @@
 # Beet The Clock
 
 <p align="center">
-  <img src="./assets/beet.png" width="160" alt="Beet The Clock logo">
+  <img src="./assets/beet_outline.png" width="160" alt="Beet The Clock logo">
 </p>
 
-Beet The Clock is a mobile guide to seasonal fruit and vegetables. Browse what
-is available for the selected region, learn how to choose and store produce,
-and keep useful recipes and notes together.
+<p align="center">
+  <a href="./README.md"><img src="https://img.shields.io/badge/English-401B32?style=for-the-badge" alt="English"></a>
+  <a href="./README_PL.md"><img src="https://img.shields.io/badge/Polski-47502B?style=for-the-badge" alt="Polski"></a>
+</p>
 
-The app is built with React Native, Expo, and TypeScript. It currently includes
-English and Polish interface translations and a starter data pack for Poland.
+Beet The Clock is a mobile guide to seasonal fruit and vegetables. Check what's
+in season, save favorites, and get practical information about choosing and
+storing produce.
+
+Built with React Native, Expo, and TypeScript. The starter data covers Poland;
+the interface is available in English and Polish.
 
 ## Features
 
-### Browse seasonal produce
+- **Seasonal produce:** Browse what's available in the selected region.
+- **Product guides:** Find buying and storage tips, nutrition information, and
+  recipes.
+- **Personal notes and recipes:** Add your own notes and recipes to products.
+- **Reminders:** Get monthly, weekly, or daily notifications, optionally for
+  favorites only.
+- **More languages and regions:** Import language translations and regional
+  produce data.
 
-- See produce grouped into **Available** and **Unavailable** for the selected
-  region and the app's reference month.
-- Search the produce list by name and filter it to favorites.
-- View seasonal and peak-season months when opening a product.
-- Share a seasonal pick through SMS.
-
-### Product details
-
-- Read buying and storage tips where available.
-- Browse approximate nutrition information and starter recipes when provided
-  by the regional data.
-- Add, edit, and delete your own recipes and product notes. These are saved
-  with the app's local settings.
-
-### Reminders and settings
-
-- Choose English or Polish, or import additional app-language files.
-- Select a region or import regional data and translations.
-- Schedule local seasonal reminders monthly, weekly, or daily, choose a time,
-  and optionally limit reminders to favorites.
-
-## Seasonality and nutrition
+## Seasonality
 
 Seasonality months estimate fresh retail availability in Poland, including
-imports, greenhouse crops, and stored domestic produce. When available,
-`bestMonths` indicates the domestic fresh-harvest peak or, for import-only
-produce, a broad peak in exporter regions. These are estimates, not guarantees
-of origin or availability in a particular shop; harvests and retail supply vary
-by year.
+imports, greenhouse crops, and stored domestic produce. `bestMonths` indicates
+the estimated domestic fresh-harvest peak or, for import-only produce, a broad
+peak in exporter regions. These estimates do not guarantee product origin or
+availability in a particular shop.
 
-The estimates are informed by a
-[Polish produce seasonality calendar](https://piknikofresh.pl/kalendarz-sezonowosci-warzyw-i-owocow/),
-[Statistics Poland agriculture data](https://stat.gov.pl/en/topics/agriculture-forestry/agriculture/),
+The estimates draw on [Statistics Poland agriculture data](https://stat.gov.pl/en/topics/agriculture-forestry/agriculture/)
 and [Eurostat Comext trade data](https://ec.europa.eu/eurostat/web/international-trade-in-goods/database).
-Product-by-origin monthly import flows have not been analyzed, so trade and
-harvest data cannot confirm a product's origin or availability in a specific
-shop.
+Monthly import flows by product and origin have not been analyzed.
 
 Nutrition values are approximate raw-food references per 100 g from USDA
 FoodData Central where available. Values vary by variety.
 
-## Data packs
+## Data format
 
-The [`data/`](./data) folder contains the bundled starter data. On first launch,
-the app copies it into its private app storage and loads it automatically.
-Additional JSON files can be imported from **Settings**; adding data this way
-does not require rebuilding the app.
-
-The data directory uses this layout:
+The `data/` directory contains example language and regional JSON files:
 
 ```text
 locales/
-  en.json                 # App interface strings and language name
+  en.json                 # App interface translations
   pl.json
 regions/
-  PL.json                 # Region code and language-neutral product data
+  PL.json                 # Region code and product data
   PL/
     en.json               # Region and product translations
     pl.json
 ```
 
-App-language files contain a `name` and a `translations` object:
+An app-language file has a `name` and a `translations` object:
 
 ```json
 {
@@ -87,38 +68,65 @@ App-language files contain a `name` and a `translations` object:
 }
 ```
 
-A regional data file contains a region `code` and a `produce` array. Each
-product needs an `id`, a `rarity` from 1 to 5, and `seasonality.months` using
-zero-based month numbers (`0` = January, `11` = December). `bestMonths`,
+A region file has a `code` and a `produce` array. Each product requires an
+`id`, `rarity` (an integer from 1 to 5), and `seasonality.months` (zero-based:
+`0` is January and `11` is December). `bestMonths`, `wikipediaUrl`,
 `nutritionItems`, and `defaultRecipeIds` are optional.
 
-Regional translation files contain a `name` and translations keyed by product
-ID. Product translations can include a name, buying and storage guides,
-nutrition text, and recipe names and instructions.
+For example:
 
-To extend the data:
+```json
+{
+  "code": "PL",
+  "produce": [
+    {
+      "id": "beetroot",
+      "rarity": 1,
+      "seasonality": {
+        "months": [8, 9, 10, 11],
+        "bestMonths": [8, 9, 10, 11]
+      },
+      "nutritionItems": [
+        { "nutrient": "energy", "amount": 43, "unit": "kcal" }
+      ],
+      "defaultRecipeIds": ["roasted-beetroot"]
+    }
+  ]
+}
+```
 
-1. **Add a language:** import an app-language file such as
-   `locales/de.json`, plus matching translation files for the regions you want
-   to support.
-2. **Add products:** add product entries to a region file and translations for
-   those product IDs under `regions/<code>/<language>.json`.
-3. **Add a region:** add `regions/<code>.json` and any regional translation
-   files under `regions/<code>/`.
+Regional translation files have a `name` and a `produce` object keyed by
+product ID. Each product can have a translated `name`, `selectionGuide`,
+`storageGuide`, `nutritionalInfo`, `nutritionNote`, and `recipes`. Recipe
+entries have a `name` and `instructions`.
 
-Use the **+** button beside **Language** or **Region** in Settings to import
-files. Import app-language files beside Language. Beside Region, import a
-region data file and its translations together, or import translations for
-the currently selected region. Multiple JSON files can be selected at once.
-The [starter data files](https://github.com/JakubKivi/BeetTheClock/tree/main/data)
-can be used as examples.
+```json
+{
+  "name": "Poland",
+  "produce": {
+    "beetroot": {
+      "name": "Beetroot",
+      "selectionGuide": "Choose firm roots with smooth skin.",
+      "storageGuide": "Keep unwashed in the fridge.",
+      "recipes": {
+        "roasted-beetroot": {
+          "name": "Roasted beetroot",
+          "instructions": "Roast until tender."
+        }
+      }
+    }
+  }
+}
+```
+
+See the [example data files](https://github.com/JakubKivi/BeetTheClock/tree/main/data)
+for complete examples.
 
 ## Download
 
 1. Open the [latest GitHub release](https://github.com/JakubKivi/BeetTheClock/releases).
-2. Download its `.apk` file.
-3. Install it on an Android device. Android may ask you to allow installation
-   from unknown sources.
+2. Download the `.apk` file and install it on an Android device. Android may
+   ask you to allow installation from unknown sources.
 
 ## Run from source
 
@@ -131,13 +139,9 @@ npm install
 npx expo start
 ```
 
-To run the test suite:
-
-```sh
-npm test
-```
+Run tests with `npm test`.
 
 ## Contributing
 
-Contributions are welcome, especially additional regional seasonality data,
-nutrition information, recipes, and translations.
+Contributions are welcome, especially additional regional seasonality data and
+translations.

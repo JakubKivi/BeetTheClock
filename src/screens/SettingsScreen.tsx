@@ -31,7 +31,11 @@ import {
 } from "../services/notifications";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useAppData } from "../contexts/DataContext";
-import { CONTACT_URL, DATA_FILES_URL } from "../constants/links";
+import {
+  CONTACT_URL,
+  README_EN_URL,
+  README_PL_URL,
+} from "../constants/links";
 import {
   AppText as Text,
   AppTextInput as TextInput,
@@ -244,14 +248,14 @@ const SettingsScreen = () => {
     }
   };
 
-  const handleOpenDataFiles = async () => {
+  const handleOpenReadme = async () => {
     try {
-      await Linking.openURL(DATA_FILES_URL);
+      await Linking.openURL(language === "pl" ? README_PL_URL : README_EN_URL);
     } catch (error) {
-      console.warn("Failed to open JSON examples on GitHub", error);
+      console.warn("Failed to open the README on GitHub", error);
       Alert.alert(
         i18n.t("settings.errorTitle", language),
-        i18n.t("settings.openGithubError", language),
+        i18n.t("settings.openReadmeError", language),
       );
     }
   };
@@ -631,7 +635,7 @@ const SettingsScreen = () => {
               <TouchableOpacity
                 accessibilityRole="link"
                 style={styles.githubButton}
-                onPress={() => void handleOpenDataFiles()}
+                onPress={() => void handleOpenReadme()}
               >
                 <MaterialIcons
                   name="open-in-new"
@@ -639,7 +643,7 @@ const SettingsScreen = () => {
                   color={themeColors.primary[25]}
                 />
                 <Text style={styles.githubButtonText}>
-                  {i18n.t("settings.viewDataFilesOnGithub", language)}
+                  {i18n.t("settings.viewReadmeOnGithub", language)}
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
