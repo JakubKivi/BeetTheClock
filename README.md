@@ -1,5 +1,9 @@
 # Beet The Clock
 
+<p align="center">
+  <img src="./assets/beet.png" width="160" alt="Beet The Clock logo">
+</p>
+
 Beet The Clock is a mobile guide to seasonal fruit and vegetables. Browse what
 is available for the selected region, learn how to choose and store produce,
 and keep useful recipes and notes together.
