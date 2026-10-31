@@ -22,15 +22,14 @@ the interface is available in English and Polish.
 - **Product guides:** Find buying and storage tips, nutrition information, and
   recipes.
 - **Personal notes and recipes:** Add your own notes and recipes to products.
-- **Reminders:** Get monthly, weekly, or daily notifications, optionally for
-  favorites only.
+- **Reminders:** Get optionall monthly, weekly, or daily notifications.
 - **More languages and regions:** Import language translations and regional
   produce data.
 
 ## Seasonality
 
 Seasonality months estimate fresh retail availability in Poland, including
-imports, greenhouse crops, and stored domestic produce. `bestMonths` indicates
+imports, greenhouse crops, and stored domestic produce. The app also indicates
 the estimated domestic fresh-harvest peak or, for import-only produce, a broad
 peak in exporter regions. These estimates do not guarantee product origin or
 availability in a particular shop.
