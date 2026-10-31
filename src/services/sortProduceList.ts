@@ -1,15 +1,13 @@
 import { MonthOfYear, Produce, RegionCode } from "../types";
-import {
-  getSeasonality,
-  SEASON_REFERENCE_DATE,
-} from "./produceSeasonality";
+import { getSeasonality } from "./produceSeasonality";
 
 export interface SortedProduceItem {
   item: Produce;
-  statusBadge: "new" | "end" | null;
+  statusBadge: "new" | "end" | "best" | null;
 }
 
 type SeasonStatus = "new" | "end" | "normal";
+type StatusBadge = SortedProduceItem["statusBadge"];
 
 function getSeasonGroups(months: MonthOfYear[]): MonthOfYear[][] {
   const sorted = [...new Set(months)].sort((a, b) => a - b);
@@ -33,59 +31,38 @@ function getSeasonGroups(months: MonthOfYear[]): MonthOfYear[][] {
   return groups;
 }
 
-function getDaysUntilNextSeasonEnd(
-  seasonGroups: MonthOfYear[][],
-  currentMonth: MonthOfYear,
-  today: Date,
-): number {
-  const todayUtc = Date.UTC(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate(),
-  );
-  const daysUntilEnds = seasonGroups.map((group) => {
-    const endMonth = group[group.length - 1];
-    const endYear =
-      endMonth < currentMonth ? today.getFullYear() + 1 : today.getFullYear();
-    const seasonEnd = new Date(endYear, endMonth + 1, 0);
-    const seasonEndUtc = Date.UTC(
-      seasonEnd.getFullYear(),
-      seasonEnd.getMonth(),
-      seasonEnd.getDate(),
-    );
-    return Math.max(
-      0,
-      Math.round((seasonEndUtc - todayUtc) / (24 * 60 * 60 * 1000)),
-    );
-  });
-
-  return Math.min(...daysUntilEnds);
-}
-
 function getSeasonStatus(
   months: MonthOfYear[],
   currentMonth: MonthOfYear,
-  today: Date,
-): { status: SeasonStatus; daysLeft: number } {
+): SeasonStatus {
   const seasonGroups = getSeasonGroups(months);
   if (seasonGroups.length === 1 && seasonGroups[0].length === 12) {
-    return { status: "normal", daysLeft: Number.MAX_SAFE_INTEGER };
+    return "normal";
   }
 
   const currentSeason = seasonGroups.find((group) =>
     group.includes(currentMonth),
   );
   if (currentSeason?.[0] === currentMonth) {
-    return { status: "new", daysLeft: 0 };
+    return "new";
   }
   if (currentSeason?.[currentSeason.length - 1] === currentMonth) {
-    return { status: "end", daysLeft: 0 };
+    return "end";
   }
 
-  return {
-    status: "normal",
-    daysLeft: getDaysUntilNextSeasonEnd(seasonGroups, currentMonth, today),
-  };
+  return "normal";
+}
+
+function shuffle<T>(items: T[]): T[] {
+  const shuffled = [...items];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [
+      shuffled[swapIndex],
+      shuffled[index],
+    ];
+  }
+  return shuffled;
 }
 
 export function sortProduceList(
@@ -93,43 +70,53 @@ export function sortProduceList(
   currentMonth: MonthOfYear,
   region: RegionCode,
 ): SortedProduceItem[] {
-  const today = SEASON_REFERENCE_DATE;
-  const statusOrder: Record<SeasonStatus, number> = {
-    new: 0,
-    end: 1,
-    normal: 2,
-  };
-
   const processedItems = produce.flatMap((item) => {
     const seasonality = getSeasonality(item, region);
     if (!seasonality?.months.length) return [];
 
-    const seasonStatus = getSeasonStatus(
-      seasonality.months,
-      currentMonth,
-      today,
-    );
-    const statusBadge =
-      seasonStatus.status === "normal" ? null : seasonStatus.status;
+    const seasonStatus = getSeasonStatus(seasonality.months, currentMonth);
+    const isYearRound = new Set(seasonality.months).size === 12;
+    const isFirstBestMonth =
+      isYearRound &&
+      seasonality.bestMonths?.includes(currentMonth) === true &&
+      !seasonality.bestMonths.includes(
+        ((currentMonth + 11) % 12) as MonthOfYear,
+      );
+    const statusBadge: StatusBadge =
+      seasonStatus === "normal"
+        ? isFirstBestMonth
+          ? "best"
+          : null
+        : seasonStatus;
 
     return {
       item,
       isAvailable: seasonality.months.includes(currentMonth),
       statusBadge,
-      daysLeft: seasonStatus.daysLeft,
-      seasonStatus: seasonStatus.status,
+      seasonStatus,
     };
   });
 
-  return processedItems
-    .sort((a, b) => {
-      if (a.isAvailable !== b.isAvailable) {
-        return a.isAvailable ? -1 : 1;
-      }
+  const availableItems = processedItems.filter((item) => item.isAvailable);
+  const unavailableItems = processedItems.filter((item) => !item.isAvailable);
+  const sortedItems: typeof processedItems = [];
 
-      const statusDiff =
-        statusOrder[a.seasonStatus] - statusOrder[b.seasonStatus];
-      return statusDiff || a.daysLeft - b.daysLeft;
-    })
-    .map(({ item, statusBadge }) => ({ item, statusBadge }));
+  for (const items of [availableItems, unavailableItems]) {
+    for (const status of ["new", "end", "best", "normal"] as const) {
+      sortedItems.push(
+        ...shuffle(
+          items.filter((item) =>
+            status === "best"
+              ? item.statusBadge === "best"
+              : status === "normal"
+                ? item.seasonStatus === "normal" &&
+                  item.statusBadge !== "best"
+                : item.seasonStatus === status,
+          ),
+        ),
+      );
+    }
+  }
+
+  return sortedItems.map(({ item, statusBadge }) => ({ item, statusBadge }));
 }

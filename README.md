@@ -98,7 +98,8 @@ For example:
 Regional translation files have a `name` and a `produce` object keyed by
 product ID. Each product can have a translated `name`, `selectionGuide`,
 `storageGuide`, `nutritionalInfo`, `nutritionNote`, and `recipes`. Recipe
-entries have a `name` and `instructions`.
+entries have a `name` and `instructions`. Files with invalid JSON structure or
+field types are rejected when loaded or imported.
 
 ```json
 {

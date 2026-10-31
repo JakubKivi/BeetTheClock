@@ -79,6 +79,23 @@ describe("HomeScreen", () => {
     );
   });
 
+  it("reshuffles produce groups when the list is refreshed", async () => {
+    const random = jest.spyOn(Math, "random").mockReturnValue(0);
+    try {
+      const { getByTestId } = render(<HomeScreen />);
+      await waitFor(() => expect(storage.getSettings).toHaveBeenCalled());
+      const callsBeforeRefresh = random.mock.calls.length;
+
+      await act(async () => {
+        await getByTestId("home-list").props.onRefresh();
+      });
+
+      expect(random.mock.calls.length).toBeGreaterThan(callsBeforeRefresh);
+    } finally {
+      random.mockRestore();
+    }
+  });
+
   it("filters both sections to favorites when the favorites switch is enabled", async () => {
     (storage.getSettings as jest.Mock).mockResolvedValue({
       ...mockSettings,

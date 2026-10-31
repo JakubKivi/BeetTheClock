@@ -100,7 +100,9 @@ Przykład:
 Plik tłumaczeń regionu zawiera pola `name` i `produce` — obiekt z tłumaczeniami
 przypisanymi do identyfikatorów produktów. Produkt może mieć przetłumaczone
 pola `name`, `selectionGuide`, `storageGuide`, `nutritionalInfo`,
-`nutritionNote` i `recipes`. Wpis przepisu zawiera `name` oraz `instructions`.
+`nutritionNote` i `recipes`. Wpis przepisu zawiera `name` oraz
+`instructions`. Pliki z nieprawidłową strukturą JSON lub typami pól są
+odrzucane podczas wczytywania lub importu.
 
 ```json
 {

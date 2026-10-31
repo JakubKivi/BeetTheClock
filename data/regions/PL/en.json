@@ -5,408 +5,441 @@
       "name": "Beetroot",
       "selectionGuide": "Firm, smooth skin, intact taproot. For greens attached, leaves should be fresh not wilted.",
       "storageGuide": "Remove greens leaving 1 inch of stem. Store unwashed in a perforated plastic bag in the fridge crisper.",
-      "nutritionalInfo": "Per 100 g raw: 43 kcal; carbohydrates 9.6 g; fiber 2.8 g; protein 1.6 g.",
+      "nutritionalInfo": "Per 100 g raw: 43 kcal; carbohydrates 9.6 g; fiber 2.8 g; protein 1.6 g. Selected micronutrient highlights (amounts not provided): folate, manganese, potassium.",
       "recipes": {
         "default-1": {
           "name": "Classic Beetroot recipe",
-          "instructions": "Roast beet wedges with olive oil, thyme, and a little vinegar until tender."
+          "instructions": "Roast beet wedges with olive oil, thyme, and a little vinegar until tender. Did you know? The young leaves are edible too when cooked like spinach. Raw: Yes. Peel and grate or thinly slice the washed root."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "2": {
       "name": "Asparagus",
       "selectionGuide": "Firm, straight stalks with closed, tight tips. Ends should be moist, not dry.",
       "storageGuide": "Trim the ends and stand stalks upright in a glass with an inch of water. Loosely cover the tips with a plastic bag in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 20 kcal; carbohydrates 3.9 g; fiber 2.1 g; protein 2.2 g.",
+      "nutritionalInfo": "Per 100 g raw: 20 kcal; carbohydrates 3.9 g; fiber 2.1 g; protein 2.2 g. Selected micronutrient highlights (amounts not provided): vitamin K, folate, copper.",
       "recipes": {
         "default-2": {
           "name": "Classic Asparagus recipe",
-          "instructions": "Roast asparagus spears with olive oil; finish with lemon zest."
+          "instructions": "Roast asparagus spears with olive oil; finish with lemon zest. Did you know? The lower ends become woody as spears mature; peel thick spears lightly. Raw: Yes. Very fresh, tender spears can be shaved thinly into a salad."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "3": {
       "name": "Pumpkin",
       "selectionGuide": "Hard rind (cannot be punctured with a fingernail), hollow sound when tapped. Stem should be dry.",
       "storageGuide": "Store whole pumpkins in a cool, dark, dry, and well-ventilated place. Once cut, wrap tightly in plastic and refrigerate.",
-      "nutritionalInfo": "Per 100 g raw: 26 kcal; carbohydrates 6.5 g; fiber 0.5 g; protein 1 g.",
+      "nutritionalInfo": "Per 100 g raw: 26 kcal; carbohydrates 6.5 g; fiber 0.5 g; protein 1 g. Selected micronutrient highlights (amounts not provided): vitamin A, vitamin C, potassium.",
       "recipes": {
         "default-3": {
           "name": "Classic Pumpkin recipe",
-          "instructions": "Roast pumpkin cubes with oil and spices, then blend with stock into soup."
+          "instructions": "Roast pumpkin cubes with oil and spices, then blend with stock into soup. Did you know? Pumpkin skin is edible on some thin-skinned culinary varieties, but not every variety has a pleasant texture. Raw: The flesh of sweet culinary pumpkins can be grated raw; do not use ornamental pumpkins, and discard any squash that tastes unusually bitter."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "4": {
       "name": "Carrot",
       "selectionGuide": "Firm, bright orange, smooth skin. Avoid cracks or rubbery texture.",
-      "storageGuide": "Remove greens. Submerge completely in water in a sealed container in the fridge. Change water every few days.",
-      "nutritionalInfo": "Per 100 g raw: 41 kcal; carbohydrates 9.6 g; fiber 2.8 g; protein 0.9 g.",
+      "storageGuide": "Remove the leafy tops. Refrigerate the roots unwashed in a perforated bag or wrapped loosely in a clean towel. Keep cut or peeled carrots in a covered container in the fridge and change the water daily if stored in water.",
+      "nutritionalInfo": "Per 100 g raw: 41 kcal; carbohydrates 9.6 g; fiber 2.8 g; protein 0.9 g. Selected micronutrient highlights (amounts not provided): vitamin A, vitamin K, potassium.",
       "recipes": {
         "default-4": {
           "name": "Classic Carrot recipe",
-          "instructions": "Simmer sliced carrots with vegetable stock, then blend with ginger for soup."
+          "instructions": "Simmer sliced carrots with vegetable stock, then blend with ginger for soup. Did you know? Cooking carrots with a little fat can improve the absorption of some carotenoids. Raw: Yes; wash and scrub well, and peel only if the skin is damaged or tough."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "5": {
       "name": "Potato",
       "selectionGuide": "Firm, smooth skin, no green tints or sprouts. New potatoes should have flaky skin.",
       "storageGuide": "Keep in a cool, dark, dry, well-ventilated place (like a paper bag in a pantry). Do not refrigerate. Keep away from onions.",
-      "nutritionalInfo": "Per 100 g raw: 77 kcal; carbohydrates 17.5 g; fiber 2.2 g; protein 2 g.",
+      "nutritionalInfo": "Per 100 g raw: 77 kcal; carbohydrates 17.5 g; fiber 2.2 g; protein 2 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin B6, potassium.",
       "recipes": {
         "default-5": {
           "name": "Classic Potato recipe",
-          "instructions": "Boil potatoes until tender and toss with dill, spring onion, and yogurt."
+          "instructions": "Boil potatoes until tender and toss with dill, spring onion, and yogurt. Did you know? Green, badly sprouted or bitter potatoes can contain elevated glycoalkaloids; cooking does not reliably make such potatoes safe. Raw: No. Never eat green, bitter or heavily sprouted potatoes; discard badly affected tubers."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "6": {
       "name": "Tomato",
       "selectionGuide": "Fragrant, rich color, slightly yielding to pressure. Heavy for size.",
       "storageGuide": "Keep stem-side down at room temperature, out of direct sunlight for best flavor. Refrigeration can slow deterioration of ripe tomatoes, but may affect flavor and texture.",
-      "nutritionalInfo": "Per 100 g raw: 18 kcal; carbohydrates 3.9 g; fiber 1.2 g; protein 0.9 g.",
+      "nutritionalInfo": "Per 100 g raw: 18 kcal; carbohydrates 3.9 g; fiber 1.2 g; protein 0.9 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, potassium.",
       "recipes": {
         "default-6": {
           "name": "Classic Tomato recipe",
-          "instructions": "Bake tomato halves with olive oil, garlic, and herbs until soft."
+          "instructions": "Bake tomato halves with olive oil, garlic, and herbs until soft. Did you know? Tomatoes continue to soften after harvest, but their color alone does not reliably indicate flavor. Raw: Yes; wash first. The green leaves and stems are not food."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "7": {
       "name": "Cucumber",
       "selectionGuide": "Firm along entire length. Avoid shriveled ends or soft spots.",
       "storageGuide": "Wrap individually in paper towels, place in a plastic bag, and store towards the front of the fridge shelf where it's warmer.",
-      "nutritionalInfo": "Per 100 g raw: 15 kcal; carbohydrates 3.6 g; fiber 0.5 g; protein 0.7 g.",
+      "nutritionalInfo": "Per 100 g raw: 15 kcal; carbohydrates 3.6 g; fiber 0.5 g; protein 0.7 g. Selected micronutrient highlights (amounts not provided): vitamin K, vitamin C, potassium.",
       "recipes": {
         "default-7": {
           "name": "Classic Cucumber recipe",
-          "instructions": "Dice cucumber and mix with yogurt, dill, and a little lemon juice."
+          "instructions": "Dice cucumber and mix with yogurt, dill, and a little lemon juice. Did you know? Cucumbers are sensitive to very cold storage and can develop soft, water-soaked patches. Raw: Yes; wash well. The peel is edible unless it is waxed, damaged or unpleasantly tough."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "8": {
       "name": "Radish",
       "selectionGuide": "Firm, smooth, bright color. If leaves are attached, they should be green and crisp.",
-      "storageGuide": "Remove greens immediately. Store roots submerged in a jar of water in the fridge to keep them crisp.",
-      "nutritionalInfo": "Per 100 g raw: 16 kcal; carbohydrates 3.4 g; fiber 1.6 g; protein 0.7 g.",
+      "storageGuide": "Remove the leaves, which draw moisture from the roots. Refrigerate the unwashed roots in a perforated bag or container; wash just before eating. A short stay in cold water can re-crisp limp radishes, but do not use standing water for long-term storage.",
+      "nutritionalInfo": "Per 100 g raw: 16 kcal; carbohydrates 3.4 g; fiber 1.6 g; protein 0.7 g. Selected micronutrient highlights (amounts not provided): vitamin C, folate, potassium.",
       "recipes": {
         "default-8": {
           "name": "Classic Radish recipe",
-          "instructions": "Thinly slice radishes and toss with butter, lemon, and chopped herbs."
+          "instructions": "Thinly slice radishes and toss with butter, lemon, and chopped herbs. Did you know? Fresh radish leaves can be cooked into pesto or soup. Raw: Yes; the roots and young leaves can both be eaten after thorough washing."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "9": {
       "name": "Cauliflower",
       "selectionGuide": "Compact, creamy white curds. No dark spots. Leaves should be fresh green.",
       "storageGuide": "Store stem-side down in a loosely sealed plastic bag with a dry paper towel to absorb moisture in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 25 kcal; carbohydrates 5 g; fiber 2 g; protein 1.9 g.",
+      "nutritionalInfo": "Per 100 g raw: 25 kcal; carbohydrates 5 g; fiber 2 g; protein 1.9 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, folate, potassium.",
       "recipes": {
         "default-9": {
           "name": "Classic Cauliflower recipe",
-          "instructions": "Steam cauliflower florets and serve with a sauce of yogurt, garlic, and herbs."
+          "instructions": "Steam cauliflower florets and serve with a sauce of yogurt, garlic, and herbs. Did you know? The tender inner stem and clean leaves are edible and can be cooked with the florets. Raw: Yes; small florets can be eaten raw, for example with a dip."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "10": {
       "name": "Broccoli",
       "selectionGuide": "Firm stalks, tight dark green florets. Avoid yellowing buds.",
-      "storageGuide": "Mist the head lightly, wrap loosely in damp paper towels, and keep in an unsealed bag in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 34 kcal; carbohydrates 6.6 g; fiber 2.6 g; protein 2.8 g.",
+      "storageGuide": "Refrigerate unwashed in a loose or perforated bag and use promptly. Avoid sealing wet florets in an airtight container, as trapped moisture encourages decay.",
+      "nutritionalInfo": "Per 100 g raw: 34 kcal; carbohydrates 6.6 g; fiber 2.6 g; protein 2.8 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, folate, potassium.",
       "recipes": {
         "default-10": {
           "name": "Classic Broccoli recipe",
-          "instructions": "Steam broccoli until just tender and toss with lemon and toasted almonds."
+          "instructions": "Steam broccoli until just tender and toss with lemon and toasted almonds. Did you know? The peeled stalk is edible and can be sliced or cooked just like the florets. Raw: Yes; clean florets and peeled tender stalk can be eaten raw."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "11": {
       "name": "Zucchini",
       "selectionGuide": "Small to medium size, shiny skin. Avoid soft spots.",
       "storageGuide": "Keep dry and unwashed. Store in a paper bag or loose plastic bag with a paper towel in the crisper drawer.",
-      "nutritionalInfo": "Per 100 g raw: 17 kcal; carbohydrates 3.1 g; fiber 1 g; protein 1.2 g.",
+      "nutritionalInfo": "Per 100 g raw: 17 kcal; carbohydrates 3.1 g; fiber 1 g; protein 1.2 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin B6, potassium.",
       "recipes": {
         "default-11": {
           "name": "Classic Zucchini recipe",
-          "instructions": "Grate zucchini into fritters with egg, flour, and herbs; pan-fry until golden."
+          "instructions": "Grate zucchini into fritters with egg, flour, and herbs; pan-fry until golden. Did you know? Very bitter zucchini can contain high levels of cucurbitacins and should be discarded, not cooked or tasted further. Raw: Yes; young zucchini can be shaved into ribbons. Discard any unusually bitter fruit."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "12": {
       "name": "Pepper",
       "selectionGuide": "Glossy, taut skin, firm stem. Heavy for size.",
       "storageGuide": "Store unwashed in a loosely tied plastic bag in the crisper drawer. Keep them completely dry.",
-      "nutritionalInfo": "Per 100 g raw: 31 kcal; carbohydrates 6 g; fiber 2.1 g; protein 1 g.",
+      "nutritionalInfo": "Per 100 g raw: 31 kcal; carbohydrates 6 g; fiber 2.1 g; protein 1 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin A, vitamin B6, potassium.",
       "recipes": {
         "default-12": {
           "name": "Classic Pepper recipe",
-          "instructions": "Fill pepper halves with cooked rice, herbs, and beans, then bake until tender."
+          "instructions": "Fill pepper halves with cooked rice, herbs, and beans, then bake until tender. Did you know? Red, yellow and green bell peppers are different ripeness stages or cultivars, so their sweetness and nutrient profile vary. Raw: Yes; wash and remove the stem and seeds if desired."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "13": {
       "name": "Beans (Broad)",
       "selectionGuide": "Pods should be green and filled, but not bulging excessively (indicates old/hard beans).",
       "storageGuide": "Store unshelled in a paper bag or perforated plastic bag in the crisper drawer for up to a few days.",
-      "nutritionalInfo": "Per 100 g raw: 88 kcal; carbohydrates 17.6 g; fiber 7.5 g; protein 7.9 g.",
+      "nutritionalInfo": "Per 100 g raw: 88 kcal; carbohydrates 17.6 g; fiber 7.5 g; protein 7.9 g. Selected micronutrient highlights (amounts not provided): folate, vitamin B1 (thiamin), iron, manganese.",
       "recipes": {
         "default-13": {
           "name": "Classic Beans (Broad) recipe",
-          "instructions": "Boil shelled broad beans until tender and toss with mint and lemon."
+          "instructions": "Boil shelled broad beans until tender and toss with mint and lemon. Did you know? Broad beans are also called fava beans. Raw: Prefer cooked beans. Boil fresh shelled beans until tender; dried beans require soaking and thorough boiling."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "14": {
       "name": "Beans (Green)",
       "selectionGuide": "Bright color, snaps easily when bent. Avoid tough or stringy pods.",
       "storageGuide": "Keep unwashed. Wrap in a dry paper towel and place inside a reusable plastic bag in the fridge crisper.",
-      "nutritionalInfo": "Per 100 g raw: 31 kcal; carbohydrates 7 g; fiber 2.7 g; protein 1.8 g.",
+      "nutritionalInfo": "Per 100 g raw: 31 kcal; carbohydrates 7 g; fiber 2.7 g; protein 1.8 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, folate, manganese.",
       "recipes": {
         "default-14": {
           "name": "Classic Beans (Green) recipe",
-          "instructions": "Steam green beans until crisp-tender and toss with garlic and olive oil."
+          "instructions": "Steam green beans until crisp-tender and toss with garlic and olive oil. Did you know? The whole young pod is eaten, but the tough stalk end can be trimmed. Raw: No recommendation to eat raw; cook green beans until tender before serving."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "15": {
       "name": "Cabbage (White)",
       "selectionGuide": "Heavy for size, tight leaves. Young cabbage is looser and greener.",
       "storageGuide": "Do not wash. Keep the whole head wrapped tightly in plastic wrap in the crisper drawer.",
-      "nutritionalInfo": "Per 100 g raw: 25 kcal; carbohydrates 5.8 g; fiber 2.5 g; protein 1.3 g.",
+      "nutritionalInfo": "Per 100 g raw: 25 kcal; carbohydrates 5.8 g; fiber 2.5 g; protein 1.3 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, folate, potassium.",
       "recipes": {
         "default-15": {
           "name": "Classic Cabbage (White) recipe",
-          "instructions": "Finely shred cabbage and dress with grated carrot, yogurt, and vinegar."
+          "instructions": "Finely shred cabbage and dress with grated carrot, yogurt, and vinegar. Did you know? Finely shredded cabbage becomes more tender when briefly massaged with salt or an acidic dressing. Raw: Yes; wash the leaves and slice thinly."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "16": {
       "name": "Brussels Sprouts",
       "selectionGuide": "Tight, small, bright green heads. Avoid yellow leaves or loose structure.",
       "storageGuide": "Leave on the stalk if possible. Otherwise, store unwashed in a loose plastic bag in the fridge crisper.",
-      "nutritionalInfo": "Per 100 g raw: 43 kcal; carbohydrates 9 g; fiber 3.8 g; protein 3.4 g.",
+      "nutritionalInfo": "Per 100 g raw: 43 kcal; carbohydrates 9 g; fiber 3.8 g; protein 3.4 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, folate, potassium.",
       "recipes": {
         "default-16": {
           "name": "Classic Brussels Sprouts recipe",
-          "instructions": "Roast halved Brussels sprouts with oil until browned; finish with lemon."
+          "instructions": "Roast halved Brussels sprouts with oil until browned; finish with lemon. Did you know? Shredded Brussels sprouts work well in slaws. Raw: They can be eaten raw when very fresh and finely sliced, though cooking is the more common preparation."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "17": {
       "name": "Kale",
       "selectionGuide": "Dark green, crisp leaves. Avoid yellow or mushy spots.",
       "storageGuide": "Wrap unwashed leaves in dry paper towels and store in a sealed plastic bag in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 49 kcal; carbohydrates 8.8 g; fiber 3.6 g; protein 4.3 g.",
+      "nutritionalInfo": "Per 100 g raw: 49 kcal; carbohydrates 8.8 g; fiber 3.6 g; protein 4.3 g. Selected micronutrient highlights (amounts not provided): vitamin A, vitamin C, vitamin K, manganese.",
       "recipes": {
         "default-17": {
           "name": "Classic Kale recipe",
-          "instructions": "Massage chopped kale with olive oil and lemon, then top with seeds."
+          "instructions": "Massage chopped kale with olive oil and lemon, then top with seeds. Did you know? Massaging chopped kale with lemon or oil softens its tough leaves. Raw: Yes; young leaves can be eaten raw after washing, while mature leaves benefit from cooking or massaging."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "18": {
       "name": "Spinach",
       "selectionGuide": "Vibrant green, fresh looking. Avoid slimy or wilted leaves.",
-      "storageGuide": "Store unwashed in a hard, airtight container lined with dry paper towels to absorb excess moisture.",
-      "nutritionalInfo": "Per 100 g raw: 23 kcal; carbohydrates 3.6 g; fiber 2.2 g; protein 2.9 g.",
+      "storageGuide": "Keep the leaves dry and refrigerate them in a container or bag lined with a dry paper towel. Wash just before use; excess moisture shortens shelf life.",
+      "nutritionalInfo": "Per 100 g raw: 23 kcal; carbohydrates 3.6 g; fiber 2.2 g; protein 2.9 g. Selected micronutrient highlights (amounts not provided): vitamin A, vitamin K, folate, iron, magnesium.",
       "recipes": {
         "default-18": {
           "name": "Classic Spinach recipe",
-          "instructions": "Wilt spinach in a pan with garlic and serve as a warm side dish."
+          "instructions": "Wilt spinach in a pan with garlic and serve as a warm side dish. Did you know? Spinach shrinks dramatically when cooked, so a large raw volume becomes a small cooked portion. Raw: Young leaves can be eaten raw; wash thoroughly. Cooking is useful for mature leaves."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "19": {
       "name": "Rhubarb",
       "selectionGuide": "Firm, crisp stalks. Avoid limp or rubbery ones.",
-      "storageGuide": "Wrap unwashed stalks tightly in aluminum foil and store in the crisper drawer of the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 21 kcal; carbohydrates 4.5 g; fiber 1.8 g; protein 0.9 g.",
+      "storageGuide": "Remove any leaves, wrap the unwashed stalks loosely, and refrigerate in the crisper drawer. Use within several days for the best texture.",
+      "nutritionalInfo": "Per 100 g raw: 21 kcal; carbohydrates 4.5 g; fiber 1.8 g; protein 0.9 g. Selected micronutrient highlights (amounts not provided): vitamin K, calcium, potassium.",
       "recipes": {
         "default-19": {
           "name": "Classic Rhubarb recipe",
-          "instructions": "Stew chopped rhubarb with a little sugar and orange zest; serve over yogurt."
+          "instructions": "Stew chopped rhubarb with a little sugar and orange zest; serve over yogurt. Did you know? Only the leaf stalks are eaten; rhubarb leaves should never be used as food because they contain high levels of oxalic acid. Raw: The stalks can be eaten raw in small pieces, but are very tart; leaves are not edible."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "20": {
       "name": "Onion",
       "selectionGuide": "Hard, dry, papery skin. Avoid sprouting necks or soft spots.",
       "storageGuide": "Store in a cool, dark, dry, and well-ventilated spot (like a wire basket). Do not refrigerate or put in plastic. Keep away from potatoes.",
-      "nutritionalInfo": "Per 100 g raw: 40 kcal; carbohydrates 9.3 g; fiber 1.7 g; protein 1.1 g.",
+      "nutritionalInfo": "Per 100 g raw: 40 kcal; carbohydrates 9.3 g; fiber 1.7 g; protein 1.1 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin B6, potassium.",
       "recipes": {
         "default-20": {
           "name": "Classic Onion recipe",
-          "instructions": "Cook sliced onions slowly until golden and serve on toast with thyme."
+          "instructions": "Cook sliced onions slowly until golden and serve on toast with thyme. Did you know? Chilling whole onions can make them soft and may encourage sprouting once returned to warmth. Raw: Yes; raw onion is commonly used in salads and salsas."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "21": {
       "name": "Strawberries",
       "selectionGuide": "Bright red all over, fresh green cap, strong sweet smell. Avoid white shoulders.",
       "storageGuide": "Store unwashed in a single layer inside an airtight container lined with a dry paper towel in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 32 kcal; carbohydrates 7.7 g; fiber 2 g; protein 0.7 g.",
+      "nutritionalInfo": "Per 100 g raw: 32 kcal; carbohydrates 7.7 g; fiber 2 g; protein 0.7 g. Selected micronutrient highlights (amounts not provided): vitamin C, folate, manganese.",
       "recipes": {
         "default-21": {
           "name": "Classic Strawberries recipe",
-          "instructions": "Slice strawberries and mix with oats, yogurt, and a little lemon zest."
+          "instructions": "Slice strawberries and mix with oats, yogurt, and a little lemon zest. Did you know? Strawberries do not continue to ripen or become sweeter after harvest. Raw: Yes; rinse gently under running water just before removing the green cap."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "22": {
       "name": "Apples",
       "selectionGuide": "Firm, unbruised, skin should be tight not wrinkled.",
       "storageGuide": "Store in the crisper drawer, ideally in a perforated plastic bag. Keep separate from other sensitive vegetables.",
-      "nutritionalInfo": "Per 100 g raw: 52 kcal; carbohydrates 13.8 g; fiber 2.4 g; protein 0.3 g.",
+      "nutritionalInfo": "Per 100 g raw: 52 kcal; carbohydrates 13.8 g; fiber 2.4 g; protein 0.3 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, potassium.",
       "recipes": {
         "default-22": {
           "name": "Classic Apples recipe",
-          "instructions": "Bake sliced apples with cinnamon and oats until soft for a simple crumble."
+          "instructions": "Bake sliced apples with cinnamon and oats until soft for a simple crumble. Did you know? Apples release ethylene, which can speed ripening of nearby produce. Raw: Yes; wash the skin well, as it is edible."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "23": {
       "name": "Pears",
       "selectionGuide": "Check the neck: if it yields to gentle pressure, it is ripe. Body can be firm.",
       "storageGuide": "Ripen at room temperature. Once the neck yields to pressure, move to the fridge to halt ripening.",
-      "nutritionalInfo": "Per 100 g raw: 57 kcal; carbohydrates 15.2 g; fiber 3.1 g; protein 0.4 g.",
+      "nutritionalInfo": "Per 100 g raw: 57 kcal; carbohydrates 15.2 g; fiber 3.1 g; protein 0.4 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, potassium.",
       "recipes": {
         "default-23": {
           "name": "Classic Pears recipe",
-          "instructions": "Poach pear halves gently with cinnamon and serve with plain yogurt."
+          "instructions": "Poach pear halves gently with cinnamon and serve with plain yogurt. Did you know? Pears often ripen from the inside out; the neck is a useful place to check softness. Raw: Yes; the skin is edible after washing."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "24": {
       "name": "Plums",
       "selectionGuide": "Slightly soft at the tip, rich color, dusty bloom on skin is good.",
       "storageGuide": "Leave at room temperature in a paper bag to ripen. Once soft, transfer unwashed to the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 46 kcal; carbohydrates 11.4 g; fiber 1.4 g; protein 0.7 g.",
+      "nutritionalInfo": "Per 100 g raw: 46 kcal; carbohydrates 11.4 g; fiber 1.4 g; protein 0.7 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, potassium.",
       "recipes": {
         "default-24": {
           "name": "Classic Plums recipe",
-          "instructions": "Simmer chopped plums with cinnamon into a quick compote."
+          "instructions": "Simmer chopped plums with cinnamon into a quick compote. Did you know? The natural waxy bloom on plums helps protect the fruit and is not a defect. Raw: Yes; wash and eat the flesh, but do not eat the stone."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "25": {
       "name": "Cherries (Sweet)",
       "selectionGuide": "Green, flexible stems. Fruit should be shiny, plump and dark.",
       "storageGuide": "Store unwashed with stems attached. Keep loosely packed in a paper-towel-lined container in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 63 kcal; carbohydrates 16 g; fiber 2.1 g; protein 1.1 g.",
+      "nutritionalInfo": "Per 100 g raw: 63 kcal; carbohydrates 16 g; fiber 2.1 g; protein 1.1 g. Selected micronutrient highlights (amounts not provided): vitamin C, potassium.",
       "recipes": {
         "default-25": {
           "name": "Classic Cherries (Sweet) recipe",
-          "instructions": "Pit sweet cherries and fold into oatmeal with a spoonful of yogurt."
+          "instructions": "Pit sweet cherries and fold into oatmeal with a spoonful of yogurt. Did you know? The stem helps cherries stay fresh, so keep it attached until washing. Raw: Yes; wash first and remove the pit before serving to young children."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "27": {
       "name": "Raspberries",
       "selectionGuide": "Dry, plump, bright color. Check container bottom for juice (sign of crushing).",
       "storageGuide": "Do not wash until eating. Store in a wide, shallow container lined with paper towels, slightly open for airflow in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 52 kcal; carbohydrates 11.9 g; fiber 6.5 g; protein 1.2 g.",
+      "nutritionalInfo": "Per 100 g raw: 52 kcal; carbohydrates 11.9 g; fiber 6.5 g; protein 1.2 g. Selected micronutrient highlights (amounts not provided): vitamin C, manganese.",
       "recipes": {
         "default-27": {
           "name": "Classic Raspberries recipe",
-          "instructions": "Mash raspberries with lemon juice and spoon over pancakes or yogurt."
+          "instructions": "Mash raspberries with lemon juice and spoon over pancakes or yogurt. Did you know? Raspberries are hollow when picked, which makes them especially delicate. Raw: Yes; remove spoiled berries and rinse gently just before eating."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "28": {
       "name": "Blueberries",
       "selectionGuide": "Firm, dusty blue color (bloom). Avoid soft or shriveled berries.",
       "storageGuide": "Pick out any moldy ones first. Store unwashed in a breathable or vented container in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 57 kcal; carbohydrates 14.5 g; fiber 2.4 g; protein 0.7 g.",
+      "nutritionalInfo": "Per 100 g raw: 57 kcal; carbohydrates 14.5 g; fiber 2.4 g; protein 0.7 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, manganese.",
       "recipes": {
         "default-28": {
           "name": "Classic Blueberries recipe",
-          "instructions": "Warm blueberries briefly with lemon to make a topping for porridge."
+          "instructions": "Warm blueberries briefly with lemon to make a topping for porridge. Did you know? The dusty coating on blueberries is a natural wax called bloom. Raw: Yes; wash gently just before eating."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "32": {
       "name": "Grapes",
       "selectionGuide": "Plump, firmly attached to green stems. Avoid wrinkled berries.",
-      "storageGuide": "Keep unwashed in their original ventilated bag or a perforated plastic bag in the fridge crisper.",
-      "nutritionalInfo": "Per 100 g raw: 69 kcal; carbohydrates 18.1 g; fiber 0.9 g; protein 0.7 g.",
+      "storageGuide": "Refrigerate unwashed in the original ventilated pack or a shallow container. Remove damaged berries and wash the bunch just before eating.",
+      "nutritionalInfo": "Per 100 g raw: 69 kcal; carbohydrates 18.1 g; fiber 0.9 g; protein 0.7 g. Selected micronutrient highlights (amounts not provided): vitamin K, vitamin C, copper.",
       "recipes": {
         "default-32": {
           "name": "Classic Grapes recipe",
-          "instructions": "Roast halved grapes with thyme and serve with soft cheese and bread."
+          "instructions": "Roast halved grapes with thyme and serve with soft cheese and bread. Did you know? Grape skins contain much of the fruit’s color compounds; seeded and seedless varieties differ in texture. Raw: Yes; rinse the bunch under running water before eating."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "34": {
       "name": "Celery Root",
       "selectionGuide": "Heavy for its size, firm, no soft spots. Smaller roots tend to be less woody.",
       "storageGuide": "Store unwashed and loosely wrapped in a plastic bag in the fridge crisper drawer.",
-      "nutritionalInfo": "Per 100 g raw: 42 kcal; carbohydrates 9.2 g; fiber 1.8 g; protein 1.5 g.",
+      "nutritionalInfo": "Per 100 g raw: 42 kcal; carbohydrates 9.2 g; fiber 1.8 g; protein 1.5 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, potassium, phosphorus.",
       "recipes": {
         "default-34": {
           "name": "Classic Celery Root recipe",
-          "instructions": "Roast celeriac cubes with oil and rosemary; serve with a lemon dressing."
+          "instructions": "Roast celeriac cubes with oil and rosemary; serve with a lemon dressing. Did you know? Celeriac browns after cutting, so toss raw shreds or slices with lemon juice. Raw: Yes. Peel the knobbly skin deeply, then grate or slice the crisp flesh thinly."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "35": {
       "name": "Parsley Root",
       "selectionGuide": "Firm, white/beige skin. Avoid rusty spots or limp roots.",
       "storageGuide": "Remove greens. Wrap the root in a lightly damp paper towel and store in an airtight container or bag in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 55 kcal; carbohydrates 12.3 g; fiber 4.3 g; protein 2.3 g.",
+      "nutritionalInfo": "Per 100 g raw: 55 kcal; carbohydrates 12.3 g; fiber 4.3 g; protein 2.3 g. Selected micronutrient highlights (amounts not provided): vitamin C, folate, potassium.",
       "recipes": {
         "default-35": {
           "name": "Classic Parsley Root recipe",
-          "instructions": "Grate parsley root into a slaw with apple, lemon juice, and yogurt."
+          "instructions": "Grate parsley root into a slaw with apple, lemon juice, and yogurt. Did you know? Parsley root is a traditional soup vegetable, but young roots are also aromatic when raw. Raw: Yes. Scrub or peel, then grate or shave thinly into salads."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "36": {
       "name": "Leek",
       "selectionGuide": "Crisp white and light green parts. Avoid yellowing or slimy leaves.",
       "storageGuide": "Store unwashed and untrimmed, loosely wrapped in a plastic bag in the crisper drawer of the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 61 kcal; carbohydrates 14.2 g; fiber 1.8 g; protein 1.5 g.",
+      "nutritionalInfo": "Per 100 g raw: 61 kcal; carbohydrates 14.2 g; fiber 1.8 g; protein 1.5 g. Selected micronutrient highlights (amounts not provided): vitamin A, vitamin K, folate, manganese.",
       "recipes": {
         "default-36": {
           "name": "Classic Leek recipe",
-          "instructions": "Simmer sliced leek and potato in stock, then blend into a smooth soup."
+          "instructions": "Simmer sliced leek and potato in stock, then blend into a smooth soup. Did you know? Soil often remains between the leek layers, so split the stalk lengthwise and rinse between the leaves. Raw: Tender white and light-green parts can be eaten raw in thin slices."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "37": {
       "name": "Kohlrabi",
       "selectionGuide": "Small to medium size (tennis ball). Heavy and firm. Large ones can be woody inside.",
       "storageGuide": "Remove leaves. Store the unwashed bulb loose or in a perforated bag in the crisper drawer.",
-      "nutritionalInfo": "Per 100 g raw: 27 kcal; carbohydrates 6.2 g; fiber 3.6 g; protein 1.7 g.",
+      "nutritionalInfo": "Per 100 g raw: 27 kcal; carbohydrates 6.2 g; fiber 3.6 g; protein 1.7 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin B6, potassium.",
       "recipes": {
         "default-37": {
           "name": "Classic Kohlrabi recipe",
-          "instructions": "Cut kohlrabi into sticks and serve raw with a yogurt and dill dip."
+          "instructions": "Cut kohlrabi into sticks and serve raw with a yogurt and dill dip. Did you know? The peel is edible when tender; older kohlrabi may need peeling because the outer layer becomes fibrous. Raw: Yes; peel if tough and slice or grate."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "39": {
       "name": "Eggplant",
       "selectionGuide": "Shiny, smooth skin. Firm but bounces back slightly when pressed. Heavy.",
       "storageGuide": "Store at cool room temperature away from bananas/tomatoes. If refrigerating, wrap in paper towel in the crisper and use quickly.",
-      "nutritionalInfo": "Per 100 g raw: 25 kcal; carbohydrates 5.9 g; fiber 3 g; protein 1 g.",
+      "nutritionalInfo": "Per 100 g raw: 25 kcal; carbohydrates 5.9 g; fiber 3 g; protein 1 g. Selected micronutrient highlights (amounts not provided): vitamin B6, folate, manganese, potassium.",
       "recipes": {
         "default-39": {
           "name": "Classic Eggplant recipe",
-          "instructions": "Roast eggplant slices with olive oil and garlic; serve with tomato sauce."
+          "instructions": "Roast eggplant slices with olive oil and garlic; serve with tomato sauce. Did you know? Eggplant flesh can darken after cutting because it oxidizes; salting is optional and mainly affects bitterness and texture. Raw: Not commonly eaten raw; cooking is recommended for flavour and texture. Discard any unusually bitter eggplant."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "41": {
       "name": "Wild Bilberries",
       "selectionGuide": "Dark, almost black, distinct aroma. Will stain hands. Must be dry.",
       "storageGuide": "Pick out crushed berries. Store unwashed in a shallow container in the fridge. Wash just before eating.",
-      "nutritionalInfo": "Per 100 g raw: 57 kcal; carbohydrates 14.5 g; fiber 2.4 g; protein 0.7 g.",
-      "nutritionNote": "Reference values are for cultivated blueberries; bilberries may differ.",
+      "nutritionalInfo": "Per 100 g raw: 57 kcal; carbohydrates 14.5 g; fiber 2.4 g; protein 0.7 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, manganese.",
+      "nutritionNote": "Reference values are for cultivated blueberries; bilberries may differ. Quantities for the micronutrient highlights are not provided.",
       "recipes": {
         "default-41": {
           "name": "Classic Wild Bilberries recipe",
-          "instructions": "Simmer bilberries with a splash of water and serve as a warm porridge topping."
+          "instructions": "Simmer bilberries with a splash of water and serve as a warm porridge topping. Did you know? Bilberries have deeply colored juice that can stain hands and fabrics. Raw: Yes; rinse gently and eat fresh or use in desserts."
         }
       }
     },
@@ -414,60 +447,64 @@
       "name": "Parsnip",
       "selectionGuide": "Firm, ivory color. Avoid very large roots as they can be woody cores.",
       "storageGuide": "Store unwashed in a perforated plastic bag in the vegetable drawer of the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 75 kcal; carbohydrates 18 g; fiber 4.9 g; protein 1.2 g.",
+      "nutritionalInfo": "Per 100 g raw: 75 kcal; carbohydrates 18 g; fiber 4.9 g; protein 1.2 g. Selected micronutrient highlights (amounts not provided): vitamin C, folate, potassium.",
       "recipes": {
         "default-45": {
           "name": "Classic Parsnip recipe",
-          "instructions": "Roast parsnip batons with oil and cumin until golden."
+          "instructions": "Roast parsnip batons with oil and cumin until golden. Did you know? Parsnips become sweeter after cool weather because starch is converted into sugars. Raw: Yes; young roots can be grated or shaved into salads."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "49": {
       "name": "Jerusalem Artichoke",
       "selectionGuide": "Firm, not shriveled. Knobby is normal, but avoid soft spots/mold.",
       "storageGuide": "Wrap unwashed tubers in a paper towel inside a loose plastic bag in the fridge crisper.",
-      "nutritionalInfo": "Per 100 g raw: 73 kcal; carbohydrates 17.4 g; fiber 1.6 g; protein 2 g.",
+      "nutritionalInfo": "Per 100 g raw: 73 kcal; carbohydrates 17.4 g; fiber 1.6 g; protein 2 g. Selected micronutrient highlights (amounts not provided): vitamin B1 (thiamin), iron, potassium.",
       "recipes": {
         "default-49": {
           "name": "Classic Jerusalem Artichoke recipe",
-          "instructions": "Roast scrubbed Jerusalem artichokes with garlic and olive oil until soft."
+          "instructions": "Roast scrubbed Jerusalem artichokes with garlic and olive oil until soft. Did you know? Jerusalem artichoke contains inulin, a fermentable fibre that can cause gas in some people when eaten in large portions. Raw: Yes; scrub well, slice thinly and start with a small portion."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "51": {
       "name": "Horseradish",
       "selectionGuide": "Very hard and firm. Avoid shriveled roots or soft ends.",
       "storageGuide": "Wrap the unwashed root loosely in plastic wrap or keep in a perforated bag in the crisper drawer.",
-      "nutritionalInfo": "Per 100 g raw: 48 kcal; carbohydrates 11.3 g; fiber 3.3 g; protein 1.2 g.",
+      "nutritionalInfo": "Per 100 g raw: 48 kcal; carbohydrates 11.3 g; fiber 3.3 g; protein 1.2 g. Selected micronutrient highlights (amounts not provided): vitamin C, calcium, potassium.",
       "recipes": {
         "default-51": {
           "name": "Classic Horseradish recipe",
-          "instructions": "Mix freshly grated horseradish with yogurt, lemon, and a pinch of salt for a sauce."
+          "instructions": "Mix freshly grated horseradish with yogurt, lemon, and a pinch of salt for a sauce. Did you know? Grating horseradish releases pungent compounds; the sharpness fades after exposure to air. Raw: Yes; it is usually eaten freshly grated in small amounts."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "52": {
       "name": "Spring Onion",
       "selectionGuide": "Bright green, crisp stalks. Avoid slimy or wilting tips.",
       "storageGuide": "Stand them upright in a jar with an inch of water at the bottom, loosely covered with a plastic bag in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 32 kcal; carbohydrates 7.3 g; fiber 2.6 g; protein 1.8 g.",
+      "nutritionalInfo": "Per 100 g raw: 32 kcal; carbohydrates 7.3 g; fiber 2.6 g; protein 1.8 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, folate, potassium.",
       "recipes": {
         "default-52": {
           "name": "Classic Spring Onion recipe",
-          "instructions": "Stir-fry chopped spring onions briefly and fold into scrambled eggs."
+          "instructions": "Stir-fry chopped spring onions briefly and fold into scrambled eggs. Did you know? Both the white bulb and green leaves are edible. Raw: Yes; slice the entire washed shoot into salads, dips or sandwiches."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "63": {
       "name": "Wild Strawberries",
       "selectionGuide": "Intense aroma is key. Very delicate, buy only if dry and not squashed.",
       "storageGuide": "Highly perishable. Eat immediately or store unwashed in a single layer in the fridge for no more than a day.",
-      "nutritionalInfo": "Per 100 g raw: 32 kcal; carbohydrates 7.7 g; fiber 2 g; protein 0.7 g.",
-      "nutritionNote": "Reference values are for cultivated strawberries; wild strawberries may differ.",
+      "nutritionalInfo": "Per 100 g raw: 32 kcal; carbohydrates 7.7 g; fiber 2 g; protein 0.7 g. Selected micronutrient highlights (amounts not provided): vitamin C, folate, manganese.",
+      "nutritionNote": "Reference values are for cultivated strawberries; wild strawberries may differ. Quantities for the micronutrient highlights are not provided.",
       "recipes": {
         "default-63": {
           "name": "Classic Wild Strawberries recipe",
-          "instructions": "Serve wild strawberries over plain yogurt with crushed oats."
+          "instructions": "Serve wild strawberries over plain yogurt with crushed oats. Did you know? Wild strawberries are very delicate and lose aroma quickly after picking. Raw: Yes; eat only correctly identified berries gathered from clean areas, or buy them from a trusted seller."
         }
       }
     },
@@ -475,36 +512,38 @@
       "name": "Corn",
       "selectionGuide": "Bright green husk, golden silk (not dried black). Kernels should look plump and release milky juice when punctured.",
       "storageGuide": "Keep unhusked in a loosely closed plastic bag in the fridge. Consume as soon as possible, as sugars quickly turn to starch.",
-      "nutritionalInfo": "Per 100 g raw: 86 kcal; carbohydrates 19 g; fiber 2.7 g; protein 3.3 g.",
+      "nutritionalInfo": "Per 100 g raw: 86 kcal; carbohydrates 19 g; fiber 2.7 g; protein 3.3 g. Selected micronutrient highlights (amounts not provided): vitamin B1 (thiamin), folate, magnesium, phosphorus.",
       "recipes": {
         "default-70": {
           "name": "Classic Corn recipe",
-          "instructions": "Boil or grill corn on the cob and serve with butter and chopped herbs."
+          "instructions": "Boil or grill corn on the cob and serve with butter and chopped herbs. Did you know? Sweet corn is harvested while the kernels are still milky and sweet. Raw: Yes, very fresh sweet corn can be eaten raw after removing the husk and silk; cooking is more common."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "71": {
       "name": "Watermelon",
       "selectionGuide": "Heavy for size, hollow sound when tapped. Look for a creamy yellow spot (field spot) where it sat on ground.",
       "storageGuide": "Keep whole watermelons at room temperature. Once cut, wrap the exposed flesh tightly with plastic wrap and refrigerate.",
-      "nutritionalInfo": "Per 100 g raw: 30 kcal; carbohydrates 7.6 g; fiber 0.4 g; protein 0.6 g.",
+      "nutritionalInfo": "Per 100 g raw: 30 kcal; carbohydrates 7.6 g; fiber 0.4 g; protein 0.6 g. Selected micronutrient highlights (amounts not provided): vitamin A, vitamin C, potassium.",
       "recipes": {
         "default-71": {
           "name": "Classic Watermelon recipe",
-          "instructions": "Dice watermelon and toss with mint and lime for a chilled fruit salad."
+          "instructions": "Dice watermelon and toss with mint and lime for a chilled fruit salad. Did you know? The pale rind is edible and can be pickled or cooked, although it is usually discarded. Raw: Yes; wash the whole melon before cutting to avoid transferring dirt from the rind to the flesh."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "72": {
       "name": "Melon (Cantaloupe/Honeydew)",
       "selectionGuide": "Sweet fragrance at the stem end. Slightly soft at the blossom end (opposite stem).",
       "storageGuide": "Ripen at room temperature. Once ripe, store whole in the fridge. Cut melon must be refrigerated in an airtight container.",
-      "nutritionalInfo": "Per 100 g raw: 34 kcal; carbohydrates 8.2 g; fiber 0.9 g; protein 0.8 g.",
-      "nutritionNote": "Reference values are for cantaloupe; honeydew melon differs.",
+      "nutritionalInfo": "Per 100 g raw: 34 kcal; carbohydrates 8.2 g; fiber 0.9 g; protein 0.8 g. Selected micronutrient highlights (amounts not provided): vitamin A, vitamin C, potassium.",
+      "nutritionNote": "Reference values are for cantaloupe; honeydew melon differs. Quantities for the micronutrient highlights are not provided.",
       "recipes": {
         "default-72": {
           "name": "Classic Melon (Cantaloupe/Honeydew) recipe",
-          "instructions": "Scoop melon into balls and serve chilled with mint and lime juice."
+          "instructions": "Scoop melon into balls and serve chilled with mint and lime juice. Did you know? Melons are not all climacteric in the same way; aroma and slight softness near the stem can help assess ripeness. Raw: Yes; wash the rind before cutting and eat the flesh fresh."
         }
       }
     },
@@ -512,97 +551,103 @@
       "name": "Orange",
       "selectionGuide": "Heavy for its size (means juicy). Firm, finely textured skin.",
       "storageGuide": "Store loose in the crisper drawer of the fridge for maximum freshness (up to a month). Room temp is fine for a few days.",
-      "nutritionalInfo": "Per 100 g raw: 47 kcal; carbohydrates 11.8 g; fiber 2.4 g; protein 0.9 g.",
+      "nutritionalInfo": "Per 100 g raw: 47 kcal; carbohydrates 11.8 g; fiber 2.4 g; protein 0.9 g. Selected micronutrient highlights (amounts not provided): vitamin C, folate, potassium.",
       "recipes": {
         "default-73": {
           "name": "Classic Orange recipe",
-          "instructions": "Add orange segments to a salad with fennel and a light olive-oil dressing."
+          "instructions": "Add orange segments to a salad with fennel and a light olive-oil dressing. Did you know? The white pith beneath the peel is edible and contributes fibre, although it can taste bitter. Raw: Yes; eat the segments fresh. Use zest only from a clean, food-suitable peel."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "74": {
       "name": "Tangerine/Clementine",
       "selectionGuide": "Bright orange, skin feels slightly loose (easy to peel) but fruit should be heavy.",
       "storageGuide": "Keep them loose in the crisper drawer of the fridge to prevent them from drying out quickly.",
-      "nutritionalInfo": "Per 100 g raw: 53 kcal; carbohydrates 13.3 g; fiber 1.8 g; protein 0.8 g.",
-      "nutritionNote": "Reference values are for tangerines; clementines may differ.",
+      "nutritionalInfo": "Per 100 g raw: 53 kcal; carbohydrates 13.3 g; fiber 1.8 g; protein 0.8 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin A, potassium.",
+      "nutritionNote": "Reference values are for tangerines; clementines may differ. Quantities for the micronutrient highlights are not provided.",
       "recipes": {
         "default-74": {
           "name": "Classic Tangerine/Clementine recipe",
-          "instructions": "Toss peeled mandarin segments with spinach and toasted nuts."
+          "instructions": "Toss peeled mandarin segments with spinach and toasted nuts. Did you know? Clementines are usually easy to peel and often seedless, while mandarins may contain seeds. Raw: Yes; peel and eat the segments fresh."
         }
       }
     },
     "75": {
       "name": "Lemon",
       "selectionGuide": "Bright yellow, heavy. Thin-skinned lemons are juicier.",
-      "storageGuide": "Store submerged in water in an airtight container in the fridge to keep them firm and juicy for weeks.",
-      "nutritionalInfo": "Per 100 g raw: 29 kcal; carbohydrates 9.3 g; fiber 2.8 g; protein 1.1 g.",
+      "storageGuide": "Refrigerate in a perforated or loosely closed bag to slow moisture loss. Keep cut lemon in a covered container and use promptly; storing whole lemons submerged in water is not necessary.",
+      "nutritionalInfo": "Per 100 g raw: 29 kcal; carbohydrates 9.3 g; fiber 2.8 g; protein 1.1 g. Selected micronutrient highlights (amounts not provided): vitamin C, potassium.",
       "recipes": {
         "default-75": {
           "name": "Classic Lemon recipe",
-          "instructions": "Mix lemon juice and zest with olive oil and herbs for a bright dressing."
+          "instructions": "Mix lemon juice and zest with olive oil and herbs for a bright dressing. Did you know? Lemon zest contains aromatic oils in the coloured outer peel; avoid grating the bitter white pith. Raw: Yes. Use the washed flesh, juice and zest; use peel only when it is suitable for culinary use."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "76": {
       "name": "Grapefruit",
       "selectionGuide": "Heavy for size, firm but slightly springy. Flat ends usually indicate good ripeness.",
       "storageGuide": "Store loose in the fridge crisper drawer to maximize shelf life.",
-      "nutritionalInfo": "Per 100 g raw: 42 kcal; carbohydrates 10.7 g; fiber 1.6 g; protein 0.8 g.",
+      "nutritionalInfo": "Per 100 g raw: 42 kcal; carbohydrates 10.7 g; fiber 1.6 g; protein 0.8 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin A, potassium.",
       "recipes": {
         "default-76": {
           "name": "Classic Grapefruit recipe",
-          "instructions": "Broil grapefruit halves briefly and serve warm with a little honey."
+          "instructions": "Broil grapefruit halves briefly and serve warm with a little honey. Did you know? Grapefruit can interact with some medicines; check the medicine leaflet or ask a pharmacist before eating it if you take prescription drugs. Raw: Yes; peel and eat the segments fresh."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "77": {
       "name": "Pomegranate",
       "selectionGuide": "Heavy, angular shape (not perfectly round means seeds are full), dark red skin.",
       "storageGuide": "Keep whole fruits in the fridge crisper drawer. Extracted seeds should go in an airtight container.",
-      "nutritionalInfo": "Per 100 g raw: 83 kcal; carbohydrates 18.7 g; fiber 4 g; protein 1.7 g.",
+      "nutritionalInfo": "Per 100 g raw: 83 kcal; carbohydrates 18.7 g; fiber 4 g; protein 1.7 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, potassium.",
       "recipes": {
         "default-77": {
           "name": "Classic Pomegranate recipe",
-          "instructions": "Scatter pomegranate seeds over roasted vegetables and a yogurt dressing."
+          "instructions": "Scatter pomegranate seeds over roasted vegetables and a yogurt dressing. Did you know? The juicy red sacs are called arils; both the juice-filled pulp and the small inner seed are edible. Raw: Yes; separate the arils and eat them fresh."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "78": {
       "name": "Persimmon (Kaki)",
       "selectionGuide": "Astringent types (such as Hachiya) must soften fully before eating; non-astringent types (such as Fuyu) can be eaten while firm.",
       "storageGuide": "Ripen at room temperature. Astringent varieties must soften fully before eating; refrigerate ripe fruit.",
-      "nutritionalInfo": "Per 100 g raw: 70 kcal; carbohydrates 18.6 g; fiber 3.6 g; protein 0.6 g.",
+      "nutritionalInfo": "Per 100 g raw: 70 kcal; carbohydrates 18.6 g; fiber 3.6 g; protein 0.6 g. Selected micronutrient highlights (amounts not provided): vitamin A, vitamin C, manganese.",
       "recipes": {
         "default-78": {
           "name": "Classic Persimmon (Kaki) recipe",
-          "instructions": "Slice ripe persimmon and serve with yogurt, toasted nuts, and cinnamon."
+          "instructions": "Slice ripe persimmon and serve with yogurt, toasted nuts, and cinnamon. Did you know? Astringent persimmons contain soluble tannins that cause a drying sensation until the fruit is fully ripe. Raw: Yes; eat non-astringent types while firm, but let astringent types become very soft first."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "79": {
       "name": "Fig",
       "selectionGuide": "Soft to touch, neck should droop. Small splits in skin indicate peak ripeness.",
       "storageGuide": "Place unwashed in a single layer on a paper towel-lined plate, covered loosely with plastic wrap in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 74 kcal; carbohydrates 19.2 g; fiber 2.9 g; protein 0.8 g.",
+      "nutritionalInfo": "Per 100 g raw: 74 kcal; carbohydrates 19.2 g; fiber 2.9 g; protein 0.8 g. Selected micronutrient highlights (amounts not provided): vitamin K, calcium, potassium.",
       "recipes": {
         "default-79": {
           "name": "Classic Fig recipe",
-          "instructions": "Bake halved figs with a little honey and serve with soft cheese."
+          "instructions": "Bake halved figs with a little honey and serve with soft cheese. Did you know? The skin of ripe figs is edible; the tiny crunchy structures inside are the fruit’s many individual flowers and seeds. Raw: Yes; rinse gently and eat the whole fruit, including the skin."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "80": {
-      "name": "Nectarine/Peach",
-      "selectionGuide": "Ignore the red blush; the background color should be non-green (yellow or cream/white, depending on variety). The fruit should yield slightly along the seam.",
-      "storageGuide": "Ripen stem-side down at room temperature. Once ripe and fragrant, store in the fridge crisper.",
-      "nutritionalInfo": "Per 100 g raw: 39 kcal; carbohydrates 9.5 g; fiber 1.5 g; protein 0.9 g.",
-      "nutritionNote": "Reference values are for peaches; nectarines may differ.",
+      "name": "Peach",
+      "selectionGuide": "Look for a fragrant fruit with a background skin color that is no longer green. It should yield slightly to gentle pressure; avoid bruises and leaking juice.",
+      "storageGuide": "Ripen firm peaches at room temperature. Once fragrant and gently yielding, refrigerate and use soon; cold storage can soften texture.",
+      "nutritionalInfo": "Per 100 g raw: 39 kcal; carbohydrates 9.5 g; fiber 1.5 g; protein 0.9 g. Selected micronutrient highlights (amounts not provided): vitamin A, vitamin C, potassium.",
+      "nutritionNote": "Reference values are for peaches; nectarines may differ. Quantities for the micronutrient highlights are not provided.",
       "recipes": {
         "default-80": {
-          "name": "Classic Nectarine/Peach recipe",
-          "instructions": "Grill peach or nectarine halves and serve with plain yogurt."
+          "name": "Grilled peaches with yogurt",
+          "instructions": "Halve and pit ripe peaches. Grill cut-side down until lightly caramelized, turn briefly, and serve with plain yogurt and toasted almonds. Did you know? Peach flesh bruises easily, so handle ripe fruit gently. Raw: Yes; wash and eat the flesh, but discard the hard stone."
         }
       }
     },
@@ -610,49 +655,1171 @@
       "name": "Kiwi",
       "selectionGuide": "Yields to gentle thumb pressure. Avoid rock hard (unripe) or mushy (overripe).",
       "storageGuide": "Leave firm kiwis at room temp to ripen. Once soft, transfer to a plastic bag in the fridge.",
-      "nutritionalInfo": "Per 100 g raw: 61 kcal; carbohydrates 14.7 g; fiber 3 g; protein 1.1 g.",
+      "nutritionalInfo": "Per 100 g raw: 61 kcal; carbohydrates 14.7 g; fiber 3 g; protein 1.1 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin K, potassium.",
       "recipes": {
         "default-81": {
           "name": "Classic Kiwi recipe",
-          "instructions": "Slice kiwi over porridge or yogurt and add a handful of oats."
+          "instructions": "Slice kiwi over porridge or yogurt and add a handful of oats. Did you know? Kiwi skin is edible, including the fuzzy green varieties; wash and rub it gently before eating. Raw: Yes; the whole fruit can be eaten skin-on, or peeled if preferred."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "82": {
       "name": "Avocado",
       "selectionGuide": "Hass: Dark skin, yields gently to pressure. Green skins: Firm but not rock hard, skin stays green.",
       "storageGuide": "Ripen at room temperature. Once it yields gently, store whole in the fridge to pause ripening. For cut halves, squeeze lemon juice and wrap tightly in plastic.",
-      "nutritionalInfo": "Per 100 g raw: 160 kcal; carbohydrates 8.5 g; fiber 6.7 g; protein 2 g.",
+      "nutritionalInfo": "Per 100 g raw: 160 kcal; carbohydrates 8.5 g; fiber 6.7 g; protein 2 g. Selected micronutrient highlights (amounts not provided): vitamin K, folate, potassium, magnesium.",
       "recipes": {
         "default-82": {
           "name": "Classic Avocado recipe",
-          "instructions": "Mash avocado with lime, chopped tomato, and a pinch of salt for a quick spread."
+          "instructions": "Mash avocado with lime, chopped tomato, and a pinch of salt for a quick spread. Did you know? Avocado is a fruit, and its flesh contains mostly monounsaturated fat. Raw: Yes; eat the flesh. Discard the large pit and the peel."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "83": {
       "name": "Mango",
       "selectionGuide": "Slightly soft to touch, fruity aroma at stem. Color is not a reliable indicator of ripeness.",
       "storageGuide": "Ripen at room temperature. Once ripe, move to the fridge to extend its shelf life by a few days.",
-      "nutritionalInfo": "Per 100 g raw: 60 kcal; carbohydrates 15 g; fiber 1.6 g; protein 0.8 g.",
+      "nutritionalInfo": "Per 100 g raw: 60 kcal; carbohydrates 15 g; fiber 1.6 g; protein 0.8 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin A, folate, potassium.",
       "recipes": {
         "default-83": {
           "name": "Classic Mango recipe",
-          "instructions": "Blend mango with plain yogurt and lime for a simple chilled smoothie."
+          "instructions": "Blend mango with plain yogurt and lime for a simple chilled smoothie. Did you know? Mango color varies by cultivar and is not a reliable ripeness test; aroma and gentle give are better clues. Raw: Yes; wash, peel and eat the flesh. Discard the large flat stone."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
     },
     "20b": {
       "name": "Garlic",
       "selectionGuide": "Firm, tight skin, heavy for size. Avoid if cloves feel hollow or soft.",
       "storageGuide": "Keep in a dry, dark, well-ventilated space at room temperature. A mesh bag or open basket is ideal.",
-      "nutritionalInfo": "Per 100 g raw: 149 kcal; carbohydrates 33.1 g; fiber 2.1 g; protein 6.4 g.",
+      "nutritionalInfo": "Per 100 g raw: 149 kcal; carbohydrates 33.1 g; fiber 2.1 g; protein 6.4 g. Selected micronutrient highlights (amounts not provided): vitamin C, vitamin B6, manganese, selenium.",
       "recipes": {
         "default-20b": {
           "name": "Classic Garlic recipe",
-          "instructions": "Roast a whole garlic bulb until soft; squeeze the cloves into mashed potatoes."
+          "instructions": "Roast a whole garlic bulb until soft; squeeze the cloves into mashed potatoes. Did you know? Crushing or chopping garlic activates enzymes that form its characteristic pungent sulfur compounds. Raw: Yes; use small amounts if its sharp flavor is too strong."
         }
-      }
+      },
+      "nutritionNote": "Approximate raw-food reference per 100 g edible portion. Values vary by cultivar and growing conditions; micronutrients without an amount are qualitative highlights only. Quantities for the micronutrient highlights are not provided."
+    },
+    "84": {
+      "name": "Red Cabbage",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Look for a dense head with tightly packed leaves.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-84": {
+          "name": "Red Cabbage Slaw",
+          "instructions": "Shred the cabbage finely, massage with a pinch of salt, then toss with apple, caraway and cider vinegar. Did you know? Its purple-red pigments are anthocyanins, which can change color with acidity. Raw: Yes. Wash the leaves and shred them for slaw; it can also be braised."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 31 kcal; carbohydrates 7.4 g; fiber 2.1 g; protein 1.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "85": {
+      "name": "Savoy Cabbage",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. The head should feel heavy; leaves should be crisp, not limp.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-85": {
+          "name": "Savoy Cabbage Rolls",
+          "instructions": "Blanch whole leaves, fill with cooked rice and lentils, roll and simmer gently in tomato sauce. Did you know? Its crinkled leaves trap soil, so separate and rinse them carefully. Raw: Yes. Tender inner leaves can be shredded for salad; tougher outer leaves are better cooked."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 27 kcal; carbohydrates 6.1 g; fiber 3.1 g; protein 2 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "86": {
+      "name": "Chinese Cabbage (Napa)",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Choose a compact head with crisp white ribs and fresh green tips.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-86": {
+          "name": "Napa Cabbage Sesame Salad",
+          "instructions": "Slice the leaves and toss with carrot, spring onion, sesame and a light soy-lime dressing. Did you know? It is also known as napa cabbage and is a common base for kimchi. Raw: Yes. The crisp white ribs and tender leaves are both eaten raw after washing."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 16 kcal; carbohydrates 3.2 g; fiber 1.2 g; protein 1.2 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "87": {
+      "name": "Leaf Lettuce",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Avoid wet, slimy leaves or a damaged base.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-87": {
+          "name": "Green Leaf Salad",
+          "instructions": "Tear the washed leaves and dress just before serving with olive oil, lemon and toasted seeds. Did you know? Whole heads usually keep longer than pre-cut leaves. Raw: Yes. Lettuce is normally eaten raw; wash and dry the leaves thoroughly."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 15 kcal; carbohydrates 2.9 g; fiber 1.3 g; protein 1.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "88": {
+      "name": "Iceberg Lettuce",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Choose a compact, heavy head with crisp outer leaves.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-88": {
+          "name": "Iceberg Wedges with Herb Dressing",
+          "instructions": "Cut into wedges and serve with a yogurt-herb dressing, or chop for a crunchy salad. Did you know? Its high water content gives it a crisp crunch but less concentrated flavour than darker lettuces. Raw: Yes. Separate the leaves, wash and dry before serving."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 14 kcal; carbohydrates 3 g; fiber 1.2 g; protein 0.9 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "89": {
+      "name": "Romaine Lettuce",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Look for firm hearts and crisp ribs without rusty or slimy patches.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-89": {
+          "name": "Grilled Romaine Hearts",
+          "instructions": "Grill halved hearts briefly and finish with lemon, olive oil and grated hard cheese. Did you know? The sturdy ribs make it a good lettuce for wraps and grilling. Raw: Yes. The crisp ribs and leaves are eaten raw after washing."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 17 kcal; carbohydrates 3.3 g; fiber 2.1 g; protein 1.2 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "90": {
+      "name": "Arugula (Rocket)",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Choose small, dry leaves with an even green colour.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-90": {
+          "name": "Rocket, Pear and Walnut Salad",
+          "instructions": "Toss fresh leaves with pear, toasted walnuts, shaved cheese and a lemon dressing. Did you know? Its peppery taste comes from naturally occurring glucosinolates. Raw: Yes. It is most often eaten raw; wash and dry the leaves."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 25 kcal; carbohydrates 3.7 g; fiber 1.6 g; protein 2.6 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "91": {
+      "name": "Lamb's Lettuce (Corn Salad)",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. The small rosettes should be fresh and not compressed or wet.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-91": {
+          "name": "Mâche with Orange and Hazelnuts",
+          "instructions": "Combine the washed leaves with orange segments, toasted hazelnuts and a mustard vinaigrette. Did you know? Rosette-shaped leaves collect grit near the base, so rinse them in several changes of water. Raw: Yes. It is a delicate salad green and is normally eaten raw after careful washing."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 21 kcal; carbohydrates 3.6 g; fiber 1.8 g; protein 2 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "92": {
+      "name": "Belgian Endive (Chicory)",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Choose pale, firm heads with tightly closed leaves.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-92": {
+          "name": "Chicory Bites with Blue Cheese",
+          "instructions": "Separate the leaves and fill them with blue cheese, chopped apple and walnuts. Did you know? It is grown in darkness, which keeps the leaves pale and tender. Raw: Yes. The crisp leaves can be eaten raw; trim the bitter base if desired."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 17 kcal; carbohydrates 3.4 g; fiber 3.1 g; protein 1.3 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "93": {
+      "name": "Radicchio",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Choose firm heads with bright, unblemished red-purple leaves.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-93": {
+          "name": "Grilled Radicchio",
+          "instructions": "Grill wedges until lightly charred and balance the bitterness with balsamic vinegar and orange. Did you know? Its red-purple color comes from anthocyanin pigments. Raw: Yes. It can be eaten raw in salads or cooked to mellow its bitterness."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 23 kcal; carbohydrates 4.5 g; fiber 0.9 g; protein 1.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "94": {
+      "name": "Celery (Stalk)",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Stalks should snap cleanly and leaves should look fresh.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-94": {
+          "name": "Celery and Apple Salad",
+          "instructions": "Slice the stalks and toss with apple, walnuts, lemon and yogurt for a crunchy salad. Did you know? Celery is naturally crisp because its stalks contain a large proportion of water. Raw: Yes. Wash well and trim the base; the leaves are also edible and can flavour stock."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 14 kcal; carbohydrates 3 g; fiber 1.6 g; protein 0.7 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "95": {
+      "name": "Fennel",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose a firm, white bulb with fresh green fronds and no browning.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-95": {
+          "name": "Fennel and Orange Salad",
+          "instructions": "Shave the bulb thinly and combine with orange, olive oil and black pepper. Did you know? The bulb, stalks, fronds and seeds all have an anise-like aroma. Raw: Yes. The washed bulb can be eaten raw, thinly sliced; the fronds are edible too."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 31 kcal; carbohydrates 7.3 g; fiber 3.1 g; protein 1.2 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "96": {
+      "name": "Sweet Potato",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose firm tubers with smooth skin and no soft or wet patches.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-96": {
+          "name": "Roasted Sweet Potato Wedges",
+          "instructions": "Cut into wedges, toss with oil, smoked paprika and salt, then roast until tender. Did you know? Despite the name, sweet potato is not botanically related to the common potato. Raw: Raw sweet potato is technically edible but hard and starchy; cooking is recommended."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 86 kcal; carbohydrates 20.1 g; fiber 3 g; protein 1.6 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "97": {
+      "name": "Artichoke",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose compact heads with tightly closed scales and fresh-looking stems.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-97": {
+          "name": "Steamed Artichokes with Dip",
+          "instructions": "Trim the tough tips, steam until the base is tender, and serve the leaves with lemon-garlic yogurt. Did you know? The edible part is an immature flower head, not a root or fruit. Raw: The tender heart can be eaten raw when very fresh and thinly sliced; most of the flower head is usually cooked."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 47 kcal; carbohydrates 10.5 g; fiber 5.4 g; protein 3.3 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "98": {
+      "name": "Green Peas (Fresh)",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Pods should be bright green and plump; small peas are usually sweeter.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-98": {
+          "name": "Fresh Pea and Mint Salad",
+          "instructions": "Briefly blanch shelled peas and toss with mint, lemon zest and butter. Did you know? The natural sugars in freshly picked peas convert to starch during storage, so freshness matters. Raw: Yes. Very fresh, sweet peas can be eaten raw after shelling and washing."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 81 kcal; carbohydrates 14.5 g; fiber 5.1 g; protein 5.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "99": {
+      "name": "Shallot",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose dry, firm bulbs with intact papery skins.",
+      "storageGuide": "Store whole shallots in a cool, dry, well-ventilated place; refrigerate cut shallot in a covered container.",
+      "recipes": {
+        "default-99": {
+          "name": "Thyme-Roasted Shallots",
+          "instructions": "Roast whole peeled shallots with oil and thyme until soft and caramelized. Did you know? Shallots often grow in clusters rather than as one large bulb. Raw: Yes. Raw shallot is edible and milder when finely sliced or soaked briefly in cold water."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 72 kcal; carbohydrates 16.8 g; fiber 3.2 g; protein 2.5 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "100": {
+      "name": "Chilli Pepper",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose glossy, firm pods with an intact stem; heat varies by cultivar.",
+      "storageGuide": "Refrigerate fresh chillies in a paper bag or breathable container and use promptly.",
+      "recipes": {
+        "default-100": {
+          "name": "Chilli-Lime Dressing",
+          "instructions": "Finely chop a little chilli and stir into lime juice, garlic and oil for a quick dressing. Did you know? Capsaicin is concentrated mainly in the pale inner placental tissue, not the seeds themselves. Raw: Yes. Fresh chilli is commonly eaten raw in small amounts; avoid touching eyes after handling and wash hands."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 40 kcal; carbohydrates 8.8 g; fiber 1.5 g; protein 1.9 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "101": {
+      "name": "Ginger Root",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose plump, firm rhizomes with smooth skin and a fresh aroma.",
+      "storageGuide": "Refrigerate fresh ginger in a breathable bag or freeze for longer storage; keep cut surfaces covered.",
+      "recipes": {
+        "default-101": {
+          "name": "Ginger and Carrot Soup",
+          "instructions": "Grate fresh ginger into carrot soup or steep thin slices with lemon for an aromatic infusion. Did you know? The part sold as ginger root is a rhizome, an underground stem. Raw: Yes. Peeled or well-washed ginger can be grated raw; use a small amount because it is pungent."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 80 kcal; carbohydrates 17.8 g; fiber 2 g; protein 1.8 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "102": {
+      "name": "Button Mushrooms",
+      "selectionGuide": "Choose firm, dry mushrooms without slime, strong off-odours or extensive dark spots. Caps should be firm and dry; closed caps are not necessarily better than open ones.",
+      "storageGuide": "Refrigerate in a paper bag or breathable original pack and use soon. Do not seal damp mushrooms in an airtight container.",
+      "recipes": {
+        "default-102": {
+          "name": "Garlic Butter Button Mushrooms",
+          "instructions": "Brown sliced mushrooms in a hot pan, then add garlic, parsley and a squeeze of lemon. Did you know? White, brown and portobello mushrooms are forms of the same cultivated species. Raw: Fresh cultivated button mushrooms may be eaten raw after cleaning, but cooking is a common way to improve flavour and texture."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 22 kcal; carbohydrates 3.3 g; fiber 1 g; protein 3.1 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "103": {
+      "name": "Oyster Mushrooms",
+      "selectionGuide": "Choose firm, dry mushrooms without slime, strong off-odours or extensive dark spots. Choose firm clusters with dry edges and no yellowing or slime.",
+      "storageGuide": "Refrigerate in a paper bag or breathable original pack and use soon. Do not seal damp mushrooms in an airtight container.",
+      "recipes": {
+        "default-103": {
+          "name": "Seared Oyster Mushrooms",
+          "instructions": "Tear into strips and sear with garlic, thyme and a splash of soy sauce until golden. Did you know? Oyster mushrooms grow in overlapping fan-shaped clusters. Raw: Cook before eating; raw oyster mushrooms are not the usual preparation."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 33 kcal; carbohydrates 6.1 g; fiber 2.3 g; protein 3.3 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "104": {
+      "name": "Shiitake Mushrooms",
+      "selectionGuide": "Choose firm, dry mushrooms without slime, strong off-odours or extensive dark spots. Caps should be firm with a fresh, earthy aroma; stems can be tough.",
+      "storageGuide": "Refrigerate in a paper bag or breathable original pack and use soon. Do not seal damp mushrooms in an airtight container.",
+      "recipes": {
+        "default-104": {
+          "name": "Ginger Shiitake Stir-Fry",
+          "instructions": "Remove tough stems, slice the caps and sauté with ginger, garlic and soy sauce. Did you know? The stems are tougher than the caps but can flavour stock. Raw: Cook thoroughly; do not eat shiitake raw, as raw or undercooked shiitake can cause a characteristic skin reaction in some people."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 34 kcal; carbohydrates 6.8 g; fiber 2.5 g; protein 2.2 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "105": {
+      "name": "Dill",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Keep stems cool in a jar with a little water, loosely covered, or wrap the leaves in a barely damp towel in the fridge.",
+      "recipes": {
+        "default-105": {
+          "name": "Dill Yogurt Dip",
+          "instructions": "Fold chopped dill into yogurt with lemon and cucumber for a quick sauce. Did you know? Dill leaves and seeds have different flavour profiles and are used differently in cooking. Raw: Yes. Use the tender leaves raw; wash and dry them before chopping."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 43 kcal; carbohydrates 7 g; fiber 2.1 g; protein 3.5 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "106": {
+      "name": "Parsley (Leaf)",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Refrigerate most herbs wrapped loosely in a barely damp paper towel inside a bag or container. Keep basil at room temperature if chilling damages it.",
+      "recipes": {
+        "default-106": {
+          "name": "Parsley Garlic Herb Sauce",
+          "instructions": "Chop a generous handful with garlic, lemon zest and olive oil for a parsley dressing. Did you know? Flat-leaf and curly parsley are different cultivated forms of the same species. Raw: Yes. The leaves and tender stems are eaten raw after washing."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 36 kcal; carbohydrates 6.3 g; fiber 3.3 g; protein 3 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "107": {
+      "name": "Basil",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Keep cut basil at room temperature in a little water; refrigeration can cause chilling damage.",
+      "recipes": {
+        "default-107": {
+          "name": "Tomato Basil Caprese",
+          "instructions": "Tear the leaves over ripe tomatoes, add mozzarella and finish with olive oil. Did you know? Tearing or cutting just before serving helps preserve its fresh aroma. Raw: Yes. Basil is usually used raw or added at the end of cooking."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 23 kcal; carbohydrates 2.7 g; fiber 1.6 g; protein 3.2 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "108": {
+      "name": "Coriander (Cilantro)",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Refrigerate most herbs wrapped loosely in a barely damp paper towel inside a bag or container. Keep basil at room temperature if chilling damages it.",
+      "recipes": {
+        "default-108": {
+          "name": "Coriander-Lime Salsa",
+          "instructions": "Chop the leaves and stems into a lime, chilli and tomato salsa. Did you know? The leaves and dried seeds are both called coriander, but they taste quite different. Raw: Yes. Wash and use the leaves and tender stems raw."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 23 kcal; carbohydrates 3.7 g; fiber 2.8 g; protein 2.1 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "109": {
+      "name": "Mint",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Refrigerate most herbs wrapped loosely in a barely damp paper towel inside a bag or container. Keep basil at room temperature if chilling damages it.",
+      "recipes": {
+        "default-109": {
+          "name": "Mint and Lemon Dressing",
+          "instructions": "Chop mint into a dressing with lemon, olive oil and a little honey for fruit or salads. Did you know? Mint aroma comes largely from volatile essential-oil compounds such as menthol in some varieties. Raw: Yes. Fresh mint leaves are commonly used raw after washing."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 44 kcal; carbohydrates 8.4 g; fiber 6.8 g; protein 3.3 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "110": {
+      "name": "Chives",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Refrigerate most herbs wrapped loosely in a barely damp paper towel inside a bag or container. Keep basil at room temperature if chilling damages it.",
+      "recipes": {
+        "default-110": {
+          "name": "Baked Potatoes with Chives",
+          "instructions": "Snip over baked potatoes, cottage cheese or scrambled eggs just before serving. Did you know? Chives are related to onions and garlic but have a milder flavour. Raw: Yes. Use the washed leaves raw; add them at the end so they retain their aroma."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 30 kcal; carbohydrates 4.4 g; fiber 2.5 g; protein 3.3 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "111": {
+      "name": "Watercress",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-111": {
+          "name": "Watercress Soup",
+          "instructions": "Blend watercress with potato, stock and yogurt for a peppery green soup. Did you know? It naturally grows in wet habitats and has a peppery taste. Raw: Yes. Eat raw only when sold for food and washed thoroughly; do not gather it from unknown waterways."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 11 kcal; carbohydrates 1.3 g; fiber 0.5 g; protein 2.3 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "112": {
+      "name": "Pak Choi (Bok Choy)",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Choose compact heads with crisp white stalks and unwilted leaves.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-112": {
+          "name": "Garlic-Ginger Pak Choi",
+          "instructions": "Halve or quarter the heads and stir-fry quickly with garlic, ginger and sesame oil. Did you know? Separate the stalks and leaves when cooking because the stalks take longer. Raw: Young leaves can be eaten raw after washing; the crunchy stalks are usually cooked."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 13 kcal; carbohydrates 2.2 g; fiber 1 g; protein 1.5 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "113": {
+      "name": "Turnip",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Smaller roots are often more tender; avoid woody cracks and soft spots.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-113": {
+          "name": "Mustard and Thyme Roasted Turnip",
+          "instructions": "Cut into cubes and roast with olive oil, mustard and thyme until tender. Did you know? Turnip greens are also edible when fresh and can be cooked like other leafy greens. Raw: Yes. Young, tender turnips can be eaten raw, grated or sliced; peel older roots if the skin is tough."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 28 kcal; carbohydrates 6.4 g; fiber 1.8 g; protein 0.9 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "114": {
+      "name": "Rutabaga (Swede)",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose firm, smooth roots that feel heavy for their size.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-114": {
+          "name": "Rutabaga Mash",
+          "instructions": "Cube and roast with carrots and parsnips, or mash with a little butter. Did you know? Rutabaga is a cross between cabbage and turnip. Raw: Yes, but raw rutabaga is firm and peppery; grate young roots for slaw."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 37 kcal; carbohydrates 8.6 g; fiber 2.3 g; protein 1.1 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "115": {
+      "name": "Mung Bean Sprouts",
+      "selectionGuide": "Choose refrigerated sprouts that look crisp, moist but not slimy, and have no sour smell. Check the use-by date and avoid packs with pooled liquid.",
+      "storageGuide": "Keep refrigerated, follow the use-by date and avoid leaving sprouts at room temperature.",
+      "recipes": {
+        "default-115": {
+          "name": "Hot Mung Bean Sprout Stir-Fry",
+          "instructions": "Stir-fry the sprouts briefly with garlic, soy sauce and sesame, keeping them hot throughout. Did you know? Warm, humid sprouting conditions can also support bacterial growth, even when sprouts look fresh. Raw: Cooking is the safer default. Raw sprouts can carry harmful bacteria; cook thoroughly, especially for pregnant people, young children, older adults and anyone with a weakened immune system."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 30 kcal; carbohydrates 5.9 g; fiber 1.8 g; protein 3 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "116": {
+      "name": "Okra",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Young, small pods are usually more tender; avoid dry or fibrous pods.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-116": {
+          "name": "Roasted Okra with Cumin",
+          "instructions": "Slice and roast with oil, cumin and paprika, or add whole pods to a tomato stew. Did you know? Its mucilage thickens soups and stews naturally. Raw: Yes. Young pods can be eaten raw after washing, but cooking is more common and softens their texture."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 33 kcal; carbohydrates 7.5 g; fiber 3.2 g; protein 1.9 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "117": {
+      "name": "Fresh Turmeric Root",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose firm orange rhizomes without mould or shrivelling.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-117": {
+          "name": "Turmeric Lentil Soup",
+          "instructions": "Finely grate a little fresh turmeric into lentil soup with ginger and black pepper. Did you know? The orange rhizome contains curcuminoid pigments and is related to ginger. Raw: Yes. Fresh turmeric can be grated raw in small amounts; it stains hands and surfaces strongly."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "118": {
+      "name": "Swiss Chard",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Leaves should be crisp; stems can be white, yellow, pink or red.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-118": {
+          "name": "Garlic Swiss Chard",
+          "instructions": "Separate stems and leaves; sauté the stems first, then add leaves with garlic and lemon. Did you know? Chard is related to beetroot; the colourful stalks are edible. Raw: Young leaves can be eaten raw; mature leaves and stems are usually cooked."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 19 kcal; carbohydrates 3.7 g; fiber 1.6 g; protein 1.8 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "119": {
+      "name": "Cassava (Yuca)",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose firm, unbruised roots with intact skin.",
+      "storageGuide": "Keep in a cool, dry place. After peeling and cooking, refrigerate leftovers promptly.",
+      "recipes": {
+        "default-119": {
+          "name": "Properly Cooked Cassava",
+          "instructions": "Peel thickly, cut into chunks, then boil thoroughly until completely tender; discard the cooking water. Did you know? Sweet and bitter cassava types differ in cyanogenic potential; follow the seller’s preparation instructions. Raw: Never eat raw cassava. It contains naturally occurring cyanogenic compounds and must be peeled and properly processed and cooked before eating."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 160 kcal; carbohydrates 38.1 g; fiber 1.8 g; protein 1.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "120": {
+      "name": "Taro Root",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose firm corms without mould or soft wet patches.",
+      "storageGuide": "Keep in a cool, dry place. Refrigerate cut pieces and cook promptly.",
+      "recipes": {
+        "default-120": {
+          "name": "Steamed Taro",
+          "instructions": "Peel with gloves if sensitive, cut into chunks and boil or steam until completely tender. Did you know? Taro is a starchy corm used in many cuisines and is not the same as yam. Raw: Never eat taro raw. Raw tissue contains irritating calcium oxalate crystals; cook thoroughly before eating."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 112 kcal; carbohydrates 26.5 g; fiber 4.1 g; protein 1.5 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "121": {
+      "name": "Banana",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Look for plump fingers without deep bruises; green tips are not necessarily a defect.",
+      "storageGuide": "Ripen at room temperature. Once ripe, use soon; refrigeration may darken the peel and affect texture.",
+      "recipes": {
+        "default-121": {
+          "name": "Banana Peanut Porridge",
+          "instructions": "Slice ripe banana over porridge with peanut butter and a little cinnamon. Did you know? Bananas are harvested green and ripened after harvest during distribution. Raw: Yes. The ripe flesh is eaten raw; peel first."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 89 kcal; carbohydrates 22.8 g; fiber 2.6 g; protein 1.1 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "122": {
+      "name": "Pineapple",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose a fruit that feels heavy and has a fresh, sweet aroma at the base.",
+      "storageGuide": "Store whole at room temperature for a short period or refrigerate once cut; cover cut surfaces.",
+      "recipes": {
+        "default-122": {
+          "name": "Grilled Pineapple with Lime",
+          "instructions": "Grill pineapple rings briefly and serve with lime zest and plain yogurt. Did you know? Pineapple contains bromelain, a group of enzymes that break down proteins. Raw: Yes. Eat the washed, peeled flesh raw; remove the tough core if you prefer."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 50 kcal; carbohydrates 13.1 g; fiber 1.4 g; protein 0.5 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "123": {
+      "name": "Lime",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose fruit that is heavy for its size with firm, glossy skin.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-123": {
+          "name": "Lime and Coriander Dressing",
+          "instructions": "Mix lime juice with coriander, chilli and olive oil for a bright dressing. Did you know? Limes are often harvested green; yellowing can occur as they mature. Raw: Yes. The juicy segments are edible raw; wash the peel before zesting."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 30 kcal; carbohydrates 10.5 g; fiber 2.8 g; protein 0.7 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "124": {
+      "name": "Sour Cherries",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose firm, glossy cherries with green flexible stems.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-124": {
+          "name": "Sour Cherry Compote",
+          "instructions": "Pit the cherries and simmer briefly with a little water and cinnamon for a compote. Did you know? Sour cherries are commonly used in baking and preserves because of their high acidity. Raw: Yes. The flesh is eaten raw, but the flavour is tart; do not eat or crack the stones."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 50 kcal; carbohydrates 12.2 g; fiber 1.6 g; protein 1 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "125": {
+      "name": "Black Currants",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Berries should be plump and dark, with no mould in the pack.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-125": {
+          "name": "Blackcurrant Yogurt Topping",
+          "instructions": "Mash the berries with a little honey and spoon over yogurt or oatmeal. Did you know? Blackcurrants are particularly rich in vitamin C compared with many common fruits. Raw: Yes. Remove the berries from the stems, rinse and eat fresh."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 63 kcal; carbohydrates 15.4 g; fiber 4.3 g; protein 1.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "126": {
+      "name": "Red Currants",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose bright, firm clusters with no leaking juice.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-126": {
+          "name": "Redcurrant and Goat Cheese Salad",
+          "instructions": "Fold the rinsed berries into a green salad with goat cheese and toasted seeds. Did you know? Their high acidity makes them useful in sauces and jellies. Raw: Yes. Rinse the clusters and strip the berries from their stems before eating."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 56 kcal; carbohydrates 13.8 g; fiber 4.3 g; protein 1.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "127": {
+      "name": "Gooseberries",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose firm berries with intact skins; avoid mushy or leaking fruit.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-127": {
+          "name": "Gooseberry Compote",
+          "instructions": "Top and tail the berries, then simmer with a little water until just softened for a tart compote. Did you know? Gooseberries may be green, yellow, red or purple depending on cultivar and ripeness. Raw: Yes. Ripe gooseberries can be eaten raw; very firm green berries are more tart."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 44 kcal; carbohydrates 10.2 g; fiber 4.3 g; protein 0.9 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "128": {
+      "name": "Blackberries",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose plump, dark berries that are dry and not crushed.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-128": {
+          "name": "Warm Blackberry Topping",
+          "instructions": "Warm the berries briefly with lemon and spoon over pancakes or yogurt. Did you know? Each blackberry is made up of many small drupelets clustered together. Raw: Yes. Rinse gently just before eating and remove any mouldy berries."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 43 kcal; carbohydrates 9.6 g; fiber 5.3 g; protein 1.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "129": {
+      "name": "Cranberries (Fresh)",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Fresh cranberries should be firm and glossy, not shrivelled.",
+      "storageGuide": "Refrigerate fresh berries in a ventilated pack; freeze if they will not be used soon.",
+      "recipes": {
+        "default-129": {
+          "name": "Cranberry-Orange Sauce",
+          "instructions": "Simmer fresh cranberries with orange zest and a little sugar until they burst into a tart sauce. Did you know? Fresh cranberries can bounce when firm because of air pockets inside the fruit. Raw: Yes, but raw cranberries are very tart; rinse and use in small amounts or sweeten."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 46 kcal; carbohydrates 12.2 g; fiber 4.6 g; protein 0.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "130": {
+      "name": "Apricot",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. The fruit should yield slightly and smell sweet; avoid bruising.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-130": {
+          "name": "Roasted Apricots with Thyme",
+          "instructions": "Halve and roast apricots with honey and thyme; serve with thick yogurt. Did you know? Apricots soften quickly after ripening, so handle them gently. Raw: Yes. Wash and eat the flesh raw; discard the hard stone and do not eat the kernel."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 48 kcal; carbohydrates 11.1 g; fiber 2 g; protein 1.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "131": {
+      "name": "Quince",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose fragrant, firm yellow fruit without bruises.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-131": {
+          "name": "Cinnamon-Poached Quince",
+          "instructions": "Peel, core and poach quince slowly with water, lemon and cinnamon until tender. Did you know? Quince flesh often turns pink or reddish during slow cooking. Raw: Not usually eaten raw: the flesh is hard, grainy and astringent; cook until tender."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 57 kcal; carbohydrates 15.3 g; fiber 1.9 g; protein 0.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "132": {
+      "name": "Asian Pear (Nashi)",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose smooth, firm fruit with no soft spots; ripe nashi remains crisp.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-132": {
+          "name": "Nashi Pear and Cucumber Salad",
+          "instructions": "Slice thinly and serve with cucumber, sesame and a rice-vinegar dressing. Did you know? Unlike many European pears, nashi stays crisp when ripe. Raw: Yes. The crisp flesh is eaten raw; wash the skin, which is edible."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 42 kcal; carbohydrates 10.7 g; fiber 3.6 g; protein 0.5 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "133": {
+      "name": "Plantain",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose mature plantains with firm skin; black patches can indicate ripeness, not always spoilage.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-133": {
+          "name": "Pan-Fried Plantain",
+          "instructions": "Peel, slice and pan-fry or bake until golden; serve as a savoury side. Did you know? Plantains are used more like a starchy vegetable than a sweet dessert banana. Raw: Usually no. Plantains are starchy and are normally cooked before eating."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 122 kcal; carbohydrates 31.9 g; fiber 2.3 g; protein 1.3 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "134": {
+      "name": "Papaya",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose fruit with yellow-orange skin and a slight give; avoid leaking or fermented smells.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-134": {
+          "name": "Papaya-Lime Fruit Salad",
+          "instructions": "Scoop out the seeds, cube the flesh and dress with lime juice and fresh mint. Did you know? Papaya contains papain, a protein-digesting enzyme concentrated in the latex and unripe fruit. Raw: Yes. Eat the ripe flesh raw after removing the skin and seeds."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 43 kcal; carbohydrates 10.8 g; fiber 1.7 g; protein 0.5 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "135": {
+      "name": "Passion Fruit",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. A ripe fruit feels heavy and slightly yielding; wrinkled skin can be normal.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-135": {
+          "name": "Passion Fruit Yogurt",
+          "instructions": "Scoop the pulp over yogurt or mix with lime juice for a sharp fruit dressing. Did you know? Wrinkled skin can indicate ripeness rather than spoilage, provided the fruit is sound and not mouldy. Raw: Yes. Scoop out the pulp and edible seeds; discard the tough outer rind."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 97 kcal; carbohydrates 23.4 g; fiber 10.4 g; protein 2.2 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "136": {
+      "name": "Dragon Fruit (Pitaya)",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose fruit with even skin colour and no soft, leaking patches.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-136": {
+          "name": "Dragon Fruit with Lime",
+          "instructions": "Halve the fruit, scoop out the flesh and serve chilled with lime and mint. Did you know? The flesh may be white or magenta depending on the species and cultivar. Raw: Yes. The flesh and tiny black seeds are edible raw; remove the leathery peel."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 57 kcal; carbohydrates 13.2 g; fiber 3 g; protein 1.2 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "137": {
+      "name": "Coconut (Fresh)",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose a heavy coconut with liquid movement inside and no cracks or mould.",
+      "storageGuide": "Store whole at room temperature; refrigerate opened coconut flesh in a sealed container and use quickly.",
+      "recipes": {
+        "default-137": {
+          "name": "Fresh Coconut Fruit Bowl",
+          "instructions": "Use fresh coconut flesh in a fruit salad, or grate it over oats and yogurt. Did you know? Coconut water is the liquid inside the cavity; it is not the same as coconut milk. Raw: Yes. The white flesh and coconut water are edible raw; discard the hard shell."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 354 kcal; carbohydrates 15.2 g; fiber 9 g; protein 3.3 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "138": {
+      "name": "Lychee",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose intact red or pink shells without mould or leaking.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-138": {
+          "name": "Lychee Citrus Salad",
+          "instructions": "Peel the fruit, remove the stone and add the flesh to a citrus fruit salad. Did you know? The translucent flesh surrounds one large, inedible seed. Raw: Yes. Eat only the peeled white flesh; discard the rough skin and seed."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 66 kcal; carbohydrates 16.5 g; fiber 1.3 g; protein 0.8 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "139": {
+      "name": "Kumquat",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose firm, bright fruits with fragrant peel and no soft patches.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-139": {
+          "name": "Kumquat and Rosemary Preserve",
+          "instructions": "Slice thinly and simmer briefly with honey and rosemary as a topping for yogurt. Did you know? Unlike most citrus, kumquat is commonly eaten whole. Raw: Yes. Wash and eat the whole fruit, including the thin sweet-tart peel; remove seeds if desired."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 71 kcal; carbohydrates 15.9 g; fiber 6.5 g; protein 1.9 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "140": {
+      "name": "Physalis (Cape Gooseberry)",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Ripe berries should be golden-orange and firm, not shrivelled or leaking.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-140": {
+          "name": "Physalis and Avocado Salad",
+          "instructions": "Halve the berries and add to a salad with avocado, herbs and lime. Did you know? The fruit develops inside a papery lantern-like calyx. Raw: Yes. Remove the papery husk and wash the ripe berry before eating."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 53 kcal; carbohydrates 11.2 g; fiber 4.9 g; protein 1.9 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "141": {
+      "name": "Pomelo",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose a heavy fruit with firm skin and no soft spots.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-141": {
+          "name": "Pomelo and Herb Salad",
+          "instructions": "Peel away the thick rind and pith, separate the segments and toss with mint. Did you know? Pomelo is one of the largest citrus fruits and is a parent of the grapefruit. Raw: Yes. Eat the peeled segments raw; remove the thick membranes if they are tough."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 38 kcal; carbohydrates 9.6 g; fiber 1 g; protein 0.8 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "142": {
+      "name": "Starfruit (Carambola)",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose firm, yellow fruit with fresh-looking ridges and no brown soft areas.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-142": {
+          "name": "Starfruit Salad",
+          "instructions": "Slice crosswise into stars and add to a fruit salad with lime and mint. Did you know? The five-ridged fruit makes star-shaped slices; its oxalate-related compounds are a concern in kidney disease. Raw: Yes for most people, after washing and trimming the edges. People with kidney disease should avoid starfruit because it can cause serious toxicity."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 31 kcal; carbohydrates 6.7 g; fiber 2.8 g; protein 1 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "143": {
+      "name": "Nectarine",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose fragrant fruit that yields slightly near the stem; avoid bruises.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-143": {
+          "name": "Grilled Nectarines with Yogurt",
+          "instructions": "Halve and pit ripe nectarines, then grill briefly and serve with plain yogurt and toasted almonds. Did you know? A nectarine is a smooth-skinned form of peach, not a cross between a peach and a plum. Raw: Yes. Wash and eat the flesh raw; discard the hard stone and do not eat the kernel."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 44 kcal; carbohydrates 10.6 g; fiber 1.7 g; protein 1.1 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "144": {
+      "name": "Guava",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose fruit that yields gently and has a fragrant, slightly sweet aroma.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-144": {
+          "name": "Guava with Lime and Mint",
+          "instructions": "Slice ripe guava and mix with lime juice and mint for a fragrant fruit salad. Did you know? Guava is often especially rich in vitamin C. Raw: Yes. Wash the fruit; the peel and small seeds are edible, though texture varies by variety."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 68 kcal; carbohydrates 14.3 g; fiber 5.4 g; protein 2.6 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "145": {
+      "name": "Rambutan",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose bright skin with fresh-looking soft spines and no mould.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-145": {
+          "name": "Rambutan and Pineapple Bowl",
+          "instructions": "Make a chilled fruit bowl with peeled rambutan, pineapple and lime juice. Did you know? Its name means “hairy” in Malay, referring to the outer skin. Raw: Yes. Remove the hairy skin and eat the translucent flesh; discard the seed."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 82 kcal; carbohydrates 20.9 g; fiber 0.9 g; protein 0.7 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "146": {
+      "name": "Longan",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose intact, firm fruit; the thin shell should not be cracked or mouldy.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-146": {
+          "name": "Chilled Longan Fruit Salad",
+          "instructions": "Peel the fruit, remove the seed and add the flesh to a chilled fruit salad. Did you know? Longan is related to lychee and rambutan but has a milder, musky aroma. Raw: Yes. Eat only the peeled flesh and discard the seed and skin."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "147": {
+      "name": "Feijoa (Pineapple Guava)",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose fruit with a fragrant scent and slight give; avoid shrivelling.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-147": {
+          "name": "Feijoa Yogurt Bowl",
+          "instructions": "Halve ripe fruit and scoop the aromatic flesh into yogurt with honey. Did you know? The fruit has a distinctive pineapple-guava aroma. Raw: Yes. The fragrant pulp is eaten raw; the skin is also edible but can be tart."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 55 kcal; carbohydrates 13 g; fiber 6.4 g; protein 1 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "148": {
+      "name": "Sea Buckthorn",
+      "selectionGuide": "Choose plump berries with no leaking juice, mould or crushed fruit at the bottom of the pack. Berries should be plump and orange-yellow; avoid crushed, fermented-smelling fruit.",
+      "storageGuide": "Refrigerate unwashed in a shallow, breathable container. Remove damaged berries and wash gently just before eating.",
+      "recipes": {
+        "default-148": {
+          "name": "Sea Buckthorn Berry Sauce",
+          "instructions": "Warm the berries gently with a little water, strain if desired and use the tart purée in a sauce. Did you know? Sea buckthorn berries are naturally rich in carotenoids and vitamin C, although levels vary by cultivar. Raw: Yes. The berries are edible raw but very tart; remove them carefully because the branches are thorny."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "149": {
+      "name": "Mulberries",
+      "selectionGuide": "Choose plump berries with no leaking juice, mould or crushed fruit at the bottom of the pack. Choose fully coloured berries that are plump and not leaking.",
+      "storageGuide": "Refrigerate unwashed in a shallow, breathable container. Remove damaged berries and wash gently just before eating.",
+      "recipes": {
+        "default-149": {
+          "name": "Mulberries with Yogurt",
+          "instructions": "Scatter fresh mulberries over yogurt or freeze them in a single layer for later use. Did you know? Mulberries are aggregate fruits that can be white, red or dark purple. Raw: Yes. Rinse gently and eat the ripe berries fresh."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 43 kcal; carbohydrates 9.8 g; fiber 1.7 g; protein 1.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "150": {
+      "name": "Elderberries",
+      "selectionGuide": "Choose plump berries with no leaking juice, mould or crushed fruit at the bottom of the pack. Use only correctly identified ripe berries from a food seller; avoid unripe fruit.",
+      "storageGuide": "Refrigerate fresh berries briefly; cook promptly and do not store cooked berries at room temperature.",
+      "recipes": {
+        "default-150": {
+          "name": "Cooked Elderberry Syrup",
+          "instructions": "Remove the berries from the stems and cook into a syrup or sauce; strain out the seeds if desired. Did you know? Raw or unripe elderberries can cause nausea, vomiting and diarrhoea. Raw: No. Do not eat raw elderberries or other parts of the plant; cook ripe berries thoroughly and discard stems and leaves."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 73 kcal; carbohydrates 18.4 g; fiber 7 g; protein 0.7 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "151": {
+      "name": "Jackfruit",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose a fruit that is sound and fragrant; very large fruit can be sold in cut sections.",
+      "storageGuide": "Ripen firm fruit at room temperature when appropriate; refrigerate ripe, delicate fruit and use promptly. Tropical fruit may be sensitive to chilling, so follow the product-specific advice.",
+      "recipes": {
+        "default-151": {
+          "name": "Ripe Jackfruit Fruit Bowl",
+          "instructions": "Separate the ripe bulbs from the fibrous core and serve chilled with lime; remove the seeds. Did you know? Ripe jackfruit is sweet, while unripe fruit is often used as a savoury meat substitute. Raw: Yes. Ripe bulbs can be eaten raw; remove the skin, core and seeds. Unripe jackfruit is normally cooked."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 95 kcal; carbohydrates 23.3 g; fiber 1.5 g; protein 1.7 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "152": {
+      "name": "Sweet Chestnuts",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose heavy nuts with intact shells and no rattling kernel.",
+      "storageGuide": "Keep in a cool, dry place and use promptly; discard chestnuts with mould or holes.",
+      "recipes": {
+        "default-152": {
+          "name": "Roasted Sweet Chestnuts",
+          "instructions": "Score the shells, roast until the shells peel back, then peel while still warm. Did you know? Edible chestnuts are botanically different from horse chestnuts, which are not food. Raw: No. Fresh sweet chestnuts should be cooked or roasted before eating; do not confuse them with toxic horse chestnuts."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 213 kcal; carbohydrates 45.5 g; fiber 8.1 g; protein 2.4 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "153": {
+      "name": "Daikon Radish",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose firm, smooth roots without soft spots or shrivelling.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-153": {
+          "name": "Daikon Sesame Salad",
+          "instructions": "Grate daikon and toss with rice vinegar, sesame oil and a little soy sauce. Did you know? Daikon is a large Asian radish with a milder flavour than many small radishes. Raw: Yes. Peel if the skin is tough, then grate or slice thinly; both root and young leaves are edible."
+        }
+      },
+      "nutritionalInfo": "Per 100 g raw edible portion: 18 kcal; carbohydrates 4.1 g; fiber 1.6 g; protein 0.6 g.",
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided."
+    },
+    "154": {
+      "name": "Romanesco Cauliflower",
+      "selectionGuide": "Choose crisp, fresh leaves with no slime, yellowing or extensive bruising. Choose a compact head with evenly coloured, tightly packed spirals.",
+      "storageGuide": "Refrigerate unwashed and dry in a loose bag or container lined with a paper towel. Wash and dry just before use.",
+      "recipes": {
+        "default-154": {
+          "name": "Romanesco with Lemon and Hazelnuts",
+          "instructions": "Steam the florets until just tender and finish with lemon, olive oil and toasted hazelnuts. Did you know? Its spiral arrangement follows a mathematical pattern called a fractal. Raw: Yes. Small, clean florets can be eaten raw after washing, although cooking is more common."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "155": {
+      "name": "Black Radish",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose a firm root with intact dark skin and no soft spots.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-155": {
+          "name": "Black Radish and Apple Slaw",
+          "instructions": "Peel if the skin is tough, grate the root and mix with apple, lemon and yogurt for a sharp slaw. Did you know? Black radish is a traditional cool-season storage root. Raw: Yes. Peel if needed and grate or slice thinly; its flavour is stronger than that of pink radishes."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "156": {
+      "name": "Scorzonera (Black Salsify)",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Choose firm roots without soft areas; latex may appear when cut.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-156": {
+          "name": "Lemon-Braised Scorzonera",
+          "instructions": "Scrub and peel the roots, then simmer in lightly acidulated water until tender; serve with parsley and butter. Did you know? Peeled scorzonera can darken quickly; acidulated water helps keep it pale. Raw: It can be eaten raw when very young and tender, but it is usually peeled and cooked. Work with gloves if the milky sap is bothersome."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "157": {
+      "name": "Sugar Snap Peas",
+      "selectionGuide": "Choose firm produce that feels heavy for its size, with no soft, wet or mouldy patches. Pods should be bright green, crisp and full, with no yellowing.",
+      "storageGuide": "Refrigerate most fresh roots in the crisper drawer in a perforated bag. Keep dry and remove tops if attached.",
+      "recipes": {
+        "default-157": {
+          "name": "Sugar Snap Peas with Garlic",
+          "instructions": "Trim the stem ends and quickly sauté whole pods with garlic, lemon zest and sesame. Did you know? Sugar snap peas are a cross between snow peas and shelling peas. Raw: Yes. The entire crisp pod is edible; remove any tough string and wash before eating."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "158": {
+      "name": "Chanterelle Mushrooms",
+      "selectionGuide": "Choose firm, dry mushrooms without slime, strong off-odours or extensive dark spots.",
+      "storageGuide": "Refrigerate in a paper bag and brush clean just before cooking; avoid soaking wild mushrooms.",
+      "recipes": {
+        "default-158": {
+          "name": "Butter-Sautéed Chanterelles",
+          "instructions": "Brush off debris, tear large mushrooms and sauté slowly with butter, shallot and thyme until their liquid evaporates. Did you know? Chanterelles have blunt, forked ridges rather than thin true gills. Raw: No. Wild chanterelles should be cooked before eating; only eat mushrooms identified with certainty."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "159": {
+      "name": "Porcini Mushrooms",
+      "selectionGuide": "Choose firm, dry mushrooms without slime, strong off-odours or extensive dark spots.",
+      "storageGuide": "Refrigerate in a paper bag and use promptly; clean gently before cooking.",
+      "recipes": {
+        "default-159": {
+          "name": "Porcini with Garlic and Parsley",
+          "instructions": "Slice firm porcini and sauté with garlic and parsley; add a little pasta water for a glossy sauce. Did you know? The sponge-like tubes under the cap release spores and are not gills. Raw: No. Cook porcini before eating and use only specimens identified with certainty."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "160": {
+      "name": "Enoki Mushrooms",
+      "selectionGuide": "Choose firm, dry mushrooms without slime, strong off-odours or extensive dark spots.",
+      "storageGuide": "Keep refrigerated in the original pack, follow the use-by date and cook thoroughly.",
+      "recipes": {
+        "default-160": {
+          "name": "Thoroughly Cooked Enoki Soup",
+          "instructions": "Trim the clustered base, separate the stems and add to soup or stir-fry near the end of cooking. Did you know? Enoki cultivated in darkness develop long pale stems and small caps. Raw: Do not eat raw. Cook thoroughly and keep refrigerated; raw enoki has been associated with foodborne outbreaks."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "161": {
+      "name": "Garden Cress",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches. Choose fresh, green shoots without yellowing or excess moisture.",
+      "storageGuide": "Refrigerate most herbs wrapped loosely in a barely damp paper towel inside a bag or container. Keep basil at room temperature if chilling damages it.",
+      "recipes": {
+        "default-161": {
+          "name": "Garden Cress Sandwiches",
+          "instructions": "Snip the fresh shoots over egg sandwiches, cottage cheese or a potato salad just before serving. Did you know? Garden cress is the familiar fast-growing “windowsill cress” used in Poland. Raw: Yes. Eat the washed shoots raw; grow or buy them for food rather than collecting unknown plants."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "162": {
+      "name": "Aronia (Chokeberry)",
+      "selectionGuide": "Choose plump berries with no leaking juice, mould or crushed fruit at the bottom of the pack. Choose fully dark berries with no mould or fermented smell.",
+      "storageGuide": "Refrigerate briefly or freeze; the berries are usually cooked or juiced soon after picking.",
+      "recipes": {
+        "default-162": {
+          "name": "Aronia and Apple Compote",
+          "instructions": "Simmer the washed berries with apple and a little water, then pass through a sieve for a tart sauce. Did you know? Aronia is widely cultivated in Poland and is valued for its dark, polyphenol-rich berries. Raw: Yes, ripe berries are edible raw, but they are very astringent; they are more often cooked, juiced or frozen."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "163": {
+      "name": "Rosemary",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Refrigerate most herbs wrapped loosely in a barely damp paper towel inside a bag or container. Keep basil at room temperature if chilling damages it.",
+      "recipes": {
+        "default-163": {
+          "name": "Rosemary-Roasted Vegetables",
+          "instructions": "Strip the leaves from woody stems, chop finely and add to roasted potatoes, beans or focaccia. Did you know? Rosemary is an evergreen Mediterranean shrub; fresh sprigs are commonly sold in pots. Raw: Yes, but the leaves are tough and strongly flavoured; use them finely chopped in small amounts."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "164": {
+      "name": "Thyme",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Refrigerate most herbs wrapped loosely in a barely damp paper towel inside a bag or container. Keep basil at room temperature if chilling damages it.",
+      "recipes": {
+        "default-164": {
+          "name": "Thyme-Roasted Root Vegetables",
+          "instructions": "Strip the small leaves from the stems and add to roasted roots, mushrooms or a lemon dressing. Did you know? Thyme retains much of its aroma during cooking, so it works well in slow dishes. Raw: Yes. The tender leaves can be eaten raw in small amounts after washing; woody stems are usually discarded."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "165": {
+      "name": "Oregano (Fresh)",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Refrigerate most herbs wrapped loosely in a barely damp paper towel inside a bag or container. Keep basil at room temperature if chilling damages it.",
+      "recipes": {
+        "default-165": {
+          "name": "Tomato Salad with Fresh Oregano",
+          "instructions": "Chop the fresh leaves into tomato salad or add them to olive oil with lemon and garlic. Did you know? Fresh oregano is milder and greener in flavour than dried oregano. Raw: Yes. Wash and use the leaves raw or add them near the end of cooking."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "166": {
+      "name": "Sage (Fresh)",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Refrigerate most herbs wrapped loosely in a barely damp paper towel inside a bag or container. Keep basil at room temperature if chilling damages it.",
+      "recipes": {
+        "default-166": {
+          "name": "Crispy Sage Leaves",
+          "instructions": "Fry whole leaves briefly in butter until crisp and serve over pumpkin or gnocchi. Did you know? Sage leaves have a textured surface and a strong aromatic oil profile. Raw: Yes, small amounts of washed fresh leaves can be eaten raw, but the strong flavour is usually better after cooking."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "167": {
+      "name": "Lemongrass",
+      "selectionGuide": "Choose vivid, aromatic leaves with crisp stems and no dark or slimy patches.",
+      "storageGuide": "Refrigerate most herbs wrapped loosely in a barely damp paper towel inside a bag or container. Keep basil at room temperature if chilling damages it.",
+      "recipes": {
+        "default-167": {
+          "name": "Lemongrass Soup",
+          "instructions": "Bruise the lower stalks and simmer in a soup or tea; remove the fibrous stalks before serving. Did you know? Bruising the stalk releases its citrus-like aroma. Raw: The tender inner core can be finely sliced, but the fibrous outer stalk is usually infused and removed rather than eaten raw."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "168": {
+      "name": "Fresh Dates",
+      "selectionGuide": "Choose fruit that is sound, free from mould and deep bruises, and at the ripeness you need. Aroma and gentle yield are more useful than colour alone for many fruits. Choose plump, glossy dates with no fermentation smell or leaking.",
+      "storageGuide": "Refrigerate ripe fresh dates in a covered container and use promptly.",
+      "recipes": {
+        "default-168": {
+          "name": "Fresh Dates with Yogurt",
+          "instructions": "Halve ripe dates, remove the stone and serve with plain yogurt, walnuts and a pinch of cinnamon. Did you know? Fresh dates are harvested at different ripeness stages and can be crisp or soft. Raw: Yes. Eat the soft flesh raw and discard the hard stone; fresh dates are different from dried dates."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
+    },
+    "169": {
+      "name": "Lingonberries",
+      "selectionGuide": "Choose plump berries with no leaking juice, mould or crushed fruit at the bottom of the pack. Choose firm red berries with no mould or crushed patches.",
+      "storageGuide": "Refrigerate in a shallow ventilated container or freeze for longer storage.",
+      "recipes": {
+        "default-169": {
+          "name": "Lingonberry Preserve",
+          "instructions": "Simmer the berries with a little sugar and water to make a tart preserve for roasted vegetables. Did you know? Lingonberries are a close relative of cranberries and naturally contain benzoic acid. Raw: Yes, ripe berries are edible raw but tart; they are often cooked into sauces or preserves."
+        }
+      },
+      "nutritionNote": "Approximate reference for 100 g of raw edible portion; values vary by cultivar, maturity and growing conditions. Quantities are rounded. Quantities for the micronutrient highlights are not provided.",
+      "nutritionalInfo": "No verified quantitative reference is included for this product; no estimate has been added."
     }
   }
 }

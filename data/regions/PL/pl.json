@@ -5,408 +5,441 @@
       "name": "Burak",
       "selectionGuide": "Twarda, gładka skórka, nienaruszony korzeń główny. Jeśli ma liście, powinny być świeże, a nie zwiędnięte.",
       "storageGuide": "Odciąć liście zostawiając 2-3 cm łodygi. Przechowywać nieumyte w perforowanym plastikowym worku w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 43 kcal; węglowodany 9,6 g; błonnik 2,8 g; białko 1,6 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 43 kcal; węglowodany 9,6 g; błonnik 2,8 g; białko 1,6 g. Wybrane mikroskładniki (bez podanych ilości): foliany, mangan, potas.",
       "recipes": {
         "default-1": {
           "name": "Podstawowy przepis: Burak",
-          "instructions": "Upiecz cząstki buraka z oliwą, tymiankiem i odrobiną octu do miękkości."
+          "instructions": "Upiecz cząstki buraka z oliwą, tymiankiem i odrobiną octu do miękkości. Czy wiesz, że młode liście buraka również są jadalne po przygotowaniu podobnie jak szpinak? Na surowo: Tak. Umyty korzeń obierz, zetrzyj lub pokrój bardzo cienko."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "2": {
       "name": "Szparagi",
       "selectionGuide": "Twarde, proste łodygi z zamkniętymi, zwartymi główkami. Końcówki powinny być wilgotne, nie suche.",
       "storageGuide": "Przyciąć końcówki i postawić pionowo w szklance z odrobiną wody. Luźno przykryć główki plastikową torbą i trzymać w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 20 kcal; węglowodany 3,9 g; błonnik 2,1 g; białko 2,2 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 20 kcal; węglowodany 3,9 g; błonnik 2,1 g; białko 2,2 g. Wybrane mikroskładniki (bez podanych ilości): witamina K, foliany, miedź.",
       "recipes": {
         "default-2": {
           "name": "Podstawowy przepis: Szparagi",
-          "instructions": "Upiecz szparagi z oliwą; na koniec dodaj skórkę z cytryny."
+          "instructions": "Upiecz szparagi z oliwą; na koniec dodaj skórkę z cytryny. Czy wiesz, że dolna część starszych pędów drewnieje; grube szparagi można lekko obrać. Na surowo: Tak. Bardzo świeże, delikatne pędy można cienko ogolić obieraczką do sałatki."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "3": {
       "name": "Dynia",
       "selectionGuide": "Twarda skóra (nie da się jej przebić paznokciem), głuchy dźwięk przy pukaniu. Łodyga powinna być sucha.",
       "storageGuide": "Przechowywać w całości w chłodnym, ciemnym, suchym i dobrze wentylowanym miejscu. Po rozkrojeniu ciasno owinąć folią i schować do lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 26 kcal; węglowodany 6,5 g; błonnik 0,5 g; białko 1 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 26 kcal; węglowodany 6,5 g; błonnik 0,5 g; białko 1 g. Wybrane mikroskładniki (bez podanych ilości): witamina A, witamina C, potas.",
       "recipes": {
         "default-3": {
           "name": "Podstawowy przepis: Dynia",
-          "instructions": "Upiecz kostki dyni z olejem i przyprawami, a następnie zmiksuj z bulionem na zupę."
+          "instructions": "Upiecz kostki dyni z olejem i przyprawami, a następnie zmiksuj z bulionem na zupę. Czy wiesz, że skórka niektórych odmian dyni jadalnej jest miękka i nadaje się do jedzenia po obróbce? Na surowo: Miąższ słodkich odmian jadalnych można zetrzeć, ale nie używaj dyń ozdobnych i wyrzuć dynię lub dyniowate o nietypowo gorzkim smaku."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "4": {
       "name": "Marchew",
       "selectionGuide": "Twarda, jasnopomarańczowa, gładka skórka. Unikaj pęknięć i gumowatej konsystencji.",
-      "storageGuide": "Odciąć nać. Przechowywać całkowicie zanurzone w wodzie w szczelnym pojemniku w lodówce. Zmieniać wodę co kilka dni.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 41 kcal; węglowodany 9,6 g; błonnik 2,8 g; białko 0,9 g.",
+      "storageGuide": "Usuń nać. Nieumyte korzenie przechowuj w lodówce, w perforowanym worku lub luźno owinięte czystym ręcznikiem. Obrane albo pokrojone marchewki trzymaj w lodówce w zamkniętym pojemniku; jeśli przechowujesz je w wodzie, zmieniaj ją codziennie.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 41 kcal; węglowodany 9,6 g; błonnik 2,8 g; białko 0,9 g. Wybrane mikroskładniki (bez podanych ilości): witamina A, witamina K, potas.",
       "recipes": {
         "default-4": {
           "name": "Podstawowy przepis: Marchew",
-          "instructions": "Gotuj pokrojoną marchew w bulionie warzywnym, a następnie zmiksuj z imbirem na zupę."
+          "instructions": "Gotuj pokrojoną marchew w bulionie warzywnym, a następnie zmiksuj z imbirem na zupę. Czy wiesz, że podanie marchwi z niewielką ilością tłuszczu może poprawiać wchłanianie części karotenoidów? Na surowo: Tak; dokładnie umyj i wyszoruj korzeń, a obieraj go głównie wtedy, gdy skórka jest uszkodzona lub twarda."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "5": {
       "name": "Ziemniak",
       "selectionGuide": "Twarda, gładka skórka, bez zielonych odcieni i kiełków. Młode ziemniaki powinny mieć łuszczącą się skórkę.",
       "storageGuide": "Trzymać w chłodnym, ciemnym, suchym i dobrze wentylowanym miejscu (np. w papierowej torbie w spiżarni). Nie w lodówce. Trzymać z dala od cebuli.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 77 kcal; węglowodany 17,5 g; błonnik 2,2 g; białko 2 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 77 kcal; węglowodany 17,5 g; błonnik 2,2 g; białko 2 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina B6, potas.",
       "recipes": {
         "default-5": {
           "name": "Podstawowy przepis: Ziemniak",
-          "instructions": "Ugotuj ziemniaki do miękkości i wymieszaj z koperkiem, dymką i jogurtem."
+          "instructions": "Ugotuj ziemniaki do miękkości i wymieszaj z koperkiem, dymką i jogurtem. Czy wiesz, że zielone, mocno kiełkujące lub gorzkie ziemniaki mogą zawierać podwyższony poziom glikoalkaloidów, których gotowanie nie usuwa w wystarczającym stopniu? Na surowo: Nie. Nie jedz ziemniaków zielonych, gorzkich ani silnie skiełkowanych; mocno zmienione bulwy wyrzuć."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "6": {
       "name": "Pomidor",
       "selectionGuide": "Pachnący, o głębokim kolorze, lekko ustępujący pod naciskiem. Ciężki jak na swój rozmiar.",
       "storageGuide": "Aby zachować najlepszy smak, trzymać szypułką do dołu w temperaturze pokojowej, z dala od bezpośredniego słońca. Chłodzenie dojrzałych pomidorów może spowolnić ich psucie, ale wpłynąć na smak i konsystencję.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 18 kcal; węglowodany 3,9 g; błonnik 1,2 g; białko 0,9 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 18 kcal; węglowodany 3,9 g; błonnik 1,2 g; białko 0,9 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, potas.",
       "recipes": {
         "default-6": {
           "name": "Podstawowy przepis: Pomidor",
-          "instructions": "Piecz połówki pomidorów z oliwą, czosnkiem i ziołami do miękkości."
+          "instructions": "Piecz połówki pomidorów z oliwą, czosnkiem i ziołami do miękkości. Czy wiesz, że pomidory miękną po zbiorze, ale sam kolor nie jest pewnym wskaźnikiem smaku? Na surowo: Tak; wcześniej umyj owoc. Zielone liście i łodygi pomidora nie są jadalną częścią warzywa."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "7": {
       "name": "Ogórek",
       "selectionGuide": "Twardy na całej długości. Unikaj pomarszczonych końcówek i miękkich plam.",
       "storageGuide": "Każdy osobno owinąć ręcznikiem papierowym, włożyć do plastikowej torby i trzymać z przodu półki w lodówce, gdzie jest cieplej.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 15 kcal; węglowodany 3,6 g; błonnik 0,5 g; białko 0,7 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 15 kcal; węglowodany 3,6 g; błonnik 0,5 g; białko 0,7 g. Wybrane mikroskładniki (bez podanych ilości): witamina K, witamina C, potas.",
       "recipes": {
         "default-7": {
           "name": "Podstawowy przepis: Ogórek",
-          "instructions": "Pokrój ogórka w kostkę i wymieszaj z jogurtem, koperkiem i odrobiną soku z cytryny."
+          "instructions": "Pokrój ogórka w kostkę i wymieszaj z jogurtem, koperkiem i odrobiną soku z cytryny. Czy wiesz, że ogórki źle znoszą zbyt niską temperaturę i mogą robić się wodniste oraz miękkie? Na surowo: Tak; dokładnie umyj. Skórka jest jadalna, o ile nie jest uszkodzona, wyjątkowo twarda lub niepożądana."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "8": {
       "name": "Rzodkiewka",
       "selectionGuide": "Twarda, gładka, o jasnym kolorze. Jeśli ma liście, powinny być zielone i chrupiące.",
-      "storageGuide": "Odciąć natychmiast liście. Przechowywać korzenie zanurzone w słoiku z wodą w lodówce, aby pozostały chrupiące.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 16 kcal; węglowodany 3,4 g; błonnik 1,6 g; białko 0,7 g.",
+      "storageGuide": "Usuń liście, które odbierają korzeniom wilgoć. Nieumyte rzodkiewki przechowuj w lodówce w perforowanym worku lub pojemniku; myj je tuż przed jedzeniem. Krótkie zanurzenie w zimnej wodzie może przywrócić jędrność zwiędniętym rzodkiewkom, ale nie przechowuj ich długo w stojącej wodzie.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 16 kcal; węglowodany 3,4 g; błonnik 1,6 g; białko 0,7 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, foliany, potas.",
       "recipes": {
         "default-8": {
           "name": "Podstawowy przepis: Rzodkiewka",
-          "instructions": "Pokrój rzodkiewki w cienkie plasterki i wymieszaj z masłem, cytryną i ziołami."
+          "instructions": "Pokrój rzodkiewki w cienkie plasterki i wymieszaj z masłem, cytryną i ziołami. Czy wiesz, że świeże liście rzodkiewki można wykorzystać do pesto lub zupy? Na surowo: Tak; korzenie i młode liście można jeść po dokładnym umyciu."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "9": {
       "name": "Kalafior",
       "selectionGuide": "Zwarty, kremowobiały kwiatostan. Bez ciemnych plam. Liście powinny być świeżo zielone.",
       "storageGuide": "Przechowywać łodygą do dołu w luźno zamkniętej plastikowej torbie z suchym ręcznikiem papierowym pochłaniającym wilgoć w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 25 kcal; węglowodany 5 g; błonnik 2 g; białko 1,9 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 25 kcal; węglowodany 5 g; błonnik 2 g; białko 1,9 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, foliany, potas.",
       "recipes": {
         "default-9": {
           "name": "Podstawowy przepis: Kalafior",
-          "instructions": "Ugotuj różyczki kalafiora na parze i podawaj z sosem z jogurtu, czosnku i ziół."
+          "instructions": "Ugotuj różyczki kalafiora na parze i podawaj z sosem z jogurtu, czosnku i ziół. Czy wiesz, że delikatna część głąba i czyste liście kalafiora również nadają się do jedzenia po przygotowaniu? Na surowo: Tak; małe różyczki można jeść na surowo, np. z dipem."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "10": {
       "name": "Brokuł",
       "selectionGuide": "Twarde łodygi, zwarte ciemnozielone różyczki. Unikaj żółknących pąków.",
-      "storageGuide": "Lekko zrosić główkę wodą, luźno owinąć wilgotnym ręcznikiem papierowym i trzymać w otwartej torbie w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 34 kcal; węglowodany 6,6 g; błonnik 2,6 g; białko 2,8 g.",
+      "storageGuide": "Przechowuj nieumyty brokuł w lodówce, w luźnym lub perforowanym worku, i zużyj go wkrótce. Nie zamykaj mokrych różyczek w szczelnym pojemniku, ponieważ zatrzymana wilgoć przyspiesza psucie.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 34 kcal; węglowodany 6,6 g; błonnik 2,6 g; białko 2,8 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, foliany, potas.",
       "recipes": {
         "default-10": {
           "name": "Podstawowy przepis: Brokuł",
-          "instructions": "Ugotuj brokuł na parze do miękkości i wymieszaj z cytryną oraz prażonymi migdałami."
+          "instructions": "Ugotuj brokuł na parze do miękkości i wymieszaj z cytryną oraz prażonymi migdałami. Czy wiesz, że obrany głąb brokułu jest jadalny i można go kroić lub gotować tak jak różyczki? Na surowo: Tak; umyte różyczki i obrany, delikatny głąb można jeść na surowo."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "11": {
       "name": "Cukinia",
       "selectionGuide": "Mały do średniego rozmiaru, błyszcząca skórka. Unikaj miękkich plam.",
       "storageGuide": "Chronić przed wilgocią, nie myć. Trzymać w papierowej torbie lub luźnej plastikowej torbie z ręcznikiem papierowym w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 17 kcal; węglowodany 3,1 g; błonnik 1 g; białko 1,2 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 17 kcal; węglowodany 3,1 g; błonnik 1 g; białko 1,2 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina B6, potas.",
       "recipes": {
         "default-11": {
           "name": "Podstawowy przepis: Cukinia",
-          "instructions": "Zetrzyj cukinię na placki z jajkiem, mąką i ziołami; smaż do zarumienienia."
+          "instructions": "Zetrzyj cukinię na placki z jajkiem, mąką i ziołami; smaż do zarumienienia. Czy wiesz, że bardzo gorzka cukinia może zawierać dużo kukurbitacyn i należy ją wyrzucić, a nie próbować ratować gotowaniem? Na surowo: Tak; młodą cukinię można pokroić obieraczką w cienkie wstążki. Wyrzuć każdy nietypowo gorzki owoc."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "12": {
       "name": "Papryka",
       "selectionGuide": "Błyszcząca, napięta skórka, twarda szypułka. Ciężka jak na swój rozmiar.",
       "storageGuide": "Przechowywać nieumytą, w luźno zawiązanej plastikowej torbie w szufladzie lodówki. Należy ją chronić przed wilgocią.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 31 kcal; węglowodany 6 g; błonnik 2,1 g; białko 1 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 31 kcal; węglowodany 6 g; błonnik 2,1 g; białko 1 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina A, witamina B6, potas.",
       "recipes": {
         "default-12": {
           "name": "Podstawowy przepis: Papryka",
-          "instructions": "Napełnij połówki papryki ugotowanym ryżem, ziołami i fasolą, a następnie upiecz do miękkości."
+          "instructions": "Napełnij połówki papryki ugotowanym ryżem, ziołami i fasolą, a następnie upiecz do miękkości. Czy wiesz, że czerwona, żółta i zielona papryka mogą różnić się odmianą lub stopniem dojrzałości, dlatego mają inny smak i skład? Na surowo: Tak; umyj, a szypułkę i nasiona usuń według uznania."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "13": {
       "name": "Bób",
       "selectionGuide": "Strąki powinny być zielone i pełne, ale nie nadmiernie wybrzuszone (oznacza to stare/twarde nasiona).",
       "storageGuide": "Przechowywać w łupinach, w papierowej torbie lub perforowanym worku w szufladzie lodówki maksymalnie przez kilka dni.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 88 kcal; węglowodany 17,6 g; błonnik 7,5 g; białko 7,9 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 88 kcal; węglowodany 17,6 g; błonnik 7,5 g; białko 7,9 g. Wybrane mikroskładniki (bez podanych ilości): foliany, witamina B1 (tiamina), żelazo, mangan.",
       "recipes": {
         "default-13": {
           "name": "Podstawowy przepis: Bób",
-          "instructions": "Ugotuj wyłuskany bób do miękkości i wymieszaj z miętą oraz cytryną."
+          "instructions": "Ugotuj wyłuskany bób do miękkości i wymieszaj z miętą oraz cytryną. Czy wiesz, że bób jest również nazywany bobem fava? Na surowo: Zalecane są nasiona po ugotowaniu. Świeży, wyłuskany bób ugotuj do miękkości; suchy wymaga namoczenia i dokładnego gotowania."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "14": {
       "name": "Fasolka szparagowa",
       "selectionGuide": "Jasny kolor, łatwo pęka przy zginaniu. Unikaj twardych lub łykowatych strąków.",
       "storageGuide": "Nie myć. Zawinąć w suchy ręcznik papierowy i włożyć do plastikowej torebki w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 31 kcal; węglowodany 7 g; błonnik 2,7 g; białko 1,8 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 31 kcal; węglowodany 7 g; błonnik 2,7 g; białko 1,8 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, foliany, mangan.",
       "recipes": {
         "default-14": {
           "name": "Podstawowy przepis: Fasolka szparagowa",
-          "instructions": "Ugotuj fasolkę szparagową na parze al dente i wymieszaj z czosnkiem oraz oliwą."
+          "instructions": "Ugotuj fasolkę szparagową na parze al dente i wymieszaj z czosnkiem oraz oliwą. Czy wiesz, że jada się cały młody strąk, po odcięciu twardej końcówki? Na surowo: Nie zaleca się jedzenia na surowo; fasolkę ugotuj lub ugotuj na parze do miękkości."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "15": {
       "name": "Kapusta (Biała)",
       "selectionGuide": "Ciężka jak na swój rozmiar, zwarte liście. Młoda kapusta jest luźniejsza i bardziej zielona.",
       "storageGuide": "Nie myć. Trzymać całą główkę ciasno owiniętą folią spożywczą w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 25 kcal; węglowodany 5,8 g; błonnik 2,5 g; białko 1,3 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 25 kcal; węglowodany 5,8 g; błonnik 2,5 g; białko 1,3 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, foliany, potas.",
       "recipes": {
         "default-15": {
           "name": "Podstawowy przepis: Kapusta (Biała)",
-          "instructions": "Drobno poszatkuj kapustę i połącz z tartą marchewką, jogurtem i octem."
+          "instructions": "Drobno poszatkuj kapustę i połącz z tartą marchewką, jogurtem i octem. Czy wiesz, że drobno poszatkowana kapusta mięknie po krótkim ugniataniu z solą lub kwaśnym dressingiem? Na surowo: Tak; umyj liście i drobno je poszatkuj."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "16": {
       "name": "Brukselka",
       "selectionGuide": "Zwarte, małe, jasnozielone główki. Unikaj żółtych liści i luźnej struktury.",
       "storageGuide": "Najlepiej trzymać na łodydze. W przeciwnym razie przechowywać nieumyte w luźnej plastikowej torbie w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 43 kcal; węglowodany 9 g; błonnik 3,8 g; białko 3,4 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 43 kcal; węglowodany 9 g; błonnik 3,8 g; białko 3,4 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, foliany, potas.",
       "recipes": {
         "default-16": {
           "name": "Podstawowy przepis: Brukselka",
-          "instructions": "Upiecz przekrojoną brukselkę z olejem do zarumienienia; skrop cytryną."
+          "instructions": "Upiecz przekrojoną brukselkę z olejem do zarumienienia; skrop cytryną. Czy wiesz, że drobno poszatkowana brukselka sprawdza się także w surówkach? Na surowo: Można ją jeść na surowo, gdy jest świeża i cienko pokrojona, choć częściej podaje się ją po obróbce."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "17": {
       "name": "Jarmuż",
       "selectionGuide": "Ciemnozielone, chrupiące liście. Unikaj żółtych lub papkowatych miejsc.",
       "storageGuide": "Owinąć nieumyte liście w suchy ręcznik papierowy i przechowywać w szczelnej plastikowej torbie w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 49 kcal; węglowodany 8,8 g; błonnik 3,6 g; białko 4,3 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 49 kcal; węglowodany 8,8 g; błonnik 3,6 g; białko 4,3 g. Wybrane mikroskładniki (bez podanych ilości): witamina A, witamina C, witamina K, mangan.",
       "recipes": {
         "default-17": {
           "name": "Podstawowy przepis: Jarmuż",
-          "instructions": "Wymieszaj posiekany jarmuż z oliwą i cytryną, a następnie posyp pestkami."
+          "instructions": "Wymieszaj posiekany jarmuż z oliwą i cytryną, a następnie posyp pestkami. Czy wiesz, że ugniatanie posiekanego jarmużu z cytryną lub oliwą zmiękcza twarde liście? Na surowo: Tak; młode liście można jeść po umyciu, a starsze warto poddać obróbce lub wcześniej pomasować."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "18": {
       "name": "Szpinak",
       "selectionGuide": "Żywo zielony, świeżo wyglądający. Unikaj oślizgłych lub zwiędniętych liści.",
-      "storageGuide": "Przechowywać nieumyty w twardym, szczelnym pojemniku wyłożonym suchym ręcznikiem papierowym, aby pochłaniał wilgoć.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 23 kcal; węglowodany 3,6 g; błonnik 2,2 g; białko 2,9 g.",
+      "storageGuide": "Liście powinny pozostać suche. Przechowuj je w lodówce w pojemniku lub worku wyłożonym suchym ręcznikiem papierowym. Myj tuż przed użyciem; nadmiar wilgoci skraca trwałość.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 23 kcal; węglowodany 3,6 g; błonnik 2,2 g; białko 2,9 g. Wybrane mikroskładniki (bez podanych ilości): witamina A, witamina K, foliany, żelazo, magnez.",
       "recipes": {
         "default-18": {
           "name": "Podstawowy przepis: Szpinak",
-          "instructions": "Podduś szpinak na patelni z czosnkiem i podawaj jako ciepły dodatek."
+          "instructions": "Podduś szpinak na patelni z czosnkiem i podawaj jako ciepły dodatek. Czy wiesz, że szpinak znacznie zmniejsza objętość podczas gotowania? Na surowo: Młode liście można jeść na surowo po dokładnym umyciu. Starsze liście lepiej poddać obróbce."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "19": {
       "name": "Rabarbar",
       "selectionGuide": "Twarde, chrupiące łodygi. Unikaj wiotkich lub gumowatych.",
-      "storageGuide": "Szczelnie owinąć nieumyte łodygi w folię aluminiową i przechowywać w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 21 kcal; węglowodany 4,5 g; błonnik 1,8 g; białko 0,9 g.",
+      "storageGuide": "Usuń ewentualne liście, nieumyte ogonki owiń luźno i przechowuj w szufladzie lodówki. Dla najlepszej tekstury zużyj je w ciągu kilku dni.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 21 kcal; węglowodany 4,5 g; błonnik 1,8 g; białko 0,9 g. Wybrane mikroskładniki (bez podanych ilości): witamina K, wapń, potas.",
       "recipes": {
         "default-19": {
           "name": "Podstawowy przepis: Rabarbar",
-          "instructions": "Duś rabarbar z niewielką ilością cukru i skórką pomarańczową; podawaj z jogurtem."
+          "instructions": "Duś rabarbar z niewielką ilością cukru i skórką pomarańczową; podawaj z jogurtem. Czy wiesz, że jadalne są wyłącznie ogonki liściowe; liści rabarbaru nie wolno wykorzystywać do jedzenia ze względu na dużą zawartość kwasu szczawiowego? Na surowo: Ogonki można jeść w małych kawałkach, choć są bardzo kwaśne; liście są niejadalne."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "20": {
       "name": "Cebula",
       "selectionGuide": "Twarda, sucha, papierowa skórka. Unikaj kiełkujących końcówek i miękkich plam.",
       "storageGuide": "Przechowywać w chłodnym, ciemnym, suchym i przewiewnym miejscu (np. w koszyku). Nie wkładać do lodówki ani do folii. Trzymać z dala od ziemniaków.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 40 kcal; węglowodany 9,3 g; błonnik 1,7 g; białko 1,1 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 40 kcal; węglowodany 9,3 g; błonnik 1,7 g; białko 1,1 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina B6, potas.",
       "recipes": {
         "default-20": {
           "name": "Podstawowy przepis: Cebula",
-          "instructions": "Duś pokrojoną cebulę powoli do zarumienienia i podawaj na grzance z tymiankiem."
+          "instructions": "Duś pokrojoną cebulę powoli do zarumienienia i podawaj na grzance z tymiankiem. Czy wiesz, że chłodzenie całych cebul może zmiękczać ich tkanki i sprzyjać kiełkowaniu po powrocie do ciepła? Na surowo: Tak; surowa cebula jest często używana w sałatkach i salsach."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "21": {
       "name": "Truskawki",
       "selectionGuide": "Całkowicie jaskrawoczerwone, świeża zielona szypułka, silny słodki zapach. Unikaj białych wierzchołków.",
       "storageGuide": "Przechowywać nieumyte, ułożone pojedynczą warstwą w szczelnym pojemniku wyłożonym suchym ręcznikiem papierowym w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 32 kcal; węglowodany 7,7 g; błonnik 2 g; białko 0,7 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 32 kcal; węglowodany 7,7 g; błonnik 2 g; białko 0,7 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, foliany, mangan.",
       "recipes": {
         "default-21": {
           "name": "Podstawowy przepis: Truskawki",
-          "instructions": "Pokrój truskawki i wymieszaj z płatkami owsianymi, jogurtem i skórką z cytryny."
+          "instructions": "Pokrój truskawki i wymieszaj z płatkami owsianymi, jogurtem i skórką z cytryny. Czy wiesz, że truskawki nie dojrzewają dalej i nie stają się słodsze po zbiorze? Na surowo: Tak; delikatnie opłucz je pod bieżącą wodą tuż przed usunięciem szypułek."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "22": {
       "name": "Jabłka",
       "selectionGuide": "Twarde, bez obić, skórka powinna być napięta, nie pomarszczona.",
       "storageGuide": "Trzymać w szufladzie lodówki, najlepiej w perforowanej plastikowej torbie. Przechowywać osobno od wrażliwych warzyw.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 52 kcal; węglowodany 13,8 g; błonnik 2,4 g; białko 0,3 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 52 kcal; węglowodany 13,8 g; błonnik 2,4 g; białko 0,3 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, potas.",
       "recipes": {
         "default-22": {
           "name": "Podstawowy przepis: Jabłka",
-          "instructions": "Zapiekaj plasterki jabłek z cynamonem i płatkami owsianymi do miękkości."
+          "instructions": "Zapiekaj plasterki jabłek z cynamonem i płatkami owsianymi do miękkości. Czy wiesz, że jabłka wydzielają etylen, który może przyspieszać dojrzewanie sąsiednich produktów? Na surowo: Tak; dokładnie umyj skórkę, która jest jadalna."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "23": {
       "name": "Gruszki",
       "selectionGuide": "Sprawdź szyjkę: jeśli ustępuje pod delikatnym naciskiem, jest dojrzała. Reszta owocu może być twarda.",
       "storageGuide": "Dojrzewać w temperaturze pokojowej. Gdy szyjka lekko zmięknie, schować do lodówki, aby zatrzymać dojrzewanie.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 57 kcal; węglowodany 15,2 g; błonnik 3,1 g; białko 0,4 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 57 kcal; węglowodany 15,2 g; błonnik 3,1 g; białko 0,4 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, potas.",
       "recipes": {
         "default-23": {
           "name": "Podstawowy przepis: Gruszki",
-          "instructions": "Delikatnie ugotuj połówki gruszki z cynamonem i podawaj z jogurtem naturalnym."
+          "instructions": "Delikatnie ugotuj połówki gruszki z cynamonem i podawaj z jogurtem naturalnym. Czy wiesz, że gruszki często dojrzewają od środka na zewnątrz, dlatego miękkość warto sprawdzać przy szyjce? Na surowo: Tak; skórka jest jadalna po umyciu."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "24": {
       "name": "Śliwki",
       "selectionGuide": "Lekko miękkie na czubku, nasycony kolor, pożądany jest matowy nalot na skórce.",
       "storageGuide": "Zostawić w temperaturze pokojowej w papierowej torbie do dojrzewania. Gdy zmiękną, przenieść nieumyte do lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 46 kcal; węglowodany 11,4 g; błonnik 1,4 g; białko 0,7 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 46 kcal; węglowodany 11,4 g; błonnik 1,4 g; białko 0,7 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, potas.",
       "recipes": {
         "default-24": {
           "name": "Podstawowy przepis: Śliwki",
-          "instructions": "Gotuj pokrojone śliwki z cynamonem, aż powstanie szybki kompot."
+          "instructions": "Gotuj pokrojone śliwki z cynamonem, aż powstanie szybki kompot. Czy wiesz, że naturalny, woskowy nalot na śliwkach chroni owoc i nie jest wadą? Na surowo: Tak; umyj owoc i zjedz miąższ, ale nie rozgryzaj pestki."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "25": {
       "name": "Czereśnie",
       "selectionGuide": "Zielone, elastyczne ogonki. Owoce powinny być błyszczące, pękate i ciemne.",
       "storageGuide": "Przechowywać nieumyte, bez odrywania ogonków. Trzymać luźno w pojemniku wyłożonym ręcznikiem papierowym w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 63 kcal; węglowodany 16 g; błonnik 2,1 g; białko 1,1 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 63 kcal; węglowodany 16 g; błonnik 2,1 g; białko 1,1 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, potas.",
       "recipes": {
         "default-25": {
           "name": "Podstawowy przepis: Czereśnie",
-          "instructions": "Wydryluj czereśnie i dodaj do owsianki z łyżką jogurtu."
+          "instructions": "Wydryluj czereśnie i dodaj do owsianki z łyżką jogurtu. Czy wiesz, że szypułka pomaga zachować świeżość czereśni, więc najlepiej odrywać ją dopiero przed myciem? Na surowo: Tak; umyj owoce i usuń pestki przed podaniem małym dzieciom."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "27": {
       "name": "Maliny",
       "selectionGuide": "Suche, pękate, jasny kolor. Sprawdź spód pojemnika pod kątem soku (oznaka zgniecenia).",
       "storageGuide": "Nie myć przed zjedzeniem. Trzymać w szerokim, płytkim pojemniku wyłożonym papierem, lekko otwartym dla przepływu powietrza w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 52 kcal; węglowodany 11,9 g; błonnik 6,5 g; białko 1,2 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 52 kcal; węglowodany 11,9 g; błonnik 6,5 g; białko 1,2 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, mangan.",
       "recipes": {
         "default-27": {
           "name": "Podstawowy przepis: Maliny",
-          "instructions": "Rozgnieć maliny z sokiem z cytryny i podawaj do naleśników lub jogurtu."
+          "instructions": "Rozgnieć maliny z sokiem z cytryny i podawaj do naleśników lub jogurtu. Czy wiesz, że maliny po zerwaniu są puste w środku, przez co łatwo je uszkodzić? Na surowo: Tak; usuń zepsute owoce i delikatnie opłucz tuż przed jedzeniem."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "28": {
       "name": "Borówki",
       "selectionGuide": "Twarde, o zakurzonym, niebieskim kolorze (nalot). Unikaj miękkich lub pomarszczonych jagód.",
       "storageGuide": "Najpierw wyrzucić spleśniałe sztuki. Przechowywać nieumyte w wentylowanym lub oddychającym pojemniku w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 57 kcal; węglowodany 14,5 g; błonnik 2,4 g; białko 0,7 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 57 kcal; węglowodany 14,5 g; błonnik 2,4 g; białko 0,7 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, mangan.",
       "recipes": {
         "default-28": {
           "name": "Podstawowy przepis: Borówki",
-          "instructions": "Krótko podgrzej borówki z cytryną i podawaj jako dodatek do owsianki."
+          "instructions": "Krótko podgrzej borówki z cytryną i podawaj jako dodatek do owsianki. Czy wiesz, że matowy, sinawy nalot na borówkach to naturalna warstwa woskowa? Na surowo: Tak; delikatnie umyj owoce tuż przed jedzeniem."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "32": {
       "name": "Winogrona",
       "selectionGuide": "Pękate, mocno osadzone na zielonych gałązkach. Unikaj pomarszczonych owoców.",
-      "storageGuide": "Trzymać nieumyte w oryginalnej perforowanej torbie z otworami wentylacyjnymi w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 69 kcal; węglowodany 18,1 g; błonnik 0,9 g; białko 0,7 g.",
+      "storageGuide": "Przechowuj nieumyte winogrona w lodówce, w oryginalnym przewiewnym opakowaniu lub płytkim pojemniku. Usuń uszkodzone owoce, a kiście umyj tuż przed jedzeniem.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 69 kcal; węglowodany 18,1 g; błonnik 0,9 g; białko 0,7 g. Wybrane mikroskładniki (bez podanych ilości): witamina K, witamina C, miedź.",
       "recipes": {
         "default-32": {
           "name": "Podstawowy przepis: Winogrona",
-          "instructions": "Upiecz przekrojone winogrona z tymiankiem i podawaj z miękkim serem oraz pieczywem."
+          "instructions": "Upiecz przekrojone winogrona z tymiankiem i podawaj z miękkim serem oraz pieczywem. Czy wiesz, że w skórce winogron znajduje się wiele związków odpowiadających za ich barwę; odmiany z pestkami i bez pestek różnią się teksturą? Na surowo: Tak; przed jedzeniem opłucz kiść pod bieżącą wodą."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "34": {
       "name": "Seler korzeniowy",
       "selectionGuide": "Ciężki jak na swój rozmiar, twardy, bez miękkich plam. Mniejsze korzenie są zazwyczaj mniej zdrewniałe.",
       "storageGuide": "Przechowywać nieumyty, luźno owinięty w plastikową torbę w szufladzie na warzywa w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 42 kcal; węglowodany 9,2 g; błonnik 1,8 g; białko 1,5 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 42 kcal; węglowodany 9,2 g; błonnik 1,8 g; białko 1,5 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, potas, fosfor.",
       "recipes": {
         "default-34": {
           "name": "Podstawowy przepis: Seler korzeniowy",
-          "instructions": "Upiecz kostki selera z olejem i rozmarynem; podawaj z sosem cytrynowym."
+          "instructions": "Upiecz kostki selera z olejem i rozmarynem; podawaj z sosem cytrynowym. Czy wiesz, że seler korzeniowy ciemnieje po pokrojeniu, dlatego surowe plastry lub wiórki warto skropić sokiem z cytryny? Na surowo: Tak. Grubo obierz nierówną skórkę, a jędrny miąższ zetrzyj lub pokrój cienko."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "35": {
       "name": "Pietruszka korzeniowa",
       "selectionGuide": "Twarda, biała/beżowa skórka. Unikaj rdzawych plam i wiotkich korzeni.",
       "storageGuide": "Odciąć nać. Zawinąć korzeń w lekko wilgotny ręcznik papierowy i trzymać w szczelnym pojemniku lub torbie w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 55 kcal; węglowodany 12,3 g; błonnik 4,3 g; białko 2,3 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 55 kcal; węglowodany 12,3 g; błonnik 4,3 g; białko 2,3 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, foliany, potas.",
       "recipes": {
         "default-35": {
           "name": "Podstawowy przepis: Pietruszka korzeniowa",
-          "instructions": "Zetrzyj pietruszkę korzeniową do surówki z jabłkiem, sokiem z cytryny i jogurtem."
+          "instructions": "Zetrzyj pietruszkę korzeniową do surówki z jabłkiem, sokiem z cytryny i jogurtem. Czy wiesz, że korzeń pietruszki jest tradycyjnym składnikiem włoszczyzny, ale młode korzenie są aromatyczne również na surowo? Na surowo: Tak. Wyszoruj lub obierz, a następnie zetrzyj albo pokrój w cienkie wstążki do sałatki."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "36": {
       "name": "Por",
       "selectionGuide": "Chrupiące białe i jasnozielone części. Unikaj żółknących lub oślizgłych liści.",
       "storageGuide": "Przechowywać nieumyty i nieprzycięty, luźno owinięty w plastikową torbę w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 61 kcal; węglowodany 14,2 g; błonnik 1,8 g; białko 1,5 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 61 kcal; węglowodany 14,2 g; błonnik 1,8 g; białko 1,5 g. Wybrane mikroskładniki (bez podanych ilości): witamina A, witamina K, foliany, mangan.",
       "recipes": {
         "default-36": {
           "name": "Podstawowy przepis: Por",
-          "instructions": "Gotuj pokrojony por i ziemniaki w bulionie, a następnie zmiksuj na krem."
+          "instructions": "Gotuj pokrojony por i ziemniaki w bulionie, a następnie zmiksuj na krem. Czy wiesz, że między warstwami pora często pozostaje ziemia, dlatego warto rozciąć łodygę wzdłuż i wypłukać liście? Na surowo: Delikatną białą i jasnozieloną część można jeść po pokrojeniu w cienkie plasterki."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "37": {
       "name": "Kalarepa",
       "selectionGuide": "Mała do średniej wielkości (wielkość piłki tenisowej). Ciężka i twarda. Duże sztuki mogą być wewnątrz zdrewniałe.",
       "storageGuide": "Odciąć liście. Przechowywać nieumytą bulwę luźno lub w perforowanej torbie w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 27 kcal; węglowodany 6,2 g; błonnik 3,6 g; białko 1,7 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 27 kcal; węglowodany 6,2 g; błonnik 3,6 g; białko 1,7 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina B6, potas.",
       "recipes": {
         "default-37": {
           "name": "Podstawowy przepis: Kalarepa",
-          "instructions": "Pokrój kalarepę w słupki i podawaj na surowo z dipem jogurtowo-koperkowym."
+          "instructions": "Pokrój kalarepę w słupki i podawaj na surowo z dipem jogurtowo-koperkowym. Czy wiesz, że skórka kalarepy jest jadalna, gdy pozostaje delikatna; starsze bulwy trzeba czasem obrać, bo zewnętrzna warstwa włóknieje? Na surowo: Tak; obierz, jeśli skórka jest twarda, i pokrój lub zetrzyj."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "39": {
       "name": "Bakłażan",
       "selectionGuide": "Błyszcząca, gładka skórka. Twardy, ale lekko sprężysty przy naciśnięciu. Ciężki.",
       "storageGuide": "Trzymać w chłodnej temperaturze pokojowej z dala od bananów i pomidorów. Jeśli w lodówce, owinąć w ręcznik papierowy i szybko zużyć.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 25 kcal; węglowodany 5,9 g; błonnik 3 g; białko 1 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 25 kcal; węglowodany 5,9 g; błonnik 3 g; białko 1 g. Wybrane mikroskładniki (bez podanych ilości): witamina B6, foliany, mangan, potas.",
       "recipes": {
         "default-39": {
           "name": "Podstawowy przepis: Bakłażan",
-          "instructions": "Upiecz plastry bakłażana z oliwą i czosnkiem; podawaj z sosem pomidorowym."
+          "instructions": "Upiecz plastry bakłażana z oliwą i czosnkiem; podawaj z sosem pomidorowym. Czy wiesz, że miąższ bakłażana może ciemnieć po przekrojeniu w wyniku utleniania; solenie jest opcjonalne i wpływa głównie na gorycz oraz teksturę? Na surowo: Zwykle nie jada się go na surowo; obróbka termiczna poprawia smak i teksturę. Wyrzuć każdy wyjątkowo gorzki egzemplarz."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "41": {
       "name": "Jagody (Leśne)",
       "selectionGuide": "Ciemne, prawie czarne, wyraźny aromat. Brudzą dłonie. Muszą być suche.",
       "storageGuide": "Usunąć zgniecione owoce. Przechowywać nieumyte w płytkim pojemniku w lodówce. Myć bezpośrednio przed jedzeniem.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 57 kcal; węglowodany 14,5 g; błonnik 2,4 g; białko 0,7 g.",
-      "nutritionNote": "Wartości referencyjne dotyczą borówek uprawnych; jagody leśne mogą się różnić.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 57 kcal; węglowodany 14,5 g; błonnik 2,4 g; białko 0,7 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, mangan.",
+      "nutritionNote": "Wartości referencyjne dotyczą borówek uprawnych; jagody leśne mogą się różnić. Ilości wyróżnionych mikroskładników nie zostały podane.",
       "recipes": {
         "default-41": {
           "name": "Podstawowy przepis: Jagody (Leśne)",
-          "instructions": "Podduś jagody leśne z odrobiną wody i podawaj na ciepło do owsianki."
+          "instructions": "Podduś jagody leśne z odrobiną wody i podawaj na ciepło do owsianki. Czy wiesz, że sok jagód leśnych intensywnie barwi dłonie i tkaniny? Na surowo: Tak; delikatnie opłucz owoce i jedz świeże lub dodawaj do deserów."
         }
       }
     },
@@ -414,60 +447,64 @@
       "name": "Pasternak",
       "selectionGuide": "Twardy, w kolorze kości słoniowej. Unikaj bardzo dużych korzeni, ponieważ mogą mieć zdrewniały środek.",
       "storageGuide": "Przechowywać nieumyty w perforowanym plastikowym worku w szufladzie na warzywa w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 75 kcal; węglowodany 18 g; błonnik 4,9 g; białko 1,2 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 75 kcal; węglowodany 18 g; błonnik 4,9 g; białko 1,2 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, foliany, potas.",
       "recipes": {
         "default-45": {
           "name": "Podstawowy przepis: Pasternak",
-          "instructions": "Upiecz słupki pasternaku z olejem i kuminem, aż się zarumienią."
+          "instructions": "Upiecz słupki pasternaku z olejem i kuminem, aż się zarumienią. Czy wiesz, że po chłodnej pogodzie pasternak może być słodszy, ponieważ część skrobi przekształca się w cukry? Na surowo: Tak; młode korzenie można zetrzeć lub cienko pokroić do sałatki."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "49": {
       "name": "Topinambur",
       "selectionGuide": "Twardy, niepomarszczony. Guzkowaty kształt to norma, ale unikaj miękkich plam i pleśni.",
       "storageGuide": "Owinąć nieumyte bulwy w ręcznik papierowy wewnątrz luźnej plastikowej torby w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 73 kcal; węglowodany 17,4 g; błonnik 1,6 g; białko 2 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 73 kcal; węglowodany 17,4 g; błonnik 1,6 g; białko 2 g. Wybrane mikroskładniki (bez podanych ilości): witamina B1 (tiamina), żelazo, potas.",
       "recipes": {
         "default-49": {
           "name": "Podstawowy przepis: Topinambur",
-          "instructions": "Upiecz wyszorowane topinambury z czosnkiem i oliwą do miękkości."
+          "instructions": "Upiecz wyszorowane topinambury z czosnkiem i oliwą do miękkości. Czy wiesz, że topinambur zawiera inulinę, fermentujący błonnik, który u niektórych osób może powodować wzdęcia po większej porcji? Na surowo: Tak; dokładnie wyszoruj, pokrój cienko i zacznij od niewielkiej porcji."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "51": {
       "name": "Chrzan",
       "selectionGuide": "Bardzo twardy i jędrny. Unikaj pomarszczonych korzeni lub miękkich końcówek.",
       "storageGuide": "Owinąć nieumyty korzeń luźno w folię spożywczą lub trzymać w perforowanej torbie w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 48 kcal; węglowodany 11,3 g; błonnik 3,3 g; białko 1,2 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 48 kcal; węglowodany 11,3 g; błonnik 3,3 g; białko 1,2 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, wapń, potas.",
       "recipes": {
         "default-51": {
           "name": "Podstawowy przepis: Chrzan",
-          "instructions": "Wymieszaj świeżo starty chrzan z jogurtem, cytryną i szczyptą soli na sos."
+          "instructions": "Wymieszaj świeżo starty chrzan z jogurtem, cytryną i szczyptą soli na sos. Czy wiesz, że tarcie chrzanu uwalnia ostre związki, których intensywność słabnie po kontakcie z powietrzem? Na surowo: Tak; najczęściej jada się go świeżo startego, w niewielkiej ilości."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "52": {
       "name": "Dymka",
       "selectionGuide": "Jasnozielone, chrupiące łodygi. Unikaj oślizgłych lub więdnących końcówek.",
       "storageGuide": "Postawić pionowo w słoiku z odrobiną wody na dnie, luźno przykryć plastikową torbą i wstawić do lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 32 kcal; węglowodany 7,3 g; błonnik 2,6 g; białko 1,8 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 32 kcal; węglowodany 7,3 g; błonnik 2,6 g; białko 1,8 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, foliany, potas.",
       "recipes": {
         "default-52": {
           "name": "Podstawowy przepis: Dymka",
-          "instructions": "Krótko podsmaż posiekaną dymkę i dodaj do jajecznicy."
+          "instructions": "Krótko podsmaż posiekaną dymkę i dodaj do jajecznicy. Czy wiesz, że jadalna jest zarówno biała część, jak i zielony szczypior? Na surowo: Tak; całą umytą roślinę można pokroić do sałatek, dipów i kanapek."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "63": {
       "name": "Poziomki",
       "selectionGuide": "Intensywny aromat to podstawa. Bardzo delikatne, kupuj tylko wtedy, gdy są suche i niezgniecione.",
       "storageGuide": "Bardzo nietrwałe. Zjeść natychmiast lub schować nieumyte w jednej warstwie do lodówki na maksymalnie jeden dzień.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 32 kcal; węglowodany 7,7 g; błonnik 2 g; białko 0,7 g.",
-      "nutritionNote": "Wartości referencyjne dotyczą truskawek uprawnych; poziomki mogą się różnić.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 32 kcal; węglowodany 7,7 g; błonnik 2 g; białko 0,7 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, foliany, mangan.",
+      "nutritionNote": "Wartości referencyjne dotyczą truskawek uprawnych; poziomki mogą się różnić. Ilości wyróżnionych mikroskładników nie zostały podane.",
       "recipes": {
         "default-63": {
           "name": "Podstawowy przepis: Poziomki",
-          "instructions": "Podawaj poziomki z jogurtem naturalnym i pokruszonymi płatkami owsianymi."
+          "instructions": "Podawaj poziomki z jogurtem naturalnym i pokruszonymi płatkami owsianymi. Czy wiesz, że poziomki są bardzo delikatne i szybko tracą aromat po zbiorze? Na surowo: Tak; jedz wyłącznie prawidłowo rozpoznane owoce z czystych miejsc albo kupione od sprawdzonego sprzedawcy."
         }
       }
     },
@@ -475,36 +512,38 @@
       "name": "Kukurydza",
       "selectionGuide": "Jasnozielone liście, złociste znamiona (nie suche i czarne). Ziarna powinny wyglądać na pękate i uwalniać mleczny sok po przekłuciu.",
       "storageGuide": "Trzymać w liściach w luźno zamkniętej plastikowej torbie w lodówce. Zjeść jak najszybciej, gdyż cukry szybko zamieniają się w skrobię.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 86 kcal; węglowodany 19 g; błonnik 2,7 g; białko 3,3 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 86 kcal; węglowodany 19 g; błonnik 2,7 g; białko 3,3 g. Wybrane mikroskładniki (bez podanych ilości): witamina B1 (tiamina), foliany, magnez, fosfor.",
       "recipes": {
         "default-70": {
           "name": "Podstawowy przepis: Kukurydza",
-          "instructions": "Ugotuj lub ugrilluj kolby kukurydzy i podawaj z masłem oraz posiekanymi ziołami."
+          "instructions": "Ugotuj lub ugrilluj kolby kukurydzy i podawaj z masłem oraz posiekanymi ziołami. Czy wiesz, że kukurydzę cukrową zbiera się, gdy ziarna są jeszcze mleczne i słodkie? Na surowo: Tak, bardzo świeże kolby kukurydzy cukrowej można jeść po usunięciu liści i znamion; częściej jednak podaje się ją po ugotowaniu."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "71": {
       "name": "Arbuz",
       "selectionGuide": "Ciężki jak na swój rozmiar, głuchy dźwięk przy pukaniu. Szukaj kremowo-żółtej plamy w miejscu, gdzie leżał na ziemi.",
       "storageGuide": "Arbuzy w całości trzymać w temperaturze pokojowej. Po rozkrojeniu szczelnie owinąć odsłonięty miąższ folią i wstawić do lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 30 kcal; węglowodany 7,6 g; błonnik 0,4 g; białko 0,6 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 30 kcal; węglowodany 7,6 g; błonnik 0,4 g; białko 0,6 g. Wybrane mikroskładniki (bez podanych ilości): witamina A, witamina C, potas.",
       "recipes": {
         "default-71": {
           "name": "Podstawowy przepis: Arbuz",
-          "instructions": "Pokrój arbuza w kostkę i wymieszaj z miętą oraz limonką na sałatkę owocową."
+          "instructions": "Pokrój arbuza w kostkę i wymieszaj z miętą oraz limonką na sałatkę owocową. Czy wiesz, że jasna część skórki arbuza jest jadalna i można ją marynować lub gotować, choć zwykle się ją odrzuca? Na surowo: Tak; przed krojeniem umyj cały owoc, aby nie przenieść zabrudzeń ze skórki na miąższ."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "72": {
       "name": "Melon",
       "selectionGuide": "Słodki zapach od strony łodygi. Lekko miękki po stronie kwiatu (przeciwnej do łodygi).",
       "storageGuide": "Dojrzewać w temp. pokojowej. Gdy dojrzeje, trzymać w całości w lodówce. Przekrojonego melona przechowywać w szczelnym pojemniku w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 34 kcal; węglowodany 8,2 g; błonnik 0,9 g; białko 0,8 g.",
-      "nutritionNote": "Wartości referencyjne dotyczą kantalupy; melon miodowy ma inne wartości.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 34 kcal; węglowodany 8,2 g; błonnik 0,9 g; białko 0,8 g. Wybrane mikroskładniki (bez podanych ilości): witamina A, witamina C, potas.",
+      "nutritionNote": "Wartości referencyjne dotyczą kantalupy; melon miodowy ma inne wartości. Ilości wyróżnionych mikroskładników nie zostały podane.",
       "recipes": {
         "default-72": {
           "name": "Podstawowy przepis: Melon",
-          "instructions": "Uformuj kulki z melona i podawaj schłodzone z miętą i sokiem z limonki."
+          "instructions": "Uformuj kulki z melona i podawaj schłodzone z miętą i sokiem z limonki. Czy wiesz, że różne melony nie dojrzewają po zbiorze w taki sam sposób; o dojrzałości pomagają wnioskować aromat i niewielka miękkość przy szypułce? Na surowo: Tak; umyj skórkę przed krojeniem i jedz świeży miąższ."
         }
       }
     },
@@ -512,97 +551,103 @@
       "name": "Pomarańcza",
       "selectionGuide": "Ciężka jak na swój rozmiar (oznacza to, że jest soczysta). Twarda, drobnoziarnista skórka.",
       "storageGuide": "Najdłuższą świeżość (do miesiąca) zachowa luźno włożona do szuflady lodówki. W temperaturze pokojowej wytrzyma kilka dni.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 47 kcal; węglowodany 11,8 g; błonnik 2,4 g; białko 0,9 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 47 kcal; węglowodany 11,8 g; błonnik 2,4 g; białko 0,9 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, foliany, potas.",
       "recipes": {
         "default-73": {
           "name": "Podstawowy przepis: Pomarańcza",
-          "instructions": "Dodaj cząstki pomarańczy do sałatki z koprem włoskim i lekkim sosem oliwnym."
+          "instructions": "Dodaj cząstki pomarańczy do sałatki z koprem włoskim i lekkim sosem oliwnym. Czy wiesz, że biała warstwa pod skórką jest jadalna i dostarcza błonnika, choć może być gorzkawa? Na surowo: Tak; jedz świeże cząstki. Skórkę ścieraj tylko wtedy, gdy jest czysta i nadaje się do wykorzystania spożywczego."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "74": {
       "name": "Mandarynka / Klementynka",
       "selectionGuide": "Jasnopomarańczowa, skórka wydaje się lekko luźna (łatwa do obrania), ale owoc powinien być ciężki.",
       "storageGuide": "Trzymać luźno w szufladzie lodówki, by zapobiec szybkiemu wysychaniu.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 53 kcal; węglowodany 13,3 g; błonnik 1,8 g; białko 0,8 g.",
-      "nutritionNote": "Wartości referencyjne dotyczą mandarynek; klementynki mogą się różnić.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 53 kcal; węglowodany 13,3 g; błonnik 1,8 g; białko 0,8 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina A, potas.",
+      "nutritionNote": "Wartości referencyjne dotyczą mandarynek; klementynki mogą się różnić. Ilości wyróżnionych mikroskładników nie zostały podane.",
       "recipes": {
         "default-74": {
           "name": "Podstawowy przepis: Mandarynka / Klementynka",
-          "instructions": "Wymieszaj obrane cząstki mandarynki ze szpinakiem i prażonymi orzechami."
+          "instructions": "Wymieszaj obrane cząstki mandarynki ze szpinakiem i prażonymi orzechami. Czy wiesz, że klementynki zwykle łatwo się obierają i często nie mają pestek, podczas gdy mandarynki mogą je zawierać? Na surowo: Tak; obierz owoc i jedz świeże cząstki."
         }
       }
     },
     "75": {
       "name": "Cytryna",
       "selectionGuide": "Jasnożółta, ciężka. Cytryny o cienkiej skórce są bardziej soczyste.",
-      "storageGuide": "Przechowywać w całości zalane wodą w szczelnym pojemniku w lodówce. Dzięki temu zachowają jędrność i sok przez wiele tygodni.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 29 kcal; węglowodany 9,3 g; błonnik 2,8 g; białko 1,1 g.",
+      "storageGuide": "Przechowuj w lodówce, w perforowanym lub luźno zamkniętym worku, aby ograniczyć utratę wilgoci. Przekrojoną cytrynę trzymaj w zamkniętym pojemniku i szybko zużyj; zanurzanie całych cytryn w wodzie nie jest konieczne.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 29 kcal; węglowodany 9,3 g; błonnik 2,8 g; białko 1,1 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, potas.",
       "recipes": {
         "default-75": {
           "name": "Podstawowy przepis: Cytryna",
-          "instructions": "Wymieszaj sok i skórkę z cytryny z oliwą oraz ziołami na wyrazisty sos."
+          "instructions": "Wymieszaj sok i skórkę z cytryny z oliwą oraz ziołami na wyrazisty sos. Czy wiesz, że aromatyczne olejki cytryny znajdują się głównie w zewnętrznej, żółtej warstwie skórki; biała część pod nią jest gorzka? Na surowo: Tak. Wykorzystuj umyty miąższ, sok i skórkę; skórkę stosuj tylko wtedy, gdy nadaje się do celów spożywczych."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "76": {
       "name": "Grejpfrut",
       "selectionGuide": "Ciężki jak na swój rozmiar, twardy, ale lekko sprężysty. Płaskie końce zazwyczaj oznaczają dobrą dojrzałość.",
       "storageGuide": "Aby zmaksymalizować trwałość, należy przechowywać luźno w szufladzie lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 42 kcal; węglowodany 10,7 g; błonnik 1,6 g; białko 0,8 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 42 kcal; węglowodany 10,7 g; błonnik 1,6 g; białko 0,8 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina A, potas.",
       "recipes": {
         "default-76": {
           "name": "Podstawowy przepis: Grejpfrut",
-          "instructions": "Krótko zapiecz połówki grejpfruta i podawaj na ciepło z odrobiną miodu."
+          "instructions": "Krótko zapiecz połówki grejpfruta i podawaj na ciepło z odrobiną miodu. Czy wiesz, że grejpfrut może wchodzić w interakcje z niektórymi lekami; przy przyjmowaniu leków sprawdź ulotkę lub zapytaj farmaceutę? Na surowo: Tak; obierz owoc i jedz świeże cząstki."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "77": {
       "name": "Granat",
       "selectionGuide": "Ciężki, kanciasty kształt (nie do końca okrągły oznacza, że nasiona są pełne), ciemnoczerwona skórka.",
       "storageGuide": "Całe owoce trzymać w szufladzie lodówki. Wyłuskane nasiona należy schować do szczelnego pojemnika.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 83 kcal; węglowodany 18,7 g; błonnik 4 g; białko 1,7 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 83 kcal; węglowodany 18,7 g; błonnik 4 g; białko 1,7 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, potas.",
       "recipes": {
         "default-77": {
           "name": "Podstawowy przepis: Granat",
-          "instructions": "Posyp pieczone warzywa pestkami granatu i polej sosem jogurtowym."
+          "instructions": "Posyp pieczone warzywa pestkami granatu i polej sosem jogurtowym. Czy wiesz, że czerwone, soczyste elementy granatu to osnówki; jadalny jest zarówno miąższ, jak i małe nasiono w środku? Na surowo: Tak; oddziel osnówki i jedz je świeże."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "78": {
       "name": "Kaki (Persymona)",
       "selectionGuide": "Odmiany cierpkie (np. Hachiya) muszą całkowicie zmięknąć przed jedzeniem; odmiany niecierpkie (np. Fuyu) można jeść, gdy są twarde.",
       "storageGuide": "Zostawić do dojrzenia w temperaturze pokojowej. Odmiany cierpkie jeść dopiero po całkowitym zmięknięciu; dojrzałe owoce przechowywać w lodówce.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 70 kcal; węglowodany 18,6 g; błonnik 3,6 g; białko 0,6 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 70 kcal; węglowodany 18,6 g; błonnik 3,6 g; białko 0,6 g. Wybrane mikroskładniki (bez podanych ilości): witamina A, witamina C, mangan.",
       "recipes": {
         "default-78": {
           "name": "Podstawowy przepis: Kaki (Persymona)",
-          "instructions": "Pokrój dojrzałą persymonę i podawaj z jogurtem, prażonymi orzechami i cynamonem."
+          "instructions": "Pokrój dojrzałą persymonę i podawaj z jogurtem, prażonymi orzechami i cynamonem. Czy wiesz, że cierpkie kaki zawiera rozpuszczalne taniny, które powodują uczucie ściągania w ustach, dopóki owoc całkowicie nie dojrzeje? Na surowo: Tak; odmiany niecierpkie można jeść twarde, a cierpkie dopiero po pełnym zmięknięciu."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "79": {
       "name": "Figa",
       "selectionGuide": "Miękka w dotyku, szyjka powinna opadać. Małe pęknięcia na skórce wskazują na szczytową dojrzałość.",
       "storageGuide": "Ułożyć nieumyte jednowarstwowo na talerzu wyłożonym papierem, przykryć luźno folią spożywczą i wstawić do lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 74 kcal; węglowodany 19,2 g; błonnik 2,9 g; białko 0,8 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 74 kcal; węglowodany 19,2 g; błonnik 2,9 g; białko 0,8 g. Wybrane mikroskładniki (bez podanych ilości): witamina K, wapń, potas.",
       "recipes": {
         "default-79": {
           "name": "Podstawowy przepis: Figa",
-          "instructions": "Upiecz połówki fig z odrobiną miodu i podawaj z miękkim serem."
+          "instructions": "Upiecz połówki fig z odrobiną miodu i podawaj z miękkim serem. Czy wiesz, że skórka dojrzałej figi jest jadalna, a drobne chrupiące elementy w środku to liczne kwiaty i nasiona owocostanu? Na surowo: Tak; delikatnie opłucz i jedz cały owoc razem ze skórką."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "80": {
-      "name": "Nektarynka / Brzoskwinia",
-      "selectionGuide": "Zignoruj czerwony rumieniec; kolor tła powinien być niezielony (żółty lub kremowy/biały, zależnie od odmiany). Owoc powinien lekko ustępować wzdłuż szwu.",
-      "storageGuide": "Dojrzewać szypułką do dołu w temp. pokojowej. Kiedy będą pachnące i miękkie, przełożyć do lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 39 kcal; węglowodany 9,5 g; błonnik 1,5 g; białko 0,9 g.",
-      "nutritionNote": "Wartości referencyjne dotyczą brzoskwiń; nektarynki mogą się różnić.",
+      "name": "Brzoskwinia",
+      "selectionGuide": "Wybierz pachnący owoc, którego barwa tła skórki nie jest już zielona. Powinien lekko ustępować pod delikatnym naciskiem; unikaj obić i wyciekającego soku.",
+      "storageGuide": "Twarde brzoskwinie pozostaw do dojrzenia w temperaturze pokojowej. Gdy staną się pachnące i lekko miękkie, włóż je do lodówki i szybko zużyj; chłodzenie może pogorszyć teksturę.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 39 kcal; węglowodany 9,5 g; błonnik 1,5 g; białko 0,9 g. Wybrane mikroskładniki (bez podanych ilości): witamina A, witamina C, potas.",
+      "nutritionNote": "Wartości referencyjne dotyczą brzoskwiń; nektarynki mogą się różnić. Ilości wyróżnionych mikroskładników nie zostały podane.",
       "recipes": {
         "default-80": {
-          "name": "Podstawowy przepis: Nektarynka / Brzoskwinia",
-          "instructions": "Ugrilluj połówki brzoskwini lub nektarynki i podawaj z jogurtem naturalnym."
+          "name": "Grillowane brzoskwinie z jogurtem",
+          "instructions": "Przekrój dojrzałe brzoskwinie i usuń pestki. Grilluj najpierw przeciętą stroną do dołu, aż lekko się skarmelizują, krótko obróć i podawaj z jogurtem naturalnym oraz prażonymi migdałami. Czy wiesz, że miąższ brzoskwini łatwo się obija, dlatego dojrzałe owoce trzeba delikatnie przenosić? Na surowo: Tak; umyj i jedz miąższ, ale wyrzuć twardą pestkę."
         }
       }
     },
@@ -610,49 +655,1171 @@
       "name": "Kiwi",
       "selectionGuide": "Ustępuje pod delikatnym naciskiem kciuka. Unikaj twardych jak kamień (niedojrzałych) lub papkowatych (przejrzałych).",
       "storageGuide": "Twarde owoce trzymać w temperaturze pokojowej aż dojrzeją. Gdy zmiękną, przenieść w plastikowej torebce do lodówki.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 61 kcal; węglowodany 14,7 g; błonnik 3 g; białko 1,1 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 61 kcal; węglowodany 14,7 g; błonnik 3 g; białko 1,1 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina K, potas.",
       "recipes": {
         "default-81": {
           "name": "Podstawowy przepis: Kiwi",
-          "instructions": "Pokrój kiwi na owsiankę lub jogurt i dodaj garść płatków owsianych."
+          "instructions": "Pokrój kiwi na owsiankę lub jogurt i dodaj garść płatków owsianych. Czy wiesz, że skórka kiwi jest jadalna także w odmianach z meszkiem; przed jedzeniem umyj owoc i delikatnie potrzyj skórkę. Na surowo: Tak; można zjeść cały owoc ze skórką albo obrać go według uznania."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "82": {
       "name": "Awokado",
       "selectionGuide": "Hass: Ciemna skórka, delikatnie ustępuje pod naciskiem. Zielone skórki: Twarde, ale nie jak kamień, skórka pozostaje zielona.",
       "storageGuide": "Dojrzewać w temp. pokojowej. Kiedy lekko zmięknie, wstawić do lodówki. Przekrojone połówki skropić cytryną i ciasno owinąć folią.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 160 kcal; węglowodany 8,5 g; błonnik 6,7 g; białko 2 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 160 kcal; węglowodany 8,5 g; błonnik 6,7 g; białko 2 g. Wybrane mikroskładniki (bez podanych ilości): witamina K, foliany, potas, magnez.",
       "recipes": {
         "default-82": {
           "name": "Podstawowy przepis: Awokado",
-          "instructions": "Rozgnieć awokado z limonką, posiekanym pomidorem i szczyptą soli na szybką pastę."
+          "instructions": "Rozgnieć awokado z limonką, posiekanym pomidorem i szczyptą soli na szybką pastę. Czy wiesz, że awokado jest owocem, a jego miąższ zawiera głównie tłuszcze jednonienasycone? Na surowo: Tak; jada się miąższ. Dużą pestkę i skórkę wyrzuć."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "83": {
       "name": "Mango",
       "selectionGuide": "Lekko miękkie w dotyku, owocowy aromat przy łodydze. Kolor nie jest wiarygodnym wskaźnikiem dojrzałości.",
       "storageGuide": "Zostawić w temperaturze pokojowej do osiągnięcia dojrzałości. Potem przełożyć do lodówki, by zachować świeżość na kilka dni dłużej.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 60 kcal; węglowodany 15 g; błonnik 1,6 g; białko 0,8 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 60 kcal; węglowodany 15 g; błonnik 1,6 g; białko 0,8 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina A, foliany, potas.",
       "recipes": {
         "default-83": {
           "name": "Podstawowy przepis: Mango",
-          "instructions": "Zblenduj mango z jogurtem naturalnym i limonką na prosty, schłodzony koktajl."
+          "instructions": "Zblenduj mango z jogurtem naturalnym i limonką na prosty, schłodzony koktajl. Czy wiesz, że barwa mango zależy od odmiany i nie jest pewnym wskaźnikiem dojrzałości; lepszy jest aromat i lekka miękkość? Na surowo: Tak; umyj, obierz i zjedz miąższ. Dużą, płaską pestkę wyrzuć."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
     },
     "20b": {
       "name": "Czosnek",
       "selectionGuide": "Twarda, ciasna skórka, ciężki jak na swój rozmiar. Unikaj główek z pustymi lub miękkimi ząbkami.",
       "storageGuide": "Trzymać w suchym, ciemnym, dobrze wentylowanym miejscu w temperaturze pokojowej. Najlepsza będzie siatka lub otwarty koszyk.",
-      "nutritionalInfo": "Na 100 g surowego produktu: 149 kcal; węglowodany 33,1 g; błonnik 2,1 g; białko 6,4 g.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 149 kcal; węglowodany 33,1 g; błonnik 2,1 g; białko 6,4 g. Wybrane mikroskładniki (bez podanych ilości): witamina C, witamina B6, mangan, selen.",
       "recipes": {
         "default-20b": {
           "name": "Podstawowy przepis: Czosnek",
-          "instructions": "Upiecz całą główkę czosnku do miękkości; wyciśnięte ząbki dodaj do purée ziemniaczanego."
+          "instructions": "Upiecz całą główkę czosnku do miękkości; wyciśnięte ząbki dodaj do purée ziemniaczanego. Czy wiesz, że rozgniatanie lub siekanie czosnku uruchamia reakcje enzymatyczne odpowiedzialne za jego charakterystyczny ostry aromat? Na surowo: Tak; zacznij od niewielkiej ilości, jeśli jego smak jest zbyt intensywny."
         }
-      }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej. Różnią się zależnie od odmiany i warunków uprawy; mikroskładniki bez podanej ilości są jedynie jakościowo wyróżnionymi składnikami. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "84": {
+      "name": "Kapusta czerwona",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Szukaj zwartej główki z ciasno ułożonymi liśćmi.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-84": {
+          "name": "Surówka z czerwonej kapusty",
+          "instructions": "Drobno poszatkuj kapustę, wmasuj szczyptę soli, a następnie wymieszaj z jabłkiem, kminkiem i octem jabłkowym. Czy wiesz, że czerwono-fioletowe barwniki kapusty to antocyjany, których barwa może zmieniać się pod wpływem kwasowości. Na surowo: Tak. Umyj liście i poszatkuj do surówki; kapustę można też dusić."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 31 kcal; węglowodany 7,4 g; błonnik 2,1 g; białko 1,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "85": {
+      "name": "Kapusta włoska",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Główka powinna być ciężka, a liście chrupkie, nie wiotkie.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-85": {
+          "name": "Gołąbki z kapusty włoskiej",
+          "instructions": "Zblanszuj całe liście, nadziej ugotowanym ryżem i soczewicą, zwiń i duś delikatnie w sosie pomidorowym. Czy wiesz, że pofałdowane liście zatrzymują ziemię, dlatego rozdziel je i dokładnie wypłucz. Na surowo: Tak. Delikatne wewnętrzne liście można poszatkować do sałatki; twardsze zewnętrzne lepiej ugotować."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 27 kcal; węglowodany 6,1 g; błonnik 3,1 g; białko 2,0 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "86": {
+      "name": "Kapusta pekińska",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Wybieraj zwartą główkę z chrupkimi białymi nerwami i świeżymi zielonymi końcówkami.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-86": {
+          "name": "Sałatka z kapusty pekińskiej z sezamem",
+          "instructions": "Pokrój liście i wymieszaj z marchewką, dymką, sezamem oraz lekkim dressingiem sojowo-limonkowym. Czy wiesz, że kapusta pekińska jest również nazywana napa i stanowi częstą bazę kimchi. Na surowo: Tak. Chrupiące białe nerwy i delikatne liście można jeść na surowo po umyciu."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 16 kcal; węglowodany 3,2 g; błonnik 1,2 g; białko 1,2 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "87": {
+      "name": "Sałata liściowa",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Unikaj mokrych, oślizgłych liści i uszkodzonej nasady.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-87": {
+          "name": "Sałata liściowa z prostym dressingiem",
+          "instructions": "Porwij umyte liście i tuż przed podaniem skrop oliwą, cytryną oraz posyp prażonymi pestkami. Czy wiesz, że całe główki zwykle zachowują świeżość dłużej niż liście już pokrojone. Na surowo: Tak. Sałatę zwykle jada się na surowo; dokładnie umyj i osusz liście."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 15 kcal; węglowodany 2,9 g; błonnik 1,3 g; białko 1,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "88": {
+      "name": "Sałata lodowa",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Wybieraj zwartą, ciężką główkę z chrupkimi zewnętrznymi liśćmi.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-88": {
+          "name": "Ćwiartki sałaty lodowej z sosem ziołowym",
+          "instructions": "Pokrój w ćwiartki i podawaj z sosem jogurtowo-ziołowym albo posiekaj do chrupiącej sałatki. Czy wiesz, że duża zawartość wody zapewnia jej chrupkość, ale smak jest łagodniejszy niż u ciemniejszych sałat. Na surowo: Tak. Oddziel liście, umyj i osusz przed podaniem."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 14 kcal; węglowodany 3,0 g; błonnik 1,2 g; białko 0,9 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "89": {
+      "name": "Sałata rzymska",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Szukaj jędrnych serc i chrupkich nerwów bez rdzawych ani oślizgłych miejsc.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-89": {
+          "name": "Grillowane serca sałaty rzymskiej",
+          "instructions": "Przekrój serca sałaty na pół, krótko grilluj i skrop cytryną oraz oliwą; posyp twardym serem. Czy wiesz, że sztywne nerwy liści sprawiają, że sałata dobrze nadaje się do wrapów i grillowania. Na surowo: Tak. Chrupiące nerwy i liście można jeść na surowo po umyciu."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 17 kcal; węglowodany 3,3 g; błonnik 2,1 g; białko 1,2 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "90": {
+      "name": "Rukola",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Wybieraj małe, suche liście o równomiernej zielonej barwie.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-90": {
+          "name": "Sałatka z rukolą, gruszką i orzechami",
+          "instructions": "Wymieszaj świeże liście z gruszką, prażonymi orzechami włoskimi, płatkami sera i dressingiem cytrynowym. Czy wiesz, że pikantny smak rukoli wiąże się z naturalnie występującymi glukozynolanami. Na surowo: Tak. Najczęściej jada się ją na surowo; liście umyj i osusz."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 25 kcal; węglowodany 3,7 g; błonnik 1,6 g; białko 2,6 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "91": {
+      "name": "Roszponka",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Małe rozetki powinny być świeże, nie zgniecione ani mokre.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-91": {
+          "name": "Roszponka z pomarańczą i orzechami laskowymi",
+          "instructions": "Połącz umyte liście z cząstkami pomarańczy, prażonymi orzechami laskowymi i winegretem musztardowym. Czy wiesz, że liście tworzą rozetki, w których przy nasadzie gromadzi się piasek; płucz je w kilku zmianach wody. Na surowo: Tak. To delikatna sałata, którą zwykle je się na surowo po dokładnym umyciu."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 21 kcal; węglowodany 3,6 g; błonnik 1,8 g; białko 2,0 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "92": {
+      "name": "Cykoria sałatowa",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Wybieraj jasne, jędrne główki z ciasno zamkniętymi liśćmi.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-92": {
+          "name": "Łódeczki z cykorii z serem pleśniowym",
+          "instructions": "Oddziel liście i napełnij je serem pleśniowym, posiekanym jabłkiem oraz orzechami włoskimi. Czy wiesz, że uprawia się ją w ciemności, dzięki czemu liście pozostają jasne i delikatne. Na surowo: Tak. Chrupiące liście można jeść na surowo; w razie potrzeby odetnij gorzką nasadę."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 17 kcal; węglowodany 3,4 g; błonnik 3,1 g; białko 1,3 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "93": {
+      "name": "Radicchio (cykoria czerwona)",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Wybieraj jędrne główki z intensywnie czerwono-fioletowymi liśćmi bez plam.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-93": {
+          "name": "Grillowane radicchio",
+          "instructions": "Grilluj ćwiartki do lekkiego przypieczenia i zrównoważ goryczkę octem balsamicznym oraz pomarańczą. Czy wiesz, że czerwono-fioletowa barwa pochodzi od pigmentów antocyjanowych. Na surowo: Tak. Można jeść je na surowo w sałatkach lub poddać obróbce, aby złagodzić goryczkę."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 23 kcal; węglowodany 4,5 g; błonnik 0,9 g; białko 1,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "94": {
+      "name": "Seler naciowy",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Łodygi powinny łatwo pękać, a liście wyglądać świeżo.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-94": {
+          "name": "Sałatka z selera naciowego i jabłka",
+          "instructions": "Pokrój łodygi i wymieszaj z jabłkiem, orzechami włoskimi, cytryną oraz jogurtem na chrupiącą sałatkę. Czy wiesz, że seler jest naturalnie chrupiący, ponieważ jego łodygi zawierają dużo wody. Na surowo: Tak. Dokładnie umyj i odetnij nasadę; liście również są jadalne i nadają aromat bulionowi."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 14 kcal; węglowodany 3,0 g; błonnik 1,6 g; białko 0,7 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "95": {
+      "name": "Koper włoski (fenkuł)",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj jędrną, białą bulwę ze świeżymi zielonymi liśćmi, bez brązowienia.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-95": {
+          "name": "Sałatka z fenkułu i pomarańczy",
+          "instructions": "Pokrój bulwę na bardzo cienkie plasterki i połącz z pomarańczą, oliwą oraz czarnym pieprzem. Czy wiesz, że bulwa, łodygi, zielone liście i nasiona mają anyżkowy aromat. Na surowo: Tak. Umytą bulwę można jeść na surowo po cienkim pokrojeniu; zielone liście również są jadalne."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 31 kcal; węglowodany 7,3 g; błonnik 3,1 g; białko 1,2 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "96": {
+      "name": "Batat",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj jędrne bulwy z gładką skórką, bez miękkich i mokrych miejsc.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-96": {
+          "name": "Pieczone łódeczki z batata",
+          "instructions": "Pokrój w łódeczki, wymieszaj z olejem, wędzoną papryką i solą, a następnie upiecz do miękkości. Czy wiesz, że mimo nazwy batat nie jest botanicznie spokrewniony ze zwykłym ziemniakiem. Na surowo: Batata można technicznie jeść na surowo, ale jest twardy i skrobiowy; zalecana jest obróbka termiczna."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 86 kcal; węglowodany 20,1 g; błonnik 3,0 g; białko 1,6 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "97": {
+      "name": "Karczoch",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj zwarte główki z ciasno zamkniętymi łuskami i świeżo wyglądającą łodygą.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-97": {
+          "name": "Karczochy na parze z sosem",
+          "instructions": "Odetnij twarde końcówki, ugotuj na parze do miękkości nasady i podawaj liście z jogurtem cytrynowo-czosnkowym. Czy wiesz, że jadalną częścią jest niedojrzały koszyczek kwiatowy, a nie korzeń ani owoc. Na surowo: Delikatne serce karczocha można jeść na surowo, jeśli jest bardzo świeże i cienko pokrojone; większość główki zwykle się gotuje."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 47 kcal; węglowodany 10,5 g; błonnik 5,4 g; białko 3,3 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "98": {
+      "name": "Groszek zielony (świeży)",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Strąki powinny być intensywnie zielone i pełne; mniejsze nasiona są zwykle słodsze.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-98": {
+          "name": "Sałatka ze świeżego groszku i mięty",
+          "instructions": "Krótko zblanszuj wyłuskany groszek i wymieszaj z miętą, skórką cytrynową oraz masłem. Czy wiesz, że naturalne cukry w świeżo zebranym groszku przekształcają się podczas przechowywania w skrobię, dlatego świeżość ma znaczenie. Na surowo: Tak. Bardzo świeży, słodki groszek można jeść na surowo po wyłuskaniu i umyciu."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 81 kcal; węglowodany 14,5 g; błonnik 5,1 g; białko 5,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "99": {
+      "name": "Szalotka",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj suche, jędrne cebulki z nieuszkodzoną papierową łuską.",
+      "storageGuide": "Całe szalotki przechowuj w chłodnym, suchym i przewiewnym miejscu; przekrojoną włóż do lodówki w zamkniętym pojemniku.",
+      "recipes": {
+        "default-99": {
+          "name": "Szalotki pieczone z tymiankiem",
+          "instructions": "Upiecz całe obrane szalotki z olejem i tymiankiem, aż zmiękną i się skarmelizują. Czy wiesz, że szalotki często rosną w skupiskach, a nie jako jedna duża cebula. Na surowo: Tak. Szalotkę można jeść na surowo; drobne plasterki są łagodniejsze po krótkim namoczeniu w zimnej wodzie."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 72 kcal; węglowodany 16,8 g; błonnik 3,2 g; białko 2,5 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "100": {
+      "name": "Papryczka chili",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj błyszczące, jędrne strąki z nieuszkodzoną szypułką; ostrość zależy od odmiany.",
+      "storageGuide": "Świeże chili przechowuj w lodówce w papierowej torbie lub przewiewnym pojemniku i szybko zużyj.",
+      "recipes": {
+        "default-100": {
+          "name": "Dressing limonkowo-chili",
+          "instructions": "Drobno posiekaj niewielką ilość chili i wymieszaj z sokiem z limonki, czosnkiem oraz olejem na szybki dressing. Czy wiesz, że kapsaicyna występuje głównie w jasnej tkance przytwierdzającej nasiona, a nie w samych nasionach. Na surowo: Tak. Świeże chili często jada się na surowo w małych ilościach; po krojeniu umyj ręce i nie dotykaj oczu."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 40 kcal; węglowodany 8,8 g; błonnik 1,5 g; białko 1,9 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "101": {
+      "name": "Imbir (korzeń)",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj pełne, jędrne kłącza o gładkiej skórce i świeżym aromacie.",
+      "storageGuide": "Świeży imbir przechowuj w lodówce w przewiewnym worku albo zamroź na dłużej; osłaniaj przekrojone powierzchnie.",
+      "recipes": {
+        "default-101": {
+          "name": "Zupa marchewkowa z imbirem",
+          "instructions": "Zetrzyj świeży imbir do zupy marchewkowej albo zaparz cienkie plasterki z cytryną jako aromatyczny napar. Czy wiesz, że część sprzedawana jako korzeń imbiru jest kłączem, czyli podziemną łodygą. Na surowo: Tak. Obrany lub dokładnie umyty imbir można zetrzeć na surowo; używaj niewielkiej ilości, bo jest ostry."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 80 kcal; węglowodany 17,8 g; błonnik 2,0 g; białko 1,8 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "102": {
+      "name": "Pieczarki",
+      "selectionGuide": "Wybieraj jędrne, suche grzyby bez śluzu, nieprzyjemnego zapachu i rozległych ciemnych plam. Kapelusze powinny być jędrne i suche; zamknięte kapelusze nie muszą być lepsze od otwartych.",
+      "storageGuide": "Przechowuj w lodówce w papierowej torbie lub przewiewnym oryginalnym opakowaniu i szybko zużyj. Nie zamykaj wilgotnych grzybów w szczelnym pojemniku.",
+      "recipes": {
+        "default-102": {
+          "name": "Pieczarki z czosnkiem i natką",
+          "instructions": "Zrumień pokrojone pieczarki na mocno rozgrzanej patelni, a następnie dodaj czosnek, natkę pietruszki i sok z cytryny. Czy wiesz, że pieczarki białe, brązowe i portobello to formy tego samego uprawnego gatunku. Na surowo: Świeże pieczarki uprawne można jeść na surowo po oczyszczeniu, ale obróbka termiczna poprawia smak i teksturę."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 22 kcal; węglowodany 3,3 g; błonnik 1,0 g; białko 3,1 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "103": {
+      "name": "Boczniaki",
+      "selectionGuide": "Wybieraj jędrne, suche grzyby bez śluzu, nieprzyjemnego zapachu i rozległych ciemnych plam. Wybieraj jędrne skupiska z suchymi brzegami, bez żółknięcia i śluzu.",
+      "storageGuide": "Przechowuj w lodówce w papierowej torbie lub przewiewnym oryginalnym opakowaniu i szybko zużyj. Nie zamykaj wilgotnych grzybów w szczelnym pojemniku.",
+      "recipes": {
+        "default-103": {
+          "name": "Smażone boczniaki z tymiankiem",
+          "instructions": "Porwij na paski i smaż z czosnkiem, tymiankiem oraz odrobiną sosu sojowego, aż się zarumienią. Czy wiesz, że boczniaki rosną w zachodzących na siebie, wachlarzowatych skupiskach. Na surowo: Przed jedzeniem poddaj obróbce termicznej; boczniaków zwykle nie jada się na surowo."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 33 kcal; węglowodany 6,1 g; błonnik 2,3 g; białko 3,3 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "104": {
+      "name": "Grzyby shiitake",
+      "selectionGuide": "Wybieraj jędrne, suche grzyby bez śluzu, nieprzyjemnego zapachu i rozległych ciemnych plam. Kapelusze powinny być jędrne i świeżo, ziemiście pachnieć; trzonki mogą być twarde.",
+      "storageGuide": "Przechowuj w lodówce w papierowej torbie lub przewiewnym oryginalnym opakowaniu i szybko zużyj. Nie zamykaj wilgotnych grzybów w szczelnym pojemniku.",
+      "recipes": {
+        "default-104": {
+          "name": "Shiitake smażone z imbirem",
+          "instructions": "Usuń twarde trzonki, pokrój kapelusze i podsmaż z imbirem, czosnkiem oraz sosem sojowym. Czy wiesz, że trzonki są twardsze niż kapelusze, ale można wykorzystać je do aromatyzowania bulionu. Na surowo: Dokładnie ugotuj lub usmaż; nie jedz shiitake na surowo, ponieważ surowe lub niedogotowane mogą u niektórych osób wywołać charakterystyczną reakcję skórną."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 34 kcal; węglowodany 6,8 g; błonnik 2,5 g; białko 2,2 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "105": {
+      "name": "Koperek",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Łodyżki możesz trzymać w lodówce w słoiku z niewielką ilością wody, luźno przykryte, albo owinąć liście ledwie wilgotnym ręcznikiem.",
+      "recipes": {
+        "default-105": {
+          "name": "Dip jogurtowo-koperkowy",
+          "instructions": "Wymieszaj posiekany koperek z jogurtem, cytryną i ogórkiem, aby przygotować szybki sos. Czy wiesz, że liście i nasiona kopru mają różne profile aromatyczne i stosuje się je w odmienny sposób. Na surowo: Tak. Delikatne listki można jeść na surowo; przed posiekaniem umyj je i osusz."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 43 kcal; węglowodany 7,0 g; błonnik 2,1 g; białko 3,5 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "106": {
+      "name": "Natka pietruszki",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Większość ziół przechowuj w lodówce, luźno owinięte ledwie wilgotnym ręcznikiem papierowym w worku lub pojemniku. Bazylię trzymaj w temperaturze pokojowej, jeśli chłodzenie ją uszkadza.",
+      "recipes": {
+        "default-106": {
+          "name": "Zielony sos pietruszkowy",
+          "instructions": "Posiekaj dużą garść natki z czosnkiem, skórką cytrynową i oliwą na pietruszkowy dressing. Czy wiesz, że pietruszka naciowa i kędzierzawa to różne formy uprawne tego samego gatunku. Na surowo: Tak. Liście i delikatne łodyżki można jeść na surowo po umyciu."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 36 kcal; węglowodany 6,3 g; błonnik 3,3 g; białko 3,0 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "107": {
+      "name": "Bazylia",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Ciętą bazylię trzymaj w temperaturze pokojowej w niewielkiej ilości wody; chłodzenie może ją uszkodzić.",
+      "recipes": {
+        "default-107": {
+          "name": "Caprese z pomidorów i bazylii",
+          "instructions": "Porwij liście na dojrzałe pomidory, dodaj mozzarellę i skrop oliwą. Czy wiesz, że rwanie lub krojenie tuż przed podaniem pomaga zachować świeży aromat. Na surowo: Tak. Bazylię zwykle jada się na surowo lub dodaje pod koniec gotowania."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 23 kcal; węglowodany 2,7 g; błonnik 1,6 g; białko 3,2 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "108": {
+      "name": "Kolendra świeża",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Większość ziół przechowuj w lodówce, luźno owinięte ledwie wilgotnym ręcznikiem papierowym w worku lub pojemniku. Bazylię trzymaj w temperaturze pokojowej, jeśli chłodzenie ją uszkadza.",
+      "recipes": {
+        "default-108": {
+          "name": "Salsa z kolendrą i limonką",
+          "instructions": "Posiekaj liście i delikatne łodygi do salsy z limonką, chili i pomidorem. Czy wiesz, że liście i suszone nasiona to kolendra, ale ich smaki wyraźnie się różnią. Na surowo: Tak. Umyj i wykorzystaj na surowo liście oraz delikatne łodygi."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 23 kcal; węglowodany 3,7 g; błonnik 2,8 g; białko 2,1 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "109": {
+      "name": "Mięta",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Większość ziół przechowuj w lodówce, luźno owinięte ledwie wilgotnym ręcznikiem papierowym w worku lub pojemniku. Bazylię trzymaj w temperaturze pokojowej, jeśli chłodzenie ją uszkadza.",
+      "recipes": {
+        "default-109": {
+          "name": "Dressing miętowo-cytrynowy",
+          "instructions": "Posiekaj miętę i połącz z cytryną, oliwą oraz odrobiną miodu jako dressing do owoców lub sałatek. Czy wiesz, że aromat mięty pochodzi głównie z lotnych składników olejku eterycznego, np. mentolu w niektórych odmianach. Na surowo: Tak. Świeże liście mięty często wykorzystuje się na surowo po umyciu."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 44 kcal; węglowodany 8,4 g; błonnik 6,8 g; białko 3,3 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "110": {
+      "name": "Szczypiorek",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Większość ziół przechowuj w lodówce, luźno owinięte ledwie wilgotnym ręcznikiem papierowym w worku lub pojemniku. Bazylię trzymaj w temperaturze pokojowej, jeśli chłodzenie ją uszkadza.",
+      "recipes": {
+        "default-110": {
+          "name": "Pieczone ziemniaki ze szczypiorkiem",
+          "instructions": "Potnij nożyczkami na pieczone ziemniaki, twarożek lub jajecznicę tuż przed podaniem. Czy wiesz, że szczypiorek jest spokrewniony z cebulą i czosnkiem, ale ma łagodniejszy smak. Na surowo: Tak. Umyte liście można jeść na surowo; dodawaj je na końcu, aby zachowały aromat."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 30 kcal; węglowodany 4,4 g; błonnik 2,5 g; białko 3,3 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "111": {
+      "name": "Rzeżucha wodna",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-111": {
+          "name": "Zupa z rzeżuchy wodnej",
+          "instructions": "Zblenduj rzeżuchę wodną z ziemniakiem, bulionem i jogurtem na lekko pikantną zieloną zupę. Czy wiesz, że naturalnie rośnie w wilgotnych siedliskach i ma lekko pieprzny smak. Na surowo: Tak. Jedz na surowo tylko produkt przeznaczony do spożycia i dokładnie umyty; nie zbieraj roślin z nieznanych cieków wodnych."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 11 kcal; węglowodany 1,3 g; błonnik 0,5 g; białko 2,3 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "112": {
+      "name": "Pak choi (kapusta chińska)",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Wybieraj zwarte główki z chrupkimi białymi ogonkami i niewiędnącymi liśćmi.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-112": {
+          "name": "Pak choi z czosnkiem i imbirem",
+          "instructions": "Przekrój główki na połówki lub ćwiartki i krótko smaż z czosnkiem, imbirem oraz olejem sezamowym. Czy wiesz, że podczas gotowania oddziel ogonki od liści, ponieważ ogonki potrzebują więcej czasu. Na surowo: Młode liście można jeść na surowo po umyciu; chrupiące ogonki zwykle poddaje się obróbce."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 13 kcal; węglowodany 2,2 g; błonnik 1,0 g; białko 1,5 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "113": {
+      "name": "Rzepa",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Mniejsze korzenie są często delikatniejsze; unikaj zdrewniałych pęknięć i miękkich plam.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-113": {
+          "name": "Rzepa pieczona z musztardą i tymiankiem",
+          "instructions": "Pokrój w kostkę i upiecz z oliwą, musztardą oraz tymiankiem do miękkości. Czy wiesz, że świeże liście rzepy również są jadalne i można je przygotować podobnie jak inne zielone warzywa liściowe. Na surowo: Tak. Młodą, delikatną rzepę można jeść na surowo, startą lub pokrojoną; starsze korzenie obierz, jeśli skórka jest twarda."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 28 kcal; węglowodany 6,4 g; błonnik 1,8 g; białko 0,9 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "114": {
+      "name": "Brukiew",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj jędrne, gładkie korzenie, ciężkie jak na swój rozmiar.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-114": {
+          "name": "Purée z brukwi",
+          "instructions": "Pokrój w kostkę i upiecz z marchewką oraz pasternakiem albo utłucz z odrobiną masła. Czy wiesz, że brukiew jest mieszańcem kapusty i rzepy. Na surowo: Tak, ale surowa brukiew jest twarda i lekko ostra; młode korzenie można zetrzeć do surówki."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 37 kcal; węglowodany 8,6 g; błonnik 2,3 g; białko 1,1 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "115": {
+      "name": "Kiełki fasoli mung",
+      "selectionGuide": "Wybieraj kiełki przechowywane w chłodzie, jędrne i wilgotne, ale nie oślizgłe ani kwaśno pachnące. Sprawdź termin przydatności i unikaj opakowań z nagromadzonym płynem.",
+      "storageGuide": "Przechowuj w lodówce, przestrzegaj terminu przydatności i nie pozostawiaj kiełków w temperaturze pokojowej.",
+      "recipes": {
+        "default-115": {
+          "name": "Smażone kiełki fasoli mung",
+          "instructions": "Krótko podsmaż kiełki z czosnkiem, sosem sojowym i sezamem, podgrzewając je dokładnie. Czy wiesz, że ciepłe i wilgotne warunki kiełkowania sprzyjają również namnażaniu bakterii, nawet gdy kiełki wyglądają świeżo. Na surowo: Bezpieczniej jest je poddać obróbce termicznej. Surowe kiełki mogą przenosić chorobotwórcze bakterie; dokładnie je ugotuj, szczególnie przy podawaniu osobom w ciąży, małym dzieciom, seniorom i osobom z obniżoną odpornością."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 30 kcal; węglowodany 5,9 g; błonnik 1,8 g; białko 3,0 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "116": {
+      "name": "Okra (ketmia jadalna)",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Młode, małe strąki są zwykle delikatniejsze; unikaj suchych i włóknistych.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-116": {
+          "name": "Okra pieczona z kuminem",
+          "instructions": "Pokrój i upiecz z olejem, kuminem oraz papryką albo dodaj całe strąki do pomidorowego gulaszu. Czy wiesz, że śluzowata substancja w okrze naturalnie zagęszcza zupy i gulasze. Na surowo: Tak. Młode strąki można jeść na surowo po umyciu, ale częściej się je gotuje lub piecze, co zmiękcza teksturę."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 33 kcal; węglowodany 7,5 g; błonnik 3,2 g; białko 1,9 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "117": {
+      "name": "Kurkuma świeża (kłącze)",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj jędrne pomarańczowe kłącza bez pleśni i pomarszczenia.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-117": {
+          "name": "Zupa z soczewicy ze świeżą kurkumą",
+          "instructions": "Zetrzyj niewielką ilość świeżej kurkumy do zupy z soczewicy z imbirem i czarnym pieprzem. Czy wiesz, że pomarańczowe kłącze zawiera barwniki kurkuminoidowe i jest spokrewnione z imbirem. Na surowo: Tak. Świeżą kurkumę można zetrzeć na surowo w niewielkiej ilości; bardzo mocno barwi dłonie i powierzchnie."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "118": {
+      "name": "Boćwina (burak liściowy)",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Liście powinny być jędrne; ogonki mogą być białe, żółte, różowe lub czerwone.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-118": {
+          "name": "Boćwina z czosnkiem",
+          "instructions": "Oddziel łodygi od liści; najpierw podsmaż łodygi, a potem dodaj liście z czosnkiem i cytryną. Czy wiesz, że boćwina jest spokrewniona z burakiem; kolorowe ogonki liściowe są jadalne. Na surowo: Młode liście można jeść na surowo; starsze liście i łodygi zwykle się gotuje."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 19 kcal; węglowodany 3,7 g; błonnik 1,6 g; białko 1,8 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "119": {
+      "name": "Maniok (kasawa)",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj jędrne, niepoobijane korzenie z nieuszkodzoną skórką.",
+      "storageGuide": "Przechowuj w chłodnym, suchym miejscu. Po obraniu i ugotowaniu szybko schowaj pozostałości do lodówki.",
+      "recipes": {
+        "default-119": {
+          "name": "Maniok po właściwym przygotowaniu i ugotowaniu",
+          "instructions": "Grubo obierz, pokrój na kawałki i dokładnie gotuj do całkowitej miękkości; wodę z gotowania wylej. Czy wiesz, że odmiany manioku słodkie i gorzkie różnią się potencjałem cyjanogennym; przestrzegaj instrukcji przygotowania od sprzedawcy. Na surowo: Nigdy nie jedz surowego manioku. Zawiera naturalne związki cyjanogenne i przed spożyciem musi zostać obrany, odpowiednio przygotowany i ugotowany."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 160 kcal; węglowodany 38,1 g; błonnik 1,8 g; białko 1,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "120": {
+      "name": "Taro (kolokazja)",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj jędrne bulwy bez pleśni i miękkich, mokrych miejsc.",
+      "storageGuide": "Przechowuj w chłodnym, suchym miejscu. Pokrojone części włóż do lodówki i szybko ugotuj.",
+      "recipes": {
+        "default-120": {
+          "name": "Taro gotowane na parze",
+          "instructions": "Obierz (w razie wrażliwości użyj rękawiczek), pokrój na kawałki i gotuj lub paruj do całkowitej miękkości. Czy wiesz, że taro jest skrobiową bulwą pędową wykorzystywaną w wielu kuchniach i nie jest tym samym co pochrzyn. Na surowo: Nigdy nie jedz surowego taro. Surowa tkanka zawiera drażniące kryształy szczawianu wapnia; przed jedzeniem dokładnie ugotuj."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 112 kcal; węglowodany 26,5 g; błonnik 4,1 g; białko 1,5 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "121": {
+      "name": "Banan",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Szukaj pełnych owoców bez głębokich obić; zielone końcówki nie muszą oznaczać wady.",
+      "storageGuide": "Pozostaw do dojrzenia w temperaturze pokojowej. Po dojrzeniu szybko zużyj; lodówka może ściemnić skórkę i pogorszyć teksturę.",
+      "recipes": {
+        "default-121": {
+          "name": "Owsianka bananowa z masłem orzechowym",
+          "instructions": "Pokrój dojrzałego banana na owsiankę z masłem orzechowym i odrobiną cynamonu. Czy wiesz, że banany zbiera się zielone, a dojrzewają po zbiorze podczas transportu i dystrybucji. Na surowo: Tak. Dojrzały miąższ jada się na surowo; wcześniej obierz owoc."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 89 kcal; węglowodany 22,8 g; błonnik 2,6 g; białko 1,1 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "122": {
+      "name": "Ananas",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj owoc ciężki jak na swój rozmiar, o świeżym, słodkim aromacie u nasady.",
+      "storageGuide": "Cały owoc przechowuj krótko w temperaturze pokojowej, a po przekrojeniu włóż do lodówki i osłoń przeciętą powierzchnię.",
+      "recipes": {
+        "default-122": {
+          "name": "Ananas z grilla z limonką",
+          "instructions": "Krótko grilluj plastry ananasa i podawaj ze skórką z limonki oraz jogurtem naturalnym. Czy wiesz, że ananas zawiera bromelainę, grupę enzymów rozkładających białka. Na surowo: Tak. Jedz surowy, umyty i obrany miąższ; twardy rdzeń możesz usunąć."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 50 kcal; węglowodany 13,1 g; błonnik 1,4 g; białko 0,5 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "123": {
+      "name": "Limonka",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj owoce ciężkie jak na swój rozmiar, z jędrną, błyszczącą skórką.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-123": {
+          "name": "Dressing limonkowo-kolendrowy",
+          "instructions": "Wymieszaj sok z limonki z kolendrą, chili i oliwą na świeży dressing. Czy wiesz, że limonki często zbiera się zielone; w miarę dojrzewania mogą żółknąć. Na surowo: Tak. Soczyste cząstki można jeść na surowo; przed ścieraniem skórki dokładnie ją umyj."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 30 kcal; węglowodany 10,5 g; błonnik 2,8 g; białko 0,7 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "124": {
+      "name": "Wiśnie",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj jędrne, błyszczące wiśnie z zielonymi, elastycznymi szypułkami.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-124": {
+          "name": "Kompot z wiśni",
+          "instructions": "Wydryluj wiśnie i krótko podduś z odrobiną wody oraz cynamonem na kompot. Czy wiesz, że wiśnie często wykorzystuje się do wypieków i przetworów ze względu na wysoką kwasowość. Na surowo: Tak. Miąższ można jeść na surowo, choć jest kwaśny; nie jedz ani nie rozgryzaj pestek."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 50 kcal; węglowodany 12,2 g; błonnik 1,6 g; białko 1,0 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "125": {
+      "name": "Czarna porzeczka",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Owoce powinny być pełne i ciemne, bez pleśni w opakowaniu.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-125": {
+          "name": "Czarna porzeczka do jogurtu",
+          "instructions": "Rozgnieć owoce z odrobiną miodu i dodaj do jogurtu lub owsianki. Czy wiesz, że czarne porzeczki mają szczególnie dużo witaminy C w porównaniu z wieloma popularnymi owocami. Na surowo: Tak. Oderwij owoce od szypułek, opłucz i jedz świeże."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 63 kcal; węglowodany 15,4 g; błonnik 4,3 g; białko 1,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "126": {
+      "name": "Czerwona porzeczka",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj jasne, jędrne grona bez wyciekającego soku.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-126": {
+          "name": "Sałatka z czerwonej porzeczki i koziego sera",
+          "instructions": "Dodaj opłukane owoce do zielonej sałatki z kozim serem i prażonymi pestkami. Czy wiesz, że wysoka kwasowość sprawia, że dobrze nadają się do sosów i galaretek. Na surowo: Tak. Opłucz grona i przed jedzeniem oddziel owoce od szypułek."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 56 kcal; węglowodany 13,8 g; błonnik 4,3 g; białko 1,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "127": {
+      "name": "Agrest",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj jędrne owoce z całą skórką; unikaj papkowatych i pękających.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-127": {
+          "name": "Kompot agrestowy",
+          "instructions": "Odetnij końcówki owoców i duś z niewielką ilością wody, aż lekko zmiękną; uzyskasz kwaśny kompot. Czy wiesz, że agrest może być zielony, żółty, czerwony lub purpurowy w zależności od odmiany i dojrzałości. Na surowo: Tak. Dojrzały agrest można jeść na surowo; bardzo twarde zielone owoce są bardziej kwaśne."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 44 kcal; węglowodany 10,2 g; błonnik 4,3 g; białko 0,9 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "128": {
+      "name": "Jeżyny",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj pełne, ciemne owoce, które są suche i niezgniecione.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-128": {
+          "name": "Ciepły sos jeżynowy",
+          "instructions": "Krótko podgrzej owoce z cytryną i podawaj na naleśnikach lub z jogurtem. Czy wiesz, że każda jeżyna składa się z wielu drobnych pestkowców zebranych w jeden owoc. Na surowo: Tak. Delikatnie opłucz tuż przed jedzeniem i usuń owoce z oznakami pleśni."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 43 kcal; węglowodany 9,6 g; błonnik 5,3 g; białko 1,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "129": {
+      "name": "Żurawina świeża",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Świeża żurawina powinna być jędrna i błyszcząca, a nie pomarszczona.",
+      "storageGuide": "Świeże owoce przechowuj w lodówce w przewiewnym opakowaniu; zamroź, jeśli nie zostaną szybko zużyte.",
+      "recipes": {
+        "default-129": {
+          "name": "Sos żurawinowo-pomarańczowy",
+          "instructions": "Gotuj świeżą żurawinę ze skórką pomarańczową i odrobiną cukru, aż owoce popękają i powstanie kwaśny sos. Czy wiesz, że świeża, jędrna żurawina może odbijać się po upuszczeniu dzięki komorom powietrznym w owocu. Na surowo: Tak, ale surowa żurawina jest bardzo kwaśna; opłucz ją i jedz w małej ilości lub dosłódź."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 46 kcal; węglowodany 12,2 g; błonnik 4,6 g; białko 0,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "130": {
+      "name": "Morela",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Owoc powinien lekko ustępować pod naciskiem i słodko pachnieć; unikaj obić.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-130": {
+          "name": "Morele pieczone z tymiankiem",
+          "instructions": "Przekrój morele i upiecz z miodem oraz tymiankiem; podawaj z gęstym jogurtem. Czy wiesz, że morele szybko miękną po dojrzeniu, dlatego obchodź się z nimi delikatnie. Na surowo: Tak. Umyj i jedz surowy miąższ; wyrzuć twardą pestkę i nie jedz jej jądra."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 48 kcal; węglowodany 11,1 g; błonnik 2,0 g; białko 1,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "131": {
+      "name": "Pigwa",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj pachnące, jędrne, żółte owoce bez obić.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-131": {
+          "name": "Pigwa gotowana z cynamonem",
+          "instructions": "Obierz pigwę, usuń gniazda nasienne i powoli gotuj z wodą, cytryną oraz cynamonem do miękkości. Czy wiesz, że miąższ pigwy często różowieje lub czerwienieje podczas powolnego gotowania. Na surowo: Zwykle nie jada się jej na surowo: miąższ jest twardy, ziarnisty i cierpki; gotuj do miękkości."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 57 kcal; węglowodany 15,3 g; błonnik 1,9 g; białko 0,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "132": {
+      "name": "Gruszka azjatycka (nashi)",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj gładkie, jędrne owoce bez miękkich miejsc; dojrzałe nashi pozostaje chrupkie.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-132": {
+          "name": "Sałatka z gruszki nashi i ogórka",
+          "instructions": "Pokrój cienko i podawaj z ogórkiem, sezamem oraz dressingiem z octu ryżowego. Czy wiesz, że w przeciwieństwie do wielu europejskich gruszek nashi pozostaje chrupiąca po dojrzeniu. Na surowo: Tak. Chrupiący miąższ jada się na surowo; umyj jadalną skórkę."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 42 kcal; węglowodany 10,7 g; błonnik 3,6 g; białko 0,5 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "133": {
+      "name": "Plantan (banan warzywny)",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj dojrzałe plantany z jędrną skórką; czarne plamy mogą oznaczać dojrzałość, nie zawsze zepsucie.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-133": {
+          "name": "Smażony plantan",
+          "instructions": "Obierz, pokrój i usmaż na patelni lub upiecz do zarumienienia; podawaj jako wytrawny dodatek. Czy wiesz, że plantany wykorzystuje się bardziej jak skrobiowe warzywo niż słodkie banany deserowe. Na surowo: Zwykle nie. Plantany są skrobiowe i standardowo podaje się je po obróbce termicznej."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 122 kcal; węglowodany 31,9 g; błonnik 2,3 g; białko 1,3 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "134": {
+      "name": "Papaja",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj owoce o żółto-pomarańczowej skórce, lekko ustępujące pod naciskiem; unikaj wycieku i zapachu fermentacji.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-134": {
+          "name": "Sałatka z papai i limonki",
+          "instructions": "Usuń nasiona, pokrój miąższ w kostkę i skrop sokiem z limonki oraz świeżą miętą. Czy wiesz, że papaja zawiera papainę, enzym rozkładający białka, obecny m.in. w lateksie i niedojrzałych owocach. Na surowo: Tak. Dojrzały miąższ jedz na surowo po usunięciu skórki i nasion."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 43 kcal; węglowodany 10,8 g; błonnik 1,7 g; białko 0,5 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "135": {
+      "name": "Marakuja (passiflora)",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Dojrzały owoc jest ciężki i lekko miękki; pomarszczona skórka może być normalna.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-135": {
+          "name": "Jogurt z marakują",
+          "instructions": "Wybierz łyżeczką miąższ i dodaj do jogurtu albo wymieszaj z sokiem z limonki na kwaśny dressing. Czy wiesz, że pomarszczona skórka może świadczyć o dojrzałości, a nie zepsuciu, o ile owoc nie jest spleśniały. Na surowo: Tak. Wybierz łyżeczką miąższ i jadalne nasiona; twardą skórkę wyrzuć."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 97 kcal; węglowodany 23,4 g; błonnik 10,4 g; białko 2,2 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "136": {
+      "name": "Pitaja (smoczy owoc)",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj owoce o równomiernej barwie, bez miękkich i wyciekających miejsc.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-136": {
+          "name": "Pitaja z limonką",
+          "instructions": "Przekrój owoc, wybierz miąższ łyżeczką i podawaj schłodzony z limonką oraz miętą. Czy wiesz, że miąższ może być biały lub purpurowy w zależności od gatunku i odmiany. Na surowo: Tak. Miąższ i drobne czarne nasiona są jadalne na surowo; usuń skórzastą skórkę."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 57 kcal; węglowodany 13,2 g; błonnik 3,0 g; białko 1,2 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "137": {
+      "name": "Kokos świeży",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj ciężki kokos, w którym słychać przemieszczającą się wodę, bez pęknięć i pleśni.",
+      "storageGuide": "Cały kokos przechowuj w temperaturze pokojowej; otwarty miąższ włóż do lodówki w zamkniętym pojemniku i szybko zużyj.",
+      "recipes": {
+        "default-137": {
+          "name": "Miska owoców ze świeżym kokosem",
+          "instructions": "Dodaj świeży miąższ kokosa do sałatki owocowej albo zetrzyj na owsiankę i jogurt. Czy wiesz, że woda kokosowa to płyn znajdujący się wewnątrz owocu; nie jest tym samym co mleko kokosowe. Na surowo: Tak. Biały miąższ i woda kokosowa są jadalne na surowo; twardą skorupę wyrzuć."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 354 kcal; węglowodany 15,2 g; błonnik 9,0 g; białko 3,3 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "138": {
+      "name": "Liczi",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj całe czerwone lub różowe skórki bez pleśni i wycieku.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-138": {
+          "name": "Sałatka cytrusowa z liczi",
+          "instructions": "Obierz owoce, usuń pestkę i dodaj miąższ do sałatki cytrusowej. Czy wiesz, że przezroczysty miąższ otacza jedną dużą, niejadalną pestkę. Na surowo: Tak. Jedz wyłącznie obrany biały miąższ; szorstką skórkę i pestkę wyrzuć."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 66 kcal; węglowodany 16,5 g; błonnik 1,3 g; białko 0,8 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "139": {
+      "name": "Kumkwat",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj jędrne, intensywnie zabarwione owoce o aromatycznej skórce, bez miękkich miejsc.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-139": {
+          "name": "Kumkwat z rozmarynem",
+          "instructions": "Pokrój cienko i krótko podduś z miodem oraz rozmarynem jako dodatek do jogurtu. Czy wiesz, że w przeciwieństwie do większości cytrusów kumkwat zwykle jada się w całości. Na surowo: Tak. Umyj i jedz cały owoc razem z cienką, słodko-kwaśną skórką; pestki możesz usunąć."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 71 kcal; węglowodany 15,9 g; błonnik 6,5 g; białko 1,9 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "140": {
+      "name": "Miechunka peruwiańska",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Dojrzałe owoce powinny być złoto-pomarańczowe i jędrne, nie pomarszczone ani wyciekające.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-140": {
+          "name": "Sałatka z miechunką i awokado",
+          "instructions": "Przekrój owoce na pół i dodaj do sałatki z awokado, ziołami oraz limonką. Czy wiesz, że owoc rozwija się wewnątrz papierowej osłonki przypominającej lampion. Na surowo: Tak. Usuń papierową osłonkę i umyj dojrzały owoc przed jedzeniem."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 53 kcal; węglowodany 11,2 g; błonnik 4,9 g; białko 1,9 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "141": {
+      "name": "Pomelo",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj ciężki owoc z jędrną skórką i bez miękkich miejsc.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-141": {
+          "name": "Sałatka z pomelo i ziołami",
+          "instructions": "Obierz grubą skórkę i białą warstwę, oddziel cząstki i wymieszaj z miętą. Czy wiesz, że pomelo jest jednym z największych cytrusów i gatunkiem rodzicielskim grejpfruta. Na surowo: Tak. Jedz obrane cząstki na surowo; usuń grube błonki, jeśli są twarde."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 38 kcal; węglowodany 9,6 g; błonnik 1,0 g; białko 0,8 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "142": {
+      "name": "Karambola",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj jędrne, żółte owoce ze świeżymi grzbietami, bez brązowych, miękkich miejsc.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-142": {
+          "name": "Sałatka owocowa z karambolą",
+          "instructions": "Pokrój w poprzek na gwiazdki i dodaj do sałatki owocowej z limonką oraz miętą. Czy wiesz, że owoc z pięcioma grzbietami po pokrojeniu tworzy gwiazdki; związki powiązane ze szczawianami stanowią zagrożenie przy chorobach nerek. Na surowo: Tak, dla większości osób po umyciu i odcięciu krawędzi. Osoby z chorobami nerek powinny unikać karamboli, ponieważ może wywołać poważne zatrucie."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 31 kcal; węglowodany 6,7 g; błonnik 2,8 g; białko 1,0 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "143": {
+      "name": "Nektarynka",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj pachnące owoce, które lekko ustępują przy szypułce; unikaj obić.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-143": {
+          "name": "Grillowane nektarynki z jogurtem",
+          "instructions": "Przekrój dojrzałe nektarynki i usuń pestki, a następnie krótko grilluj i podawaj z jogurtem naturalnym oraz prażonymi migdałami. Czy wiesz, że nektarynka jest brzoskwinią o gładkiej skórce, a nie krzyżówką brzoskwini ze śliwką. Na surowo: Tak. Umyj i jedz miąższ na surowo; wyrzuć twardą pestkę i nie jedz jej jądra."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 44 kcal; węglowodany 10,6 g; błonnik 1,7 g; białko 1,1 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "144": {
+      "name": "Guawa",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj owoce lekko ustępujące pod naciskiem i o przyjemnym, lekko słodkim aromacie.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-144": {
+          "name": "Guawa z limonką i miętą",
+          "instructions": "Pokrój dojrzałą guawę i wymieszaj z sokiem z limonki oraz miętą na aromatyczną sałatkę owocową. Czy wiesz, że guawa często zawiera szczególnie dużo witaminy C. Na surowo: Tak. Umyj owoc; skórka i drobne nasiona są jadalne, choć tekstura zależy od odmiany."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 68 kcal; węglowodany 14,3 g; błonnik 5,4 g; białko 2,6 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "145": {
+      "name": "Rambutan",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj owoce o intensywnej barwie i świeżo wyglądających miękkich wypustkach, bez pleśni.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-145": {
+          "name": "Miska owocowa z rambutanem i ananasem",
+          "instructions": "Przygotuj schłodzoną sałatkę owocową z obranym rambutanem, ananasem i sokiem z limonki. Czy wiesz, że nazwa pochodzi od malajskiego słowa oznaczającego „włosy” i odnosi się do skórki. Na surowo: Tak. Usuń włochatą skórkę i jedz przezroczysty miąższ; pestkę wyrzuć."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 82 kcal; węglowodany 20,9 g; błonnik 0,9 g; białko 0,7 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "146": {
+      "name": "Longan",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj całe, jędrne owoce; cienka skórka nie powinna być pęknięta ani spleśniała.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-146": {
+          "name": "Schłodzona sałatka owocowa z longanem",
+          "instructions": "Obierz owoce, usuń pestki i dodaj miąższ do schłodzonej sałatki owocowej. Czy wiesz, że longan jest spokrewniony z liczi i rambutanem, ale ma łagodniejszy, piżmowy aromat. Na surowo: Tak. Jedz wyłącznie obrany miąższ, a pestkę i skórkę wyrzuć."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "147": {
+      "name": "Feijoa (gruszla)",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj owoce o aromatycznym zapachu i lekkiej miękkości; unikaj pomarszczenia.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-147": {
+          "name": "Jogurt z feijoą",
+          "instructions": "Przekrój dojrzałe owoce i wybierz aromatyczny miąższ do jogurtu z miodem. Czy wiesz, że owoc ma charakterystyczny aromat przypominający ananasa i guawę. Na surowo: Tak. Aromatyczny miąższ jada się na surowo; skórka również jest jadalna, ale może być cierpka."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 55 kcal; węglowodany 13,0 g; błonnik 6,4 g; białko 1,0 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "148": {
+      "name": "Rokitnik",
+      "selectionGuide": "Wybieraj jędrne owoce bez wyciekającego soku, pleśni i zgniecionych sztuk na dnie opakowania. Owoce powinny być pełne i pomarańczowo-żółte; unikaj zgniecionych i pachnących fermentacją.",
+      "storageGuide": "Przechowuj nieumyte w lodówce, w płytkim i przewiewnym pojemniku. Usuń uszkodzone owoce, a pozostałe delikatnie umyj tuż przed jedzeniem.",
+      "recipes": {
+        "default-148": {
+          "name": "Sos z rokitnika",
+          "instructions": "Delikatnie podgrzej owoce z odrobiną wody, w razie potrzeby przetrzyj i wykorzystaj kwaśne purée do sosu. Czy wiesz, że owoce rokitnika naturalnie zawierają karotenoidy i witaminę C, ale ich ilość zależy od odmiany. Na surowo: Tak. Owoce są jadalne na surowo, ale bardzo kwaśne; zbieraj je ostrożnie, ponieważ gałązki mają kolce."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "149": {
+      "name": "Morwa",
+      "selectionGuide": "Wybieraj jędrne owoce bez wyciekającego soku, pleśni i zgniecionych sztuk na dnie opakowania. Wybieraj w pełni wybarwione, pełne owoce, które nie wyciekają.",
+      "storageGuide": "Przechowuj nieumyte w lodówce, w płytkim i przewiewnym pojemniku. Usuń uszkodzone owoce, a pozostałe delikatnie umyj tuż przed jedzeniem.",
+      "recipes": {
+        "default-149": {
+          "name": "Morwy z jogurtem",
+          "instructions": "Posyp świeżymi morwami jogurt albo zamroź owoce pojedynczą warstwą do późniejszego wykorzystania. Czy wiesz, że morwy są owocami złożonymi i mogą być białe, czerwone lub ciemnofioletowe. Na surowo: Tak. Delikatnie opłucz dojrzałe owoce i jedz na świeżo."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 43 kcal; węglowodany 9,8 g; błonnik 1,7 g; białko 1,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "150": {
+      "name": "Owoce czarnego bzu",
+      "selectionGuide": "Wybieraj jędrne owoce bez wyciekającego soku, pleśni i zgniecionych sztuk na dnie opakowania. Używaj wyłącznie prawidłowo rozpoznanych, dojrzałych owoców od sprzedawcy żywności; unikaj niedojrzałych.",
+      "storageGuide": "Świeże owoce przechowuj krótko w lodówce; szybko poddaj obróbce i nie trzymaj ugotowanych w temperaturze pokojowej.",
+      "recipes": {
+        "default-150": {
+          "name": "Syrop z owoców czarnego bzu",
+          "instructions": "Oddziel owoce od baldachów i ugotuj na syrop lub sos; w razie potrzeby przetrzyj, aby usunąć nasiona. Czy wiesz, że surowe lub niedojrzałe owoce czarnego bzu mogą powodować nudności, wymioty i biegunkę. Na surowo: Nie. Nie jedz surowych owoców czarnego bzu ani innych części rośliny; dojrzałe owoce dokładnie ugotuj, a łodyżki i liście usuń."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 73 kcal; węglowodany 18,4 g; błonnik 7,0 g; białko 0,7 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "151": {
+      "name": "Jackfruit (chlebowiec)",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj zdrowy, aromatyczny owoc; bardzo duże sztuki mogą być sprzedawane w porcjowanych kawałkach.",
+      "storageGuide": "Twarde owoce pozostaw do dojrzenia w temperaturze pokojowej, jeśli tego wymagają; dojrzałe i delikatne przechowuj w lodówce i szybko zużyj. Owoce tropikalne mogą być wrażliwe na chłód, dlatego stosuj wskazówki dla danego produktu.",
+      "recipes": {
+        "default-151": {
+          "name": "Miska z dojrzałym jackfruitem",
+          "instructions": "Oddziel dojrzałe osnówki od włóknistego rdzenia i podawaj schłodzone z limonką; usuń nasiona. Czy wiesz, że dojrzały chlebowiec jest słodki, a niedojrzały często wykorzystuje się w daniach wytrawnych jako zamiennik mięsa. Na surowo: Tak. Dojrzałe osnówki można jeść na surowo; usuń skórkę, rdzeń i nasiona. Niedojrzały chlebowiec zwykle się gotuje."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 95 kcal; węglowodany 23,3 g; błonnik 1,5 g; białko 1,7 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "152": {
+      "name": "Kasztany jadalne",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj ciężkie kasztany z nieuszkodzoną skorupą, w których jądro nie grzechocze.",
+      "storageGuide": "Przechowuj w chłodnym, suchym miejscu i szybko zużyj; kasztany z pleśnią lub otworami wyrzuć.",
+      "recipes": {
+        "default-152": {
+          "name": "Pieczone kasztany jadalne",
+          "instructions": "Natnij skorupki, upiecz aż zaczną się rozchylać, a następnie obierz jeszcze ciepłe. Czy wiesz, że kasztany jadalne różnią się botanicznie od kasztanowców, których nasiona nie są żywnością. Na surowo: Nie. Świeże kasztany jadalne należy ugotować lub upiec; nie myl ich z trującymi kasztanami zwyczajnymi (kasztanowca)."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 213 kcal; węglowodany 45,5 g; błonnik 8,1 g; białko 2,4 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "153": {
+      "name": "Rzodkiew japońska (daikon)",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj jędrne, gładkie korzenie bez miękkich miejsc i pomarszczenia.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-153": {
+          "name": "Sałatka z daikonu i sezamu",
+          "instructions": "Zetrzyj daikon i wymieszaj z octem ryżowym, olejem sezamowym oraz odrobiną sosu sojowego. Czy wiesz, że daikon to duża azjatycka rzodkiew o łagodniejszym smaku niż wiele małych rzodkiewek. Na surowo: Tak. Obierz, jeśli skórka jest twarda, a następnie zetrzyj lub pokrój cienko; jadalny jest także korzeń i młode liście."
+        }
+      },
+      "nutritionalInfo": "Na 100 g surowej części jadalnej: 18 kcal; węglowodany 4,1 g; błonnik 1,6 g; białko 0,6 g.",
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane."
+    },
+    "154": {
+      "name": "Kalafior romanesco",
+      "selectionGuide": "Wybieraj jędrne, świeże liście bez śluzu, żółknięcia i rozległych uszkodzeń. Wybieraj zwartą główkę z równomiernie zabarwionymi, ciasno ułożonymi spiralami.",
+      "storageGuide": "Przechowuj nieumyte i suche w lodówce, w luźnym worku lub pojemniku wyłożonym ręcznikiem papierowym. Umyj i osusz tuż przed użyciem.",
+      "recipes": {
+        "default-154": {
+          "name": "Romanesco z cytryną i orzechami laskowymi",
+          "instructions": "Ugotuj różyczki na parze do lekkiej miękkości i skrop cytryną oraz oliwą; posyp prażonymi orzechami laskowymi. Czy wiesz, że układ spiral przypomina fraktalny wzór matematyczny; warzywo bywa nazywane kalafiorem lub brokułem romanesco. Na surowo: Tak. Małe, czyste różyczki można jeść na surowo po umyciu, choć częściej podaje się je po obróbce."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "155": {
+      "name": "Rzodkiew czarna",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj jędrny korzeń z nieuszkodzoną, ciemną skórką i bez miękkich miejsc.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-155": {
+          "name": "Surówka z czarnej rzodkwi i jabłka",
+          "instructions": "Obierz, jeśli skórka jest twarda, zetrzyj korzeń i wymieszaj z jabłkiem, cytryną oraz jogurtem na wyrazistą surówkę. Czy wiesz, że czarna rzodkiew jest tradycyjnym korzeniem późnego sezonu, który dobrze się przechowuje. Na surowo: Tak. W razie potrzeby obierz i zetrzyj lub pokrój cienko; smak jest ostrzejszy niż w przypadku różowej rzodkiewki."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "156": {
+      "name": "Skorzonera (wężymord)",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Wybieraj jędrne korzenie bez miękkich miejsc; po przekrojeniu może wypływać mleczny sok.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-156": {
+          "name": "Skorzonera duszona z cytryną",
+          "instructions": "Wyszoruj i obierz korzenie, a następnie gotuj w lekko zakwaszonej wodzie do miękkości; podawaj z pietruszką i masłem. Czy wiesz, że obrana skorzonera szybko ciemnieje; woda z dodatkiem cytryny pomaga zachować jasny kolor. Na surowo: Bardzo młody i delikatny korzeń można jeść na surowo, ale zwykle się go obiera i gotuje. Załóż rękawiczki, jeśli przeszkadza Ci mleczny sok."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "157": {
+      "name": "Groszek cukrowy",
+      "selectionGuide": "Wybieraj jędrne okazy, ciężkie jak na swój rozmiar, bez miękkich, mokrych i spleśniałych miejsc. Strąki powinny być intensywnie zielone, chrupkie i pełne, bez żółknięcia.",
+      "storageGuide": "Większość świeżych korzeni przechowuj w szufladzie lodówki, w perforowanym worku. Utrzymuj je w suchości i usuń nać, jeśli jest dołączona.",
+      "recipes": {
+        "default-157": {
+          "name": "Groszek cukrowy z czosnkiem",
+          "instructions": "Odetnij końcówki strąków i krótko podsmaż je w całości z czosnkiem, skórką cytrynową oraz sezamem. Czy wiesz, że groszek cukrowy powstał ze skrzyżowania groszku cukrowego typu snow pea i groszku łuskanego. Na surowo: Tak. Cały chrupiący strąk jest jadalny; usuń ewentualne twarde włókno i umyj przed jedzeniem."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "158": {
+      "name": "Kurki (pieprznik jadalny)",
+      "selectionGuide": "Wybieraj jędrne, suche grzyby bez śluzu, nieprzyjemnego zapachu i rozległych ciemnych plam.",
+      "storageGuide": "Przechowuj w lodówce w papierowej torbie i oczyść szczoteczką tuż przed gotowaniem; nie mocz grzybów leśnych.",
+      "recipes": {
+        "default-158": {
+          "name": "Kurki duszone na maśle",
+          "instructions": "Oczyść kurki z zabrudzeń, większe rozerwij i powoli smaż z masłem, szalotką oraz tymiankiem, aż odparuje płyn. Czy wiesz, że kurki mają tępe, rozwidlone listewki zamiast cienkich, prawdziwych blaszek. Na surowo: Nie. Kurki należy poddać obróbce termicznej; jedz wyłącznie grzyby oznaczone z całkowitą pewnością."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "159": {
+      "name": "Borowiki (prawdziwki)",
+      "selectionGuide": "Wybieraj jędrne, suche grzyby bez śluzu, nieprzyjemnego zapachu i rozległych ciemnych plam.",
+      "storageGuide": "Przechowuj w lodówce w papierowej torbie i szybko zużyj; delikatnie oczyść przed gotowaniem.",
+      "recipes": {
+        "default-159": {
+          "name": "Borowiki z czosnkiem i pietruszką",
+          "instructions": "Pokrój jędrne borowiki i podsmaż z czosnkiem oraz natką pietruszki; dodaj odrobinę wody z makaronu, aby uzyskać kremowy sos. Czy wiesz, że gąbczasta warstwa rurek pod kapeluszem uwalnia zarodniki i nie jest zbudowana z blaszek. Na surowo: Nie. Borowiki należy ugotować lub usmażyć; wykorzystuj wyłącznie okazy rozpoznane z całkowitą pewnością."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "160": {
+      "name": "Grzyby enoki (płomiennica zimowa)",
+      "selectionGuide": "Wybieraj jędrne, suche grzyby bez śluzu, nieprzyjemnego zapachu i rozległych ciemnych plam.",
+      "storageGuide": "Przechowuj w lodówce w oryginalnym opakowaniu, przestrzegaj terminu przydatności i dokładnie ugotuj.",
+      "recipes": {
+        "default-160": {
+          "name": "Zupa z dokładnie ugotowanymi enoki",
+          "instructions": "Odetnij zbitą nasadę, rozdziel trzonki i dodaj do zupy lub dania stir-fry pod koniec gotowania. Czy wiesz, że enoki uprawiane w ciemności mają długie, jasne trzonki i małe kapelusze. Na surowo: Nie jedz na surowo. Dokładnie ugotuj i przechowuj w lodówce; surowe enoki wiązano z ogniskami zatruć pokarmowych."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "161": {
+      "name": "Rzeżucha siewna",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc. Wybieraj świeże, zielone kiełki bez żółknięcia i nadmiaru wilgoci.",
+      "storageGuide": "Większość ziół przechowuj w lodówce, luźno owinięte ledwie wilgotnym ręcznikiem papierowym w worku lub pojemniku. Bazylię trzymaj w temperaturze pokojowej, jeśli chłodzenie ją uszkadza.",
+      "recipes": {
+        "default-161": {
+          "name": "Kanapki z rzeżuchą",
+          "instructions": "Ścinaj świeże kiełki na kanapki z jajkiem, twarożek lub sałatkę ziemniaczaną tuż przed podaniem. Czy wiesz, że rzeżucha siewna to znana w Polsce szybko rosnąca rzeżucha wysiewana na parapecie. Na surowo: Tak. Umyte kiełki można jeść na surowo; uprawiaj je lub kupuj jako żywność, zamiast zbierać nieznane rośliny."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "162": {
+      "name": "Aronia",
+      "selectionGuide": "Wybieraj jędrne owoce bez wyciekającego soku, pleśni i zgniecionych sztuk na dnie opakowania. Wybieraj w pełni wybarwione, ciemne owoce bez pleśni i zapachu fermentacji.",
+      "storageGuide": "Krótko przechowuj w lodówce lub zamroź; owoce zwykle szybko się gotuje albo wyciska z nich sok.",
+      "recipes": {
+        "default-162": {
+          "name": "Kompot z aronii i jabłek",
+          "instructions": "Gotuj umyte owoce z jabłkiem i niewielką ilością wody, a następnie przetrzyj przez sito na cierpki sos. Czy wiesz, że aronia jest szeroko uprawiana w Polsce, a jej ciemne owoce zawierają liczne polifenole. Na surowo: Tak, dojrzałe owoce można jeść na surowo, ale są bardzo cierpkie; częściej się je gotuje, wyciska sok lub mrozi."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "163": {
+      "name": "Rozmaryn świeży",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Większość ziół przechowuj w lodówce, luźno owinięte ledwie wilgotnym ręcznikiem papierowym w worku lub pojemniku. Bazylię trzymaj w temperaturze pokojowej, jeśli chłodzenie ją uszkadza.",
+      "recipes": {
+        "default-163": {
+          "name": "Warzywa pieczone z rozmarynem",
+          "instructions": "Oderwij listki od zdrewniałych łodyżek, drobno posiekaj i dodaj do pieczonych ziemniaków, fasoli lub focacci. Czy wiesz, że rozmaryn jest zimozielonym krzewem śródziemnomorskim; świeże gałązki często sprzedaje się w doniczkach. Na surowo: Tak, ale liście są twarde i bardzo aromatyczne; używaj drobno posiekanych, w niewielkiej ilości."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "164": {
+      "name": "Tymianek świeży",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Większość ziół przechowuj w lodówce, luźno owinięte ledwie wilgotnym ręcznikiem papierowym w worku lub pojemniku. Bazylię trzymaj w temperaturze pokojowej, jeśli chłodzenie ją uszkadza.",
+      "recipes": {
+        "default-164": {
+          "name": "Pieczone warzywa korzeniowe z tymiankiem",
+          "instructions": "Oberwij drobne listki z łodyżek i dodaj do pieczonych korzeni, grzybów lub cytrynowego dressingu. Czy wiesz, że tymianek dobrze zachowuje aromat podczas gotowania, dlatego sprawdza się w długo duszonych potrawach. Na surowo: Tak. Delikatne listki można jeść na surowo w niewielkiej ilości po umyciu; zdrewniałe łodyżki zwykle się odrzuca."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "165": {
+      "name": "Oregano świeże",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Większość ziół przechowuj w lodówce, luźno owinięte ledwie wilgotnym ręcznikiem papierowym w worku lub pojemniku. Bazylię trzymaj w temperaturze pokojowej, jeśli chłodzenie ją uszkadza.",
+      "recipes": {
+        "default-165": {
+          "name": "Sałatka pomidorowa ze świeżym oregano",
+          "instructions": "Posiekaj świeże liście do sałatki pomidorowej albo wymieszaj je z oliwą, cytryną i czosnkiem. Czy wiesz, że świeże oregano ma łagodniejszy, bardziej zielony aromat niż suszone. Na surowo: Tak. Umyte liście można jeść na surowo lub dodawać pod koniec gotowania."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "166": {
+      "name": "Szałwia świeża",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Większość ziół przechowuj w lodówce, luźno owinięte ledwie wilgotnym ręcznikiem papierowym w worku lub pojemniku. Bazylię trzymaj w temperaturze pokojowej, jeśli chłodzenie ją uszkadza.",
+      "recipes": {
+        "default-166": {
+          "name": "Chrupiące liście szałwii",
+          "instructions": "Krótko podsmaż całe liście na maśle, aż staną się chrupkie, i podawaj z dynią lub gnocchi. Czy wiesz, że liście szałwii mają pomarszczoną powierzchnię i intensywny aromat olejków eterycznych. Na surowo: Tak, niewielkie ilości umytych liści można jeść na surowo, ale ich intensywny smak zwykle lepiej sprawdza się po obróbce."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "167": {
+      "name": "Trawa cytrynowa",
+      "selectionGuide": "Wybieraj intensywnie zabarwione, aromatyczne liście z jędrnymi łodyżkami, bez ciemnych i oślizgłych miejsc.",
+      "storageGuide": "Większość ziół przechowuj w lodówce, luźno owinięte ledwie wilgotnym ręcznikiem papierowym w worku lub pojemniku. Bazylię trzymaj w temperaturze pokojowej, jeśli chłodzenie ją uszkadza.",
+      "recipes": {
+        "default-167": {
+          "name": "Zupa z trawą cytrynową",
+          "instructions": "Rozgnieć dolne części łodyg i gotuj w zupie lub naparze; przed podaniem usuń włókniste łodygi. Czy wiesz, że rozgniecenie łodygi uwalnia jej cytrusowy aromat. Na surowo: Delikatny środek można drobno pokroić, ale włóknistą zewnętrzną łodygę zwykle się zaparza i usuwa, zamiast jeść na surowo."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "168": {
+      "name": "Daktyle świeże",
+      "selectionGuide": "Wybieraj owoce bez pleśni i głębokich obić, o stopniu dojrzałości odpowiednim do planowanego użycia. W przypadku wielu owoców aromat i lekka miękkość są lepszymi wskazówkami niż sam kolor. Wybieraj pełne, błyszczące daktyle bez zapachu fermentacji i wycieku.",
+      "storageGuide": "Dojrzałe świeże daktyle przechowuj w lodówce w przykrytym pojemniku i szybko zużyj.",
+      "recipes": {
+        "default-168": {
+          "name": "Świeże daktyle z jogurtem",
+          "instructions": "Przekrój dojrzałe daktyle, usuń pestkę i podawaj z jogurtem naturalnym, orzechami włoskimi oraz szczyptą cynamonu. Czy wiesz, że świeże daktyle zbiera się na różnych etapach dojrzałości — mogą być chrupkie albo miękkie. Na surowo: Tak. Jedz miękki miąższ na surowo, a twardą pestkę wyrzuć; świeże daktyle różnią się od suszonych."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
+    },
+    "169": {
+      "name": "Borówka brusznica",
+      "selectionGuide": "Wybieraj jędrne owoce bez wyciekającego soku, pleśni i zgniecionych sztuk na dnie opakowania. Wybieraj jędrne czerwone owoce bez pleśni i zgniecionych miejsc.",
+      "storageGuide": "Przechowuj w lodówce w płytkim, przewiewnym pojemniku albo zamroź na dłużej.",
+      "recipes": {
+        "default-169": {
+          "name": "Przetwory z borówki brusznicy",
+          "instructions": "Gotuj owoce z niewielką ilością cukru i wody, aby przygotować kwaśny dodatek do pieczonych warzyw. Czy wiesz, że borówka brusznica jest blisko spokrewniona z żurawiną i naturalnie zawiera kwas benzoesowy. Na surowo: Tak, dojrzałe owoce można jeść na surowo, ale są kwaśne; często gotuje się je na sosy lub przetwory."
+        }
+      },
+      "nutritionNote": "Wartości orientacyjne dla 100 g surowej części jadalnej; zależą od odmiany, dojrzałości i warunków uprawy. Liczby są zaokrąglone. Ilości wyróżnionych mikroskładników nie zostały podane.",
+      "nutritionalInfo": "Brak zweryfikowanej wartości liczbowej dla tego produktu; nie dodano szacunków."
     }
   }
 }

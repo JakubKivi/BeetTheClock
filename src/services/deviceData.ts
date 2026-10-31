@@ -42,6 +42,11 @@ type RegionDataset = {
   produce: RegionalProduce[];
 };
 
+type RegionLocale = {
+  name: string;
+  produce: Record<string, unknown>;
+};
+
 export type DataImportTarget = "app-locale" | "region";
 
 export type RegionOption = {
@@ -194,6 +199,64 @@ const validateRegion = (region: unknown, fileName: string): RegionDataset => {
   return { code: region.code, produce };
 };
 
+const validateRegionLocale = (
+  locale: unknown,
+  fileName: string,
+): RegionLocale => {
+  if (
+    !isRecord(locale) ||
+    typeof locale.name !== "string" ||
+    !isRecord(locale.produce)
+  ) {
+    throw new Error(
+      `${fileName} must contain a string "name" and a "produce" object.`,
+    );
+  }
+
+  for (const [produceId, product] of Object.entries(locale.produce)) {
+    if (!isCode(produceId) || !isRecord(product)) {
+      throw new Error(
+        `${fileName} has invalid product translations for "${produceId}".`,
+      );
+    }
+
+    for (const field of [
+      "name",
+      "selectionGuide",
+      "storageGuide",
+      "nutritionalInfo",
+      "nutritionNote",
+    ]) {
+      if (product[field] !== undefined && typeof product[field] !== "string") {
+        throw new Error(
+          `${fileName} has an invalid "${field}" translation for "${produceId}".`,
+        );
+      }
+    }
+
+    if (product.recipes === undefined) continue;
+    if (!isRecord(product.recipes)) {
+      throw new Error(
+        `${fileName} must contain a recipes object for "${produceId}".`,
+      );
+    }
+    for (const [recipeId, recipe] of Object.entries(product.recipes)) {
+      if (
+        !isCode(recipeId) ||
+        !isRecord(recipe) ||
+        typeof recipe.name !== "string" ||
+        typeof recipe.instructions !== "string"
+      ) {
+        throw new Error(
+          `${fileName} has invalid recipe translations for "${produceId}.${recipeId}".`,
+        );
+      }
+    }
+  }
+
+  return { name: locale.name, produce: locale.produce };
+};
+
 export const resolveImportDestination = (
   fileName: string,
   content: unknown,
@@ -228,18 +291,9 @@ export const resolveImportDestination = (
     return `regions/${code}${FILE_EXTENSION}`;
   }
 
-  if (
-    !isRecord(content) ||
-    typeof content.name !== "string" ||
-    !isRecord(content.produce)
-  ) {
-    throw new Error(
-      `${fileName} must contain region translations or a region data file.`,
-    );
-  }
-
+  const locale = validateRegionLocale(content, fileName);
   const translations: Record<string, string> = {};
-  flattenTranslations(content.produce, "produce", translations);
+  flattenTranslations(locale.produce, "produce", translations);
   return `regions/${translationRegion}/${code}${FILE_EXTENSION}`;
 };
 
@@ -567,30 +621,13 @@ const loadData = async (directory: Directory): Promise<LoadedData> => {
         );
       }
 
-      const localization: unknown = await parseJson(translationFile);
-      if (!isRecord(localization)) {
-        throw new Error(
-          `regions/${region.code}/${translationFile.name} must contain an object.`,
-        );
-      }
-      if (
-        (localization.name !== undefined &&
-          typeof localization.name !== "string") ||
-        (localization.produce !== undefined &&
-          !isRecord(localization.produce))
-      ) {
-        throw new Error(
-          `regions/${region.code}/${translationFile.name} has an invalid name or produce section.`,
-        );
-      }
-
+      const localization = validateRegionLocale(
+        await parseJson(translationFile),
+        `regions/${region.code}/${translationFile.name}`,
+      );
       const translations: Record<string, string> = {};
-      if (typeof localization.name === "string") {
-        translations[`regions.${region.code}`] = localization.name;
-      }
-      if (localization.produce !== undefined) {
-        flattenTranslations(localization.produce, "produce", translations);
-      }
+      translations[`regions.${region.code}`] = localization.name;
+      flattenTranslations(localization.produce, "produce", translations);
       regionLocales[region.code][language] = translations;
     }
   }

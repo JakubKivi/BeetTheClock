@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   View,
   Image,
@@ -52,6 +52,7 @@ const HomeScreen = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [listRefreshCount, setListRefreshCount] = useState(0);
   const [isListScrolled, setIsListScrolled] = useState(false);
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
@@ -172,41 +173,50 @@ const HomeScreen = () => {
   }, [navigation, isSearching, searchQuery, language]);
 
   const normalizedSearchQuery = searchQuery.toLowerCase();
-  const filteredProduce = produce.filter((produce) => {
+  const { sortedAndBadgedProduce, sortedUnavailableProduce } = useMemo(() => {
+    const seasonalProduce: Produce[] = [];
+    const unavailableProduce: Produce[] = [];
+    produce.forEach((item) => {
+      const seasonality = getSeasonality(item, currentRegion);
+      if (!seasonality) return;
+
+      const targetList = seasonality.months.includes(currentMonth)
+        ? seasonalProduce
+        : unavailableProduce;
+      targetList.push(item);
+    });
+
+    return {
+      sortedAndBadgedProduce: sortProduceList(
+        seasonalProduce,
+        currentMonth,
+        currentRegion,
+      ),
+      sortedUnavailableProduce: sortProduceList(
+        unavailableProduce,
+        currentMonth,
+        currentRegion,
+      ),
+    };
+  }, [produce, currentMonth, currentRegion, listRefreshCount]);
+  const visibleSeasonalProduce = sortedAndBadgedProduce.filter(({ item }) => {
     const name =
-      i18n.tOptional(`produce.${produce.id}.name`, language) ?? produce.id;
-    return name.toLowerCase().includes(normalizedSearchQuery);
+      i18n.tOptional(`produce.${item.id}.name`, language) ?? item.id;
+    return (
+      name.toLowerCase().includes(normalizedSearchQuery) &&
+      (!favoritesOnly || favorites.includes(item.id))
+    );
   });
-
-  const seasonalProduce: Produce[] = [];
-  const unavailableProduce: Produce[] = [];
-  filteredProduce.forEach((produce) => {
-    const seasonality = getSeasonality(produce, currentRegion);
-    if (!seasonality) return;
-
-    const targetList = seasonality.months.includes(currentMonth)
-      ? seasonalProduce
-      : unavailableProduce;
-    targetList.push(produce);
-  });
-
-  const sortedAndBadgedProduce = sortProduceList(
-    seasonalProduce,
-    currentMonth,
-    currentRegion,
+  const visibleUnavailableProduce = sortedUnavailableProduce.filter(
+    ({ item }) => {
+      const name =
+        i18n.tOptional(`produce.${item.id}.name`, language) ?? item.id;
+      return (
+        name.toLowerCase().includes(normalizedSearchQuery) &&
+        (!favoritesOnly || favorites.includes(item.id))
+      );
+    },
   );
-
-  const sortedUnavailableProduce = sortProduceList(
-    unavailableProduce,
-    currentMonth,
-    currentRegion,
-  );
-  const visibleSeasonalProduce = favoritesOnly
-    ? sortedAndBadgedProduce.filter(({ item }) => favorites.includes(item.id))
-    : sortedAndBadgedProduce;
-  const visibleUnavailableProduce = favoritesOnly
-    ? sortedUnavailableProduce.filter(({ item }) => favorites.includes(item.id))
-    : sortedUnavailableProduce;
 
   const handleShare = async (produce: Produce) => {
     const isAvailable = await SMS.isAvailableAsync();
@@ -286,6 +296,7 @@ const HomeScreen = () => {
 
   const handleRefresh = async () => {
     setIsRefreshing(true);
+    setListRefreshCount((count) => count + 1);
 
     try {
       const settings = await getSettings();

@@ -16,7 +16,7 @@ const PRODUCE_DATA = getLoadedData()!.produce;
 describe("regional produce seasonality", () => {
   it("uses the existing fixed reference date by default", () => {
     expect(USE_DEVICE_DATE).toBe(false);
-    expect(SEASON_REFERENCE_DATE).toEqual(new Date(2026, 8, 1));
+    expect(SEASON_REFERENCE_DATE).toEqual(new Date(2026, 4, 1));
   });
 
   it("defines Poland retail availability and its domestic best months", () => {

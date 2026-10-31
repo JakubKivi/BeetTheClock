@@ -75,6 +75,29 @@ describe("ProduceCard", () => {
     expect(badgeTextStyle.fontSize).toBe(10);
   });
 
+  it("uses the dark legendary color and label for the best badge", () => {
+    const { getByTestId } = render(
+      <ProduceCard
+        item={mockProduce}
+        isFavorite={false}
+        onPress={jest.fn()}
+        onFavoritePress={jest.fn()}
+        statusBadge="best"
+      />,
+    );
+
+    expect(
+      StyleSheet.flatten(getByTestId("season-badge").props.style)
+        .backgroundColor,
+    ).toBe(themeColors.semantic.legendary.main);
+    const cardStyle = StyleSheet.flatten(getByTestId("card-press").props.style);
+    expect(cardStyle.borderColor).toBe(themeColors.semantic.legendary.main);
+    expect(cardStyle.borderWidth).toBe(2);
+    expect(getByTestId("season-badge").props.children.props.children).toBe(
+      "Best",
+    );
+  });
+
   it("uses regular text and even spacing for the card content", () => {
     const { getByTestId } = render(
       <ProduceCard

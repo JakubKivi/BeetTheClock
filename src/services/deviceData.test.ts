@@ -56,6 +56,17 @@ describe("phone data loading", () => {
     ).toBe("locales/de.json");
   });
 
+  it("rejects app locale translations that are not strings", () => {
+    expect(() =>
+      resolveImportDestination(
+        "de.json",
+        { name: "Deutsch", translations: { "app.title": { value: "Titel" } } },
+        "app-locale",
+        "PL",
+      ),
+    ).toThrow('de.json must contain a string "name" and string "translations".');
+  });
+
   it("routes region data and translations to the correct directories", () => {
     expect(
       resolveImportDestination(
@@ -82,6 +93,58 @@ describe("phone data loading", () => {
         "DE",
       ),
     ).toBe("regions/DE/pl.json");
+  });
+
+  it("rejects malformed regional product and recipe translations", () => {
+    expect(() =>
+      resolveImportDestination(
+        "de.json",
+        {
+          name: "Deutschland",
+          produce: { apple: { name: 42 } },
+        },
+        "region",
+        "PL",
+      ),
+    ).toThrow('invalid "name" translation for "apple"');
+
+    expect(() =>
+      resolveImportDestination(
+        "de.json",
+        {
+          name: "Deutschland",
+          produce: {
+            apple: {
+              recipes: {
+                pie: { name: "Apfelkuchen" },
+              },
+            },
+          },
+        },
+        "region",
+        "PL",
+      ),
+    ).toThrow('invalid recipe translations for "apple.pie"');
+  });
+
+  it("rejects invalid region product data before it can be imported", () => {
+    expect(() =>
+      resolveImportDestination(
+        "DE.json",
+        {
+          code: "DE",
+          produce: [
+            {
+              id: "apple",
+              rarity: 1,
+              seasonality: { months: [12] },
+            },
+          ],
+        },
+        "region",
+        "PL",
+      ),
+    ).toThrow("invalid or duplicate product data");
   });
 
   it("rejects mismatched region codes", () => {

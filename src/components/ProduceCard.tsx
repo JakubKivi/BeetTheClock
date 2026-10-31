@@ -21,7 +21,7 @@ type Props = {
   onPress: () => void;
   onCardPress?: () => void;
   onFavoritePress: () => void;
-  statusBadge?: "new" | "end" | null;
+  statusBadge?: "new" | "end" | "best" | null;
   isAvailable?: boolean;
 };
 
@@ -53,7 +53,9 @@ const ProduceCard: React.FC<Props> = ({
       ? themeColors.accent[1]
       : statusBadge === "end"
         ? themeColors.accent[2]
-        : undefined;
+        : statusBadge === "best"
+          ? themeColors.semantic.legendary.main
+          : undefined;
   const rarityColor = getRarityInfo(item.rarity).color;
   const rarityGradientId = `rarity-gradient-${item.id}`;
 
@@ -70,6 +72,7 @@ const ProduceCard: React.FC<Props> = ({
           styles.card,
           statusBadge === "new" && styles.newCard,
           statusBadge === "end" && styles.endCard,
+          statusBadge === "best" && styles.bestCard,
         ]}
       >
         <Svg
@@ -191,7 +194,11 @@ const ProduceCard: React.FC<Props> = ({
         >
           <Text style={styles.badge}>
             {i18n.t(
-              statusBadge === "new" ? "season.new" : "season.end",
+              statusBadge === "new"
+                ? "season.new"
+                : statusBadge === "end"
+                  ? "season.end"
+                  : "season.best",
               language,
             )}
           </Text>
@@ -227,6 +234,10 @@ const styles = StyleSheet.create({
   },
   endCard: {
     borderColor: themeColors.accent[2],
+    borderWidth: 2,
+  },
+  bestCard: {
+    borderColor: themeColors.semantic.legendary.main,
     borderWidth: 2,
   },
   leftContainer: {
