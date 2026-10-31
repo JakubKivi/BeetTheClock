@@ -4,9 +4,9 @@ import AppNavigator from "./src/navigation/AppNavigator";
 import { getSettings } from "./src/services/storage";
 import { syncScheduledNotifications } from "./src/services/notifications";
 import { useLanguage } from "./src/contexts/LanguageContext";
+import { DataProvider, useAppData } from "./src/contexts/DataContext";
 import { useFonts } from "expo-font";
 import {
-  Lato_300Light,
   Lato_400Regular,
   Lato_700Bold,
 } from "@expo-google-fonts/lato";
@@ -17,6 +17,7 @@ import {
 
 function NotificationSetup() {
   const { language } = useLanguage();
+  const { produce, activeRegion } = useAppData();
 
   useEffect(() => {
     const synchronize = async () => {
@@ -31,14 +32,13 @@ function NotificationSetup() {
     };
 
     void synchronize();
-  }, [language]);
+  }, [activeRegion, language, produce]);
 
   return null;
 }
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
-    Lato_300Light,
     Lato_400Regular,
     Lato_700Bold,
     Sansation_400Regular,
@@ -49,9 +49,11 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <LanguageProvider>
-      <NotificationSetup />
-      <AppNavigator />
-    </LanguageProvider>
+    <DataProvider>
+      <LanguageProvider>
+        <NotificationSetup />
+        <AppNavigator />
+      </LanguageProvider>
+    </DataProvider>
   );
 }

@@ -1,13 +1,17 @@
 import { describe, expect, it } from "@jest/globals";
-import { PRODUCE_DATA } from "../constants/produce";
 import { NUTRIENT_INFO } from "../constants/nutrition";
 import { REGIONS } from "../types";
+import { i18n } from "./i18n";
+import { getLoadedData } from "./deviceData";
 import {
   getSeasonality,
   isAvailableInRegion,
   SEASON_REFERENCE_DATE,
   USE_DEVICE_DATE,
 } from "./produceSeasonality";
+
+const LANGUAGES = ["en", "pl"] as const;
+const PRODUCE_DATA = getLoadedData()!.produce;
 
 describe("regional produce seasonality", () => {
   it("uses the existing fixed reference date by default", () => {
@@ -49,18 +53,56 @@ describe("regional produce seasonality", () => {
     expect(isAvailableInRegion(asparagus!, REGIONS.POLAND, 0)).toBe(false);
   });
 
-  it("includes English and Polish nutrition and recipe content for every product", () => {
+  it("keeps product text in the English and Polish locale resources", () => {
     expect(
       PRODUCE_DATA.every(
-        (produce) =>
-          produce.nutritionalInfo?.startsWith("Per 100 g raw:") &&
-          produce.plNutritionalInfo?.startsWith("Na 100 g surowego produktu:") &&
-          (produce.nutritionItems?.length ?? 0) > 4 &&
-          produce.recipes?.length === 1 &&
-          !produce.nutritionalInfo.includes("[sample text]") &&
-          Boolean(produce.recipes[0].name && produce.recipes[0].plName) &&
-          !produce.recipes[0].instructions.includes("[sample text]") &&
-          !produce.recipes[0].plInstructions?.includes("[sample text]"),
+        (produce) => {
+          const localizedName = LANGUAGES.every((language) =>
+            i18n.tOptional(`produce.${produce.id}.name`, language),
+          );
+          const localizedNutrition = LANGUAGES.every((language) =>
+            i18n
+              .tOptional(`produce.${produce.id}.nutritionalInfo`, language)
+              ?.startsWith(
+                language === "pl"
+                  ? "Na 100 g surowego produktu:"
+                  : "Per 100 g raw:",
+              ),
+          );
+          const localizedGuides = LANGUAGES.every(
+            (language) =>
+              i18n.tOptional(
+                `produce.${produce.id}.selectionGuide`,
+                language,
+              ) &&
+              i18n.tOptional(
+                `produce.${produce.id}.storageGuide`,
+                language,
+              ),
+          );
+          const localizedRecipes = (produce.defaultRecipeIds ?? []).every(
+            (recipeId) =>
+              LANGUAGES.every(
+                (language) =>
+                  i18n.tOptional(
+                    `produce.${produce.id}.recipes.${recipeId}.name`,
+                    language,
+                  ) &&
+                  i18n.tOptional(
+                    `produce.${produce.id}.recipes.${recipeId}.instructions`,
+                    language,
+                  ),
+              ),
+          );
+
+          return (
+            localizedName &&
+            localizedNutrition &&
+            localizedGuides &&
+            localizedRecipes &&
+            (produce.nutritionItems?.length ?? 0) > 4
+          );
+        },
       ),
     ).toBe(true);
   });
@@ -80,8 +122,9 @@ describe("regional produce seasonality", () => {
     const qualifiedProduceIds = ["41", "63", "72", "74", "80"];
     expect(
       qualifiedProduceIds.every((id) => {
-        const produce = PRODUCE_DATA.find((item) => item.id === id);
-        return Boolean(produce?.nutritionNote?.en && produce.nutritionNote.pl);
+        return LANGUAGES.every((language) =>
+          i18n.tOptional(`produce.${id}.nutritionNote`, language),
+        );
       }),
     ).toBe(true);
   });

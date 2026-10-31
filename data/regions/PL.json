@@ -1,0 +1,3285 @@
+{
+  "code": "PL",
+  "produce": [
+    {
+      "id": "1",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Beetroot",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 43,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 9.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "manganese"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-1"
+      ]
+    },
+    {
+      "id": "4",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Carrot",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 41,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 9.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-4"
+      ]
+    },
+    {
+      "id": "34",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Celeriac",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 42,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 9.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "potassium"
+        },
+        {
+          "nutrient": "phosphorus"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-34"
+      ]
+    },
+    {
+      "id": "35",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Parsley#Root_parsley",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 55,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 12.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 4.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 2.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-35"
+      ]
+    },
+    {
+      "id": "5",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Potato",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 77,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 17.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminB6"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-5"
+      ]
+    },
+    {
+      "id": "45",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Parsnip",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 75,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 18,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 4.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-45"
+      ]
+    },
+    {
+      "id": "49",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Jerusalem_artichoke",
+      "rarity": 3,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          0,
+          1,
+          2,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 73,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 17.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminB1"
+        },
+        {
+          "nutrient": "iron"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-49"
+      ]
+    },
+    {
+      "id": "51",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Horseradish",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          0,
+          1,
+          2,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 48,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 11.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 3.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "calcium"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-51"
+      ]
+    },
+    {
+      "id": "8",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Radish",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          3,
+          4,
+          5,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 16,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 3.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-8"
+      ]
+    },
+    {
+      "id": "20",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Onion",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          7,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 40,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 9.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminB6"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-20"
+      ]
+    },
+    {
+      "id": "20b",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Garlic",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 149,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 33.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 6.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminB6"
+        },
+        {
+          "nutrient": "manganese"
+        },
+        {
+          "nutrient": "selenium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-20b"
+      ]
+    },
+    {
+      "id": "36",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Leek",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          0,
+          1,
+          2,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 61,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 14.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "manganese"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-36"
+      ]
+    },
+    {
+      "id": "52",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Scallion",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 32,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 7.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-52"
+      ]
+    },
+    {
+      "id": "15",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Cabbage",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 25,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 5.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-15"
+      ]
+    },
+    {
+      "id": "16",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Brussels_sprout",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          0,
+          1,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 43,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 3.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 3.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-16"
+      ]
+    },
+    {
+      "id": "9",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Cauliflower",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 25,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-9"
+      ]
+    },
+    {
+      "id": "10",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Broccoli",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 34,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 6.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 2.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-10"
+      ]
+    },
+    {
+      "id": "37",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Kohlrabi",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 27,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 6.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 3.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminB6"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-37"
+      ]
+    },
+    {
+      "id": "17",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Kale",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          0,
+          1,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 49,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 8.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 3.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 4.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "manganese"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-17"
+      ]
+    },
+    {
+      "id": "18",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Spinach",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          2,
+          3,
+          4,
+          5,
+          8,
+          9,
+          10
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 23,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 3.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 2.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "iron"
+        },
+        {
+          "nutrient": "magnesium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-18"
+      ]
+    },
+    {
+      "id": "2",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Asparagus",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "bestMonths": [
+          3,
+          4,
+          5
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 20,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 3.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 2.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "copper"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-2"
+      ]
+    },
+    {
+      "id": "19",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Rhubarb",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestMonths": [
+          3,
+          4,
+          5
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 21,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 4.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "calcium"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-19"
+      ]
+    },
+    {
+      "id": "6",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Tomato",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 18,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 3.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-6"
+      ]
+    },
+    {
+      "id": "7",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Cucumber",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 15,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 3.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 0.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-7"
+      ]
+    },
+    {
+      "id": "12",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Bell_pepper",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 31,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "vitaminB6"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-12"
+      ]
+    },
+    {
+      "id": "39",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Eggplant",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 25,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 5.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminB6"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "manganese"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-39"
+      ]
+    },
+    {
+      "id": "11",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Zucchini",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 17,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 3.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminB6"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-11"
+      ]
+    },
+    {
+      "id": "3",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Pumpkin",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          8,
+          9,
+          10
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 26,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 6.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 0.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-3"
+      ]
+    },
+    {
+      "id": "70",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Sweet_corn",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 86,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 19,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 3.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminB1"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "magnesium"
+        },
+        {
+          "nutrient": "phosphorus"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-70"
+      ]
+    },
+    {
+      "id": "13",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Vicia_faba",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "bestMonths": [
+          4,
+          5,
+          6
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 88,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 17.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 7.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 7.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "vitaminB1"
+        },
+        {
+          "nutrient": "iron"
+        },
+        {
+          "nutrient": "manganese"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-13"
+      ]
+    },
+    {
+      "id": "14",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Green_bean",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 31,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "manganese"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-14"
+      ]
+    },
+    {
+      "id": "22",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Apple",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 52,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 13.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-22"
+      ]
+    },
+    {
+      "id": "23",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Pear",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 57,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 15.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 3.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-23"
+      ]
+    },
+    {
+      "id": "24",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Plum",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 46,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 11.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-24"
+      ]
+    },
+    {
+      "id": "25",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Cherry",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          5,
+          6,
+          7
+        ],
+        "bestMonths": [
+          5,
+          6
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 63,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 16,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-25"
+      ]
+    },
+    {
+      "id": "21",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Strawberry",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          4,
+          5,
+          6
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 32,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 7.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "manganese"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-21"
+      ]
+    },
+    {
+      "id": "27",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Raspberry",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 52,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 11.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 6.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "manganese"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-27"
+      ]
+    },
+    {
+      "id": "28",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Blueberry",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 57,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 14.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "manganese"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-28"
+      ]
+    },
+    {
+      "id": "63",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Fragaria_vesca",
+      "rarity": 5,
+      "seasonality": {
+        "months": [
+          5,
+          6,
+          7
+        ],
+        "bestMonths": [
+          5,
+          6
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 32,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 7.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "manganese"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-63"
+      ]
+    },
+    {
+      "id": "41",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Bilberry",
+      "rarity": 4,
+      "seasonality": {
+        "months": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "bestMonths": [
+          6,
+          7
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 57,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 14.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "manganese"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-41"
+      ]
+    },
+    {
+      "id": "32",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Grape",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 69,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 18.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 0.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "copper"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-32"
+      ]
+    },
+    {
+      "id": "71",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Watermelon",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 30,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 7.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 0.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-71"
+      ]
+    },
+    {
+      "id": "72",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Melon",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 34,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 8.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 0.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-72"
+      ]
+    },
+    {
+      "id": "73",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Orange_(fruit)",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 47,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 11.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-73"
+      ]
+    },
+    {
+      "id": "74",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Tangerine",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          0,
+          1,
+          2,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 53,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 13.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-74"
+      ]
+    },
+    {
+      "id": "75",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Lemon",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 29,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 9.3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-75"
+      ]
+    },
+    {
+      "id": "76",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Grapefruit",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 42,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 10.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-76"
+      ]
+    },
+    {
+      "id": "77",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Pomegranate",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          0,
+          1,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 83,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 18.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-77"
+      ]
+    },
+    {
+      "id": "78",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Persimmon",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          0,
+          1,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 70,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 18.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 3.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "manganese"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-78"
+      ]
+    },
+    {
+      "id": "79",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Fig",
+      "rarity": 3,
+      "seasonality": {
+        "months": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 74,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 19.2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "calcium"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-79"
+      ]
+    },
+    {
+      "id": "80",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Peach",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 39,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 9.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.9,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-80"
+      ]
+    },
+    {
+      "id": "81",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Kiwifruit",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 61,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 14.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 3,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-81"
+      ]
+    },
+    {
+      "id": "82",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Avocado",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 160,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 8.5,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 6.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminK"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        },
+        {
+          "nutrient": "magnesium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-82"
+      ]
+    },
+    {
+      "id": "83",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Mango",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 60,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 15,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.6,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "vitaminC"
+        },
+        {
+          "nutrient": "vitaminA"
+        },
+        {
+          "nutrient": "folate"
+        },
+        {
+          "nutrient": "potassium"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-83"
+      ]
+    }
+  ]
+}

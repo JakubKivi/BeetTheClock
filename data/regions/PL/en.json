@@ -1,0 +1,658 @@
+{
+  "name": "Poland",
+  "produce": {
+    "1": {
+      "name": "Beetroot",
+      "selectionGuide": "Firm, smooth skin, intact taproot. For greens attached, leaves should be fresh not wilted.",
+      "storageGuide": "Remove greens leaving 1 inch of stem. Store unwashed in a perforated plastic bag in the fridge crisper.",
+      "nutritionalInfo": "Per 100 g raw: 43 kcal; carbohydrates 9.6 g; fiber 2.8 g; protein 1.6 g.",
+      "recipes": {
+        "default-1": {
+          "name": "Classic Beetroot recipe",
+          "instructions": "Roast beet wedges with olive oil, thyme, and a little vinegar until tender."
+        }
+      }
+    },
+    "2": {
+      "name": "Asparagus",
+      "selectionGuide": "Firm, straight stalks with closed, tight tips. Ends should be moist, not dry.",
+      "storageGuide": "Trim the ends and stand stalks upright in a glass with an inch of water. Loosely cover the tips with a plastic bag in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 20 kcal; carbohydrates 3.9 g; fiber 2.1 g; protein 2.2 g.",
+      "recipes": {
+        "default-2": {
+          "name": "Classic Asparagus recipe",
+          "instructions": "Roast asparagus spears with olive oil; finish with lemon zest."
+        }
+      }
+    },
+    "3": {
+      "name": "Pumpkin",
+      "selectionGuide": "Hard rind (cannot be punctured with a fingernail), hollow sound when tapped. Stem should be dry.",
+      "storageGuide": "Store whole pumpkins in a cool, dark, dry, and well-ventilated place. Once cut, wrap tightly in plastic and refrigerate.",
+      "nutritionalInfo": "Per 100 g raw: 26 kcal; carbohydrates 6.5 g; fiber 0.5 g; protein 1 g.",
+      "recipes": {
+        "default-3": {
+          "name": "Classic Pumpkin recipe",
+          "instructions": "Roast pumpkin cubes with oil and spices, then blend with stock into soup."
+        }
+      }
+    },
+    "4": {
+      "name": "Carrot",
+      "selectionGuide": "Firm, bright orange, smooth skin. Avoid cracks or rubbery texture.",
+      "storageGuide": "Remove greens. Submerge completely in water in a sealed container in the fridge. Change water every few days.",
+      "nutritionalInfo": "Per 100 g raw: 41 kcal; carbohydrates 9.6 g; fiber 2.8 g; protein 0.9 g.",
+      "recipes": {
+        "default-4": {
+          "name": "Classic Carrot recipe",
+          "instructions": "Simmer sliced carrots with vegetable stock, then blend with ginger for soup."
+        }
+      }
+    },
+    "5": {
+      "name": "Potato",
+      "selectionGuide": "Firm, smooth skin, no green tints or sprouts. New potatoes should have flaky skin.",
+      "storageGuide": "Keep in a cool, dark, dry, well-ventilated place (like a paper bag in a pantry). Do not refrigerate. Keep away from onions.",
+      "nutritionalInfo": "Per 100 g raw: 77 kcal; carbohydrates 17.5 g; fiber 2.2 g; protein 2 g.",
+      "recipes": {
+        "default-5": {
+          "name": "Classic Potato recipe",
+          "instructions": "Boil potatoes until tender and toss with dill, spring onion, and yogurt."
+        }
+      }
+    },
+    "6": {
+      "name": "Tomato",
+      "selectionGuide": "Fragrant, rich color, slightly yielding to pressure. Heavy for size.",
+      "storageGuide": "Keep stem-side down at room temperature, out of direct sunlight for best flavor. Refrigeration can slow deterioration of ripe tomatoes, but may affect flavor and texture.",
+      "nutritionalInfo": "Per 100 g raw: 18 kcal; carbohydrates 3.9 g; fiber 1.2 g; protein 0.9 g.",
+      "recipes": {
+        "default-6": {
+          "name": "Classic Tomato recipe",
+          "instructions": "Bake tomato halves with olive oil, garlic, and herbs until soft."
+        }
+      }
+    },
+    "7": {
+      "name": "Cucumber",
+      "selectionGuide": "Firm along entire length. Avoid shriveled ends or soft spots.",
+      "storageGuide": "Wrap individually in paper towels, place in a plastic bag, and store towards the front of the fridge shelf where it's warmer.",
+      "nutritionalInfo": "Per 100 g raw: 15 kcal; carbohydrates 3.6 g; fiber 0.5 g; protein 0.7 g.",
+      "recipes": {
+        "default-7": {
+          "name": "Classic Cucumber recipe",
+          "instructions": "Dice cucumber and mix with yogurt, dill, and a little lemon juice."
+        }
+      }
+    },
+    "8": {
+      "name": "Radish",
+      "selectionGuide": "Firm, smooth, bright color. If leaves are attached, they should be green and crisp.",
+      "storageGuide": "Remove greens immediately. Store roots submerged in a jar of water in the fridge to keep them crisp.",
+      "nutritionalInfo": "Per 100 g raw: 16 kcal; carbohydrates 3.4 g; fiber 1.6 g; protein 0.7 g.",
+      "recipes": {
+        "default-8": {
+          "name": "Classic Radish recipe",
+          "instructions": "Thinly slice radishes and toss with butter, lemon, and chopped herbs."
+        }
+      }
+    },
+    "9": {
+      "name": "Cauliflower",
+      "selectionGuide": "Compact, creamy white curds. No dark spots. Leaves should be fresh green.",
+      "storageGuide": "Store stem-side down in a loosely sealed plastic bag with a dry paper towel to absorb moisture in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 25 kcal; carbohydrates 5 g; fiber 2 g; protein 1.9 g.",
+      "recipes": {
+        "default-9": {
+          "name": "Classic Cauliflower recipe",
+          "instructions": "Steam cauliflower florets and serve with a sauce of yogurt, garlic, and herbs."
+        }
+      }
+    },
+    "10": {
+      "name": "Broccoli",
+      "selectionGuide": "Firm stalks, tight dark green florets. Avoid yellowing buds.",
+      "storageGuide": "Mist the head lightly, wrap loosely in damp paper towels, and keep in an unsealed bag in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 34 kcal; carbohydrates 6.6 g; fiber 2.6 g; protein 2.8 g.",
+      "recipes": {
+        "default-10": {
+          "name": "Classic Broccoli recipe",
+          "instructions": "Steam broccoli until just tender and toss with lemon and toasted almonds."
+        }
+      }
+    },
+    "11": {
+      "name": "Zucchini",
+      "selectionGuide": "Small to medium size, shiny skin. Avoid soft spots.",
+      "storageGuide": "Keep dry and unwashed. Store in a paper bag or loose plastic bag with a paper towel in the crisper drawer.",
+      "nutritionalInfo": "Per 100 g raw: 17 kcal; carbohydrates 3.1 g; fiber 1 g; protein 1.2 g.",
+      "recipes": {
+        "default-11": {
+          "name": "Classic Zucchini recipe",
+          "instructions": "Grate zucchini into fritters with egg, flour, and herbs; pan-fry until golden."
+        }
+      }
+    },
+    "12": {
+      "name": "Pepper",
+      "selectionGuide": "Glossy, taut skin, firm stem. Heavy for size.",
+      "storageGuide": "Store unwashed in a loosely tied plastic bag in the crisper drawer. Keep them completely dry.",
+      "nutritionalInfo": "Per 100 g raw: 31 kcal; carbohydrates 6 g; fiber 2.1 g; protein 1 g.",
+      "recipes": {
+        "default-12": {
+          "name": "Classic Pepper recipe",
+          "instructions": "Fill pepper halves with cooked rice, herbs, and beans, then bake until tender."
+        }
+      }
+    },
+    "13": {
+      "name": "Beans (Broad)",
+      "selectionGuide": "Pods should be green and filled, but not bulging excessively (indicates old/hard beans).",
+      "storageGuide": "Store unshelled in a paper bag or perforated plastic bag in the crisper drawer for up to a few days.",
+      "nutritionalInfo": "Per 100 g raw: 88 kcal; carbohydrates 17.6 g; fiber 7.5 g; protein 7.9 g.",
+      "recipes": {
+        "default-13": {
+          "name": "Classic Beans (Broad) recipe",
+          "instructions": "Boil shelled broad beans until tender and toss with mint and lemon."
+        }
+      }
+    },
+    "14": {
+      "name": "Beans (Green)",
+      "selectionGuide": "Bright color, snaps easily when bent. Avoid tough or stringy pods.",
+      "storageGuide": "Keep unwashed. Wrap in a dry paper towel and place inside a reusable plastic bag in the fridge crisper.",
+      "nutritionalInfo": "Per 100 g raw: 31 kcal; carbohydrates 7 g; fiber 2.7 g; protein 1.8 g.",
+      "recipes": {
+        "default-14": {
+          "name": "Classic Beans (Green) recipe",
+          "instructions": "Steam green beans until crisp-tender and toss with garlic and olive oil."
+        }
+      }
+    },
+    "15": {
+      "name": "Cabbage (White)",
+      "selectionGuide": "Heavy for size, tight leaves. Young cabbage is looser and greener.",
+      "storageGuide": "Do not wash. Keep the whole head wrapped tightly in plastic wrap in the crisper drawer.",
+      "nutritionalInfo": "Per 100 g raw: 25 kcal; carbohydrates 5.8 g; fiber 2.5 g; protein 1.3 g.",
+      "recipes": {
+        "default-15": {
+          "name": "Classic Cabbage (White) recipe",
+          "instructions": "Finely shred cabbage and dress with grated carrot, yogurt, and vinegar."
+        }
+      }
+    },
+    "16": {
+      "name": "Brussels Sprouts",
+      "selectionGuide": "Tight, small, bright green heads. Avoid yellow leaves or loose structure.",
+      "storageGuide": "Leave on the stalk if possible. Otherwise, store unwashed in a loose plastic bag in the fridge crisper.",
+      "nutritionalInfo": "Per 100 g raw: 43 kcal; carbohydrates 9 g; fiber 3.8 g; protein 3.4 g.",
+      "recipes": {
+        "default-16": {
+          "name": "Classic Brussels Sprouts recipe",
+          "instructions": "Roast halved Brussels sprouts with oil until browned; finish with lemon."
+        }
+      }
+    },
+    "17": {
+      "name": "Kale",
+      "selectionGuide": "Dark green, crisp leaves. Avoid yellow or mushy spots.",
+      "storageGuide": "Wrap unwashed leaves in dry paper towels and store in a sealed plastic bag in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 49 kcal; carbohydrates 8.8 g; fiber 3.6 g; protein 4.3 g.",
+      "recipes": {
+        "default-17": {
+          "name": "Classic Kale recipe",
+          "instructions": "Massage chopped kale with olive oil and lemon, then top with seeds."
+        }
+      }
+    },
+    "18": {
+      "name": "Spinach",
+      "selectionGuide": "Vibrant green, fresh looking. Avoid slimy or wilted leaves.",
+      "storageGuide": "Store unwashed in a hard, airtight container lined with dry paper towels to absorb excess moisture.",
+      "nutritionalInfo": "Per 100 g raw: 23 kcal; carbohydrates 3.6 g; fiber 2.2 g; protein 2.9 g.",
+      "recipes": {
+        "default-18": {
+          "name": "Classic Spinach recipe",
+          "instructions": "Wilt spinach in a pan with garlic and serve as a warm side dish."
+        }
+      }
+    },
+    "19": {
+      "name": "Rhubarb",
+      "selectionGuide": "Firm, crisp stalks. Avoid limp or rubbery ones.",
+      "storageGuide": "Wrap unwashed stalks tightly in aluminum foil and store in the crisper drawer of the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 21 kcal; carbohydrates 4.5 g; fiber 1.8 g; protein 0.9 g.",
+      "recipes": {
+        "default-19": {
+          "name": "Classic Rhubarb recipe",
+          "instructions": "Stew chopped rhubarb with a little sugar and orange zest; serve over yogurt."
+        }
+      }
+    },
+    "20": {
+      "name": "Onion",
+      "selectionGuide": "Hard, dry, papery skin. Avoid sprouting necks or soft spots.",
+      "storageGuide": "Store in a cool, dark, dry, and well-ventilated spot (like a wire basket). Do not refrigerate or put in plastic. Keep away from potatoes.",
+      "nutritionalInfo": "Per 100 g raw: 40 kcal; carbohydrates 9.3 g; fiber 1.7 g; protein 1.1 g.",
+      "recipes": {
+        "default-20": {
+          "name": "Classic Onion recipe",
+          "instructions": "Cook sliced onions slowly until golden and serve on toast with thyme."
+        }
+      }
+    },
+    "21": {
+      "name": "Strawberries",
+      "selectionGuide": "Bright red all over, fresh green cap, strong sweet smell. Avoid white shoulders.",
+      "storageGuide": "Store unwashed in a single layer inside an airtight container lined with a dry paper towel in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 32 kcal; carbohydrates 7.7 g; fiber 2 g; protein 0.7 g.",
+      "recipes": {
+        "default-21": {
+          "name": "Classic Strawberries recipe",
+          "instructions": "Slice strawberries and mix with oats, yogurt, and a little lemon zest."
+        }
+      }
+    },
+    "22": {
+      "name": "Apples",
+      "selectionGuide": "Firm, unbruised, skin should be tight not wrinkled.",
+      "storageGuide": "Store in the crisper drawer, ideally in a perforated plastic bag. Keep separate from other sensitive vegetables.",
+      "nutritionalInfo": "Per 100 g raw: 52 kcal; carbohydrates 13.8 g; fiber 2.4 g; protein 0.3 g.",
+      "recipes": {
+        "default-22": {
+          "name": "Classic Apples recipe",
+          "instructions": "Bake sliced apples with cinnamon and oats until soft for a simple crumble."
+        }
+      }
+    },
+    "23": {
+      "name": "Pears",
+      "selectionGuide": "Check the neck: if it yields to gentle pressure, it is ripe. Body can be firm.",
+      "storageGuide": "Ripen at room temperature. Once the neck yields to pressure, move to the fridge to halt ripening.",
+      "nutritionalInfo": "Per 100 g raw: 57 kcal; carbohydrates 15.2 g; fiber 3.1 g; protein 0.4 g.",
+      "recipes": {
+        "default-23": {
+          "name": "Classic Pears recipe",
+          "instructions": "Poach pear halves gently with cinnamon and serve with plain yogurt."
+        }
+      }
+    },
+    "24": {
+      "name": "Plums",
+      "selectionGuide": "Slightly soft at the tip, rich color, dusty bloom on skin is good.",
+      "storageGuide": "Leave at room temperature in a paper bag to ripen. Once soft, transfer unwashed to the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 46 kcal; carbohydrates 11.4 g; fiber 1.4 g; protein 0.7 g.",
+      "recipes": {
+        "default-24": {
+          "name": "Classic Plums recipe",
+          "instructions": "Simmer chopped plums with cinnamon into a quick compote."
+        }
+      }
+    },
+    "25": {
+      "name": "Cherries (Sweet)",
+      "selectionGuide": "Green, flexible stems. Fruit should be shiny, plump and dark.",
+      "storageGuide": "Store unwashed with stems attached. Keep loosely packed in a paper-towel-lined container in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 63 kcal; carbohydrates 16 g; fiber 2.1 g; protein 1.1 g.",
+      "recipes": {
+        "default-25": {
+          "name": "Classic Cherries (Sweet) recipe",
+          "instructions": "Pit sweet cherries and fold into oatmeal with a spoonful of yogurt."
+        }
+      }
+    },
+    "27": {
+      "name": "Raspberries",
+      "selectionGuide": "Dry, plump, bright color. Check container bottom for juice (sign of crushing).",
+      "storageGuide": "Do not wash until eating. Store in a wide, shallow container lined with paper towels, slightly open for airflow in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 52 kcal; carbohydrates 11.9 g; fiber 6.5 g; protein 1.2 g.",
+      "recipes": {
+        "default-27": {
+          "name": "Classic Raspberries recipe",
+          "instructions": "Mash raspberries with lemon juice and spoon over pancakes or yogurt."
+        }
+      }
+    },
+    "28": {
+      "name": "Blueberries",
+      "selectionGuide": "Firm, dusty blue color (bloom). Avoid soft or shriveled berries.",
+      "storageGuide": "Pick out any moldy ones first. Store unwashed in a breathable or vented container in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 57 kcal; carbohydrates 14.5 g; fiber 2.4 g; protein 0.7 g.",
+      "recipes": {
+        "default-28": {
+          "name": "Classic Blueberries recipe",
+          "instructions": "Warm blueberries briefly with lemon to make a topping for porridge."
+        }
+      }
+    },
+    "32": {
+      "name": "Grapes",
+      "selectionGuide": "Plump, firmly attached to green stems. Avoid wrinkled berries.",
+      "storageGuide": "Keep unwashed in their original ventilated bag or a perforated plastic bag in the fridge crisper.",
+      "nutritionalInfo": "Per 100 g raw: 69 kcal; carbohydrates 18.1 g; fiber 0.9 g; protein 0.7 g.",
+      "recipes": {
+        "default-32": {
+          "name": "Classic Grapes recipe",
+          "instructions": "Roast halved grapes with thyme and serve with soft cheese and bread."
+        }
+      }
+    },
+    "34": {
+      "name": "Celery Root",
+      "selectionGuide": "Heavy for its size, firm, no soft spots. Smaller roots tend to be less woody.",
+      "storageGuide": "Store unwashed and loosely wrapped in a plastic bag in the fridge crisper drawer.",
+      "nutritionalInfo": "Per 100 g raw: 42 kcal; carbohydrates 9.2 g; fiber 1.8 g; protein 1.5 g.",
+      "recipes": {
+        "default-34": {
+          "name": "Classic Celery Root recipe",
+          "instructions": "Roast celeriac cubes with oil and rosemary; serve with a lemon dressing."
+        }
+      }
+    },
+    "35": {
+      "name": "Parsley Root",
+      "selectionGuide": "Firm, white/beige skin. Avoid rusty spots or limp roots.",
+      "storageGuide": "Remove greens. Wrap the root in a lightly damp paper towel and store in an airtight container or bag in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 55 kcal; carbohydrates 12.3 g; fiber 4.3 g; protein 2.3 g.",
+      "recipes": {
+        "default-35": {
+          "name": "Classic Parsley Root recipe",
+          "instructions": "Grate parsley root into a slaw with apple, lemon juice, and yogurt."
+        }
+      }
+    },
+    "36": {
+      "name": "Leek",
+      "selectionGuide": "Crisp white and light green parts. Avoid yellowing or slimy leaves.",
+      "storageGuide": "Store unwashed and untrimmed, loosely wrapped in a plastic bag in the crisper drawer of the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 61 kcal; carbohydrates 14.2 g; fiber 1.8 g; protein 1.5 g.",
+      "recipes": {
+        "default-36": {
+          "name": "Classic Leek recipe",
+          "instructions": "Simmer sliced leek and potato in stock, then blend into a smooth soup."
+        }
+      }
+    },
+    "37": {
+      "name": "Kohlrabi",
+      "selectionGuide": "Small to medium size (tennis ball). Heavy and firm. Large ones can be woody inside.",
+      "storageGuide": "Remove leaves. Store the unwashed bulb loose or in a perforated bag in the crisper drawer.",
+      "nutritionalInfo": "Per 100 g raw: 27 kcal; carbohydrates 6.2 g; fiber 3.6 g; protein 1.7 g.",
+      "recipes": {
+        "default-37": {
+          "name": "Classic Kohlrabi recipe",
+          "instructions": "Cut kohlrabi into sticks and serve raw with a yogurt and dill dip."
+        }
+      }
+    },
+    "39": {
+      "name": "Eggplant",
+      "selectionGuide": "Shiny, smooth skin. Firm but bounces back slightly when pressed. Heavy.",
+      "storageGuide": "Store at cool room temperature away from bananas/tomatoes. If refrigerating, wrap in paper towel in the crisper and use quickly.",
+      "nutritionalInfo": "Per 100 g raw: 25 kcal; carbohydrates 5.9 g; fiber 3 g; protein 1 g.",
+      "recipes": {
+        "default-39": {
+          "name": "Classic Eggplant recipe",
+          "instructions": "Roast eggplant slices with olive oil and garlic; serve with tomato sauce."
+        }
+      }
+    },
+    "41": {
+      "name": "Wild Bilberries",
+      "selectionGuide": "Dark, almost black, distinct aroma. Will stain hands. Must be dry.",
+      "storageGuide": "Pick out crushed berries. Store unwashed in a shallow container in the fridge. Wash just before eating.",
+      "nutritionalInfo": "Per 100 g raw: 57 kcal; carbohydrates 14.5 g; fiber 2.4 g; protein 0.7 g.",
+      "nutritionNote": "Reference values are for cultivated blueberries; bilberries may differ.",
+      "recipes": {
+        "default-41": {
+          "name": "Classic Wild Bilberries recipe",
+          "instructions": "Simmer bilberries with a splash of water and serve as a warm porridge topping."
+        }
+      }
+    },
+    "45": {
+      "name": "Parsnip",
+      "selectionGuide": "Firm, ivory color. Avoid very large roots as they can be woody cores.",
+      "storageGuide": "Store unwashed in a perforated plastic bag in the vegetable drawer of the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 75 kcal; carbohydrates 18 g; fiber 4.9 g; protein 1.2 g.",
+      "recipes": {
+        "default-45": {
+          "name": "Classic Parsnip recipe",
+          "instructions": "Roast parsnip batons with oil and cumin until golden."
+        }
+      }
+    },
+    "49": {
+      "name": "Jerusalem Artichoke",
+      "selectionGuide": "Firm, not shriveled. Knobby is normal, but avoid soft spots/mold.",
+      "storageGuide": "Wrap unwashed tubers in a paper towel inside a loose plastic bag in the fridge crisper.",
+      "nutritionalInfo": "Per 100 g raw: 73 kcal; carbohydrates 17.4 g; fiber 1.6 g; protein 2 g.",
+      "recipes": {
+        "default-49": {
+          "name": "Classic Jerusalem Artichoke recipe",
+          "instructions": "Roast scrubbed Jerusalem artichokes with garlic and olive oil until soft."
+        }
+      }
+    },
+    "51": {
+      "name": "Horseradish",
+      "selectionGuide": "Very hard and firm. Avoid shriveled roots or soft ends.",
+      "storageGuide": "Wrap the unwashed root loosely in plastic wrap or keep in a perforated bag in the crisper drawer.",
+      "nutritionalInfo": "Per 100 g raw: 48 kcal; carbohydrates 11.3 g; fiber 3.3 g; protein 1.2 g.",
+      "recipes": {
+        "default-51": {
+          "name": "Classic Horseradish recipe",
+          "instructions": "Mix freshly grated horseradish with yogurt, lemon, and a pinch of salt for a sauce."
+        }
+      }
+    },
+    "52": {
+      "name": "Spring Onion",
+      "selectionGuide": "Bright green, crisp stalks. Avoid slimy or wilting tips.",
+      "storageGuide": "Stand them upright in a jar with an inch of water at the bottom, loosely covered with a plastic bag in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 32 kcal; carbohydrates 7.3 g; fiber 2.6 g; protein 1.8 g.",
+      "recipes": {
+        "default-52": {
+          "name": "Classic Spring Onion recipe",
+          "instructions": "Stir-fry chopped spring onions briefly and fold into scrambled eggs."
+        }
+      }
+    },
+    "63": {
+      "name": "Wild Strawberries",
+      "selectionGuide": "Intense aroma is key. Very delicate, buy only if dry and not squashed.",
+      "storageGuide": "Highly perishable. Eat immediately or store unwashed in a single layer in the fridge for no more than a day.",
+      "nutritionalInfo": "Per 100 g raw: 32 kcal; carbohydrates 7.7 g; fiber 2 g; protein 0.7 g.",
+      "nutritionNote": "Reference values are for cultivated strawberries; wild strawberries may differ.",
+      "recipes": {
+        "default-63": {
+          "name": "Classic Wild Strawberries recipe",
+          "instructions": "Serve wild strawberries over plain yogurt with crushed oats."
+        }
+      }
+    },
+    "70": {
+      "name": "Corn",
+      "selectionGuide": "Bright green husk, golden silk (not dried black). Kernels should look plump and release milky juice when punctured.",
+      "storageGuide": "Keep unhusked in a loosely closed plastic bag in the fridge. Consume as soon as possible, as sugars quickly turn to starch.",
+      "nutritionalInfo": "Per 100 g raw: 86 kcal; carbohydrates 19 g; fiber 2.7 g; protein 3.3 g.",
+      "recipes": {
+        "default-70": {
+          "name": "Classic Corn recipe",
+          "instructions": "Boil or grill corn on the cob and serve with butter and chopped herbs."
+        }
+      }
+    },
+    "71": {
+      "name": "Watermelon",
+      "selectionGuide": "Heavy for size, hollow sound when tapped. Look for a creamy yellow spot (field spot) where it sat on ground.",
+      "storageGuide": "Keep whole watermelons at room temperature. Once cut, wrap the exposed flesh tightly with plastic wrap and refrigerate.",
+      "nutritionalInfo": "Per 100 g raw: 30 kcal; carbohydrates 7.6 g; fiber 0.4 g; protein 0.6 g.",
+      "recipes": {
+        "default-71": {
+          "name": "Classic Watermelon recipe",
+          "instructions": "Dice watermelon and toss with mint and lime for a chilled fruit salad."
+        }
+      }
+    },
+    "72": {
+      "name": "Melon (Cantaloupe/Honeydew)",
+      "selectionGuide": "Sweet fragrance at the stem end. Slightly soft at the blossom end (opposite stem).",
+      "storageGuide": "Ripen at room temperature. Once ripe, store whole in the fridge. Cut melon must be refrigerated in an airtight container.",
+      "nutritionalInfo": "Per 100 g raw: 34 kcal; carbohydrates 8.2 g; fiber 0.9 g; protein 0.8 g.",
+      "nutritionNote": "Reference values are for cantaloupe; honeydew melon differs.",
+      "recipes": {
+        "default-72": {
+          "name": "Classic Melon (Cantaloupe/Honeydew) recipe",
+          "instructions": "Scoop melon into balls and serve chilled with mint and lime juice."
+        }
+      }
+    },
+    "73": {
+      "name": "Orange",
+      "selectionGuide": "Heavy for its size (means juicy). Firm, finely textured skin.",
+      "storageGuide": "Store loose in the crisper drawer of the fridge for maximum freshness (up to a month). Room temp is fine for a few days.",
+      "nutritionalInfo": "Per 100 g raw: 47 kcal; carbohydrates 11.8 g; fiber 2.4 g; protein 0.9 g.",
+      "recipes": {
+        "default-73": {
+          "name": "Classic Orange recipe",
+          "instructions": "Add orange segments to a salad with fennel and a light olive-oil dressing."
+        }
+      }
+    },
+    "74": {
+      "name": "Tangerine/Clementine",
+      "selectionGuide": "Bright orange, skin feels slightly loose (easy to peel) but fruit should be heavy.",
+      "storageGuide": "Keep them loose in the crisper drawer of the fridge to prevent them from drying out quickly.",
+      "nutritionalInfo": "Per 100 g raw: 53 kcal; carbohydrates 13.3 g; fiber 1.8 g; protein 0.8 g.",
+      "nutritionNote": "Reference values are for tangerines; clementines may differ.",
+      "recipes": {
+        "default-74": {
+          "name": "Classic Tangerine/Clementine recipe",
+          "instructions": "Toss peeled mandarin segments with spinach and toasted nuts."
+        }
+      }
+    },
+    "75": {
+      "name": "Lemon",
+      "selectionGuide": "Bright yellow, heavy. Thin-skinned lemons are juicier.",
+      "storageGuide": "Store submerged in water in an airtight container in the fridge to keep them firm and juicy for weeks.",
+      "nutritionalInfo": "Per 100 g raw: 29 kcal; carbohydrates 9.3 g; fiber 2.8 g; protein 1.1 g.",
+      "recipes": {
+        "default-75": {
+          "name": "Classic Lemon recipe",
+          "instructions": "Mix lemon juice and zest with olive oil and herbs for a bright dressing."
+        }
+      }
+    },
+    "76": {
+      "name": "Grapefruit",
+      "selectionGuide": "Heavy for size, firm but slightly springy. Flat ends usually indicate good ripeness.",
+      "storageGuide": "Store loose in the fridge crisper drawer to maximize shelf life.",
+      "nutritionalInfo": "Per 100 g raw: 42 kcal; carbohydrates 10.7 g; fiber 1.6 g; protein 0.8 g.",
+      "recipes": {
+        "default-76": {
+          "name": "Classic Grapefruit recipe",
+          "instructions": "Broil grapefruit halves briefly and serve warm with a little honey."
+        }
+      }
+    },
+    "77": {
+      "name": "Pomegranate",
+      "selectionGuide": "Heavy, angular shape (not perfectly round means seeds are full), dark red skin.",
+      "storageGuide": "Keep whole fruits in the fridge crisper drawer. Extracted seeds should go in an airtight container.",
+      "nutritionalInfo": "Per 100 g raw: 83 kcal; carbohydrates 18.7 g; fiber 4 g; protein 1.7 g.",
+      "recipes": {
+        "default-77": {
+          "name": "Classic Pomegranate recipe",
+          "instructions": "Scatter pomegranate seeds over roasted vegetables and a yogurt dressing."
+        }
+      }
+    },
+    "78": {
+      "name": "Persimmon (Kaki)",
+      "selectionGuide": "Astringent types (such as Hachiya) must soften fully before eating; non-astringent types (such as Fuyu) can be eaten while firm.",
+      "storageGuide": "Ripen at room temperature. Astringent varieties must soften fully before eating; refrigerate ripe fruit.",
+      "nutritionalInfo": "Per 100 g raw: 70 kcal; carbohydrates 18.6 g; fiber 3.6 g; protein 0.6 g.",
+      "recipes": {
+        "default-78": {
+          "name": "Classic Persimmon (Kaki) recipe",
+          "instructions": "Slice ripe persimmon and serve with yogurt, toasted nuts, and cinnamon."
+        }
+      }
+    },
+    "79": {
+      "name": "Fig",
+      "selectionGuide": "Soft to touch, neck should droop. Small splits in skin indicate peak ripeness.",
+      "storageGuide": "Place unwashed in a single layer on a paper towel-lined plate, covered loosely with plastic wrap in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 74 kcal; carbohydrates 19.2 g; fiber 2.9 g; protein 0.8 g.",
+      "recipes": {
+        "default-79": {
+          "name": "Classic Fig recipe",
+          "instructions": "Bake halved figs with a little honey and serve with soft cheese."
+        }
+      }
+    },
+    "80": {
+      "name": "Nectarine/Peach",
+      "selectionGuide": "Ignore the red blush; the background color should be non-green (yellow or cream/white, depending on variety). The fruit should yield slightly along the seam.",
+      "storageGuide": "Ripen stem-side down at room temperature. Once ripe and fragrant, store in the fridge crisper.",
+      "nutritionalInfo": "Per 100 g raw: 39 kcal; carbohydrates 9.5 g; fiber 1.5 g; protein 0.9 g.",
+      "nutritionNote": "Reference values are for peaches; nectarines may differ.",
+      "recipes": {
+        "default-80": {
+          "name": "Classic Nectarine/Peach recipe",
+          "instructions": "Grill peach or nectarine halves and serve with plain yogurt."
+        }
+      }
+    },
+    "81": {
+      "name": "Kiwi",
+      "selectionGuide": "Yields to gentle thumb pressure. Avoid rock hard (unripe) or mushy (overripe).",
+      "storageGuide": "Leave firm kiwis at room temp to ripen. Once soft, transfer to a plastic bag in the fridge.",
+      "nutritionalInfo": "Per 100 g raw: 61 kcal; carbohydrates 14.7 g; fiber 3 g; protein 1.1 g.",
+      "recipes": {
+        "default-81": {
+          "name": "Classic Kiwi recipe",
+          "instructions": "Slice kiwi over porridge or yogurt and add a handful of oats."
+        }
+      }
+    },
+    "82": {
+      "name": "Avocado",
+      "selectionGuide": "Hass: Dark skin, yields gently to pressure. Green skins: Firm but not rock hard, skin stays green.",
+      "storageGuide": "Ripen at room temperature. Once it yields gently, store whole in the fridge to pause ripening. For cut halves, squeeze lemon juice and wrap tightly in plastic.",
+      "nutritionalInfo": "Per 100 g raw: 160 kcal; carbohydrates 8.5 g; fiber 6.7 g; protein 2 g.",
+      "recipes": {
+        "default-82": {
+          "name": "Classic Avocado recipe",
+          "instructions": "Mash avocado with lime, chopped tomato, and a pinch of salt for a quick spread."
+        }
+      }
+    },
+    "83": {
+      "name": "Mango",
+      "selectionGuide": "Slightly soft to touch, fruity aroma at stem. Color is not a reliable indicator of ripeness.",
+      "storageGuide": "Ripen at room temperature. Once ripe, move to the fridge to extend its shelf life by a few days.",
+      "nutritionalInfo": "Per 100 g raw: 60 kcal; carbohydrates 15 g; fiber 1.6 g; protein 0.8 g.",
+      "recipes": {
+        "default-83": {
+          "name": "Classic Mango recipe",
+          "instructions": "Blend mango with plain yogurt and lime for a simple chilled smoothie."
+        }
+      }
+    },
+    "20b": {
+      "name": "Garlic",
+      "selectionGuide": "Firm, tight skin, heavy for size. Avoid if cloves feel hollow or soft.",
+      "storageGuide": "Keep in a dry, dark, well-ventilated space at room temperature. A mesh bag or open basket is ideal.",
+      "nutritionalInfo": "Per 100 g raw: 149 kcal; carbohydrates 33.1 g; fiber 2.1 g; protein 6.4 g.",
+      "recipes": {
+        "default-20b": {
+          "name": "Classic Garlic recipe",
+          "instructions": "Roast a whole garlic bulb until soft; squeeze the cloves into mashed potatoes."
+        }
+      }
+    }
+  }
+}

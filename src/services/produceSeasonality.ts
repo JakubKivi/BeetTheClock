@@ -2,11 +2,12 @@ import {
   MonthOfYear,
   Produce,
   RegionCode,
-  REGIONS,
   RegionalSeasonality,
 } from "../types";
+import { DEFAULT_REGION } from "../constants/regions";
 
-export const DEFAULT_REGION: RegionCode = REGIONS.POLAND;
+export { DEFAULT_REGION };
+
 export const USE_DEVICE_DATE = false;
 export const SEASON_REFERENCE_DATE = USE_DEVICE_DATE
   ? new Date()

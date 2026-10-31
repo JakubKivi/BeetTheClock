@@ -1,13 +1,14 @@
 import React from "react";
 import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 import { Produce, RegionCode } from "../types";
 import { formatMonths } from "../utils/utils";
 import { getRarityInfo } from "../constants/produce";
 import { i18n } from "../services/i18n";
 import { useLanguage } from "../contexts/LanguageContext";
 import { DEFAULT_REGION, getSeasonality } from "../services/produceSeasonality";
-import { COLORS } from "../constants/theme";
+import { themeColors } from "../constants/theme";
 import { AppText as Text } from "./Typography";
 
 const PRODUCE_LOGO = require("../../assets/beet_mini.png");
@@ -49,21 +50,17 @@ const ProduceCard: React.FC<Props> = ({
     : null;
   const statusColor =
     statusBadge === "new"
-      ? COLORS.seasonNew
+      ? themeColors.accent[1]
       : statusBadge === "end"
-        ? COLORS.seasonEnd
+        ? themeColors.accent[2]
         : undefined;
-  const rarityGlow =
-    item.rarity > 1
-      ? {
-          color: getRarityInfo(item.rarity).color,
-        }
-      : undefined;
+  const rarityColor = getRarityInfo(item.rarity).color;
+  const rarityGradientId = `rarity-gradient-${item.id}`;
 
   return (
     <View
       testID="produce-card-wrapper"
-      style={[styles.wrapper, statusBadge && styles.badgedWrapper]}
+      style={styles.wrapper}
     >
       <TouchableOpacity
         testID="card-press"
@@ -75,26 +72,44 @@ const ProduceCard: React.FC<Props> = ({
           statusBadge === "end" && styles.endCard,
         ]}
       >
+        <Svg
+          testID="rarity-gradient"
+          pointerEvents="none"
+          style={styles.rarityGradient}
+        >
+          <Defs>
+            <LinearGradient
+              id={rarityGradientId}
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+              <Stop offset="0%" stopColor={rarityColor} stopOpacity={0.2} />
+              <Stop offset="100%" stopColor={themeColors.neutral.white} />
+            </LinearGradient>
+          </Defs>
+          <Rect
+            width="100%"
+            height="100%"
+            rx={10}
+            fill={`url(#${rarityGradientId})`}
+          />
+        </Svg>
         <View style={styles.leftContainer}>
           <View testID="produce-icon-container" style={styles.iconContainer}>
-            {rarityGlow && (
-              <View
-                testID="rarity-glow"
-                pointerEvents="none"
-                style={[
-                  styles.rarityGlow,
-                  {
-                    shadowColor: rarityGlow.color,
-                  },
-                ]}
-              />
-            )}
             <View style={styles.iconSlot}>
               {iconUri ? (
                 <Image
                   testID="produce-image"
                   source={{ uri: iconUri }}
-                  style={styles.iconImage}
+                  style={[
+                    styles.iconImage,
+                    {
+                      borderWidth: 1,
+                      borderColor: rarityColor,
+                    },
+                  ]}
                 />
               ) : (
                 <Image
@@ -115,7 +130,7 @@ const ProduceCard: React.FC<Props> = ({
               minimumFontScale={0.75}
               style={[styles.name, !isAvailable && styles.unavailableText]}
             >
-              {language === "pl" ? item.plName : item.name}
+              {i18n.tOptional(`produce.${item.id}.name`, language) ?? item.id}
             </Text>
             <Text
               testID="produce-category"
@@ -141,19 +156,17 @@ const ProduceCard: React.FC<Props> = ({
         </View>
 
         <View style={styles.rightButtons}>
-          {onPress && (
-            <TouchableOpacity
-              testID="share-button"
-              onPress={onPress}
-              style={styles.iconButton}
-            >
-              <Ionicons
-                name="share-social-outline"
-                size={20}
-                color={COLORS.A_primaryDark}
-              />
-            </TouchableOpacity>
-          )}
+          <TouchableOpacity
+            testID="share-button"
+            onPress={onPress}
+            style={styles.iconButton}
+          >
+            <Ionicons
+              name="share-social-outline"
+              size={20}
+              color={themeColors.primary[25]}
+            />
+          </TouchableOpacity>
 
           <TouchableOpacity
             testID="favorite-button"
@@ -164,7 +177,7 @@ const ProduceCard: React.FC<Props> = ({
               testID="favorite-icon"
               name={isFavorite ? "heart" : "heart-outline"}
               size={20}
-              color="#6B3255"
+              color={themeColors.primary.main}
             />
           </TouchableOpacity>
         </View>
@@ -195,26 +208,25 @@ const styles = StyleSheet.create({
     position: "relative",
     overflow: "visible",
   },
-  badgedWrapper: {
-    zIndex: 10,
-    elevation: 10,
-  },
   card: {
-    backgroundColor: COLORS.homeCard,
+    backgroundColor: themeColors.neutral.white,
     padding: 10,
     borderRadius: 10,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     borderWidth: 0.3,
-    borderColor: COLORS.A_Grey,
+    borderColor: themeColors.neutral.grey,
+  },
+  rarityGradient: {
+    ...StyleSheet.absoluteFill,
   },
   newCard: {
-    borderColor: COLORS.seasonNew,
+    borderColor: themeColors.accent[1],
     borderWidth: 2,
   },
   endCard: {
-    borderColor: COLORS.seasonEnd,
+    borderColor: themeColors.accent[2],
     borderWidth: 2,
   },
   leftContainer: {
@@ -227,17 +239,6 @@ const styles = StyleSheet.create({
     height: ICON_SIZE,
     alignItems: "center",
     justifyContent: "center",
-  },
-  rarityGlow: {
-    position: "absolute",
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    backgroundColor: "transparent",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.55,
-    shadowRadius: 10,
-    elevation: 6,
   },
   iconImage: {
     width: ICON_SIZE,
@@ -253,18 +254,16 @@ const styles = StyleSheet.create({
   },
   badgeContainer: {
     position: "absolute",
-    top: -8,
+    top: -7,
     left: 1,
-    backgroundColor: COLORS.A_primaryDark,
+    backgroundColor: themeColors.primary[25],
     paddingHorizontal: 6,
     paddingVertical: 3,
     borderRadius: 8,
-    zIndex: 2,
-    elevation: 3,
     transform: [{ rotate: "-20deg" }],
   },
   badge: {
-    color: COLORS.white,
+    color: themeColors.neutral.white,
     fontSize: 10,
     lineHeight: 13,
     fontWeight: "bold",
@@ -285,16 +284,16 @@ const styles = StyleSheet.create({
     marginBottom: 3,
   },
   unavailableText: {
-    color: COLORS.A_darkGrey,
+    color: themeColors.neutral.darkGrey,
   },
   category: {
     fontSize: 10,
-    color: COLORS.secondaryText,
+    color: themeColors.neutral.darkGrey,
     lineHeight: 12,
   },
   bestMonths: {
     fontSize: 9,
-    color: COLORS.A_darkGrey,
+    color: themeColors.neutral.darkGrey,
     lineHeight: 11,
   },
   rightButtons: {

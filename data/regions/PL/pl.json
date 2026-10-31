@@ -1,0 +1,658 @@
+{
+  "name": "Polska",
+  "produce": {
+    "1": {
+      "name": "Burak",
+      "selectionGuide": "Twarda, gładka skórka, nienaruszony korzeń główny. Jeśli ma liście, powinny być świeże, a nie zwiędnięte.",
+      "storageGuide": "Odciąć liście zostawiając 2-3 cm łodygi. Przechowywać nieumyte w perforowanym plastikowym worku w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 43 kcal; węglowodany 9,6 g; błonnik 2,8 g; białko 1,6 g.",
+      "recipes": {
+        "default-1": {
+          "name": "Podstawowy przepis: Burak",
+          "instructions": "Upiecz cząstki buraka z oliwą, tymiankiem i odrobiną octu do miękkości."
+        }
+      }
+    },
+    "2": {
+      "name": "Szparagi",
+      "selectionGuide": "Twarde, proste łodygi z zamkniętymi, zwartymi główkami. Końcówki powinny być wilgotne, nie suche.",
+      "storageGuide": "Przyciąć końcówki i postawić pionowo w szklance z odrobiną wody. Luźno przykryć główki plastikową torbą i trzymać w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 20 kcal; węglowodany 3,9 g; błonnik 2,1 g; białko 2,2 g.",
+      "recipes": {
+        "default-2": {
+          "name": "Podstawowy przepis: Szparagi",
+          "instructions": "Upiecz szparagi z oliwą; na koniec dodaj skórkę z cytryny."
+        }
+      }
+    },
+    "3": {
+      "name": "Dynia",
+      "selectionGuide": "Twarda skóra (nie da się jej przebić paznokciem), głuchy dźwięk przy pukaniu. Łodyga powinna być sucha.",
+      "storageGuide": "Przechowywać w całości w chłodnym, ciemnym, suchym i dobrze wentylowanym miejscu. Po rozkrojeniu ciasno owinąć folią i schować do lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 26 kcal; węglowodany 6,5 g; błonnik 0,5 g; białko 1 g.",
+      "recipes": {
+        "default-3": {
+          "name": "Podstawowy przepis: Dynia",
+          "instructions": "Upiecz kostki dyni z olejem i przyprawami, a następnie zmiksuj z bulionem na zupę."
+        }
+      }
+    },
+    "4": {
+      "name": "Marchew",
+      "selectionGuide": "Twarda, jasnopomarańczowa, gładka skórka. Unikaj pęknięć i gumowatej konsystencji.",
+      "storageGuide": "Odciąć nać. Przechowywać całkowicie zanurzone w wodzie w szczelnym pojemniku w lodówce. Zmieniać wodę co kilka dni.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 41 kcal; węglowodany 9,6 g; błonnik 2,8 g; białko 0,9 g.",
+      "recipes": {
+        "default-4": {
+          "name": "Podstawowy przepis: Marchew",
+          "instructions": "Gotuj pokrojoną marchew w bulionie warzywnym, a następnie zmiksuj z imbirem na zupę."
+        }
+      }
+    },
+    "5": {
+      "name": "Ziemniak",
+      "selectionGuide": "Twarda, gładka skórka, bez zielonych odcieni i kiełków. Młode ziemniaki powinny mieć łuszczącą się skórkę.",
+      "storageGuide": "Trzymać w chłodnym, ciemnym, suchym i dobrze wentylowanym miejscu (np. w papierowej torbie w spiżarni). Nie w lodówce. Trzymać z dala od cebuli.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 77 kcal; węglowodany 17,5 g; błonnik 2,2 g; białko 2 g.",
+      "recipes": {
+        "default-5": {
+          "name": "Podstawowy przepis: Ziemniak",
+          "instructions": "Ugotuj ziemniaki do miękkości i wymieszaj z koperkiem, dymką i jogurtem."
+        }
+      }
+    },
+    "6": {
+      "name": "Pomidor",
+      "selectionGuide": "Pachnący, o głębokim kolorze, lekko ustępujący pod naciskiem. Ciężki jak na swój rozmiar.",
+      "storageGuide": "Aby zachować najlepszy smak, trzymać szypułką do dołu w temperaturze pokojowej, z dala od bezpośredniego słońca. Chłodzenie dojrzałych pomidorów może spowolnić ich psucie, ale wpłynąć na smak i konsystencję.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 18 kcal; węglowodany 3,9 g; błonnik 1,2 g; białko 0,9 g.",
+      "recipes": {
+        "default-6": {
+          "name": "Podstawowy przepis: Pomidor",
+          "instructions": "Piecz połówki pomidorów z oliwą, czosnkiem i ziołami do miękkości."
+        }
+      }
+    },
+    "7": {
+      "name": "Ogórek",
+      "selectionGuide": "Twardy na całej długości. Unikaj pomarszczonych końcówek i miękkich plam.",
+      "storageGuide": "Każdy osobno owinąć ręcznikiem papierowym, włożyć do plastikowej torby i trzymać z przodu półki w lodówce, gdzie jest cieplej.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 15 kcal; węglowodany 3,6 g; błonnik 0,5 g; białko 0,7 g.",
+      "recipes": {
+        "default-7": {
+          "name": "Podstawowy przepis: Ogórek",
+          "instructions": "Pokrój ogórka w kostkę i wymieszaj z jogurtem, koperkiem i odrobiną soku z cytryny."
+        }
+      }
+    },
+    "8": {
+      "name": "Rzodkiewka",
+      "selectionGuide": "Twarda, gładka, o jasnym kolorze. Jeśli ma liście, powinny być zielone i chrupiące.",
+      "storageGuide": "Odciąć natychmiast liście. Przechowywać korzenie zanurzone w słoiku z wodą w lodówce, aby pozostały chrupiące.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 16 kcal; węglowodany 3,4 g; błonnik 1,6 g; białko 0,7 g.",
+      "recipes": {
+        "default-8": {
+          "name": "Podstawowy przepis: Rzodkiewka",
+          "instructions": "Pokrój rzodkiewki w cienkie plasterki i wymieszaj z masłem, cytryną i ziołami."
+        }
+      }
+    },
+    "9": {
+      "name": "Kalafior",
+      "selectionGuide": "Zwarty, kremowobiały kwiatostan. Bez ciemnych plam. Liście powinny być świeżo zielone.",
+      "storageGuide": "Przechowywać łodygą do dołu w luźno zamkniętej plastikowej torbie z suchym ręcznikiem papierowym pochłaniającym wilgoć w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 25 kcal; węglowodany 5 g; błonnik 2 g; białko 1,9 g.",
+      "recipes": {
+        "default-9": {
+          "name": "Podstawowy przepis: Kalafior",
+          "instructions": "Ugotuj różyczki kalafiora na parze i podawaj z sosem z jogurtu, czosnku i ziół."
+        }
+      }
+    },
+    "10": {
+      "name": "Brokuł",
+      "selectionGuide": "Twarde łodygi, zwarte ciemnozielone różyczki. Unikaj żółknących pąków.",
+      "storageGuide": "Lekko zrosić główkę wodą, luźno owinąć wilgotnym ręcznikiem papierowym i trzymać w otwartej torbie w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 34 kcal; węglowodany 6,6 g; błonnik 2,6 g; białko 2,8 g.",
+      "recipes": {
+        "default-10": {
+          "name": "Podstawowy przepis: Brokuł",
+          "instructions": "Ugotuj brokuł na parze do miękkości i wymieszaj z cytryną oraz prażonymi migdałami."
+        }
+      }
+    },
+    "11": {
+      "name": "Cukinia",
+      "selectionGuide": "Mały do średniego rozmiaru, błyszcząca skórka. Unikaj miękkich plam.",
+      "storageGuide": "Chronić przed wilgocią, nie myć. Trzymać w papierowej torbie lub luźnej plastikowej torbie z ręcznikiem papierowym w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 17 kcal; węglowodany 3,1 g; błonnik 1 g; białko 1,2 g.",
+      "recipes": {
+        "default-11": {
+          "name": "Podstawowy przepis: Cukinia",
+          "instructions": "Zetrzyj cukinię na placki z jajkiem, mąką i ziołami; smaż do zarumienienia."
+        }
+      }
+    },
+    "12": {
+      "name": "Papryka",
+      "selectionGuide": "Błyszcząca, napięta skórka, twarda szypułka. Ciężka jak na swój rozmiar.",
+      "storageGuide": "Przechowywać nieumytą, w luźno zawiązanej plastikowej torbie w szufladzie lodówki. Należy ją chronić przed wilgocią.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 31 kcal; węglowodany 6 g; błonnik 2,1 g; białko 1 g.",
+      "recipes": {
+        "default-12": {
+          "name": "Podstawowy przepis: Papryka",
+          "instructions": "Napełnij połówki papryki ugotowanym ryżem, ziołami i fasolą, a następnie upiecz do miękkości."
+        }
+      }
+    },
+    "13": {
+      "name": "Bób",
+      "selectionGuide": "Strąki powinny być zielone i pełne, ale nie nadmiernie wybrzuszone (oznacza to stare/twarde nasiona).",
+      "storageGuide": "Przechowywać w łupinach, w papierowej torbie lub perforowanym worku w szufladzie lodówki maksymalnie przez kilka dni.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 88 kcal; węglowodany 17,6 g; błonnik 7,5 g; białko 7,9 g.",
+      "recipes": {
+        "default-13": {
+          "name": "Podstawowy przepis: Bób",
+          "instructions": "Ugotuj wyłuskany bób do miękkości i wymieszaj z miętą oraz cytryną."
+        }
+      }
+    },
+    "14": {
+      "name": "Fasolka szparagowa",
+      "selectionGuide": "Jasny kolor, łatwo pęka przy zginaniu. Unikaj twardych lub łykowatych strąków.",
+      "storageGuide": "Nie myć. Zawinąć w suchy ręcznik papierowy i włożyć do plastikowej torebki w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 31 kcal; węglowodany 7 g; błonnik 2,7 g; białko 1,8 g.",
+      "recipes": {
+        "default-14": {
+          "name": "Podstawowy przepis: Fasolka szparagowa",
+          "instructions": "Ugotuj fasolkę szparagową na parze al dente i wymieszaj z czosnkiem oraz oliwą."
+        }
+      }
+    },
+    "15": {
+      "name": "Kapusta (Biała)",
+      "selectionGuide": "Ciężka jak na swój rozmiar, zwarte liście. Młoda kapusta jest luźniejsza i bardziej zielona.",
+      "storageGuide": "Nie myć. Trzymać całą główkę ciasno owiniętą folią spożywczą w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 25 kcal; węglowodany 5,8 g; błonnik 2,5 g; białko 1,3 g.",
+      "recipes": {
+        "default-15": {
+          "name": "Podstawowy przepis: Kapusta (Biała)",
+          "instructions": "Drobno poszatkuj kapustę i połącz z tartą marchewką, jogurtem i octem."
+        }
+      }
+    },
+    "16": {
+      "name": "Brukselka",
+      "selectionGuide": "Zwarte, małe, jasnozielone główki. Unikaj żółtych liści i luźnej struktury.",
+      "storageGuide": "Najlepiej trzymać na łodydze. W przeciwnym razie przechowywać nieumyte w luźnej plastikowej torbie w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 43 kcal; węglowodany 9 g; błonnik 3,8 g; białko 3,4 g.",
+      "recipes": {
+        "default-16": {
+          "name": "Podstawowy przepis: Brukselka",
+          "instructions": "Upiecz przekrojoną brukselkę z olejem do zarumienienia; skrop cytryną."
+        }
+      }
+    },
+    "17": {
+      "name": "Jarmuż",
+      "selectionGuide": "Ciemnozielone, chrupiące liście. Unikaj żółtych lub papkowatych miejsc.",
+      "storageGuide": "Owinąć nieumyte liście w suchy ręcznik papierowy i przechowywać w szczelnej plastikowej torbie w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 49 kcal; węglowodany 8,8 g; błonnik 3,6 g; białko 4,3 g.",
+      "recipes": {
+        "default-17": {
+          "name": "Podstawowy przepis: Jarmuż",
+          "instructions": "Wymieszaj posiekany jarmuż z oliwą i cytryną, a następnie posyp pestkami."
+        }
+      }
+    },
+    "18": {
+      "name": "Szpinak",
+      "selectionGuide": "Żywo zielony, świeżo wyglądający. Unikaj oślizgłych lub zwiędniętych liści.",
+      "storageGuide": "Przechowywać nieumyty w twardym, szczelnym pojemniku wyłożonym suchym ręcznikiem papierowym, aby pochłaniał wilgoć.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 23 kcal; węglowodany 3,6 g; błonnik 2,2 g; białko 2,9 g.",
+      "recipes": {
+        "default-18": {
+          "name": "Podstawowy przepis: Szpinak",
+          "instructions": "Podduś szpinak na patelni z czosnkiem i podawaj jako ciepły dodatek."
+        }
+      }
+    },
+    "19": {
+      "name": "Rabarbar",
+      "selectionGuide": "Twarde, chrupiące łodygi. Unikaj wiotkich lub gumowatych.",
+      "storageGuide": "Szczelnie owinąć nieumyte łodygi w folię aluminiową i przechowywać w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 21 kcal; węglowodany 4,5 g; błonnik 1,8 g; białko 0,9 g.",
+      "recipes": {
+        "default-19": {
+          "name": "Podstawowy przepis: Rabarbar",
+          "instructions": "Duś rabarbar z niewielką ilością cukru i skórką pomarańczową; podawaj z jogurtem."
+        }
+      }
+    },
+    "20": {
+      "name": "Cebula",
+      "selectionGuide": "Twarda, sucha, papierowa skórka. Unikaj kiełkujących końcówek i miękkich plam.",
+      "storageGuide": "Przechowywać w chłodnym, ciemnym, suchym i przewiewnym miejscu (np. w koszyku). Nie wkładać do lodówki ani do folii. Trzymać z dala od ziemniaków.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 40 kcal; węglowodany 9,3 g; błonnik 1,7 g; białko 1,1 g.",
+      "recipes": {
+        "default-20": {
+          "name": "Podstawowy przepis: Cebula",
+          "instructions": "Duś pokrojoną cebulę powoli do zarumienienia i podawaj na grzance z tymiankiem."
+        }
+      }
+    },
+    "21": {
+      "name": "Truskawki",
+      "selectionGuide": "Całkowicie jaskrawoczerwone, świeża zielona szypułka, silny słodki zapach. Unikaj białych wierzchołków.",
+      "storageGuide": "Przechowywać nieumyte, ułożone pojedynczą warstwą w szczelnym pojemniku wyłożonym suchym ręcznikiem papierowym w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 32 kcal; węglowodany 7,7 g; błonnik 2 g; białko 0,7 g.",
+      "recipes": {
+        "default-21": {
+          "name": "Podstawowy przepis: Truskawki",
+          "instructions": "Pokrój truskawki i wymieszaj z płatkami owsianymi, jogurtem i skórką z cytryny."
+        }
+      }
+    },
+    "22": {
+      "name": "Jabłka",
+      "selectionGuide": "Twarde, bez obić, skórka powinna być napięta, nie pomarszczona.",
+      "storageGuide": "Trzymać w szufladzie lodówki, najlepiej w perforowanej plastikowej torbie. Przechowywać osobno od wrażliwych warzyw.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 52 kcal; węglowodany 13,8 g; błonnik 2,4 g; białko 0,3 g.",
+      "recipes": {
+        "default-22": {
+          "name": "Podstawowy przepis: Jabłka",
+          "instructions": "Zapiekaj plasterki jabłek z cynamonem i płatkami owsianymi do miękkości."
+        }
+      }
+    },
+    "23": {
+      "name": "Gruszki",
+      "selectionGuide": "Sprawdź szyjkę: jeśli ustępuje pod delikatnym naciskiem, jest dojrzała. Reszta owocu może być twarda.",
+      "storageGuide": "Dojrzewać w temperaturze pokojowej. Gdy szyjka lekko zmięknie, schować do lodówki, aby zatrzymać dojrzewanie.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 57 kcal; węglowodany 15,2 g; błonnik 3,1 g; białko 0,4 g.",
+      "recipes": {
+        "default-23": {
+          "name": "Podstawowy przepis: Gruszki",
+          "instructions": "Delikatnie ugotuj połówki gruszki z cynamonem i podawaj z jogurtem naturalnym."
+        }
+      }
+    },
+    "24": {
+      "name": "Śliwki",
+      "selectionGuide": "Lekko miękkie na czubku, nasycony kolor, pożądany jest matowy nalot na skórce.",
+      "storageGuide": "Zostawić w temperaturze pokojowej w papierowej torbie do dojrzewania. Gdy zmiękną, przenieść nieumyte do lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 46 kcal; węglowodany 11,4 g; błonnik 1,4 g; białko 0,7 g.",
+      "recipes": {
+        "default-24": {
+          "name": "Podstawowy przepis: Śliwki",
+          "instructions": "Gotuj pokrojone śliwki z cynamonem, aż powstanie szybki kompot."
+        }
+      }
+    },
+    "25": {
+      "name": "Czereśnie",
+      "selectionGuide": "Zielone, elastyczne ogonki. Owoce powinny być błyszczące, pękate i ciemne.",
+      "storageGuide": "Przechowywać nieumyte, bez odrywania ogonków. Trzymać luźno w pojemniku wyłożonym ręcznikiem papierowym w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 63 kcal; węglowodany 16 g; błonnik 2,1 g; białko 1,1 g.",
+      "recipes": {
+        "default-25": {
+          "name": "Podstawowy przepis: Czereśnie",
+          "instructions": "Wydryluj czereśnie i dodaj do owsianki z łyżką jogurtu."
+        }
+      }
+    },
+    "27": {
+      "name": "Maliny",
+      "selectionGuide": "Suche, pękate, jasny kolor. Sprawdź spód pojemnika pod kątem soku (oznaka zgniecenia).",
+      "storageGuide": "Nie myć przed zjedzeniem. Trzymać w szerokim, płytkim pojemniku wyłożonym papierem, lekko otwartym dla przepływu powietrza w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 52 kcal; węglowodany 11,9 g; błonnik 6,5 g; białko 1,2 g.",
+      "recipes": {
+        "default-27": {
+          "name": "Podstawowy przepis: Maliny",
+          "instructions": "Rozgnieć maliny z sokiem z cytryny i podawaj do naleśników lub jogurtu."
+        }
+      }
+    },
+    "28": {
+      "name": "Borówki",
+      "selectionGuide": "Twarde, o zakurzonym, niebieskim kolorze (nalot). Unikaj miękkich lub pomarszczonych jagód.",
+      "storageGuide": "Najpierw wyrzucić spleśniałe sztuki. Przechowywać nieumyte w wentylowanym lub oddychającym pojemniku w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 57 kcal; węglowodany 14,5 g; błonnik 2,4 g; białko 0,7 g.",
+      "recipes": {
+        "default-28": {
+          "name": "Podstawowy przepis: Borówki",
+          "instructions": "Krótko podgrzej borówki z cytryną i podawaj jako dodatek do owsianki."
+        }
+      }
+    },
+    "32": {
+      "name": "Winogrona",
+      "selectionGuide": "Pękate, mocno osadzone na zielonych gałązkach. Unikaj pomarszczonych owoców.",
+      "storageGuide": "Trzymać nieumyte w oryginalnej perforowanej torbie z otworami wentylacyjnymi w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 69 kcal; węglowodany 18,1 g; błonnik 0,9 g; białko 0,7 g.",
+      "recipes": {
+        "default-32": {
+          "name": "Podstawowy przepis: Winogrona",
+          "instructions": "Upiecz przekrojone winogrona z tymiankiem i podawaj z miękkim serem oraz pieczywem."
+        }
+      }
+    },
+    "34": {
+      "name": "Seler korzeniowy",
+      "selectionGuide": "Ciężki jak na swój rozmiar, twardy, bez miękkich plam. Mniejsze korzenie są zazwyczaj mniej zdrewniałe.",
+      "storageGuide": "Przechowywać nieumyty, luźno owinięty w plastikową torbę w szufladzie na warzywa w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 42 kcal; węglowodany 9,2 g; błonnik 1,8 g; białko 1,5 g.",
+      "recipes": {
+        "default-34": {
+          "name": "Podstawowy przepis: Seler korzeniowy",
+          "instructions": "Upiecz kostki selera z olejem i rozmarynem; podawaj z sosem cytrynowym."
+        }
+      }
+    },
+    "35": {
+      "name": "Pietruszka korzeniowa",
+      "selectionGuide": "Twarda, biała/beżowa skórka. Unikaj rdzawych plam i wiotkich korzeni.",
+      "storageGuide": "Odciąć nać. Zawinąć korzeń w lekko wilgotny ręcznik papierowy i trzymać w szczelnym pojemniku lub torbie w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 55 kcal; węglowodany 12,3 g; błonnik 4,3 g; białko 2,3 g.",
+      "recipes": {
+        "default-35": {
+          "name": "Podstawowy przepis: Pietruszka korzeniowa",
+          "instructions": "Zetrzyj pietruszkę korzeniową do surówki z jabłkiem, sokiem z cytryny i jogurtem."
+        }
+      }
+    },
+    "36": {
+      "name": "Por",
+      "selectionGuide": "Chrupiące białe i jasnozielone części. Unikaj żółknących lub oślizgłych liści.",
+      "storageGuide": "Przechowywać nieumyty i nieprzycięty, luźno owinięty w plastikową torbę w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 61 kcal; węglowodany 14,2 g; błonnik 1,8 g; białko 1,5 g.",
+      "recipes": {
+        "default-36": {
+          "name": "Podstawowy przepis: Por",
+          "instructions": "Gotuj pokrojony por i ziemniaki w bulionie, a następnie zmiksuj na krem."
+        }
+      }
+    },
+    "37": {
+      "name": "Kalarepa",
+      "selectionGuide": "Mała do średniej wielkości (wielkość piłki tenisowej). Ciężka i twarda. Duże sztuki mogą być wewnątrz zdrewniałe.",
+      "storageGuide": "Odciąć liście. Przechowywać nieumytą bulwę luźno lub w perforowanej torbie w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 27 kcal; węglowodany 6,2 g; błonnik 3,6 g; białko 1,7 g.",
+      "recipes": {
+        "default-37": {
+          "name": "Podstawowy przepis: Kalarepa",
+          "instructions": "Pokrój kalarepę w słupki i podawaj na surowo z dipem jogurtowo-koperkowym."
+        }
+      }
+    },
+    "39": {
+      "name": "Bakłażan",
+      "selectionGuide": "Błyszcząca, gładka skórka. Twardy, ale lekko sprężysty przy naciśnięciu. Ciężki.",
+      "storageGuide": "Trzymać w chłodnej temperaturze pokojowej z dala od bananów i pomidorów. Jeśli w lodówce, owinąć w ręcznik papierowy i szybko zużyć.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 25 kcal; węglowodany 5,9 g; błonnik 3 g; białko 1 g.",
+      "recipes": {
+        "default-39": {
+          "name": "Podstawowy przepis: Bakłażan",
+          "instructions": "Upiecz plastry bakłażana z oliwą i czosnkiem; podawaj z sosem pomidorowym."
+        }
+      }
+    },
+    "41": {
+      "name": "Jagody (Leśne)",
+      "selectionGuide": "Ciemne, prawie czarne, wyraźny aromat. Brudzą dłonie. Muszą być suche.",
+      "storageGuide": "Usunąć zgniecione owoce. Przechowywać nieumyte w płytkim pojemniku w lodówce. Myć bezpośrednio przed jedzeniem.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 57 kcal; węglowodany 14,5 g; błonnik 2,4 g; białko 0,7 g.",
+      "nutritionNote": "Wartości referencyjne dotyczą borówek uprawnych; jagody leśne mogą się różnić.",
+      "recipes": {
+        "default-41": {
+          "name": "Podstawowy przepis: Jagody (Leśne)",
+          "instructions": "Podduś jagody leśne z odrobiną wody i podawaj na ciepło do owsianki."
+        }
+      }
+    },
+    "45": {
+      "name": "Pasternak",
+      "selectionGuide": "Twardy, w kolorze kości słoniowej. Unikaj bardzo dużych korzeni, ponieważ mogą mieć zdrewniały środek.",
+      "storageGuide": "Przechowywać nieumyty w perforowanym plastikowym worku w szufladzie na warzywa w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 75 kcal; węglowodany 18 g; błonnik 4,9 g; białko 1,2 g.",
+      "recipes": {
+        "default-45": {
+          "name": "Podstawowy przepis: Pasternak",
+          "instructions": "Upiecz słupki pasternaku z olejem i kuminem, aż się zarumienią."
+        }
+      }
+    },
+    "49": {
+      "name": "Topinambur",
+      "selectionGuide": "Twardy, niepomarszczony. Guzkowaty kształt to norma, ale unikaj miękkich plam i pleśni.",
+      "storageGuide": "Owinąć nieumyte bulwy w ręcznik papierowy wewnątrz luźnej plastikowej torby w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 73 kcal; węglowodany 17,4 g; błonnik 1,6 g; białko 2 g.",
+      "recipes": {
+        "default-49": {
+          "name": "Podstawowy przepis: Topinambur",
+          "instructions": "Upiecz wyszorowane topinambury z czosnkiem i oliwą do miękkości."
+        }
+      }
+    },
+    "51": {
+      "name": "Chrzan",
+      "selectionGuide": "Bardzo twardy i jędrny. Unikaj pomarszczonych korzeni lub miękkich końcówek.",
+      "storageGuide": "Owinąć nieumyty korzeń luźno w folię spożywczą lub trzymać w perforowanej torbie w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 48 kcal; węglowodany 11,3 g; błonnik 3,3 g; białko 1,2 g.",
+      "recipes": {
+        "default-51": {
+          "name": "Podstawowy przepis: Chrzan",
+          "instructions": "Wymieszaj świeżo starty chrzan z jogurtem, cytryną i szczyptą soli na sos."
+        }
+      }
+    },
+    "52": {
+      "name": "Dymka",
+      "selectionGuide": "Jasnozielone, chrupiące łodygi. Unikaj oślizgłych lub więdnących końcówek.",
+      "storageGuide": "Postawić pionowo w słoiku z odrobiną wody na dnie, luźno przykryć plastikową torbą i wstawić do lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 32 kcal; węglowodany 7,3 g; błonnik 2,6 g; białko 1,8 g.",
+      "recipes": {
+        "default-52": {
+          "name": "Podstawowy przepis: Dymka",
+          "instructions": "Krótko podsmaż posiekaną dymkę i dodaj do jajecznicy."
+        }
+      }
+    },
+    "63": {
+      "name": "Poziomki",
+      "selectionGuide": "Intensywny aromat to podstawa. Bardzo delikatne, kupuj tylko wtedy, gdy są suche i niezgniecione.",
+      "storageGuide": "Bardzo nietrwałe. Zjeść natychmiast lub schować nieumyte w jednej warstwie do lodówki na maksymalnie jeden dzień.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 32 kcal; węglowodany 7,7 g; błonnik 2 g; białko 0,7 g.",
+      "nutritionNote": "Wartości referencyjne dotyczą truskawek uprawnych; poziomki mogą się różnić.",
+      "recipes": {
+        "default-63": {
+          "name": "Podstawowy przepis: Poziomki",
+          "instructions": "Podawaj poziomki z jogurtem naturalnym i pokruszonymi płatkami owsianymi."
+        }
+      }
+    },
+    "70": {
+      "name": "Kukurydza",
+      "selectionGuide": "Jasnozielone liście, złociste znamiona (nie suche i czarne). Ziarna powinny wyglądać na pękate i uwalniać mleczny sok po przekłuciu.",
+      "storageGuide": "Trzymać w liściach w luźno zamkniętej plastikowej torbie w lodówce. Zjeść jak najszybciej, gdyż cukry szybko zamieniają się w skrobię.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 86 kcal; węglowodany 19 g; błonnik 2,7 g; białko 3,3 g.",
+      "recipes": {
+        "default-70": {
+          "name": "Podstawowy przepis: Kukurydza",
+          "instructions": "Ugotuj lub ugrilluj kolby kukurydzy i podawaj z masłem oraz posiekanymi ziołami."
+        }
+      }
+    },
+    "71": {
+      "name": "Arbuz",
+      "selectionGuide": "Ciężki jak na swój rozmiar, głuchy dźwięk przy pukaniu. Szukaj kremowo-żółtej plamy w miejscu, gdzie leżał na ziemi.",
+      "storageGuide": "Arbuzy w całości trzymać w temperaturze pokojowej. Po rozkrojeniu szczelnie owinąć odsłonięty miąższ folią i wstawić do lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 30 kcal; węglowodany 7,6 g; błonnik 0,4 g; białko 0,6 g.",
+      "recipes": {
+        "default-71": {
+          "name": "Podstawowy przepis: Arbuz",
+          "instructions": "Pokrój arbuza w kostkę i wymieszaj z miętą oraz limonką na sałatkę owocową."
+        }
+      }
+    },
+    "72": {
+      "name": "Melon",
+      "selectionGuide": "Słodki zapach od strony łodygi. Lekko miękki po stronie kwiatu (przeciwnej do łodygi).",
+      "storageGuide": "Dojrzewać w temp. pokojowej. Gdy dojrzeje, trzymać w całości w lodówce. Przekrojonego melona przechowywać w szczelnym pojemniku w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 34 kcal; węglowodany 8,2 g; błonnik 0,9 g; białko 0,8 g.",
+      "nutritionNote": "Wartości referencyjne dotyczą kantalupy; melon miodowy ma inne wartości.",
+      "recipes": {
+        "default-72": {
+          "name": "Podstawowy przepis: Melon",
+          "instructions": "Uformuj kulki z melona i podawaj schłodzone z miętą i sokiem z limonki."
+        }
+      }
+    },
+    "73": {
+      "name": "Pomarańcza",
+      "selectionGuide": "Ciężka jak na swój rozmiar (oznacza to, że jest soczysta). Twarda, drobnoziarnista skórka.",
+      "storageGuide": "Najdłuższą świeżość (do miesiąca) zachowa luźno włożona do szuflady lodówki. W temperaturze pokojowej wytrzyma kilka dni.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 47 kcal; węglowodany 11,8 g; błonnik 2,4 g; białko 0,9 g.",
+      "recipes": {
+        "default-73": {
+          "name": "Podstawowy przepis: Pomarańcza",
+          "instructions": "Dodaj cząstki pomarańczy do sałatki z koprem włoskim i lekkim sosem oliwnym."
+        }
+      }
+    },
+    "74": {
+      "name": "Mandarynka / Klementynka",
+      "selectionGuide": "Jasnopomarańczowa, skórka wydaje się lekko luźna (łatwa do obrania), ale owoc powinien być ciężki.",
+      "storageGuide": "Trzymać luźno w szufladzie lodówki, by zapobiec szybkiemu wysychaniu.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 53 kcal; węglowodany 13,3 g; błonnik 1,8 g; białko 0,8 g.",
+      "nutritionNote": "Wartości referencyjne dotyczą mandarynek; klementynki mogą się różnić.",
+      "recipes": {
+        "default-74": {
+          "name": "Podstawowy przepis: Mandarynka / Klementynka",
+          "instructions": "Wymieszaj obrane cząstki mandarynki ze szpinakiem i prażonymi orzechami."
+        }
+      }
+    },
+    "75": {
+      "name": "Cytryna",
+      "selectionGuide": "Jasnożółta, ciężka. Cytryny o cienkiej skórce są bardziej soczyste.",
+      "storageGuide": "Przechowywać w całości zalane wodą w szczelnym pojemniku w lodówce. Dzięki temu zachowają jędrność i sok przez wiele tygodni.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 29 kcal; węglowodany 9,3 g; błonnik 2,8 g; białko 1,1 g.",
+      "recipes": {
+        "default-75": {
+          "name": "Podstawowy przepis: Cytryna",
+          "instructions": "Wymieszaj sok i skórkę z cytryny z oliwą oraz ziołami na wyrazisty sos."
+        }
+      }
+    },
+    "76": {
+      "name": "Grejpfrut",
+      "selectionGuide": "Ciężki jak na swój rozmiar, twardy, ale lekko sprężysty. Płaskie końce zazwyczaj oznaczają dobrą dojrzałość.",
+      "storageGuide": "Aby zmaksymalizować trwałość, należy przechowywać luźno w szufladzie lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 42 kcal; węglowodany 10,7 g; błonnik 1,6 g; białko 0,8 g.",
+      "recipes": {
+        "default-76": {
+          "name": "Podstawowy przepis: Grejpfrut",
+          "instructions": "Krótko zapiecz połówki grejpfruta i podawaj na ciepło z odrobiną miodu."
+        }
+      }
+    },
+    "77": {
+      "name": "Granat",
+      "selectionGuide": "Ciężki, kanciasty kształt (nie do końca okrągły oznacza, że nasiona są pełne), ciemnoczerwona skórka.",
+      "storageGuide": "Całe owoce trzymać w szufladzie lodówki. Wyłuskane nasiona należy schować do szczelnego pojemnika.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 83 kcal; węglowodany 18,7 g; błonnik 4 g; białko 1,7 g.",
+      "recipes": {
+        "default-77": {
+          "name": "Podstawowy przepis: Granat",
+          "instructions": "Posyp pieczone warzywa pestkami granatu i polej sosem jogurtowym."
+        }
+      }
+    },
+    "78": {
+      "name": "Kaki (Persymona)",
+      "selectionGuide": "Odmiany cierpkie (np. Hachiya) muszą całkowicie zmięknąć przed jedzeniem; odmiany niecierpkie (np. Fuyu) można jeść, gdy są twarde.",
+      "storageGuide": "Zostawić do dojrzenia w temperaturze pokojowej. Odmiany cierpkie jeść dopiero po całkowitym zmięknięciu; dojrzałe owoce przechowywać w lodówce.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 70 kcal; węglowodany 18,6 g; błonnik 3,6 g; białko 0,6 g.",
+      "recipes": {
+        "default-78": {
+          "name": "Podstawowy przepis: Kaki (Persymona)",
+          "instructions": "Pokrój dojrzałą persymonę i podawaj z jogurtem, prażonymi orzechami i cynamonem."
+        }
+      }
+    },
+    "79": {
+      "name": "Figa",
+      "selectionGuide": "Miękka w dotyku, szyjka powinna opadać. Małe pęknięcia na skórce wskazują na szczytową dojrzałość.",
+      "storageGuide": "Ułożyć nieumyte jednowarstwowo na talerzu wyłożonym papierem, przykryć luźno folią spożywczą i wstawić do lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 74 kcal; węglowodany 19,2 g; błonnik 2,9 g; białko 0,8 g.",
+      "recipes": {
+        "default-79": {
+          "name": "Podstawowy przepis: Figa",
+          "instructions": "Upiecz połówki fig z odrobiną miodu i podawaj z miękkim serem."
+        }
+      }
+    },
+    "80": {
+      "name": "Nektarynka / Brzoskwinia",
+      "selectionGuide": "Zignoruj czerwony rumieniec; kolor tła powinien być niezielony (żółty lub kremowy/biały, zależnie od odmiany). Owoc powinien lekko ustępować wzdłuż szwu.",
+      "storageGuide": "Dojrzewać szypułką do dołu w temp. pokojowej. Kiedy będą pachnące i miękkie, przełożyć do lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 39 kcal; węglowodany 9,5 g; błonnik 1,5 g; białko 0,9 g.",
+      "nutritionNote": "Wartości referencyjne dotyczą brzoskwiń; nektarynki mogą się różnić.",
+      "recipes": {
+        "default-80": {
+          "name": "Podstawowy przepis: Nektarynka / Brzoskwinia",
+          "instructions": "Ugrilluj połówki brzoskwini lub nektarynki i podawaj z jogurtem naturalnym."
+        }
+      }
+    },
+    "81": {
+      "name": "Kiwi",
+      "selectionGuide": "Ustępuje pod delikatnym naciskiem kciuka. Unikaj twardych jak kamień (niedojrzałych) lub papkowatych (przejrzałych).",
+      "storageGuide": "Twarde owoce trzymać w temperaturze pokojowej aż dojrzeją. Gdy zmiękną, przenieść w plastikowej torebce do lodówki.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 61 kcal; węglowodany 14,7 g; błonnik 3 g; białko 1,1 g.",
+      "recipes": {
+        "default-81": {
+          "name": "Podstawowy przepis: Kiwi",
+          "instructions": "Pokrój kiwi na owsiankę lub jogurt i dodaj garść płatków owsianych."
+        }
+      }
+    },
+    "82": {
+      "name": "Awokado",
+      "selectionGuide": "Hass: Ciemna skórka, delikatnie ustępuje pod naciskiem. Zielone skórki: Twarde, ale nie jak kamień, skórka pozostaje zielona.",
+      "storageGuide": "Dojrzewać w temp. pokojowej. Kiedy lekko zmięknie, wstawić do lodówki. Przekrojone połówki skropić cytryną i ciasno owinąć folią.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 160 kcal; węglowodany 8,5 g; błonnik 6,7 g; białko 2 g.",
+      "recipes": {
+        "default-82": {
+          "name": "Podstawowy przepis: Awokado",
+          "instructions": "Rozgnieć awokado z limonką, posiekanym pomidorem i szczyptą soli na szybką pastę."
+        }
+      }
+    },
+    "83": {
+      "name": "Mango",
+      "selectionGuide": "Lekko miękkie w dotyku, owocowy aromat przy łodydze. Kolor nie jest wiarygodnym wskaźnikiem dojrzałości.",
+      "storageGuide": "Zostawić w temperaturze pokojowej do osiągnięcia dojrzałości. Potem przełożyć do lodówki, by zachować świeżość na kilka dni dłużej.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 60 kcal; węglowodany 15 g; błonnik 1,6 g; białko 0,8 g.",
+      "recipes": {
+        "default-83": {
+          "name": "Podstawowy przepis: Mango",
+          "instructions": "Zblenduj mango z jogurtem naturalnym i limonką na prosty, schłodzony koktajl."
+        }
+      }
+    },
+    "20b": {
+      "name": "Czosnek",
+      "selectionGuide": "Twarda, ciasna skórka, ciężki jak na swój rozmiar. Unikaj główek z pustymi lub miękkimi ząbkami.",
+      "storageGuide": "Trzymać w suchym, ciemnym, dobrze wentylowanym miejscu w temperaturze pokojowej. Najlepsza będzie siatka lub otwarty koszyk.",
+      "nutritionalInfo": "Na 100 g surowego produktu: 149 kcal; węglowodany 33,1 g; błonnik 2,1 g; białko 6,4 g.",
+      "recipes": {
+        "default-20b": {
+          "name": "Podstawowy przepis: Czosnek",
+          "instructions": "Upiecz całą główkę czosnku do miękkości; wyciśnięte ząbki dodaj do purée ziemniaczanego."
+        }
+      }
+    }
+  }
+}

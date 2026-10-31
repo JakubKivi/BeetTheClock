@@ -1,28 +1,35 @@
 import React from "react";
 import { render, fireEvent, act, waitFor } from "@testing-library/react-native";
 import { StyleSheet } from "react-native";
-import HomeScreen from "../HomeScreen";
-import * as storage from "../../services/storage";
-import * as newIcon from "../../services/newIcon";
+import HomeScreen from "./HomeScreen";
+import * as storage from "../services/storage";
+import * as newIcon from "../services/newIcon";
 import * as SMS from "expo-sms";
 
 // mock navigation
 const mockNavigate = jest.fn();
+const mockSetOptions = jest.fn();
 jest.mock("@react-navigation/native", () => ({
   useNavigation: () => ({
     navigate: mockNavigate,
-    setOptions: jest.fn(),
+    setOptions: mockSetOptions,
   }),
   useFocusEffect: jest.fn(),
 }));
 
-jest.mock("../../contexts/LanguageContext", () => ({
+jest.mock("../contexts/LanguageContext", () => ({
   useLanguage: () => ({ language: "en", setLanguage: jest.fn() }),
+}));
+jest.mock("../contexts/DataContext", () => ({
+  useAppData: () => ({
+    produce: require("../services/deviceData").getLoadedData().produce,
+    activeRegion: "PL",
+  }),
 }));
 
 // provide minimal mocks for dependencies
-jest.mock("../../services/storage");
-jest.mock("../../services/newIcon");
+jest.mock("../services/storage");
+jest.mock("../services/newIcon");
 jest.mock("expo-image-picker", () => ({
   getMediaLibraryPermissionsAsync: jest.fn(async () => ({ status: "granted" })),
   requestMediaLibraryPermissionsAsync: jest.fn(async () => ({ granted: true })),
@@ -37,6 +44,7 @@ const mockSettings = { phoneNumber: "123" };
 
 describe("HomeScreen", () => {
   beforeEach(() => {
+    mockSetOptions.mockClear();
     (storage.getSettings as jest.Mock).mockResolvedValue(mockSettings);
     (newIcon.getProduceIcons as jest.Mock).mockResolvedValue({});
   });
@@ -108,20 +116,62 @@ describe("HomeScreen", () => {
     );
   });
 
-  it("uses a larger favorites filter and a compact section header", async () => {
+  it("keeps section headers in the list instead of pinning them", async () => {
     const { getByTestId } = render(<HomeScreen />);
     await waitFor(() => expect(storage.getSettings).toHaveBeenCalled());
 
+    const containerStyle = StyleSheet.flatten(
+      getByTestId("home-container").props.style,
+    );
     const filterStyle = StyleSheet.flatten(
       getByTestId("favorites-filter").props.style,
     );
     const headerStyle = StyleSheet.flatten(
       getByTestId("home-section-header").props.style,
     );
-
     expect(filterStyle.width).toBe(34);
     expect(filterStyle.height).toBe(34);
+    expect(containerStyle.paddingTop).toBeUndefined();
     expect(headerStyle.paddingTop).toBe(6);
+    expect(headerStyle.zIndex).toBeUndefined();
+    expect(headerStyle.elevation).toBeUndefined();
+    expect(headerStyle.borderBottomWidth).toBeUndefined();
+    expect(headerStyle.borderBottomColor).toBeUndefined();
+  });
+
+  it("shows a header shadow only while the list is scrolled", async () => {
+    const { getByTestId } = render(<HomeScreen />);
+    await waitFor(() => expect(storage.getSettings).toHaveBeenCalled());
+
+    expect(mockSetOptions).toHaveBeenCalledWith({
+      headerShadowVisible: false,
+    });
+
+    fireEvent.scroll(getByTestId("home-list"), {
+      nativeEvent: {
+        contentOffset: { x: 0, y: 12 },
+        contentSize: { width: 400, height: 1200 },
+        layoutMeasurement: { width: 400, height: 800 },
+      },
+    });
+    await waitFor(() =>
+      expect(mockSetOptions).toHaveBeenCalledWith({
+        headerShadowVisible: true,
+      }),
+    );
+
+    fireEvent.scroll(getByTestId("home-list"), {
+      nativeEvent: {
+        contentOffset: { x: 0, y: 0 },
+        contentSize: { width: 400, height: 1200 },
+        layoutMeasurement: { width: 400, height: 800 },
+      },
+    });
+    await waitFor(() =>
+      expect(mockSetOptions).toHaveBeenCalledWith({
+        headerShadowVisible: false,
+      }),
+    );
   });
 
 });

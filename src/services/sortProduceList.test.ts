@@ -6,8 +6,6 @@ import { sortProduceList } from "./sortProduceList";
 const currentMonth = SEASON_REFERENCE_DATE.getMonth() as MonthOfYear;
 const produce: Produce = {
   id: "in-season",
-  name: "Seasonal crop",
-  plName: "Warzywo sezonowe",
   seasonalityByRegion: {
     [REGIONS.POLAND]: { months: [currentMonth] },
   },

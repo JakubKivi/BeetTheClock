@@ -9,16 +9,14 @@
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/beet.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "contain"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/beet.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/beet.png"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,

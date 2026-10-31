@@ -1,10 +1,11 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { Language, i18n } from "../services/i18n";
+import { Language, i18n, isLanguage } from "../services/i18n";
 import {
   DEFAULT_SETTINGS,
   getSettings,
   saveSettings,
 } from "../services/storage";
+import { useAppData } from "./DataContext";
 
 type LanguageContextType = {
   language: Language;
@@ -18,6 +19,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
+  const { languages } = useAppData();
   const [language, setLanguageState] = useState<Language>("en");
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -25,7 +27,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     const loadLanguage = async () => {
       try {
         const settings = await getSettings();
-        const savedLanguage = (settings?.language || "en") as Language;
+        const savedLanguage =
+          isLanguage(settings?.language) && languages.includes(settings.language)
+          ? settings.language
+          : languages.includes("en")
+            ? "en"
+            : languages[0];
         setLanguageState(savedLanguage);
         i18n.setLanguage(savedLanguage);
       } catch (e) {
@@ -36,9 +43,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     };
 
     loadLanguage();
-  }, []);
+  }, [languages]);
 
   const setLanguage = async (lang: Language) => {
+    if (!languages.includes(lang)) {
+      throw new Error(`Unknown language: ${lang}`);
+    }
     try {
       setLanguageState(lang);
       i18n.setLanguage(lang);

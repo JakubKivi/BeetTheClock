@@ -1,8 +1,8 @@
 import * as Notifications from "expo-notifications";
 import { Platform } from "react-native";
-import { PRODUCE_DATA } from "../constants/produce";
 import { Language, i18n } from "./i18n";
 import { AppSettings } from "./storage";
+import { getLoadedData } from "./deviceData";
 
 // Set up how notifications should be handled when app is foregrounded
 Notifications.setNotificationHandler({
@@ -87,14 +87,19 @@ export async function syncScheduledNotifications(
   const notificationTime = settings.notificationTime ?? "09:00";
   const weekday = settings.notificationWeekday ?? 1;
   const onlyFavorites = settings.notificationsOnlyFavorites ?? false;
+  const produceData = getLoadedData()?.produce ?? [];
   const favoriteProduce = onlyFavorites
-    ? PRODUCE_DATA.filter((produce) => settings.favItems.includes(produce.id))
+    ? produceData.filter((produce) => settings.favItems.includes(produce.id))
     : [];
   if (onlyFavorites && favoriteProduce.length === 0) return true;
 
   const body = onlyFavorites
     ? `${i18n.t("notifications.favoritesBody", language)} ${favoriteProduce
-        .map((produce) => (language === "pl" ? produce.plName : produce.name))
+      .map(
+        (produce) =>
+          i18n.tOptional(`produce.${produce.id}.name`, language) ??
+          produce.id,
+      )
         .join(", ")}`
     : i18n.t("notifications.body", language);
 

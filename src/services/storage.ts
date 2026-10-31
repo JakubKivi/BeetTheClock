@@ -4,9 +4,9 @@ import {
   NotificationFrequency,
   NotificationWeekday,
   RegionCode,
-  REGIONS,
   Recipe,
 } from "../types";
+import { DEFAULT_REGION } from "./produceSeasonality";
 
 const SETTINGS_KEY = "BeetTheClock:settings";
 const SETTINGS_VERSION = 2;
@@ -35,7 +35,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   notificationTime: "09:00",
   favItems: [],
   language: "en",
-  regionCode: REGIONS.POLAND,
+  regionCode: DEFAULT_REGION,
   settingsVersion: SETTINGS_VERSION,
 };
 

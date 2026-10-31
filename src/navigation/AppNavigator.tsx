@@ -5,10 +5,10 @@ import HomeScreen from "../screens/HomeScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import ProduceDetailsScreen from "../screens/ProduceDetailsScreen";
 
-import { RootStackParamList } from "../screens/ProduceDetailsScreen";
+import type { RootStackParamList } from "./types";
 import { useLanguage } from "../contexts/LanguageContext";
 import { i18n } from "../services/i18n";
-import { COLORS, FONTS } from "../constants/theme";
+import { FONTS, themeColors } from "../constants/theme";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -24,8 +24,8 @@ const AppNavigator = () => {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerStyle: { backgroundColor: COLORS.A_primaryDark },
-          headerTintColor: COLORS.white,
+          headerStyle: { backgroundColor: themeColors.primary[25] },
+          headerTintColor: themeColors.neutral.white,
           headerTitleAlign: "left",
           headerTitleStyle: {
             fontFamily: FONTS.navigationBold,
@@ -44,12 +44,16 @@ const AppNavigator = () => {
         <Stack.Screen
           name="Settings"
           component={SettingsScreen}
-          options={{ title: i18n.t("app.settings") }}
+          options={{
+            title: i18n.t("app.settings", language),
+          }}
         />
         <Stack.Screen
           name="Details"
           component={ProduceDetailsScreen}
-          options={{ title: i18n.t("app.produceDetails") }}
+          options={{
+            title: i18n.t("app.produceDetails", language),
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

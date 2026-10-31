@@ -12,13 +12,12 @@ import {
   NavigationProp,
   useFocusEffect,
 } from "@react-navigation/native";
-import { RootStackParamList } from "./ProduceDetailsScreen";
+import type { RootStackParamList } from "../navigation/types";
 import * as SMS from "expo-sms";
 import * as ImagePicker from "expo-image-picker";
 
-import { PRODUCE_DATA } from "../constants/produce";
-import { MonthOfYear, Produce, RegionCode } from "../types";
-import { COLORS, FONTS } from "../constants/theme";
+import { MonthOfYear, Produce } from "../types";
+import { FONTS, themeColors } from "../constants/theme";
 import {
   DEFAULT_SETTINGS,
   getSettings,
@@ -29,11 +28,10 @@ import { getProduceIcons, saveProduceIcon } from "../services/newIcon";
 import { sortProduceList } from "../services/sortProduceList";
 import { Ionicons } from "@expo/vector-icons";
 import { useLanguage } from "../contexts/LanguageContext";
+import { useAppData } from "../contexts/DataContext";
 import { i18n } from "../services/i18n";
 import {
-  DEFAULT_REGION,
   getSeasonality,
-  isAvailableInRegion,
   SEASON_REFERENCE_DATE,
 } from "../services/produceSeasonality";
 import { syncScheduledNotifications } from "../services/notifications";
@@ -44,8 +42,8 @@ import {
 
 const HomeScreen = () => {
   const { language } = useLanguage();
+  const { produce, activeRegion: currentRegion } = useAppData();
   const currentMonth = SEASON_REFERENCE_DATE.getMonth() as MonthOfYear;
-  const [currentRegion, setCurrentRegion] = useState<RegionCode>(DEFAULT_REGION);
   const [targetNumber, setTargetNumber] = useState("");
   const [icons, setIcons] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
@@ -54,8 +52,13 @@ const HomeScreen = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [isListScrolled, setIsListScrolled] = useState(false);
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
+  useEffect(() => {
+    navigation.setOptions({ headerShadowVisible: isListScrolled });
+  }, [navigation, isListScrolled]);
 
   const handleNavigateToDetails = (item: Produce) => {
     navigation.navigate("Details", {
@@ -73,7 +76,6 @@ const HomeScreen = () => {
         const settings = await getSettings();
         if (settings?.phoneNumber) setTargetNumber(settings.phoneNumber);
         setFavorites(settings?.favItems || []);
-        setCurrentRegion(settings?.regionCode ?? DEFAULT_REGION);
         const storedIcons = await getProduceIcons();
         setIcons(storedIcons);
       } catch (e) {
@@ -90,7 +92,6 @@ const HomeScreen = () => {
         try {
           const settings = await getSettings();
           setFavorites(settings?.favItems || []);
-          setCurrentRegion(settings?.regionCode ?? DEFAULT_REGION);
         } catch (e) {
           console.warn("Failed to refresh favorites", e);
         }
@@ -112,7 +113,7 @@ const HomeScreen = () => {
             value={searchQuery}
             onChangeText={setSearchQuery}
             placeholder={i18n.t("home.searchPlaceholder")}
-            placeholderTextColor="rgba(255,255,255,0.7)"
+            placeholderTextColor={`${themeColors.neutral.white}B3`}
             style={styles.searchInput}
             autoFocus
           />
@@ -122,7 +123,11 @@ const HomeScreen = () => {
             onPress={closeSearch}
             style={styles.headerAction}
           >
-            <Ionicons name="close-outline" size={25} color={COLORS.white} />
+            <Ionicons
+              name="close-outline"
+              size={25}
+              color={themeColors.neutral.white}
+            />
           </TouchableOpacity>
         ),
       });
@@ -144,13 +149,21 @@ const HomeScreen = () => {
               onPress={() => setIsSearching(true)}
               style={styles.headerAction}
             >
-              <Ionicons name="search-outline" size={25} color={COLORS.white} />
+              <Ionicons
+                name="search-outline"
+                size={25}
+                color={themeColors.neutral.white}
+              />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate("Settings")}
               style={styles.headerAction}
             >
-              <Ionicons name="settings-outline" size={25} color={COLORS.white} />
+              <Ionicons
+                name="settings-outline"
+                size={25}
+                color={themeColors.neutral.white}
+              />
             </TouchableOpacity>
           </View>
         ),
@@ -158,25 +171,23 @@ const HomeScreen = () => {
     }
   }, [navigation, isSearching, searchQuery, language]);
 
-  const filteredProduce = PRODUCE_DATA.filter((produce) => {
-    const query = searchQuery.toLowerCase();
-    if (language === "pl") {
-      return produce.plName.toLowerCase().includes(query);
-    } else {
-      return produce.name.toLowerCase().includes(query);
-    }
+  const normalizedSearchQuery = searchQuery.toLowerCase();
+  const filteredProduce = produce.filter((produce) => {
+    const name =
+      i18n.tOptional(`produce.${produce.id}.name`, language) ?? produce.id;
+    return name.toLowerCase().includes(normalizedSearchQuery);
   });
 
-  const seasonalProduce = filteredProduce.filter((produce) =>
-    isAvailableInRegion(produce, currentRegion, currentMonth),
-  );
-
-  const unavailableProduce = filteredProduce.filter((produce) => {
+  const seasonalProduce: Produce[] = [];
+  const unavailableProduce: Produce[] = [];
+  filteredProduce.forEach((produce) => {
     const seasonality = getSeasonality(produce, currentRegion);
-    return (
-      seasonality !== undefined &&
-      !seasonality.months.includes(currentMonth)
-    );
+    if (!seasonality) return;
+
+    const targetList = seasonality.months.includes(currentMonth)
+      ? seasonalProduce
+      : unavailableProduce;
+    targetList.push(produce);
   });
 
   const sortedAndBadgedProduce = sortProduceList(
@@ -203,7 +214,8 @@ const HomeScreen = () => {
       Alert.alert(i18n.t("settings.errorTitle"), i18n.t("home.smsError"));
       return;
     }
-    const produceName = language === "pl" ? produce.plName : produce.name;
+    const produceName =
+      i18n.tOptional(`produce.${produce.id}.name`, language) ?? produce.id;
     const message = i18n
       .t("home.shareMessage", language)
       .replace("{name}", produceName);
@@ -321,17 +333,25 @@ const HomeScreen = () => {
       }
     } catch (error) {
       console.warn("Failed to update favorites", error);
-      Alert.alert(i18n.t("settings.errorTitle"), i18n.t("settings.errorMessage"));
+      Alert.alert(
+        i18n.t("settings.errorTitle"),
+        i18n.t("settings.errorMessage"),
+      );
     }
   };
 
   return (
-    <View style={styles.container}>
+    <View testID="home-container" style={styles.container}>
       <SectionList
+        testID="home-list"
         sections={sections}
         keyExtractor={(item) => item.item.id}
         removeClippedSubviews={false}
-        stickySectionHeadersEnabled
+        stickySectionHeadersEnabled={false}
+        onScroll={(event) =>
+          setIsListScrolled(event.nativeEvent.contentOffset.y > 0)
+        }
+        scrollEventThrottle={16}
         refreshing={isRefreshing}
         onRefresh={handleRefresh}
         renderSectionHeader={({ section }) => (
@@ -355,17 +375,21 @@ const HomeScreen = () => {
                 <Ionicons
                   name={favoritesOnly ? "heart" : "heart-outline"}
                   size={19}
-                  color={favoritesOnly ? COLORS.white : COLORS.A_primaryDark}
+                  color={
+                    favoritesOnly
+                      ? themeColors.neutral.white
+                      : themeColors.primary[25]
+                  }
                 />
               </TouchableOpacity>
             )}
           </View>
         )}
-        renderItem={({ item, section }) => {
+        renderItem={({ item, section, index }) => {
           const produceItem = item.item;
           const statusBadge = item.statusBadge;
           const isAvailable = section.isAvailable;
-          return (
+          const card = (
             <ProduceCard
               item={produceItem}
               iconUri={icons[produceItem.id]}
@@ -378,6 +402,16 @@ const HomeScreen = () => {
               isAvailable={isAvailable}
             />
           );
+          return section.isAvailable && index === 0 ? (
+            <View
+              testID="first-available-item"
+              style={styles.firstAvailableItem}
+            >
+              {card}
+            </View>
+          ) : (
+            card
+          );
         }}
       />
     </View>
@@ -388,12 +422,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingTop: 8,
     paddingBottom: 20,
-    backgroundColor: COLORS.homeBackground,
+    backgroundColor: themeColors.neutral.lightGrey,
   },
   sectionHeaderContainer: {
-    backgroundColor: COLORS.homeBackground,
+    backgroundColor: themeColors.neutral.lightGrey,
     paddingTop: 6,
     paddingBottom: 8,
     marginLeft: -20,
@@ -404,22 +437,25 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
+  firstAvailableItem: {
+    marginTop: 8,
+  },
   sectionTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    color: COLORS.A_primaryDark,
+    color: themeColors.primary[25],
   },
   favoritesFilter: {
     width: 34,
     height: 34,
     borderRadius: 17,
     borderWidth: 1.5,
-    borderColor: COLORS.A_primaryDark,
+    borderColor: themeColors.primary[25],
     alignItems: "center",
     justifyContent: "center",
   },
   favoritesFilterActive: {
-    backgroundColor: COLORS.A_primaryDark,
+    backgroundColor: themeColors.primary[25],
   },
   center: {
     flex: 1,
@@ -435,7 +471,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     borderRadius: 5,
     paddingHorizontal: 10,
-    color: COLORS.white,
+    color: themeColors.neutral.white,
     fontSize: 16,
     fontFamily: FONTS.navigation,
   },
@@ -449,7 +485,7 @@ const styles = StyleSheet.create({
     width: 42,
     height: 42,
     marginLeft: 12,
-    marginBottom: 4,
+    marginBottom: 12,
   },
   headerActions: {
     flexDirection: "row",

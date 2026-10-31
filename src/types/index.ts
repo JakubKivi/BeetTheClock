@@ -4,7 +4,7 @@ export const REGIONS = {
   POLAND: "PL",
 } as const;
 
-export type RegionCode = (typeof REGIONS)[keyof typeof REGIONS];
+export type RegionCode = string;
 export type MonthOfYear = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
 export type NotificationFrequency = "monthly" | "weekly" | "daily";
 // Monday = 1 through Sunday = 7.
@@ -26,25 +26,11 @@ export interface Recipe {
   note?: string;
 }
 
-export interface NutritionNote {
-  en: string;
-  pl: string;
-}
-
 export interface Produce {
   id: string;
-  name: string;
-  plName: string;
   seasonalityByRegion: Partial<Record<RegionCode, RegionalSeasonality>>;
-  selectionGuide?: string;
-  plSelectionGuide?: string;
-  storageGuide?: string;
-  plStorageGuide?: string;
   wikipediaUrl?: string;
-  nutritionalInfo?: string;
-  plNutritionalInfo?: string;
   nutritionItems?: NutritionEntry[];
-  nutritionNote?: NutritionNote;
-  recipes?: Recipe[];
+  defaultRecipeIds?: string[];
   rarity: 1 | 2 | 3 | 4 | 5;
 }
