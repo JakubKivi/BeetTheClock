@@ -2,12 +2,16 @@ import React from "react";
 import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
-import { Produce, RegionCode } from "../types";
+import { MonthOfYear, Produce, RegionCode } from "../types";
 import { formatMonths } from "../utils/utils";
 import { getRarityInfo } from "../constants/produce";
 import { i18n } from "../services/i18n";
 import { useLanguage } from "../contexts/LanguageContext";
-import { DEFAULT_REGION, getSeasonality } from "../services/produceSeasonality";
+import {
+  DEFAULT_REGION,
+  getSeasonality,
+  SEASON_REFERENCE_DATE,
+} from "../services/produceSeasonality";
 import { themeColors } from "../constants/theme";
 import { AppText as Text } from "./Typography";
 
@@ -42,6 +46,10 @@ const ProduceCard: React.FC<Props> = ({
   const seasonality = getSeasonality(item, region);
 
   const monthsLabel = formatMonths(seasonality?.months, language);
+  const isCurrentMonthBest =
+    seasonality?.bestMonths?.includes(
+      SEASON_REFERENCE_DATE.getMonth() as MonthOfYear,
+    ) ?? false;
   const bestMonthsLabel = seasonality?.bestMonths?.length
     ? `${i18n.t("details.best", language).toUpperCase()}: ${formatMonths(
         seasonality.bestMonths,
@@ -53,9 +61,7 @@ const ProduceCard: React.FC<Props> = ({
       ? themeColors.accent[1]
       : statusBadge === "end"
         ? themeColors.accent[2]
-        : statusBadge === "best"
-          ? themeColors.semantic.legendary.main
-          : undefined;
+        : undefined;
   const rarityColor = getRarityInfo(item.rarity).color;
   const rarityGradientId = `rarity-gradient-${item.id}`;
 
@@ -70,9 +76,8 @@ const ProduceCard: React.FC<Props> = ({
         onPress={onCardPress}
         style={[
           styles.card,
-          statusBadge === "new" && styles.newCard,
-          statusBadge === "end" && styles.endCard,
-          statusBadge === "best" && styles.bestCard,
+          statusBadge && statusBadge !== "best" && styles.statusCard,
+          statusColor && { borderColor: statusColor },
         ]}
       >
         <Svg
@@ -150,6 +155,7 @@ const ProduceCard: React.FC<Props> = ({
                 style={[
                   styles.bestMonths,
                   !isAvailable && styles.unavailableText,
+                  isCurrentMonthBest && styles.bestMonthsHighlight,
                 ]}
               >
                 {bestMonthsLabel}
@@ -186,7 +192,7 @@ const ProduceCard: React.FC<Props> = ({
         </View>
       </TouchableOpacity>
 
-      {statusBadge && (
+      {statusBadge && statusBadge !== "best" && (
         <View
           testID="season-badge"
           pointerEvents="none"
@@ -223,21 +229,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderWidth: 0.3,
-    borderColor: themeColors.neutral.grey,
+    borderColor: themeColors.accent[3],
   },
   rarityGradient: {
     ...StyleSheet.absoluteFill,
   },
-  newCard: {
-    borderColor: themeColors.accent[1],
-    borderWidth: 2,
-  },
-  endCard: {
-    borderColor: themeColors.accent[2],
-    borderWidth: 2,
-  },
-  bestCard: {
-    borderColor: themeColors.semantic.legendary.main,
+  statusCard: {
+    borderColor: themeColors.accent[3],
     borderWidth: 2,
   },
   leftContainer: {
@@ -306,6 +304,12 @@ const styles = StyleSheet.create({
     fontSize: 9,
     color: themeColors.neutral.darkGrey,
     lineHeight: 11,
+  },
+  bestMonthsHighlight: {
+    color: themeColors.accent[3],
+    fontSize: 10,
+    fontWeight: "600",
+    lineHeight: 12,
   },
   rightButtons: {
     flexDirection: "row",

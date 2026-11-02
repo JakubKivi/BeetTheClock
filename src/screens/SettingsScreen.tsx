@@ -27,6 +27,7 @@ import {
 } from "../services/storage";
 import {
   isValidNotificationTime,
+  sendTestNotification,
   syncScheduledNotifications,
 } from "../services/notifications";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -36,10 +37,8 @@ import {
   README_EN_URL,
   README_PL_URL,
 } from "../constants/links";
-import {
-  AppText as Text,
-  AppTextInput as TextInput,
-} from "../components/Typography";
+import { AppText as Text } from "../components/Typography";
+import TimeInput from "../components/TimeInput";
 
 const FREQUENCY_OPTIONS: {
   label: string;
@@ -68,6 +67,7 @@ const SettingsScreen = () => {
     activeRegion,
     setActiveRegion,
     importFiles,
+    refreshBundledData,
   } = useAppData();
   const languageOptions = getAvailableLanguages().filter(({ value }) =>
     languages.includes(value),
@@ -140,32 +140,55 @@ const SettingsScreen = () => {
       try {
         await saveSettings(updatedSettings);
         persistedSettingsRef.current = updatedSettings;
-
-        if (!syncNotifications) return;
-
-        const permissionGranted = await syncScheduledNotifications(
-          updatedSettings,
-          language,
-        );
-        if (!permissionGranted) {
-          const disabledSettings = {
-            ...settingsRef.current,
-            notificationsEnabled: false,
-          };
-          await saveSettings(disabledSettings);
-          settingsRef.current = disabledSettings;
-          persistedSettingsRef.current = disabledSettings;
-          setSettings(disabledSettings);
-          Alert.alert(
-            i18n.t("settings.permissionRequiredTitle", language),
-            i18n.t("settings.notificationsDisabledMessage", language),
-          );
-        }
       } catch (error) {
         console.warn("Failed to save settings", error);
         Alert.alert(
           i18n.t("settings.errorTitle", language),
           i18n.t("settings.errorMessage", language),
+        );
+        return;
+      }
+
+      if (!syncNotifications) return;
+
+      let permissionGranted: boolean;
+      try {
+        permissionGranted = await syncScheduledNotifications(
+          updatedSettings,
+          language,
+        );
+      } catch (error) {
+        console.warn("Failed to sync scheduled notifications", error);
+        const detail = error instanceof Error ? error.message : String(error);
+        Alert.alert(
+          i18n.t("settings.errorTitle", language),
+          `${i18n.t("settings.notificationScheduleError", language)}\n\n${detail}`,
+        );
+        return;
+      }
+
+      if (!permissionGranted) {
+        const disabledSettings = {
+          ...settingsRef.current,
+          notificationsEnabled: false,
+        };
+        try {
+          await saveSettings(disabledSettings);
+        } catch (error) {
+          console.warn("Failed to save settings", error);
+          Alert.alert(
+            i18n.t("settings.errorTitle", language),
+            i18n.t("settings.errorMessage", language),
+          );
+          return;
+        }
+
+        settingsRef.current = disabledSettings;
+        persistedSettingsRef.current = disabledSettings;
+        setSettings(disabledSettings);
+        Alert.alert(
+          i18n.t("settings.permissionRequiredTitle", language),
+          i18n.t("settings.notificationsDisabledMessage", language),
         );
       }
     });
@@ -244,6 +267,68 @@ const SettingsScreen = () => {
       Alert.alert(
         i18n.t("settings.errorTitle", language),
         error instanceof Error ? error.message : String(error),
+      );
+    }
+  };
+
+  const handleRefreshBundledData = () => {
+    Alert.alert(
+      i18n.t("settings.refreshBundledDataConfirmTitle", language),
+      i18n.t("settings.refreshBundledDataConfirmMessage", language),
+      [
+        {
+          text: i18n.t("settings.close", language),
+          style: "cancel",
+        },
+        {
+          text: i18n.t("settings.refreshBundledData", language),
+          style: "destructive",
+          onPress: () => {
+            void refreshBundledData()
+              .then(() =>
+                Alert.alert(
+                  i18n.t("settings.refreshBundledDataCompleteTitle", language),
+                  i18n.t(
+                    "settings.refreshBundledDataCompleteMessage",
+                    language,
+                  ),
+                ),
+              )
+              .catch((error: unknown) => {
+                console.warn("Failed to refresh bundled data", error);
+                Alert.alert(
+                  i18n.t("settings.errorTitle", language),
+                  error instanceof Error ? error.message : String(error),
+                );
+              });
+          },
+        },
+      ],
+    );
+  };
+
+  const handleSendTestNotification = async () => {
+    try {
+      const sent = await sendTestNotification(settingsRef.current, language);
+      if (!sent) {
+        Alert.alert(
+          i18n.t("settings.permissionRequiredTitle", language),
+          i18n.t("settings.testNotificationPermission", language),
+        );
+        return;
+      }
+
+      Alert.alert(
+        i18n.t("settings.testNotificationSentTitle", language),
+        i18n.t("settings.testNotificationSentMessage", language),
+      );
+    } catch (error) {
+      console.warn("Failed to send test notification", error);
+      const errorDetails =
+        error instanceof Error ? error.message : String(error);
+      Alert.alert(
+        i18n.t("settings.errorTitle", language),
+        `${i18n.t("settings.testNotificationError", language)}\n\n${errorDetails}`,
       );
     }
   };
@@ -333,6 +418,51 @@ const SettingsScreen = () => {
               color={themeColors.neutral.grey}
             />
           </TouchableOpacity>
+          {__DEV__ ? (
+            <TouchableOpacity
+              accessibilityRole="button"
+              style={styles.refreshDataButton}
+              onPress={handleRefreshBundledData}
+            >
+              <MaterialIcons
+                name="refresh"
+                size={18}
+                color={themeColors.primary[25]}
+              />
+              <Text style={styles.refreshDataButtonText}>
+                {i18n.t("settings.refreshBundledData", language)}
+              </Text>
+            </TouchableOpacity>
+          ) : null}
+        </View>
+
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>
+            {i18n.t("settings.display", language)}
+          </Text>
+          <View style={styles.switchRow}>
+            <Text style={styles.rowLabel}>
+              {i18n.t("settings.sortAlphabetically", language)}
+            </Text>
+            <Switch
+              accessibilityLabel={i18n.t(
+                "settings.sortAlphabetically",
+                language,
+              )}
+              testID="sort-alphabetically-switch"
+              value={settings.sortAlphabetically ?? false}
+              onValueChange={(value) =>
+                updateSetting("sortAlphabetically", value)
+              }
+              ios_backgroundColor={themeColors.neutral.grey}
+              thumbColor={themeColors.primary[25]}
+              trackColor={{
+                false: themeColors.neutral.grey,
+                true: themeColors.primary[75],
+              }}
+              style={styles.switch}
+            />
+          </View>
         </View>
 
         <View style={styles.section}>
@@ -455,18 +585,22 @@ const SettingsScreen = () => {
                 </View>
               )}
 
-              <TextInput
+              <TimeInput
                 accessibilityLabel={i18n.t(
                   "settings.notificationTime",
                   language,
                 )}
-                keyboardType="numbers-and-punctuation"
-                maxLength={5}
+                hourAccessibilityLabel={i18n.t(
+                  "settings.notificationTimeHour",
+                  language,
+                )}
+                minuteAccessibilityLabel={i18n.t(
+                  "settings.notificationTimeMinute",
+                  language,
+                )}
                 onChangeText={(value) => updateSetting("notificationTime", value)}
-                onBlur={() => {
-                  timeInputFocusedRef.current = false;
-                }}
                 onEndEditing={() => {
+                  timeInputFocusedRef.current = false;
                   if (
                     !isValidNotificationTime(
                       settingsRef.current.notificationTime ?? "",
@@ -481,9 +615,7 @@ const SettingsScreen = () => {
                 onFocus={() => {
                   timeInputFocusedRef.current = true;
                 }}
-                placeholder="09:00"
                 style={[
-                  styles.timeInput,
                   settings.notificationFrequency !== "weekly" &&
                     styles.timeInputSeparated,
                 ]}
@@ -491,6 +623,22 @@ const SettingsScreen = () => {
               />
             </>
           )}
+          {__DEV__ ? (
+            <TouchableOpacity
+              accessibilityRole="button"
+              style={styles.refreshDataButton}
+              onPress={() => void handleSendTestNotification()}
+            >
+              <MaterialIcons
+                name="notifications-active"
+                size={18}
+                color={themeColors.primary[25]}
+              />
+              <Text style={styles.refreshDataButtonText}>
+                {i18n.t("settings.testNotification", language)}
+              </Text>
+            </TouchableOpacity>
+          ) : null}
         </View>
 
         <TouchableOpacity
@@ -731,6 +879,22 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: themeColors.neutral.black,
   },
+  refreshDataButton: {
+    minHeight: 36,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    borderWidth: 1,
+    borderColor: themeColors.primary[25],
+    borderRadius: 4,
+    backgroundColor: themeColors.neutral.white,
+  },
+  refreshDataButtonText: {
+    color: themeColors.primary[25],
+    fontSize: 12,
+    fontWeight: "700",
+  },
   switchRow: {
     minHeight: 25,
     flexDirection: "row",
@@ -813,20 +977,6 @@ const styles = StyleSheet.create({
   selectedFrequencyText: {
     color: themeColors.neutral.white,
     fontWeight: "bold",
-  },
-  timeInput: {
-    alignSelf: "center",
-    width: 58,
-    height: 37,
-    borderWidth: 1,
-    borderColor: themeColors.neutral.grey,
-    borderRadius: 4,
-    paddingHorizontal: 4,
-    paddingVertical: 5,
-    backgroundColor: themeColors.neutral.white,
-    color: themeColors.neutral.black,
-    fontSize: 14,
-    textAlign: "center",
   },
   timeInputSeparated: {
     marginTop: 16,

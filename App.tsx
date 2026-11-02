@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { AppState } from "react-native";
 import { LanguageProvider } from "./src/contexts/LanguageContext";
 import AppNavigator from "./src/navigation/AppNavigator";
 import { getSettings } from "./src/services/storage";
@@ -18,20 +19,30 @@ import {
 function NotificationSetup() {
   const { language } = useLanguage();
   const { produce, activeRegion } = useAppData();
+  const synchronizationQueueRef = useRef<Promise<void>>(Promise.resolve());
 
   useEffect(() => {
-    const synchronize = async () => {
-      try {
-        const settings = await getSettings();
-        if (settings) {
-          await syncScheduledNotifications(settings, language);
-        }
-      } catch (error) {
-        console.warn("Failed to synchronize scheduled notifications", error);
-      }
+    const synchronize = () => {
+      synchronizationQueueRef.current = synchronizationQueueRef.current.then(
+        async () => {
+          try {
+            const settings = await getSettings();
+            if (settings) {
+              await syncScheduledNotifications(settings, language);
+            }
+          } catch (error) {
+            console.warn("Failed to synchronize scheduled notifications", error);
+          }
+        },
+      );
     };
 
-    void synchronize();
+    synchronize();
+    const subscription = AppState.addEventListener("change", (state) => {
+      if (state === "active") synchronize();
+    });
+
+    return () => subscription.remove();
   }, [activeRegion, language, produce]);
 
   return null;

@@ -22,7 +22,9 @@ the interface is available in English and Polish.
 - **Product guides:** Find buying and storage tips, nutrition information, and
   recipes.
 - **Personal notes and recipes:** Add your own notes and recipes to products.
-- **Reminders:** Get optionall monthly, weekly, or daily notifications.
+- **Reminders:** Get optional monthly, weekly, or daily notifications with
+  seasonal picks, newly in-season favorites, and occasional end-of-season
+  reminders.
 - **More languages and regions:** Import language translations and regional
   produce data.
 
@@ -34,12 +36,24 @@ the estimated domestic fresh-harvest peak or, for import-only produce, a broad
 peak in exporter regions. These estimates do not guarantee product origin or
 availability in a particular shop.
 
-The estimates draw on [Statistics Poland agriculture data](https://stat.gov.pl/en/topics/agriculture-forestry/agriculture/)
-and [Eurostat Comext trade data](https://ec.europa.eu/eurostat/web/international-trade-in-goods/database).
-Monthly import flows by product and origin have not been analyzed.
+Relevant official sources are [Statistics Poland agriculture data](https://stat.gov.pl/en/topics/agriculture-forestry/agriculture/)
+and the [Statistical Yearbook of Agriculture](https://stat.gov.pl/en/topics/statistical-yearbooks/statistical-yearbooks/statistical-yearbook-of-agriculture-2025,6,20.html);
+[Eurostat Comext](https://ec.europa.eu/eurostat/web/international-trade-in-goods/database)
+provides monthly trade flows by product and partner country. These sources
+describe domestic production and trade, not retail availability. Trade
+classifications can also combine products (for example, fresh carrots and
+turnips), and an import peak does not prove that fresh produce is on a shop
+shelf. The calendar is therefore indicative, not a product-by-product verified
+retail inventory.
 
-Nutrition values are approximate raw-food references per 100 g from USDA
-FoodData Central where available. Values vary by variety.
+Nutrition values are approximate raw-food references per 100 g from [USDA
+FoodData Central](https://fdc.nal.usda.gov/) where available. Values vary by
+variety and growing conditions; micronutrient highlights are qualitative, not
+complete quantitative profiles. General produce-selection and safe-handling
+guidance references the FDA's [Selecting and Serving Produce Safely](https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-produce-safely);
+storage guidance also references the USDA [FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app).
+Numeric nutrition is included only when a matching reference is available;
+missing values are not estimated.
 
 ## Data format
 
@@ -71,6 +85,9 @@ A region file has a `code` and a `produce` array. Each product requires an
 `id`, `rarity` (an integer from 1 to 5), and `seasonality.months` (zero-based:
 `0` is January and `11` is December). `bestMonths`, `wikipediaUrl`,
 `nutritionItems`, and `defaultRecipeIds` are optional.
+When used, `bestMonths` should be a concise peak of at most four months within
+`months`; omit it if no distinct peak is supported, rather than forcing one for
+year-round produce.
 
 For example:
 
@@ -96,9 +113,11 @@ For example:
 
 Regional translation files have a `name` and a `produce` object keyed by
 product ID. Each product can have a translated `name`, `selectionGuide`,
-`storageGuide`, `nutritionalInfo`, `nutritionNote`, and `recipes`. Recipe
-entries have a `name` and `instructions`. Files with invalid JSON structure or
-field types are rejected when loaded or imported.
+`storageGuide`, `nutritionalInfo`, and `recipes`. Recipe entries have a `name`
+and `instructions`. The shared nutrition disclaimer is the
+`details.nutritionNote` key in each app-language file, not a per-product field.
+Files with invalid JSON structure or field types are rejected when loaded or
+imported.
 
 ```json
 {

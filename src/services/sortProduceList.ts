@@ -69,6 +69,7 @@ export function sortProduceList(
   produce: Produce[],
   currentMonth: MonthOfYear,
   region: RegionCode,
+  compareProduce?: (first: Produce, second: Produce) => number,
 ): SortedProduceItem[] {
   const processedItems = produce.flatMap((item) => {
     const seasonality = getSeasonality(item, region);
@@ -82,6 +83,8 @@ export function sortProduceList(
       !seasonality.bestMonths.includes(
         ((currentMonth + 11) % 12) as MonthOfYear,
       );
+    const isCurrentBestMonth =
+      seasonality.bestMonths?.includes(currentMonth) === true;
     const statusBadge: StatusBadge =
       seasonStatus === "normal"
         ? isFirstBestMonth
@@ -94,6 +97,7 @@ export function sortProduceList(
       isAvailable: seasonality.months.includes(currentMonth),
       statusBadge,
       seasonStatus,
+      isCurrentBestMonth,
     };
   });
 
@@ -106,17 +110,41 @@ export function sortProduceList(
       sortedItems.push(
         ...shuffle(
           items.filter((item) =>
-            status === "best"
-              ? item.statusBadge === "best"
-              : status === "normal"
+            status === "new" || status === "end"
+              ? item.seasonStatus === status
+              : status === "best"
                 ? item.seasonStatus === "normal" &&
-                  item.statusBadge !== "best"
-                : item.seasonStatus === status,
+                  item.isCurrentBestMonth
+                : item.seasonStatus === "normal" &&
+                  !item.isCurrentBestMonth,
           ),
         ),
       );
     }
   }
 
-  return sortedItems.map(({ item, statusBadge }) => ({ item, statusBadge }));
+  const result = sortedItems.map(({ item, statusBadge }) => ({ item, statusBadge }));
+  if (!compareProduce) return result;
+
+  return result.sort((first, second) => {
+    const getPriority = (sortedItem: (typeof result)[number]) => {
+      if (sortedItem.statusBadge === "new") return 0;
+      if (sortedItem.statusBadge === "end") return 1;
+      if (
+        getSeasonality(sortedItem.item, region)?.bestMonths?.includes(
+          currentMonth,
+        )
+      ) {
+        return 2;
+      }
+      return 3;
+    };
+    const firstPriority = getPriority(first);
+    const secondPriority = getPriority(second);
+
+    return (
+      firstPriority - secondPriority ||
+      compareProduce(first.item, second.item)
+    );
+  });
 }

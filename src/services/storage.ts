@@ -21,8 +21,10 @@ export type AppSettings = {
   favItems: string[];
   customRecipes?: Record<string, Recipe[]>;
   produceNotes?: Record<string, string>;
+  readFunFacts?: string[];
   language?: Language;
   regionCode?: RegionCode;
+  sortAlphabetically?: boolean;
   settingsVersion?: number;
 };
 
@@ -36,6 +38,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   favItems: [],
   language: "en",
   regionCode: DEFAULT_REGION,
+  sortAlphabetically: false,
   settingsVersion: SETTINGS_VERSION,
 };
 
@@ -160,4 +163,26 @@ export const saveProduceNote = async (
     delete produceNotes[produceId];
   }
   await saveSettings({ ...settings, produceNotes });
+};
+
+export const hasReadFunFact = async (produceId: string): Promise<boolean> =>
+  (await getSettings())?.readFunFacts?.includes(produceId) ?? false;
+
+export const setFunFactReadStatus = async (
+  produceId: string,
+  isRead: boolean,
+): Promise<void> => {
+  const settings = (await getSettings()) ?? DEFAULT_SETTINGS;
+  const existingReadFunFacts = settings.readFunFacts ?? [];
+  const readFunFacts = isRead
+    ? [...new Set([...existingReadFunFacts, produceId])]
+    : existingReadFunFacts.filter((id) => id !== produceId);
+
+  const updatedSettings = { ...settings };
+  if (readFunFacts.length) {
+    updatedSettings.readFunFacts = readFunFacts;
+  } else {
+    delete updatedSettings.readFunFacts;
+  }
+  await saveSettings(updatedSettings);
 };

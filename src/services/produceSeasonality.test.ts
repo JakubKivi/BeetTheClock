@@ -6,19 +6,12 @@ import { getLoadedData } from "./deviceData";
 import {
   getSeasonality,
   isAvailableInRegion,
-  SEASON_REFERENCE_DATE,
-  USE_DEVICE_DATE,
 } from "./produceSeasonality";
 
 const LANGUAGES = ["en", "pl"] as const;
 const PRODUCE_DATA = getLoadedData()!.produce;
 
 describe("regional produce seasonality", () => {
-  it("uses the existing fixed reference date by default", () => {
-    expect(USE_DEVICE_DATE).toBe(false);
-    expect(SEASON_REFERENCE_DATE).toEqual(new Date(2026, 4, 1));
-  });
-
   it("defines Poland retail availability and its domestic best months", () => {
     const beetroot = PRODUCE_DATA.find((produce) => produce.id === "1");
 
@@ -36,13 +29,24 @@ describe("regional produce seasonality", () => {
         return (
           seasonality !== undefined &&
           seasonality.months.length > 0 &&
+          seasonality.months.every(
+            (month) => Number.isInteger(month) && month >= 0 && month <= 11,
+          ) &&
           new Set(seasonality.months).size === seasonality.months.length &&
+          (seasonality.bestMonths?.length ?? 0) <= 4 &&
           (seasonality.bestMonths ?? []).every((month) =>
             seasonality.months.includes(month),
           )
         );
       }),
     ).toBe(true);
+  });
+
+  it("does not force a best season for year-round kiwi imports", () => {
+    const kiwi = PRODUCE_DATA.find((produce) => produce.id === "81");
+
+    expect(kiwi).toBeDefined();
+    expect(getSeasonality(kiwi!, REGIONS.POLAND)?.bestMonths).toBeUndefined();
   });
 
   it("checks availability against the selected region data", () => {
@@ -60,15 +64,27 @@ describe("regional produce seasonality", () => {
           const localizedName = LANGUAGES.every((language) =>
             i18n.tOptional(`produce.${produce.id}.name`, language),
           );
-          const localizedNutrition = LANGUAGES.every((language) =>
-            i18n
-              .tOptional(`produce.${produce.id}.nutritionalInfo`, language)
-              ?.startsWith(
-                language === "pl"
-                  ? "Na 100 g surowego produktu:"
-                  : "Per 100 g raw:",
-              ),
-          );
+          const hasQuantitativeNutrition =
+            (produce.nutritionItems?.length ?? 0) > 0;
+          const localizedNutrition = LANGUAGES.every((language) => {
+            const text = i18n.tOptional(
+              `produce.${produce.id}.nutritionalInfo`,
+              language,
+            );
+            if (!text) return false;
+            if (!hasQuantitativeNutrition) {
+              return language === "pl"
+                ? text.startsWith(
+                    "Brak zweryfikowanej wartości liczbowej",
+                  )
+                : text.startsWith(
+                    "No verified quantitative reference",
+                  );
+            }
+            return language === "pl"
+              ? /^Na 100 g (?:surow[^:]*|świeżej części jadalnej):/.test(text)
+              : /^Per 100 g (?:raw[^:]*|fresh edible portion):/.test(text);
+          });
           const localizedGuides = LANGUAGES.every(
             (language) =>
               i18n.tOptional(
@@ -100,32 +116,53 @@ describe("regional produce seasonality", () => {
             localizedNutrition &&
             localizedGuides &&
             localizedRecipes &&
-            (produce.nutritionItems?.length ?? 0) > 4
+            (produce.nutritionItems === undefined ||
+              produce.nutritionItems.every(
+                ({ amount, nutrient }) =>
+                  Number.isFinite(amount) && NUTRIENT_INFO[nutrient] !== undefined,
+              ))
           );
         },
       ),
     ).toBe(true);
   });
 
-  it("provides localized labels for selected micronutrients", () => {
+  it("uses only verified quantitative nutrition data for carrots", () => {
     const carrot = PRODUCE_DATA.find((produce) => produce.id === "4");
 
-    expect(carrot?.nutritionItems?.map(({ nutrient }) => nutrient)).toContain(
-      "vitaminA",
-    );
-    expect(carrot?.nutritionItems?.map(({ nutrient }) => nutrient)).toContain(
-      "potassium",
-    );
+    expect(carrot?.nutritionItems).toEqual([
+      { nutrient: "energy", amount: 41, unit: "kcal" },
+      { nutrient: "carbohydrates", amount: 9.6, unit: "g" },
+      { nutrient: "fiber", amount: 2.8, unit: "g" },
+      { nutrient: "protein", amount: 0.9, unit: "g" },
+    ]);
+    expect(
+      i18n.tOptional("produce.4.nutritionalInfo", "en"),
+    ).toContain("vitamin A");
+    expect(
+      i18n.tOptional("produce.4.nutritionalInfo", "en"),
+    ).toContain("amounts not provided");
+    expect(carrot?.nutritionItems?.some(({ nutrient }) =>
+      ["vitaminA", "potassium"].includes(nutrient),
+    )).toBe(false);
   });
 
-  it("labels nutrition values that represent only one of multiple varieties", () => {
-    const qualifiedProduceIds = ["41", "63", "72", "74", "80"];
+  it("uses one global nutrition note instead of per-product notes", () => {
     expect(
-      qualifiedProduceIds.every((id) => {
-        return LANGUAGES.every((language) =>
-          i18n.tOptional(`produce.${id}.nutritionNote`, language),
-        );
-      }),
+      LANGUAGES.every((language) =>
+        i18n.tOptional("details.nutritionNote", language),
+      ),
+    ).toBe(true);
+    expect(
+      PRODUCE_DATA.every((produce) =>
+        LANGUAGES.every(
+          (language) =>
+            i18n.tOptional(
+              `produce.${produce.id}.nutritionNote`,
+              language,
+            ) === undefined,
+        ),
+      ),
     ).toBe(true);
   });
 

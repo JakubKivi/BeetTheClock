@@ -49,6 +49,7 @@ const HomeScreen = () => {
   const [error, setError] = useState<string | null>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [favoritesOnly, setFavoritesOnly] = useState(false);
+  const [sortAlphabetically, setSortAlphabetically] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -77,6 +78,7 @@ const HomeScreen = () => {
         const settings = await getSettings();
         if (settings?.phoneNumber) setTargetNumber(settings.phoneNumber);
         setFavorites(settings?.favItems || []);
+        setSortAlphabetically(settings?.sortAlphabetically ?? false);
         const storedIcons = await getProduceIcons();
         setIcons(storedIcons);
       } catch (e) {
@@ -93,6 +95,7 @@ const HomeScreen = () => {
         try {
           const settings = await getSettings();
           setFavorites(settings?.favItems || []);
+          setSortAlphabetically(settings?.sortAlphabetically ?? false);
         } catch (e) {
           console.warn("Failed to refresh favorites", e);
         }
@@ -186,19 +189,33 @@ const HomeScreen = () => {
       targetList.push(item);
     });
 
-    return {
-      sortedAndBadgedProduce: sortProduceList(
-        seasonalProduce,
-        currentMonth,
-        currentRegion,
-      ),
-      sortedUnavailableProduce: sortProduceList(
-        unavailableProduce,
-        currentMonth,
-        currentRegion,
-      ),
+    const compareProduceNames = (first: Produce, second: Produce) => {
+      const firstName =
+        i18n.tOptional(`produce.${first.id}.name`, language) ?? first.id;
+      const secondName =
+        i18n.tOptional(`produce.${second.id}.name`, language) ?? second.id;
+      return firstName.localeCompare(secondName, language);
     };
-  }, [produce, currentMonth, currentRegion, listRefreshCount]);
+    const sortSeasonalProduce = (items: Produce[]) =>
+      sortProduceList(
+        items,
+        currentMonth,
+        currentRegion,
+        sortAlphabetically ? compareProduceNames : undefined,
+      );
+
+    return {
+      sortedAndBadgedProduce: sortSeasonalProduce(seasonalProduce),
+      sortedUnavailableProduce: sortSeasonalProduce(unavailableProduce),
+    };
+  }, [
+    produce,
+    currentMonth,
+    currentRegion,
+    listRefreshCount,
+    language,
+    sortAlphabetically,
+  ]);
   const visibleSeasonalProduce = sortedAndBadgedProduce.filter(({ item }) => {
     const name =
       i18n.tOptional(`produce.${item.id}.name`, language) ?? item.id;
@@ -301,6 +318,7 @@ const HomeScreen = () => {
     try {
       const settings = await getSettings();
       setFavorites(settings?.favItems || []);
+      setSortAlphabetically(settings?.sortAlphabetically ?? false);
       const storedIcons = await getProduceIcons();
       setIcons(storedIcons);
     } catch (error) {

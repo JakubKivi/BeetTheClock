@@ -29,7 +29,7 @@ describe("sortProduceList", () => {
     ).toEqual(["in-season"]);
   });
 
-  it("orders new, ending, best, and other produce and randomizes within groups", () => {
+  it("orders new, ending, current best-month, and other produce", () => {
     const previousMonth = ((currentMonth + 11) % 12) as MonthOfYear;
     const nextMonth = ((currentMonth + 1) % 12) as MonthOfYear;
     const itemWithSeason = (id: string, months: MonthOfYear[]): Produce => ({
@@ -82,6 +82,82 @@ describe("sortProduceList", () => {
     } finally {
       random.mockRestore();
     }
+  });
+
+  it("uses the supplied comparator while preserving season badges", () => {
+    const first = { ...produce, id: "zucchini" };
+    const second = { ...produce, id: "apple" };
+
+    expect(
+      sortProduceList(
+        [first, second],
+        currentMonth,
+        REGIONS.POLAND,
+        (left, right) => left.id.localeCompare(right.id),
+      ),
+    ).toEqual([
+      { item: second, statusBadge: "new" },
+      { item: first, statusBadge: "new" },
+    ]);
+  });
+
+  it("prioritizes new, ending, current best-month, then other produce before alphabetizing", () => {
+    const monthsAroundCurrentMonth = [
+      ((currentMonth + 11) % 12) as MonthOfYear,
+      currentMonth,
+      ((currentMonth + 1) % 12) as MonthOfYear,
+    ];
+    const itemWithSeason = (
+      id: string,
+      months: MonthOfYear[],
+      bestMonths?: MonthOfYear[],
+    ): Produce => ({
+      ...produce,
+      id,
+      seasonalityByRegion: {
+        [REGIONS.POLAND]: { months, bestMonths },
+      },
+    });
+    const yearRoundMonths = Array.from(
+      { length: 12 },
+      (_, month) => month as MonthOfYear,
+    );
+    const items = [
+      itemWithSeason("z-new", [currentMonth, ((currentMonth + 1) % 12) as MonthOfYear]),
+      itemWithSeason("b-best", yearRoundMonths, [currentMonth]),
+      itemWithSeason("a-best", yearRoundMonths, [currentMonth]),
+      itemWithSeason("z-highlight", monthsAroundCurrentMonth, [currentMonth]),
+      itemWithSeason("a-highlight", monthsAroundCurrentMonth, [currentMonth]),
+      itemWithSeason("z-ending", [
+        ((currentMonth + 11) % 12) as MonthOfYear,
+        currentMonth,
+      ]),
+      itemWithSeason("a-new", [currentMonth, ((currentMonth + 1) % 12) as MonthOfYear]),
+      itemWithSeason("a-ending", [
+        ((currentMonth + 11) % 12) as MonthOfYear,
+        currentMonth,
+      ]),
+      itemWithSeason("other", monthsAroundCurrentMonth),
+    ];
+
+    expect(
+      sortProduceList(
+        items,
+        currentMonth,
+        REGIONS.POLAND,
+        (first, second) => first.id.localeCompare(second.id),
+      ).map(({ item }) => item.id),
+    ).toEqual([
+      "a-new",
+      "z-new",
+      "a-ending",
+      "z-ending",
+      "a-best",
+      "a-highlight",
+      "b-best",
+      "z-highlight",
+      "other",
+    ]);
   });
 
   it("treats a season spanning December and January as one season", () => {

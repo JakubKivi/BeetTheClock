@@ -47,6 +47,11 @@ type RegionLocale = {
   produce: Record<string, unknown>;
 };
 
+type PendingDataFile = {
+  path: string;
+  contents: string;
+};
+
 export type DataImportTarget = "app-locale" | "region";
 
 export type RegionOption = {
@@ -80,6 +85,69 @@ const parseJson = async <Value>(file: File): Promise<Value> => {
         error instanceof Error ? error.message : String(error)
       }`,
     );
+  }
+};
+
+const replaceDataFiles = async <Result>(
+  directory: Directory,
+  pendingFiles: PendingDataFile[],
+  loadUpdatedData: () => Promise<Result>,
+  operationName: string,
+): Promise<Result> => {
+  const backups: {
+    file: File;
+    existed: boolean;
+    contents?: string;
+  }[] = [];
+
+  try {
+    for (const pendingFile of pendingFiles) {
+      const segments = pendingFile.path.split("/");
+      const fileName = segments.pop();
+      if (!fileName) {
+        throw new Error(`Invalid data file path: ${pendingFile.path}`);
+      }
+      const parentDirectory = new Directory(directory, ...segments);
+      parentDirectory.create({ idempotent: true, intermediates: true });
+      const file = new File(parentDirectory, fileName);
+      const existed = file.exists;
+      backups.push({
+        file,
+        existed,
+        contents: existed ? await file.text() : undefined,
+      });
+      file.create({ intermediates: true, overwrite: true });
+      await file.write(pendingFile.contents);
+    }
+
+    return await loadUpdatedData();
+  } catch (error) {
+    const rollbackErrors: string[] = [];
+    for (const backup of backups.reverse()) {
+      try {
+        if (backup.existed) {
+          backup.file.create({ intermediates: true, overwrite: true });
+          await backup.file.write(backup.contents ?? "");
+        } else if (backup.file.exists) {
+          backup.file.delete();
+        }
+      } catch (rollbackError) {
+        rollbackErrors.push(
+          rollbackError instanceof Error
+            ? rollbackError.message
+            : String(rollbackError),
+        );
+      }
+    }
+
+    if (rollbackErrors.length > 0) {
+      throw new Error(
+        `${operationName} failed: ${
+          error instanceof Error ? error.message : String(error)
+        }. Restoring previous files also failed: ${rollbackErrors.join("; ")}`,
+      );
+    }
+    throw error;
   }
 };
 
@@ -370,63 +438,14 @@ export const importDataFiles = async (
     destinations.add(pendingFile.path);
   }
 
-  const backups: {
-    file: File;
-    existed: boolean;
-    contents?: string;
-  }[] = [];
-
-  try {
-    for (const pendingFile of pendingFiles) {
-      const segments = pendingFile.path.split("/");
-      const fileName = segments.pop();
-      if (!fileName) {
-        throw new Error(`Invalid import destination: ${pendingFile.path}`);
-      }
-      const parentDirectory = new Directory(directory, ...segments);
-      parentDirectory.create({ idempotent: true, intermediates: true });
-      const destination = new File(parentDirectory, fileName);
-      const existed = destination.exists;
-      backups.push({
-        file: destination,
-        existed,
-        contents: existed ? await destination.text() : undefined,
-      });
-      destination.create({ intermediates: true, overwrite: true });
-      await destination.write(pendingFile.contents);
-    }
-
-    const data = await loadData(directory);
-    loadedData = data;
-    return { data, importedCount: pendingFiles.length };
-  } catch (error) {
-    const rollbackErrors: string[] = [];
-    for (const backup of backups.reverse()) {
-      try {
-        if (backup.existed) {
-          backup.file.create({ intermediates: true, overwrite: true });
-          await backup.file.write(backup.contents ?? "");
-        } else if (backup.file.exists) {
-          backup.file.delete();
-        }
-      } catch (rollbackError) {
-        rollbackErrors.push(
-          rollbackError instanceof Error
-            ? rollbackError.message
-            : String(rollbackError),
-        );
-      }
-    }
-
-    if (rollbackErrors.length > 0) {
-      throw new Error(
-        `Import failed: ${
-          error instanceof Error ? error.message : String(error)
-        }. Restoring previous files also failed: ${rollbackErrors.join("; ")}`,
-      );
-    }
-    throw error;
-  }
+  const data = await replaceDataFiles(
+    directory,
+    pendingFiles,
+    () => loadData(directory),
+    "Import",
+  );
+  loadedData = data;
+  return { data, importedCount: pendingFiles.length };
 };
 
 const createDefaultDataDirectory = async (): Promise<Directory> => {
@@ -677,3 +696,25 @@ export const selectDataDirectory = async (): Promise<{
 export const refreshLoadedData = async (
   uri: string,
 ): Promise<LoadedData> => loadSavedDataDirectory(uri);
+
+export const refreshBundledData = async (
+  uri: string,
+): Promise<LoadedData> => {
+  if (!__DEV__) {
+    throw new Error("Refreshing bundled data is only available in development.");
+  }
+
+  const directory = new Directory(uri);
+  const pendingFiles = BUNDLED_DATA_FILES.map(({ path, contents }) => ({
+    path,
+    contents: `${JSON.stringify(contents, null, 2)}\n`,
+  }));
+  const data = await replaceDataFiles(
+    directory,
+    pendingFiles,
+    () => loadData(directory),
+    "Bundled data refresh",
+  );
+  loadedData = data;
+  return data;
+};

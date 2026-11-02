@@ -22,7 +22,9 @@ obejmuje Polskę, a interfejs jest dostępny po polsku i angielsku.
 - **Poradniki:** sprawdź, jak wybierać i przechowywać produkty, oraz poznaj ich
   wartości odżywcze i przepisy.
 - **Własne notatki i przepisy:** dodawaj je do poszczególnych produktów.
-- **Powiadomienia:** ustaw opcjonalne przypomnienia miesięczne, cotygodniowe lub codzienne.
+- **Powiadomienia:** ustaw przypomnienia miesięczne, cotygodniowe lub codzienne
+  z sezonowymi propozycjami, nowymi ulubionymi i okazjonalnymi informacjami
+  o kończącym się sezonie.
 - **Dodatkowe języki i regiony:** importuj tłumaczenia oraz dane sezonowe.
 
 ## Sezonowość
@@ -33,14 +35,26 @@ szacowany szczyt krajowych zbiorów albo — dla produktów dostępnych wyłącz
 z importu — przybliżony szczyt sezonu w regionach eksportujących. Szacunki nie
 gwarantują pochodzenia ani dostępności produktu w konkretnym sklepie.
 
-Szacunki opierają się na [danych rolniczych GUS](https://stat.gov.pl/obszary-tematyczne/rolnictwo-lesnictwo/)
-i [danych handlowych Eurostat Comext](https://ec.europa.eu/eurostat/web/international-trade-in-goods/database).
-Nie analizowano miesięcznych przepływów importowych według produktu i kraju
-pochodzenia.
+Oficjalne źródła to [dane rolnicze GUS](https://stat.gov.pl/obszary-tematyczne/rolnictwo-lesnictwo/)
+i [Rocznik Statystyczny Rolnictwa](https://stat.gov.pl/en/topics/statistical-yearbooks/statistical-yearbooks/statistical-yearbook-of-agriculture-2025,6,20.html);
+[Eurostat Comext](https://ec.europa.eu/eurostat/web/international-trade-in-goods/database)
+udostępnia miesięczne przepływy handlowe według produktu i kraju partnera.
+Źródła te opisują produkcję krajową i handel, a nie dostępność w sklepach.
+Klasyfikacje handlowe mogą łączyć różne produkty (np. świeżą marchew i rzepę),
+a szczyt importu nie dowodzi, że świeży produkt znajduje się na sklepowej półce.
+Kalendarz ma więc charakter orientacyjny i nie jest zweryfikowanym zestawieniem
+dostępności detalicznej dla każdego produktu i miesiąca.
 
 Wartości odżywcze to przybliżone dane dla surowych produktów na 100 g,
-pochodzące z USDA FoodData Central, gdy są dostępne. Wartości różnią się
-w zależności od odmiany.
+pochodzące z [USDA FoodData Central](https://fdc.nal.usda.gov/), gdy są
+dostępne. Wartości różnią się zależnie od odmiany i warunków uprawy; wyróżnione
+mikroskładniki mają charakter jakościowy i nie są pełnymi profilami ilościowymi.
+Ogólne wskazówki dotyczące przechowywania opierają się również na bazie
+[USDA FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app).
+Ogólne wskazówki wyboru i bezpiecznego obchodzenia się z produktami uwzględniają
+wytyczne FDA [Selecting and Serving Produce Safely](https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-produce-safely).
+Dane liczbowe są podawane tylko wtedy, gdy dostępne jest dopasowane źródło;
+brakujących wartości nie szacujemy.
 
 ## Format danych
 
@@ -73,6 +87,10 @@ Plik regionu zawiera `code` oraz tablicę `produce`. Każdy produkt wymaga pól
 `id`, `rarity` (liczba całkowita od 1 do 5) i `seasonality.months` (miesiące
 numerowane od zera: `0` to styczeń, `11` to grudzień). Pola `bestMonths`,
 `wikipediaUrl`, `nutritionItems` i `defaultRecipeIds` są opcjonalne.
+Jeśli podano `bestMonths`, powinno obejmować zwięzły szczyt trwający najwyżej
+cztery miesiące i zawierać się w `months`. Należy je pominąć, gdy nie ma
+uzasadnionego, wyraźnego szczytu, zamiast wymuszać go dla produktu dostępnego
+przez cały rok.
 
 Przykład:
 
@@ -98,10 +116,11 @@ Przykład:
 
 Plik tłumaczeń regionu zawiera pola `name` i `produce` — obiekt z tłumaczeniami
 przypisanymi do identyfikatorów produktów. Produkt może mieć przetłumaczone
-pola `name`, `selectionGuide`, `storageGuide`, `nutritionalInfo`,
-`nutritionNote` i `recipes`. Wpis przepisu zawiera `name` oraz
-`instructions`. Pliki z nieprawidłową strukturą JSON lub typami pól są
-odrzucane podczas wczytywania lub importu.
+pola `name`, `selectionGuide`, `storageGuide`, `nutritionalInfo` i `recipes`.
+Wpis przepisu zawiera `name` oraz `instructions`. Wspólna informacja o danych
+odżywczych znajduje się w kluczu `details.nutritionNote` pliku języka
+aplikacji, a nie osobno przy każdym produkcie. Pliki z nieprawidłową strukturą
+JSON lub typami pól są odrzucane podczas wczytywania lub importu.
 
 ```json
 {

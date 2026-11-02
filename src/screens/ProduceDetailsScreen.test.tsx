@@ -74,8 +74,8 @@ describe("ProduceDetailsScreen", () => {
     expect(tree.queryByText("My note")).toBeNull();
     expect(tree.getByTestId("details-nutrient-energy")).toBeTruthy();
     expect(
-      tree.getByText(
-        "Roast beet wedges with olive oil, thyme, and a little vinegar until tender.",
+      within(tree.getByTestId("details-recipes-card")).getByText(
+        /Roast beet wedges with olive oil, thyme, and a little vinegar until tender\./,
       ),
     ).toBeTruthy();
 
@@ -127,6 +127,97 @@ describe("ProduceDetailsScreen", () => {
     ).toBe(12);
   });
 
+  it("opens a seasonal import fact from the left help icon and saves its read status", async () => {
+    const cherries = PRODUCE_DATA.find((produce) => produce.id === "25");
+    expect(cherries).toBeDefined();
+    const hasReadSpy = jest
+      .spyOn(storage, "hasReadFunFact")
+      .mockResolvedValue(false);
+    const setReadStatusSpy = jest
+      .spyOn(storage, "setFunFactReadStatus")
+      .mockResolvedValue();
+
+    const tree = await renderDetailsScreen({
+      params: {
+        item: cherries!,
+        iconUri: undefined,
+        onPickImage: jest.fn(),
+      },
+    } as any);
+
+    expect(
+      StyleSheet.flatten(
+        tree.getByTestId("details-fun-fact-button").props.style,
+      ).left,
+    ).toBe(3);
+    expect(
+      StyleSheet.flatten(tree.getByTestId("details-set-image").props.style)
+        .right,
+    ).toBe(3);
+    expect(tree.queryByTestId("details-fun-fact-modal")).toBeNull();
+    const funFactQuestion = tree.getByTestId("details-fun-fact-icon").props
+      .children;
+    expect(funFactQuestion.props.children).toBe("?");
+    expect(StyleSheet.flatten(funFactQuestion.props.style)).toEqual(
+      expect.objectContaining({
+        fontSize: 30,
+        fontWeight: "900",
+        color: themeColors.accent[2],
+      }),
+    );
+    expect(
+      StyleSheet.flatten(
+        tree.getByTestId("details-fun-fact-button").props.style,
+      ).backgroundColor,
+    ).toBe(themeColors.neutral.white);
+    expect(tree.getByTestId("details-photo-icon").props.color).toBe(
+      themeColors.accent[1],
+    );
+    await act(async () => {
+      fireEvent.press(tree.getByTestId("details-fun-fact-button"));
+    });
+
+    expect(tree.getByTestId("details-fun-fact-modal")).toBeTruthy();
+    const funFactModal = tree.getByTestId("details-fun-fact-modal");
+    expect(
+      StyleSheet.flatten(funFactModal.props.style).backgroundColor,
+    ).toBe(themeColors.neutral.white);
+    const readCheckbox = tree.getByTestId("details-fun-fact-read-checkbox");
+    expect(readCheckbox.props.accessibilityState.checked).toBe(true);
+    expect(
+      within(funFactModal).getByText(
+        "In the Polish winter, fresh cherries are often imported from the Southern Hemisphere, including Chile, South Africa, and Argentina, where it is summer.",
+      ),
+    ).toBeTruthy();
+    await waitFor(() => {
+      expect(setReadStatusSpy).toHaveBeenCalledWith("25", true);
+    });
+    expect(hasReadSpy).toHaveBeenCalledWith("25");
+    expect(StyleSheet.flatten(tree.getByText("?").props.style).color).toBe(
+      themeColors.accent[2],
+    );
+
+    await act(async () => {
+      fireEvent.press(readCheckbox);
+      await Promise.resolve();
+    });
+    expect(
+      tree.getByTestId("details-fun-fact-read-checkbox").props
+        .accessibilityState.checked,
+    ).toBe(false);
+    await waitFor(() => {
+      expect(setReadStatusSpy).toHaveBeenLastCalledWith("25", false);
+    });
+    expect(StyleSheet.flatten(tree.getByText("?").props.style).color).toBe(
+      themeColors.accent[2],
+    );
+
+    fireEvent.press(tree.getByTestId("details-fun-fact-close"));
+    expect(tree.queryByTestId("details-fun-fact-modal")).toBeNull();
+    hasReadSpy.mockRestore();
+    setReadStatusSpy.mockRestore();
+  });
+
   it("uses the beet logo fallback and displays the produce rarity", async () => {
     const topinambur = PRODUCE_DATA.find((produce) => produce.id === "49");
     expect(topinambur).toBeDefined();
@@ -142,6 +233,9 @@ describe("ProduceDetailsScreen", () => {
     expect(tree.getByTestId("details-rarity").props.children).toBe(
       getRarityInfo(topinambur!.rarity).label.toUpperCase(),
     );
+    expect(
+      StyleSheet.flatten(tree.getByTestId("details-rarity").props.style).color,
+    ).toBe(getRarityInfo(topinambur!.rarity).darkColor);
   });
 
   it("renders a circular image with an extended rarity-colored glow and SVG aura", async () => {
@@ -176,7 +270,7 @@ describe("ProduceDetailsScreen", () => {
     expect(tree.getByTestId("details-rarity").props.children).toBe("LEGENDARY");
   });
 
-  it("renders nutrients in separate, themed category rows", async () => {
+  it("renders only verified carrot nutrient amounts in themed category rows", async () => {
     const carrot = PRODUCE_DATA.find((produce) => produce.id === "4");
     expect(carrot).toBeDefined();
     const route = { params: { item: carrot! } } as any;
@@ -185,12 +279,15 @@ describe("ProduceDetailsScreen", () => {
 
     const energyGroup = tree.getByTestId("details-nutrition-group-energy");
     const macrosGroup = tree.getByTestId("details-nutrition-group-macros");
-    const vitaminsGroup = tree.getByTestId("details-nutrition-group-vitamins");
-    const mineralsGroup = tree.getByTestId("details-nutrition-group-minerals");
     expect(within(energyGroup).getByTestId("details-nutrient-energy")).toBeTruthy();
     expect(within(macrosGroup).getByTestId("details-nutrient-fiber")).toBeTruthy();
-    expect(within(vitaminsGroup).getByTestId("details-nutrient-vitaminA")).toBeTruthy();
-    expect(within(mineralsGroup).getByTestId("details-nutrient-potassium")).toBeTruthy();
+    expect(within(macrosGroup).getByTestId("details-nutrient-carbohydrates")).toBeTruthy();
+    expect(within(macrosGroup).getByTestId("details-nutrient-protein")).toBeTruthy();
+    expect(tree.queryByTestId("details-nutrition-group-vitamins")).toBeNull();
+    expect(tree.queryByTestId("details-nutrition-group-minerals")).toBeNull();
+    expect(
+      tree.getByText(/Approximate raw-food reference values per 100 g/),
+    ).toBeTruthy();
     expect(tree.getByTestId("details-nutrient-energy").props.style).toEqual(
       expect.objectContaining({
         backgroundColor: themeColors.semantic.uncommon[100],
@@ -199,16 +296,6 @@ describe("ProduceDetailsScreen", () => {
     expect(tree.getByTestId("details-nutrient-fiber").props.style).toEqual(
       expect.objectContaining({
         backgroundColor: themeColors.semantic.epic[100],
-      }),
-    );
-    expect(tree.getByTestId("details-nutrient-vitaminA").props.style).toEqual(
-      expect.objectContaining({
-        backgroundColor: themeColors.semantic.legendary[100],
-      }),
-    );
-    expect(tree.getByTestId("details-nutrient-potassium").props.style).toEqual(
-      expect.objectContaining({
-        backgroundColor: themeColors.semantic.rare[100],
       }),
     );
   });
@@ -543,7 +630,7 @@ describe("ProduceDetailsScreen", () => {
     openSpy.mockRestore();
   });
 
-  it("opens a localized nutrient popup and closes it", async () => {
+  it("opens a localized quantitative nutrient popup and closes it", async () => {
     const carrot = PRODUCE_DATA.find((produce) => produce.id === "4");
     expect(carrot).toBeDefined();
     const route = {
@@ -555,12 +642,12 @@ describe("ProduceDetailsScreen", () => {
 
     const { getByTestId, queryByTestId } = await renderDetailsScreen(route);
 
-    fireEvent.press(getByTestId("details-nutrient-vitaminA"));
+    fireEvent.press(getByTestId("details-nutrient-energy"));
     const nutrientModal = getByTestId("details-nutrient-modal");
-    expect(within(nutrientModal).getByText("Vitamin A")).toBeTruthy();
+    expect(within(nutrientModal).getByText("Energy")).toBeTruthy();
     expect(
       within(nutrientModal).getByText(
-        "Vitamin A helps the eyes adapt to dim light and supports immune defenses and healthy skin and tissues. Severe deficiency can impair night vision and increase susceptibility to infections.",
+        "Food energy powers basic processes such as breathing and circulation, as well as movement and exercise. Too little energy over time can contribute to fatigue and unintended weight loss.",
       ),
     ).toBeTruthy();
     expect(getByTestId("details-nutrient-wikipedia")).toBeTruthy();
@@ -577,13 +664,13 @@ describe("ProduceDetailsScreen", () => {
       .mockResolvedValue(true);
     const { getByTestId } = await renderDetailsScreen(route);
 
-    fireEvent.press(getByTestId("details-nutrient-vitaminA"));
+    fireEvent.press(getByTestId("details-nutrient-energy"));
     await act(async () => {
       fireEvent.press(getByTestId("details-nutrient-wikipedia"));
     });
 
     expect(openSpy).toHaveBeenCalledWith(
-      "https://en.wikipedia.org/wiki/Vitamin_A",
+      "https://en.wikipedia.org/wiki/Food_energy",
     );
     openSpy.mockRestore();
   });

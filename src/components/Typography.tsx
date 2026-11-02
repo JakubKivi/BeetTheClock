@@ -28,9 +28,13 @@ export const AppText: React.FC<TextProps> = ({ style, ...props }) => (
   />
 );
 
-export const AppTextInput: React.FC<TextInputProps> = ({ style, ...props }) => (
+export const AppTextInput = React.forwardRef<
+  React.ComponentRef<typeof NativeTextInput>,
+  TextInputProps
+>(({ style, ...props }, ref) => (
   <NativeTextInput
     {...props}
+    ref={ref}
     style={[style, { fontFamily: getFontFamily(style) }]}
   />
-);
+));

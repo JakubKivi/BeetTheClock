@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
+  Animated,
+  Easing,
   View,
   StyleSheet,
   Image,
@@ -27,8 +29,10 @@ import {
   addCustomRecipe,
   deleteCustomRecipe,
   getCustomRecipes,
+  hasReadFunFact,
   getProduceNote,
   saveProduceNote,
+  setFunFactReadStatus,
   updateCustomRecipe,
 } from "../services/storage";
 import {
@@ -53,6 +57,29 @@ const ICON_SIZE = 204;
 const ICON_FRAME_SIZE = 224;
 const ICON_AURA_SIZE = ICON_SIZE * 1.75;
 const PRODUCE_LOGO = require("../../assets/beet_mini.png");
+
+const splitFunFact = (
+  instructions: string,
+): { instructions: string; funFact?: string } => {
+  const match = instructions.match(
+    /(?:Czy wiesz, że|Did you know\?)\s*([\s\S]*?)\s*(?=Na surowo:|Raw:)/i,
+  );
+  if (!match || match.index === undefined) return { instructions };
+
+  const recipeInstructions = [
+    instructions.slice(0, match.index).trimEnd(),
+    instructions.slice(match.index + match[0].length).trimStart(),
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const funFact = match[1].trim();
+  return {
+    instructions: recipeInstructions,
+    funFact: /^Czy wiesz, że/i.test(match[0])
+      ? funFact.replace(/\?$/, "")
+      : funFact,
+  };
+};
 
 const NUTRIENT_GROUPS: {
   id: "energy" | "macros" | "vitamins" | "minerals";
@@ -107,11 +134,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
     language,
     region,
   );
-  const nutritionNote = i18n.tOptional(
-    `produce.${item.id}.nutritionNote`,
-    language,
-    region,
-  );
+  const nutritionNote = i18n.t("details.nutritionNote", language);
   const selectionGuide = i18n.tOptional(
     `produce.${item.id}.selectionGuide`,
     language,
@@ -122,19 +145,29 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
     language,
     region,
   );
-  const defaultRecipes = (item.defaultRecipeIds ?? []).flatMap((recipeId) => {
-    const name = i18n.tOptional(
-      `produce.${item.id}.recipes.${recipeId}.name`,
-      language,
-      region,
-    );
-    const instructions = i18n.tOptional(
-      `produce.${item.id}.recipes.${recipeId}.instructions`,
-      language,
-      region,
-    );
-    return name && instructions ? [{ id: recipeId, name, instructions }] : [];
-  });
+  const defaultRecipeEntries = (item.defaultRecipeIds ?? []).flatMap(
+    (recipeId) => {
+      const name = i18n.tOptional(
+        `produce.${item.id}.recipes.${recipeId}.name`,
+        language,
+        region,
+      );
+      const instructions = i18n.tOptional(
+        `produce.${item.id}.recipes.${recipeId}.instructions`,
+        language,
+        region,
+      );
+      return name && instructions
+        ? [{ id: recipeId, name, ...splitFunFact(instructions) }]
+        : [];
+    },
+  );
+  const funFact = defaultRecipeEntries
+    .map(({ funFact: fact }) => fact)
+    .find((fact): fact is string => fact !== undefined);
+  const defaultRecipes = defaultRecipeEntries.map(
+    ({ id, name, instructions }) => ({ id, name, instructions }),
+  );
   const rarityInfo = getRarityInfo(item.rarity);
 
   useEffect(() => {
@@ -146,6 +179,8 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
   const isFocused = useIsFocused();
 
   const [iconUri, setIconUri] = useState<string | undefined>(initialIconUri);
+  const [hasReadFact, setHasReadFact] = useState<boolean | null>(null);
+  const [showFunFact, setShowFunFact] = useState(false);
   const [customRecipes, setCustomRecipes] = useState<Recipe[]>([]);
   const [produceNote, setProduceNote] = useState<string | null>(null);
   const [noteDraft, setNoteDraft] = useState("");
@@ -161,6 +196,10 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
   const [recipeInstructions, setRecipeInstructions] = useState("");
   const [editingRecipeId, setEditingRecipeId] = useState<string | null>(null);
   const [isSavingRecipe, setIsSavingRecipe] = useState(false);
+  const factReadRef = useRef(false);
+  const factReadStatusChangedRef = useRef(false);
+  const factReadSaveQueueRef = useRef(Promise.resolve());
+  const shakeAnimation = useRef(new Animated.Value(0)).current;
 
   // when screen is focused we might want to sync any changes that happened elsewhere
   useEffect(() => {
@@ -168,6 +207,90 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
       setIconUri(initialIconUri);
     }
   }, [isFocused, initialIconUri]);
+
+  useEffect(() => {
+    let isActive = true;
+    factReadRef.current = false;
+    factReadStatusChangedRef.current = false;
+    setHasReadFact(null);
+
+    const loadReadStatus = async () => {
+      try {
+        const hasRead = await hasReadFunFact(item.id);
+        if (isActive && !factReadStatusChangedRef.current) {
+          factReadRef.current = hasRead;
+          setHasReadFact(hasRead);
+        }
+      } catch (error) {
+        if (!isActive) return;
+        console.warn("Failed to load fun fact read status", error);
+        Alert.alert(
+          i18n.t("settings.errorTitle", language),
+          i18n.t("settings.errorMessage", language),
+        );
+      }
+    };
+
+    void loadReadStatus();
+    return () => {
+      isActive = false;
+    };
+  }, [item.id, language]);
+
+  useEffect(() => {
+    if (!funFact || hasReadFact !== false) {
+      shakeAnimation.stopAnimation();
+      shakeAnimation.setValue(0);
+      return;
+    }
+
+    let timeout: ReturnType<typeof setTimeout>;
+    const randomBetween = (minimum: number, maximum: number) =>
+      minimum + Math.random() * (maximum - minimum);
+
+    const shake = () => {
+      shakeAnimation.setValue(0);
+      let direction = Math.random() < 0.5 ? -1 : 1;
+      const swingCount = 4 + Math.floor(Math.random() * 3);
+      const swings: Animated.CompositeAnimation[] = [];
+
+      for (let index = 0; index < swingCount; index += 1) {
+        const decay = 1 - index * 0.12;
+        const strength = randomBetween(0.72, 1) * decay;
+        swings.push(
+          Animated.timing(shakeAnimation, {
+            toValue: direction * strength,
+            duration: randomBetween(75, 145),
+            easing: Easing.inOut(Easing.sin),
+            useNativeDriver: true,
+          }),
+        );
+        direction *= -1;
+      }
+
+      swings.push(
+        Animated.timing(shakeAnimation, {
+          toValue: 0,
+          duration: randomBetween(90, 150),
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+      );
+
+      Animated.sequence(swings).start(({ finished }) => {
+        if (finished) {
+          timeout = setTimeout(shake, randomBetween(650, 1450));
+        }
+      });
+    };
+
+    timeout = setTimeout(shake, randomBetween(350, 950));
+    return () => {
+      clearTimeout(timeout);
+      shakeAnimation.stopAnimation();
+      shakeAnimation.setValue(0);
+    };
+  }, [funFact, hasReadFact, shakeAnimation]);
 
   useEffect(() => {
     if (!isFocused) return;
@@ -374,6 +497,27 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
     }
   };
 
+  const saveFunFactReadStatus = (isRead: boolean) => {
+    factReadRef.current = isRead;
+    factReadStatusChangedRef.current = true;
+    setHasReadFact(isRead);
+    factReadSaveQueueRef.current = factReadSaveQueueRef.current
+      .catch(() => undefined)
+      .then(() => setFunFactReadStatus(item.id, isRead))
+      .catch((error: unknown) => {
+        console.warn("Failed to save fun fact read status", error);
+        Alert.alert(
+          i18n.t("settings.errorTitle", language),
+          i18n.t("settings.errorMessage", language),
+        );
+      });
+  };
+
+  const handleOpenFunFact = () => {
+    setShowFunFact(true);
+    if (!factReadRef.current) saveFunFactReadStatus(true);
+  };
+
   const handleOpenNutrientWikipedia = async () => {
     if (!selectedNutrient) return;
 
@@ -475,6 +619,47 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
               )}
             </View>
           </View>
+          {funFact && (
+            <TouchableOpacity
+              accessibilityLabel={i18n.t("details.funFact", language)}
+              accessibilityRole="button"
+              testID="details-fun-fact-button"
+              style={styles.funFactButton}
+              onPress={() => void handleOpenFunFact()}
+            >
+              <Animated.View
+                testID="details-fun-fact-icon"
+                style={{
+                  transform: [
+                    {
+                      translateX: shakeAnimation.interpolate({
+                        inputRange: [-1, 0, 1],
+                        outputRange: [-1.5, 0, 1.5],
+                      }),
+                    },
+                    {
+                      rotate: shakeAnimation.interpolate({
+                        inputRange: [-1, 0, 1],
+                        outputRange: ["-15deg", "0deg", "15deg"],
+                      }),
+                    },
+                  ],
+                }}
+              >
+                <Text
+                  style={[
+                    styles.funFactQuestionMark,
+                    {
+                      color: themeColors.accent[2],
+                    },
+                  ]}
+                >
+                  ?
+                </Text>
+              </Animated.View>
+            </TouchableOpacity>
+          )}
+
           {!iconUri && onPickImage && (
             <TouchableOpacity
               testID="details-set-image"
@@ -482,9 +667,10 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
               onPress={handlePick}
             >
               <Ionicons
+                testID="details-photo-icon"
                 name="images-sharp"
                 size={22}
-                color={themeColors.primary[25]}
+                color={themeColors.accent[1]}
               />
             </TouchableOpacity>
           )}
@@ -501,7 +687,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
         </View>
         <Text
           testID="details-rarity"
-          style={[styles.rarityLabel, { color: rarityInfo.color }]}
+          style={[styles.rarityLabel, { color: rarityInfo.darkColor }]}
         >
           {(language === "pl" ? rarityInfo.plLabel : rarityInfo.label).toUpperCase()}
         </Text>
@@ -600,9 +786,6 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
           ) : (
             <Text style={styles.guideText}>{nutritionSummary}</Text>
           )}
-          <Text style={styles.sourceText}>
-            {i18n.t("details.nutritionSource", language)}
-          </Text>
           {nutritionNote && (
             <Text style={styles.sourceText}>
               {nutritionNote}
@@ -747,6 +930,56 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
           </Text>
         </TouchableOpacity>
       )}
+
+      <Modal
+        visible={showFunFact}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setShowFunFact(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View
+            accessibilityViewIsModal
+            style={styles.recipeModal}
+            testID="details-fun-fact-modal"
+          >
+            <Text accessibilityRole="header" style={styles.modalTitle}>
+              {i18n.t("details.funFact", language)}
+            </Text>
+            <Text style={styles.guideText}>{funFact}</Text>
+            <TouchableOpacity
+              accessibilityRole="checkbox"
+              accessibilityState={{ checked: hasReadFact === true }}
+              testID="details-fun-fact-read-checkbox"
+              style={styles.funFactReadCheckbox}
+              onPress={() => saveFunFactReadStatus(!factReadRef.current)}
+            >
+              <Ionicons
+                name={
+                  hasReadFact
+                    ? "checkbox"
+                    : "square-outline"
+                }
+                size={22}
+                color={themeColors.primary[25]}
+              />
+              <Text style={styles.funFactReadLabel}>
+                {i18n.t("details.funFactRead", language)}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              accessibilityRole="button"
+              testID="details-fun-fact-close"
+              style={styles.modalCloseButton}
+              onPress={() => setShowFunFact(false)}
+            >
+              <Text style={styles.modalCloseButtonText}>
+                {i18n.t("details.close", language)}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
 
       <Modal
         visible={showRecipeForm}
@@ -1070,6 +1303,17 @@ const styles = StyleSheet.create({
     color: themeColors.neutral.black,
     lineHeight: 18,
   },
+  funFactReadCheckbox: {
+    alignItems: "center",
+    flexDirection: "row",
+    marginTop: 16,
+    paddingVertical: 4,
+  },
+  funFactReadLabel: {
+    color: themeColors.neutral.black,
+    fontSize: 14,
+    marginLeft: 8,
+  },
   nutritionServing: {
     fontSize: 8,
     lineHeight: 12,
@@ -1250,6 +1494,23 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: themeColors.neutral.lightGrey,
     zIndex: 20,
+  },
+  funFactButton: {
+    position: "absolute",
+    left: 3,
+    bottom: 3,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: themeColors.neutral.white,
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 20,
+  },
+  funFactQuestionMark: {
+    fontSize: 30,
+    fontWeight: "900",
+    lineHeight: 34,
   },
   linkButtonsRow: {
     width: "100%",

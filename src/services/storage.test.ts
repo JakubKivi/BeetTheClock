@@ -5,8 +5,10 @@ import {
   AppSettings,
   deleteCustomRecipe,
   getProduceNote,
+  hasReadFunFact,
   migrateSettings,
   saveProduceNote,
+  setFunFactReadStatus,
   updateCustomRecipe,
 } from "./storage";
 
@@ -40,6 +42,49 @@ describe("settings migration", () => {
 });
 
 describe("custom recipes storage", () => {
+  it("stores and retrieves read fun facts per produce while preserving settings", async () => {
+    const settings = {
+      ...makeLegacySettings(1),
+      settingsVersion: 2,
+      readFunFacts: ["apples"],
+    };
+    jest
+      .mocked(AsyncStorage.getItem)
+      .mockReset()
+      .mockResolvedValueOnce(JSON.stringify(settings))
+      .mockResolvedValueOnce(JSON.stringify(settings))
+      .mockResolvedValueOnce(JSON.stringify(settings))
+      .mockResolvedValueOnce(
+        JSON.stringify({
+          ...settings,
+          readFunFacts: ["apples", "cherries"],
+        }),
+      );
+
+    await expect(hasReadFunFact("apples")).resolves.toBe(true);
+    await expect(hasReadFunFact("cherries")).resolves.toBe(false);
+    await setFunFactReadStatus("cherries", true);
+
+    expect(AsyncStorage.setItem).toHaveBeenLastCalledWith(
+      "BeetTheClock:settings",
+      JSON.stringify({
+        ...settings,
+        readFunFacts: ["apples", "cherries"],
+        settingsVersion: 2,
+      }),
+    );
+
+    await setFunFactReadStatus("apples", false);
+    expect(AsyncStorage.setItem).toHaveBeenLastCalledWith(
+      "BeetTheClock:settings",
+      JSON.stringify({
+        ...settings,
+        readFunFacts: ["cherries"],
+        settingsVersion: 2,
+      }),
+    );
+  });
+
   it("saves recipes under the matching produce item in local settings", async () => {
     const settings = {
       ...makeLegacySettings(1),

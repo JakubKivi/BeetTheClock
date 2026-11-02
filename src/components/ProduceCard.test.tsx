@@ -2,9 +2,10 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react-native";
 import { StyleSheet } from "react-native";
 import ProduceCard from "./ProduceCard";
-import { Produce } from "../types";
+import { MonthOfYear, Produce } from "../types";
 import { getRarityInfo } from "../constants/produce";
 import { FONTS, themeColors } from "../constants/theme";
+import { SEASON_REFERENCE_DATE } from "../services/produceSeasonality";
 
 jest.mock("../../assets/beet_mini.png", () => "beet-mini-logo");
 jest.mock("../contexts/LanguageContext", () => ({
@@ -75,10 +76,47 @@ describe("ProduceCard", () => {
     expect(badgeTextStyle.fontSize).toBe(10);
   });
 
-  it("uses the dark legendary color and label for the best badge", () => {
-    const { getByTestId } = render(
+  it.each(["new", "end"] as const)(
+    "uses the matching accent color for the %s badge and card outline",
+    (statusBadge) => {
+      const { getByTestId } = render(
+        <ProduceCard
+          item={mockProduce}
+          isFavorite={false}
+          onPress={jest.fn()}
+          onFavoritePress={jest.fn()}
+          statusBadge={statusBadge}
+        />,
+      );
+      const expectedColor =
+        statusBadge === "new" ? themeColors.accent[1] : themeColors.accent[2];
+
+      expect(
+        StyleSheet.flatten(getByTestId("season-badge").props.style)
+          .backgroundColor,
+      ).toBe(expectedColor);
+      const cardStyle = StyleSheet.flatten(
+        getByTestId("card-press").props.style,
+      );
+      expect(cardStyle.borderColor).toBe(expectedColor);
+      expect(cardStyle.borderWidth).toBe(2);
+    },
+  );
+
+  it("replaces the best badge and outline with highlighted best-month text", () => {
+    const { getByTestId, queryByTestId } = render(
       <ProduceCard
-        item={mockProduce}
+        item={{
+          ...mockProduce,
+          seasonalityByRegion: {
+            PL: {
+              months: [1, 2],
+              bestMonths: [
+                SEASON_REFERENCE_DATE.getMonth() as MonthOfYear,
+              ],
+            },
+          },
+        }}
         isFavorite={false}
         onPress={jest.fn()}
         onFavoritePress={jest.fn()}
@@ -86,19 +124,34 @@ describe("ProduceCard", () => {
       />,
     );
 
-    expect(
-      StyleSheet.flatten(getByTestId("season-badge").props.style)
-        .backgroundColor,
-    ).toBe(themeColors.semantic.legendary.main);
     const cardStyle = StyleSheet.flatten(getByTestId("card-press").props.style);
-    expect(cardStyle.borderColor).toBe(themeColors.semantic.legendary.main);
-    expect(cardStyle.borderWidth).toBe(2);
-    expect(getByTestId("season-badge").props.children.props.children).toBe(
-      "Best",
+    const bestMonthsStyle = StyleSheet.flatten(
+      getByTestId("best-months-label").props.style,
     );
+    expect(queryByTestId("season-badge")).toBeNull();
+    expect(cardStyle.borderWidth).toBe(0.3);
+    expect(bestMonthsStyle.color).toBe(themeColors.accent[3]);
+    expect(bestMonthsStyle.fontSize).toBeGreaterThan(9);
+    expect(bestMonthsStyle.fontWeight).toBe("600");
+    expect(getByTestId("best-months-label").props.children).toMatch(/^BEST:/);
   });
 
-  it("uses regular text and even spacing for the card content", () => {
+  it("uses the third accent color for the outline of every list card", () => {
+    const { getByTestId } = render(
+      <ProduceCard
+        item={mockProduce}
+        isFavorite={false}
+        onPress={jest.fn()}
+        onFavoritePress={jest.fn()}
+      />,
+    );
+
+    const cardStyle = StyleSheet.flatten(getByTestId("card-press").props.style);
+    expect(cardStyle.borderColor).toBe(themeColors.accent[3]);
+    expect(cardStyle.borderWidth).toBe(0.3);
+  });
+
+  it("keeps best-month text neutral when the current month is not a best month", () => {
     const { getByTestId } = render(
       <ProduceCard
         item={{
@@ -135,6 +188,9 @@ describe("ProduceCard", () => {
     expect(nameStyle.lineHeight).toBe(20);
     expect(categoryStyle.lineHeight).toBe(12);
     expect(bestMonthsStyle.lineHeight).toBe(11);
+    expect(bestMonthsStyle.fontSize).toBe(9);
+    expect(bestMonthsStyle.fontWeight).toBeUndefined();
+    expect(bestMonthsStyle.color).toBe(themeColors.neutral.darkGrey);
     expect(bestMonthsStyle.fontStyle).toBeUndefined();
     expect(bestMonthsStyle.fontVariant).toBeUndefined();
     expect(bestMonthsStyle.marginTop).toBeUndefined();
@@ -142,6 +198,35 @@ describe("ProduceCard", () => {
     expect(getByTestId("favorite-icon").props.color).toBe(
       themeColors.primary.main,
     );
+  });
+
+  it("highlights best months only when the current month is among them", () => {
+    const { getByTestId } = render(
+      <ProduceCard
+        item={{
+          ...mockProduce,
+          seasonalityByRegion: {
+            PL: {
+              months: [1, 2],
+              bestMonths: [
+                SEASON_REFERENCE_DATE.getMonth() as MonthOfYear,
+              ],
+            },
+          },
+        }}
+        isFavorite={false}
+        onPress={jest.fn()}
+        onFavoritePress={jest.fn()}
+      />,
+    );
+
+    const bestMonthsStyle = StyleSheet.flatten(
+      getByTestId("best-months-label").props.style,
+    );
+    expect(bestMonthsStyle.fontFamily).toBe(FONTS.bodyBold);
+    expect(bestMonthsStyle.fontSize).toBe(10);
+    expect(bestMonthsStyle.fontWeight).toBe("600");
+    expect(bestMonthsStyle.color).toBe(themeColors.accent[3]);
   });
 
   it("renders a circular uploaded produce image", () => {

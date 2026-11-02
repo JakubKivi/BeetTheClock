@@ -14,6 +14,6 @@ describe("formatMonths", () => {
   it("localizes year-round seasonality", () => {
     const allMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] as const;
     expect(formatMonths([...allMonths], "en")).toBe("Year-round");
-    expect(formatMonths([...allMonths], "pl")).toBe("Całoroczny");
+    expect(formatMonths([...allMonths], "pl")).toBe("Całoroczne");
   });
 });

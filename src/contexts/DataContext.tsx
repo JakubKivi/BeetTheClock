@@ -13,6 +13,7 @@ import {
   importDataFiles,
   loadDefaultDataDirectory,
   loadSavedDataDirectory,
+  refreshBundledData as refreshBundledDataFiles,
   refreshLoadedData,
   selectDataDirectory,
 } from "../services/deviceData";
@@ -33,6 +34,7 @@ type DataContextValue = {
   activeRegion: RegionCode;
   setActiveRegion: (region: RegionCode) => void;
   importFiles: (target: DataImportTarget) => Promise<number>;
+  refreshBundledData: () => Promise<void>;
 };
 
 const DataContext = createContext<DataContextValue | undefined>(undefined);
@@ -160,6 +162,23 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({
     [activeRegion, applyData, dataDirectoryUri],
   );
 
+  const refreshBundledData = useCallback(async () => {
+    if (!dataDirectoryUri) {
+      throw new Error("Choose a data folder before refreshing bundled data.");
+    }
+    if (isImportingRef.current) {
+      throw new Error("A data file operation is already in progress.");
+    }
+
+    isImportingRef.current = true;
+    try {
+      const nextData = await refreshBundledDataFiles(dataDirectoryUri);
+      await applyData(nextData);
+    } finally {
+      isImportingRef.current = false;
+    }
+  }, [applyData, dataDirectoryUri]);
+
   const chooseDataDirectory = useCallback(async () => {
     try {
       const selected = await selectDataDirectory();
@@ -246,11 +265,13 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({
       activeRegion,
       setActiveRegion,
       importFiles,
+      refreshBundledData,
     };
   }, [
     activeRegion,
     data,
     importFiles,
+    refreshBundledData,
     setActiveRegion,
     status,
   ]);

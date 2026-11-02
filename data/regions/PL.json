@@ -73,12 +73,9 @@
           11
         ],
         "bestMonths": [
-          6,
-          7,
           8,
           9,
-          10,
-          11
+          10
         ]
       },
       "nutritionItems": [
@@ -331,12 +328,9 @@
           11
         ],
         "bestMonths": [
-          0,
-          1,
-          2,
+          8,
           9,
-          10,
-          11
+          10
         ]
       },
       "nutritionItems": [
@@ -385,9 +379,6 @@
           11
         ],
         "bestMonths": [
-          0,
-          1,
-          2,
           9,
           10,
           11
@@ -441,9 +432,7 @@
         "bestMonths": [
           3,
           4,
-          5,
-          8,
-          9
+          8
         ]
       },
       "nutritionItems": [
@@ -594,13 +583,10 @@
           11
         ],
         "bestMonths": [
-          0,
-          1,
-          2,
-          8,
           9,
           10,
-          11
+          11,
+          0
         ]
       },
       "nutritionItems": [
@@ -649,12 +635,10 @@
           11
         ],
         "bestMonths": [
-          3,
           4,
           5,
           6,
-          7,
-          8
+          7
         ]
       },
       "nutritionItems": [
@@ -706,9 +690,7 @@
           5,
           6,
           7,
-          8,
-          9,
-          10
+          9
         ]
       },
       "nutritionItems": [
@@ -757,11 +739,9 @@
           11
         ],
         "bestMonths": [
-          0,
-          1,
-          9,
           10,
-          11
+          11,
+          0
         ]
       },
       "nutritionItems": [
@@ -813,8 +793,7 @@
           5,
           6,
           7,
-          8,
-          9
+          8
         ]
       },
       "nutritionItems": [
@@ -866,8 +845,7 @@
           5,
           6,
           7,
-          8,
-          9
+          8
         ]
       },
       "nutritionItems": [
@@ -916,12 +894,10 @@
           11
         ],
         "bestMonths": [
-          3,
           4,
           5,
           6,
-          7,
-          8
+          7
         ]
       },
       "nutritionItems": [
@@ -970,12 +946,9 @@
           11
         ],
         "bestMonths": [
+          11,
           0,
-          1,
-          8,
-          9,
-          10,
-          11
+          1
         ]
       },
       "nutritionItems": [
@@ -1027,10 +1000,7 @@
           2,
           3,
           4,
-          5,
-          8,
-          9,
-          10
+          8
         ]
       },
       "nutritionItems": [
@@ -1169,11 +1139,9 @@
           11
         ],
         "bestMonths": [
-          5,
           6,
           7,
-          8,
-          9
+          8
         ]
       },
       "nutritionItems": [
@@ -1222,12 +1190,9 @@
           11
         ],
         "bestMonths": [
-          4,
           5,
           6,
-          7,
-          8,
-          9
+          7
         ]
       },
       "nutritionItems": [
@@ -1881,8 +1846,7 @@
           5,
           6,
           7,
-          8,
-          9
+          8
         ]
       },
       "nutritionItems": [
@@ -2218,13 +2182,10 @@
           11
         ],
         "bestMonths": [
+          11,
           0,
           1,
-          2,
-          3,
-          4,
-          10,
-          11
+          2
         ]
       },
       "nutritionItems": [
@@ -2269,12 +2230,10 @@
           11
         ],
         "bestMonths": [
-          0,
-          1,
-          2,
-          9,
           10,
-          11
+          11,
+          0,
+          1
         ]
       },
       "nutritionItems": [
@@ -2369,13 +2328,10 @@
           11
         ],
         "bestMonths": [
+          11,
           0,
           1,
-          2,
-          3,
-          4,
-          5,
-          11
+          2
         ]
       },
       "nutritionItems": [
@@ -2424,11 +2380,10 @@
           11
         ],
         "bestMonths": [
-          0,
-          1,
           9,
           10,
-          11
+          11,
+          0
         ]
       },
       "nutritionItems": [
@@ -2472,11 +2427,9 @@
           11
         ],
         "bestMonths": [
-          0,
-          1,
-          9,
           10,
-          11
+          11,
+          0
         ]
       },
       "nutritionItems": [
@@ -2623,14 +2576,6 @@
           9,
           10,
           11
-        ],
-        "bestMonths": [
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
         ]
       },
       "nutritionItems": [
@@ -2845,7 +2790,7 @@
         },
         {
           "nutrient": "protein",
-          "amount": 2.0,
+          "amount": 2,
           "unit": "g"
         }
       ],
@@ -2927,8 +2872,7 @@
           3,
           4,
           5,
-          6,
-          7
+          6
         ]
       },
       "nutritionItems": [
@@ -2991,7 +2935,7 @@
         },
         {
           "nutrient": "carbohydrates",
-          "amount": 3.0,
+          "amount": 3,
           "unit": "g"
         },
         {
@@ -3032,8 +2976,7 @@
           3,
           4,
           5,
-          6,
-          7
+          6
         ]
       },
       "nutritionItems": [
@@ -3085,8 +3028,7 @@
           3,
           4,
           5,
-          6,
-          7
+          6
         ]
       },
       "nutritionItems": [
@@ -3158,7 +3100,7 @@
         },
         {
           "nutrient": "protein",
-          "amount": 2.0,
+          "amount": 2,
           "unit": "g"
         }
       ],
@@ -3302,7 +3244,7 @@
         },
         {
           "nutrient": "carbohydrates",
-          "amount": 3.0,
+          "amount": 3,
           "unit": "g"
         },
         {
@@ -3405,7 +3347,7 @@
         },
         {
           "nutrient": "fiber",
-          "amount": 3.0,
+          "amount": 3,
           "unit": "g"
         },
         {
@@ -3642,7 +3584,7 @@
         },
         {
           "nutrient": "fiber",
-          "amount": 2.0,
+          "amount": 2,
           "unit": "g"
         },
         {
@@ -3688,7 +3630,7 @@
         },
         {
           "nutrient": "fiber",
-          "amount": 1.0,
+          "amount": 1,
           "unit": "g"
         },
         {
@@ -3827,7 +3769,7 @@
         },
         {
           "nutrient": "carbohydrates",
-          "amount": 7.0,
+          "amount": 7,
           "unit": "g"
         },
         {
@@ -3889,7 +3831,7 @@
         },
         {
           "nutrient": "protein",
-          "amount": 3.0,
+          "amount": 3,
           "unit": "g"
         }
       ],
@@ -4069,10 +4011,7 @@
         "bestMonths": [
           3,
           4,
-          5,
-          6,
-          7,
-          8
+          5
         ]
       },
       "nutritionItems": [
@@ -4180,7 +4119,7 @@
         },
         {
           "nutrient": "fiber",
-          "amount": 1.0,
+          "amount": 1,
           "unit": "g"
         },
         {
@@ -4213,11 +4152,8 @@
           11
         ],
         "bestMonths": [
-          4,
-          5,
           8,
-          9,
-          10
+          9
         ]
       },
       "nutritionItems": [
@@ -4331,7 +4267,7 @@
         },
         {
           "nutrient": "protein",
-          "amount": 3.0,
+          "amount": 3,
           "unit": "g"
         }
       ],
@@ -4405,6 +4341,7 @@
           11
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-117"
       ]
@@ -4719,7 +4656,7 @@
         },
         {
           "nutrient": "protein",
-          "amount": 1.0,
+          "amount": 1,
           "unit": "g"
         }
       ],
@@ -4966,7 +4903,7 @@
         },
         {
           "nutrient": "fiber",
-          "amount": 2.0,
+          "amount": 2,
           "unit": "g"
         },
         {
@@ -5240,7 +5177,7 @@
         },
         {
           "nutrient": "fiber",
-          "amount": 3.0,
+          "amount": 3,
           "unit": "g"
         },
         {
@@ -5286,7 +5223,7 @@
         },
         {
           "nutrient": "fiber",
-          "amount": 9.0,
+          "amount": 9,
           "unit": "g"
         },
         {
@@ -5471,7 +5408,7 @@
         },
         {
           "nutrient": "fiber",
-          "amount": 1.0,
+          "amount": 1,
           "unit": "g"
         },
         {
@@ -5522,7 +5459,7 @@
         },
         {
           "nutrient": "protein",
-          "amount": 1.0,
+          "amount": 1,
           "unit": "g"
         }
       ],
@@ -5692,6 +5629,7 @@
           8
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-146"
       ]
@@ -5721,7 +5659,7 @@
         },
         {
           "nutrient": "carbohydrates",
-          "amount": 13.0,
+          "amount": 13,
           "unit": "g"
         },
         {
@@ -5731,7 +5669,7 @@
         },
         {
           "nutrient": "protein",
-          "amount": 1.0,
+          "amount": 1,
           "unit": "g"
         }
       ],
@@ -5755,6 +5693,7 @@
           9
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-148"
       ]
@@ -5828,7 +5767,7 @@
         },
         {
           "nutrient": "fiber",
-          "amount": 7.0,
+          "amount": 7,
           "unit": "g"
         },
         {
@@ -6002,6 +5941,7 @@
           11
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-154"
       ]
@@ -6026,6 +5966,7 @@
           11
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-155"
       ]
@@ -6049,6 +5990,7 @@
           11
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-156"
       ]
@@ -6070,6 +6012,7 @@
           6
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-157"
       ]
@@ -6093,6 +6036,7 @@
           8
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-158"
       ]
@@ -6116,6 +6060,7 @@
           9
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-159"
       ]
@@ -6140,6 +6085,7 @@
           11
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-160"
       ]
@@ -6170,6 +6116,7 @@
           3
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-161"
       ]
@@ -6190,6 +6137,7 @@
           9
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-162"
       ]
@@ -6214,6 +6162,7 @@
           11
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-163"
       ]
@@ -6238,6 +6187,7 @@
           11
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-164"
       ]
@@ -6262,6 +6212,7 @@
           11
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-165"
       ]
@@ -6286,6 +6237,7 @@
           11
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-166"
       ]
@@ -6310,6 +6262,7 @@
           11
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-167"
       ]
@@ -6332,6 +6285,7 @@
           10
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-168"
       ]
@@ -6352,8 +6306,199 @@
           9
         ]
       },
+      "nutritionItems": [],
       "defaultRecipeIds": [
         "default-169"
+      ]
+    },
+    {
+      "id": "170",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Beetroot#Leaves",
+      "rarity": 1,
+      "seasonality": {
+        "months": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 26.4,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 4.66,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.58,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.61,
+          "unit": "g"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-170"
+      ]
+    },
+    {
+      "id": "171",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Sorrel",
+      "rarity": 2,
+      "seasonality": {
+        "months": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 23.2,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 3.4,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 1.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.84,
+          "unit": "g"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-171"
+      ]
+    },
+    {
+      "id": "172",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/White_currant",
+      "rarity": 3,
+      "seasonality": {
+        "months": [
+          5,
+          6,
+          7
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 52,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 12.8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 6.7,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.1,
+          "unit": "g"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-172"
+      ]
+    },
+    {
+      "id": "173",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Mirabelle_plum",
+      "rarity": 3,
+      "seasonality": {
+        "months": [
+          6,
+          7,
+          8
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 56,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 13.65,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 2.09,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.7,
+          "unit": "g"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-173"
+      ]
+    },
+    {
+      "id": "174",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Rose_hip",
+      "rarity": 4,
+      "seasonality": {
+        "months": [
+          8,
+          9
+        ]
+      },
+      "nutritionItems": [
+        {
+          "nutrient": "energy",
+          "amount": 48,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "carbohydrates",
+          "amount": 14.1,
+          "unit": "g"
+        },
+        {
+          "nutrient": "fiber",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 0.7,
+          "unit": "g"
+        }
+      ],
+      "defaultRecipeIds": [
+        "default-174"
       ]
     }
   ]
