@@ -272,6 +272,8 @@ const SettingsScreen = () => {
   };
 
   const handleRefreshBundledData = () => {
+    if (!__DEV__) return;
+
     Alert.alert(
       i18n.t("settings.refreshBundledDataConfirmTitle", language),
       i18n.t("settings.refreshBundledDataConfirmMessage", language),
@@ -284,6 +286,8 @@ const SettingsScreen = () => {
           text: i18n.t("settings.refreshBundledData", language),
           style: "destructive",
           onPress: () => {
+            if (!__DEV__) return;
+
             void refreshBundledData()
               .then(() =>
                 Alert.alert(
@@ -308,6 +312,8 @@ const SettingsScreen = () => {
   };
 
   const handleSendTestNotification = async () => {
+    if (!__DEV__) return;
+
     try {
       const sent = await sendTestNotification(settingsRef.current, language);
       if (!sent) {

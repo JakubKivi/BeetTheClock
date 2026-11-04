@@ -1,5 +1,6 @@
 import {
   getAvailableLanguages,
+  getAvailableRegionLanguages,
   i18n,
   isLanguage,
   loadResources,
@@ -47,6 +48,11 @@ describe("i18n", () => {
     ]);
     expect(isLanguage("pl")).toBe(true);
     expect(isLanguage("de")).toBe(false);
+  });
+
+  it("exposes only languages with translations for the requested region", () => {
+    expect(getAvailableRegionLanguages("PL")).toEqual(["en", "pl"]);
+    expect(getAvailableRegionLanguages("DE")).toEqual([]);
   });
 
   it("resolves app and regional translations independently", () => {

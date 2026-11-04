@@ -3,12 +3,28 @@ import { Directory, File, Paths } from "expo-file-system";
 import type { Language, LocaleResource } from "./i18n";
 import { loadResources } from "./i18n";
 import { NUTRIENT_INFO } from "../constants/nutrition";
+import type { NutritionBasis, NutritionNoteKey } from "../constants/nutrition";
 import type { Produce, RegionCode, RegionalSeasonality } from "../types";
 
 const DATA_DIRECTORY_KEY = "BeetTheClock:dataDirectory";
 const DEFAULT_DATA_DIRECTORY_NAME = "BeetTheClock";
 const FILE_EXTENSION = ".json";
 const CODE_PATTERN = /^[A-Za-z0-9_-]+$/;
+const NUTRITION_BASES: NutritionBasis[] = [
+  "raw",
+  "rawEdiblePortion",
+  "freshEdiblePortion",
+  "rawBeetLeaves",
+  "rawSorrel",
+  "rawRoseHips",
+];
+const NUTRITION_NOTE_KEYS: NutritionNoteKey[] = [
+  "beetLeaves",
+  "sorrel",
+  "whiteCurrants",
+  "mirabellePlums",
+  "roseHips",
+];
 
 const BUNDLED_DATA_FILES: { path: string; contents: unknown }[] = [
   {
@@ -207,6 +223,10 @@ const isRegionalProduce = (value: unknown): value is RegionalProduce => {
     value.rarity > 5 ||
     (value.wikipediaUrl !== undefined &&
       typeof value.wikipediaUrl !== "string") ||
+    (value.nutritionBasis !== undefined &&
+      !NUTRITION_BASES.some((basis) => basis === value.nutritionBasis)) ||
+    (value.nutritionNoteKey !== undefined &&
+      !NUTRITION_NOTE_KEYS.some((key) => key === value.nutritionNoteKey)) ||
     !isRecord(value.seasonality) ||
     !Array.isArray(value.seasonality.months) ||
     value.seasonality.months.length === 0 ||
@@ -292,7 +312,6 @@ const validateRegionLocale = (
       "name",
       "selectionGuide",
       "storageGuide",
-      "nutritionalInfo",
       "nutritionNote",
     ]) {
       if (product[field] !== undefined && typeof product[field] !== "string") {

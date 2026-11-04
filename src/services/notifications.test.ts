@@ -358,6 +358,29 @@ describe("notification scheduling", () => {
     }
   });
 
+  it("rejects test notifications outside development", async () => {
+    const developmentFlag = Object.getOwnPropertyDescriptor(
+      globalThis,
+      "__DEV__",
+    );
+    Object.defineProperty(globalThis, "__DEV__", { value: false });
+    const scheduleNotification = jest.mocked(
+      Notifications.scheduleNotificationAsync,
+    );
+    scheduleNotification.mockClear();
+
+    try {
+      await expect(
+        sendTestNotification(DEFAULT_SETTINGS, "en"),
+      ).rejects.toThrow("Test notifications are only available in development.");
+      expect(scheduleNotification).not.toHaveBeenCalled();
+    } finally {
+      if (developmentFlag) {
+        Object.defineProperty(globalThis, "__DEV__", developmentFlag);
+      }
+    }
+  });
+
   it("uses the system fallback channel for Android test notifications", async () => {
     const platformOS = jest.replaceProperty(Platform, "OS", "android");
     const scheduleNotification = jest.mocked(
@@ -411,7 +434,8 @@ describe("notification scheduling", () => {
 
     const firstBody = scheduleNotification.mock.calls[0]?.[0].content.body;
     const secondBody = scheduleNotification.mock.calls[1]?.[0].content.body;
-    expect(firstBody).toContain("Sea Buckthorn");
+    expect(firstBody).toEqual(expect.any(String));
+    expect(secondBody).toEqual(expect.any(String));
     expect(secondBody).not.toBe(firstBody);
   });
 

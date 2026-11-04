@@ -57,34 +57,35 @@ describe("regional produce seasonality", () => {
     expect(isAvailableInRegion(asparagus!, REGIONS.POLAND, 0)).toBe(false);
   });
 
-  it("keeps product text in the English and Polish locale resources", () => {
+  it("keeps localized product text separate from shared nutrition data", () => {
     expect(
       PRODUCE_DATA.every(
         (produce) => {
           const localizedName = LANGUAGES.every((language) =>
             i18n.tOptional(`produce.${produce.id}.name`, language),
           );
-          const hasQuantitativeNutrition =
+          const hasNutritionData =
             (produce.nutritionItems?.length ?? 0) > 0;
-          const localizedNutrition = LANGUAGES.every((language) => {
-            const text = i18n.tOptional(
-              `produce.${produce.id}.nutritionalInfo`,
-              language,
+          const localizedNutrition = LANGUAGES.every((language) =>
+            hasNutritionData
+              ? i18n.tOptional("details.nutritionServing", language)
+              : i18n.tOptional("details.nutritionUnavailable", language),
+          );
+          const noLocalizedNutritionData = LANGUAGES.every(
+            (language) =>
+              i18n.tOptional(
+                `produce.${produce.id}.nutritionalInfo`,
+                language,
+              ) === undefined,
+          );
+          const localizedNutritionNote =
+            produce.nutritionNoteKey === undefined ||
+            LANGUAGES.every((language) =>
+              i18n.tOptional(
+                `details.nutritionProductNote.${produce.nutritionNoteKey}`,
+                language,
+              ),
             );
-            if (!text) return false;
-            if (!hasQuantitativeNutrition) {
-              return language === "pl"
-                ? text.startsWith(
-                    "Brak zweryfikowanej wartości liczbowej",
-                  )
-                : text.startsWith(
-                    "No verified quantitative reference",
-                  );
-            }
-            return language === "pl"
-              ? /^Na 100 g (?:surow[^:]*|świeżej części jadalnej):/.test(text)
-              : /^Per 100 g (?:raw[^:]*|fresh edible portion):/.test(text);
-          });
           const localizedGuides = LANGUAGES.every(
             (language) =>
               i18n.tOptional(
@@ -97,29 +98,49 @@ describe("regional produce seasonality", () => {
               ),
           );
           const localizedRecipes = (produce.defaultRecipeIds ?? []).every(
-            (recipeId) =>
-              LANGUAGES.every(
-                (language) =>
-                  i18n.tOptional(
-                    `produce.${produce.id}.recipes.${recipeId}.name`,
-                    language,
-                  ) &&
-                  i18n.tOptional(
-                    `produce.${produce.id}.recipes.${recipeId}.instructions`,
-                    language,
-                  ),
-              ),
+            (recipeId) => {
+              const localizedRecipeFields = LANGUAGES.map((language) => ({
+                name: i18n.tOptional(
+                  `produce.${produce.id}.recipes.${recipeId}.name`,
+                  language,
+                ),
+                instructions: i18n.tOptional(
+                  `produce.${produce.id}.recipes.${recipeId}.instructions`,
+                  language,
+                ),
+                raw: i18n.tOptional(
+                  `produce.${produce.id}.recipes.${recipeId}.raw`,
+                  language,
+                ),
+              }));
+              const hasRawGuidance = localizedRecipeFields.map(({ raw }) =>
+                Boolean(raw),
+              );
+
+              return (
+                localizedRecipeFields.every(
+                  ({ name, instructions }) => name && instructions,
+                ) &&
+                hasRawGuidance[0] === hasRawGuidance[1] &&
+                localizedRecipeFields.every(
+                  ({ raw }) => !raw || !/^(?:yes|tak)\b/i.test(raw),
+                )
+              );
+            },
           );
 
           return (
             localizedName &&
             localizedNutrition &&
+            noLocalizedNutritionData &&
+            localizedNutritionNote &&
             localizedGuides &&
             localizedRecipes &&
             (produce.nutritionItems === undefined ||
               produce.nutritionItems.every(
                 ({ amount, nutrient }) =>
-                  Number.isFinite(amount) && NUTRIENT_INFO[nutrient] !== undefined,
+                  (amount === undefined || Number.isFinite(amount)) &&
+                  NUTRIENT_INFO[nutrient] !== undefined,
               ))
           );
         },
@@ -127,7 +148,39 @@ describe("regional produce seasonality", () => {
     ).toBe(true);
   });
 
-  it("uses only verified quantitative nutrition data for carrots", () => {
+  it("omits raw guidance for produce that should not be eaten raw", () => {
+    const notForRawConsumption = [
+      "5",
+      "13",
+      "14",
+      "39",
+      "103",
+      "104",
+      "119",
+      "120",
+      "131",
+      "133",
+      "150",
+      "152",
+      "158",
+      "159",
+      "160",
+    ];
+
+    expect(
+      notForRawConsumption.every((produceId) =>
+        LANGUAGES.every(
+          (language) =>
+            i18n.tOptional(
+              `produce.${produceId}.recipes.default-${produceId}.raw`,
+              language,
+            ) === undefined,
+        ),
+      ),
+    ).toBe(true);
+  });
+
+  it("stores quantitative and qualitative carrot nutrients in the region data", () => {
     const carrot = PRODUCE_DATA.find((produce) => produce.id === "4");
 
     expect(carrot?.nutritionItems).toEqual([
@@ -135,16 +188,26 @@ describe("regional produce seasonality", () => {
       { nutrient: "carbohydrates", amount: 9.6, unit: "g" },
       { nutrient: "fiber", amount: 2.8, unit: "g" },
       { nutrient: "protein", amount: 0.9, unit: "g" },
+      { nutrient: "vitaminA" },
+      { nutrient: "vitaminK" },
+      { nutrient: "potassium" },
     ]);
     expect(
       i18n.tOptional("produce.4.nutritionalInfo", "en"),
-    ).toContain("vitamin A");
-    expect(
-      i18n.tOptional("produce.4.nutritionalInfo", "en"),
-    ).toContain("amounts not provided");
-    expect(carrot?.nutritionItems?.some(({ nutrient }) =>
-      ["vitaminA", "potassium"].includes(nutrient),
-    )).toBe(false);
+    ).toBeUndefined();
+  });
+
+  it("uses the corrected reference values and serving basis from the Polish region", () => {
+    const kiwi = PRODUCE_DATA.find((produce) => produce.id === "81");
+    const whiteCurrant = PRODUCE_DATA.find((produce) => produce.id === "172");
+
+    expect(kiwi?.nutritionItems?.[0]).toEqual({
+      nutrient: "energy",
+      amount: 61,
+      unit: "kcal",
+    });
+    expect(whiteCurrant?.nutritionBasis).toBe("freshEdiblePortion");
+    expect(whiteCurrant?.nutritionNoteKey).toBe("whiteCurrants");
   });
 
   it("uses one global nutrition note instead of per-product notes", () => {

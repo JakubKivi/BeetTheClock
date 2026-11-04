@@ -11,18 +11,20 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Alert } from "react-native";
 import ProduceDetailsScreen from "./ProduceDetailsScreen";
 import { getRarityInfo } from "../constants/produce";
-import { themeColors } from "../constants/theme";
+import { FONTS, themeColors } from "../constants/theme";
 import { Produce } from "../types";
 import * as storage from "../services/storage";
 import { getLoadedData } from "../services/deviceData";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const PRODUCE_DATA = getLoadedData()!.produce;
 
 jest.mock("../contexts/LanguageContext", () => ({
-  useLanguage: () => ({ language: "en", setLanguage: jest.fn() }),
+  useLanguage: jest.fn(),
 }));
 
 const mockNavigation = { setOptions: jest.fn() } as any;
+const mockSetLanguage = jest.fn();
 
 const mockProduce: Produce = {
   ...PRODUCE_DATA.find((produce) => produce.id === "1")!,
@@ -47,6 +49,14 @@ const renderDetailsScreen = async (
 };
 
 describe("ProduceDetailsScreen", () => {
+  beforeEach(() => {
+    (useLanguage as jest.Mock).mockReturnValue({
+      language: "en",
+      setLanguage: mockSetLanguage,
+    });
+    mockSetLanguage.mockClear();
+  });
+
   it("sets the produce title and renders the beet logo when no iconUri", async () => {
     const route = {
       params: {
@@ -78,9 +88,65 @@ describe("ProduceDetailsScreen", () => {
         /Roast beet wedges with olive oil, thyme, and a little vinegar until tender\./,
       ),
     ).toBeTruthy();
+    expect(
+      tree.getByTestId("recipe-raw-title-default-1").props.children,
+    ).toBe("Raw");
+    expect(tree.getByTestId("recipe-raw-default-1").props.children).toBe(
+      "Peel and grate or thinly slice the washed root.",
+    );
+    expect(
+      within(tree.getByTestId("details-recipes-card")).queryByText(
+        /young leaves are edible/i,
+      ),
+    ).toBeNull();
 
     // availability months should appear based on data
     expect(tree.getByText("OCT - NOV")).toBeTruthy();
+  });
+
+  it("offers the available regional translation from the image corner", async () => {
+    const tree = await renderDetailsScreen({
+      params: { item: mockProduce },
+    } as any);
+    const languageButton = tree.getByTestId("details-language-button");
+
+    expect(tree.getByText("PL")).toBeTruthy();
+    expect(StyleSheet.flatten(languageButton.props.style)).toEqual(
+      expect.objectContaining({ top: 3, right: 3 }),
+    );
+    expect(
+      StyleSheet.flatten(tree.getByText("PL").props.style),
+    ).toEqual(
+      expect.objectContaining({
+        fontFamily: FONTS.navigationBold,
+        fontWeight: "900",
+      }),
+    );
+
+    fireEvent.press(languageButton);
+    expect(mockSetLanguage).toHaveBeenCalledWith("pl");
+  });
+
+  it("offers English when viewing a regional translation", async () => {
+    (useLanguage as jest.Mock).mockReturnValue({
+      language: "pl",
+      setLanguage: mockSetLanguage,
+    });
+    const tree = await renderDetailsScreen({
+      params: { item: mockProduce },
+    } as any);
+
+    expect(tree.getByText("EN")).toBeTruthy();
+    fireEvent.press(tree.getByTestId("details-language-button"));
+    expect(mockSetLanguage).toHaveBeenCalledWith("en");
+  });
+
+  it("hides the language button when the region has no translations", async () => {
+    const tree = await renderDetailsScreen({
+      params: { item: mockProduce, region: "UNKNOWN" },
+    } as any);
+
+    expect(tree.queryByTestId("details-language-button")).toBeNull();
   });
 
   it("renders guide sections as bordered cards on the light-gray screen", async () => {
@@ -270,7 +336,7 @@ describe("ProduceDetailsScreen", () => {
     expect(tree.getByTestId("details-rarity").props.children).toBe("LEGENDARY");
   });
 
-  it("renders only verified carrot nutrient amounts in themed category rows", async () => {
+  it("renders quantitative and qualitative carrot nutrients in themed rows", async () => {
     const carrot = PRODUCE_DATA.find((produce) => produce.id === "4");
     expect(carrot).toBeDefined();
     const route = { params: { item: carrot! } } as any;
@@ -279,14 +345,17 @@ describe("ProduceDetailsScreen", () => {
 
     const energyGroup = tree.getByTestId("details-nutrition-group-energy");
     const macrosGroup = tree.getByTestId("details-nutrition-group-macros");
+    const vitaminsGroup = tree.getByTestId("details-nutrition-group-vitamins");
+    const mineralsGroup = tree.getByTestId("details-nutrition-group-minerals");
     expect(within(energyGroup).getByTestId("details-nutrient-energy")).toBeTruthy();
     expect(within(macrosGroup).getByTestId("details-nutrient-fiber")).toBeTruthy();
     expect(within(macrosGroup).getByTestId("details-nutrient-carbohydrates")).toBeTruthy();
     expect(within(macrosGroup).getByTestId("details-nutrient-protein")).toBeTruthy();
-    expect(tree.queryByTestId("details-nutrition-group-vitamins")).toBeNull();
-    expect(tree.queryByTestId("details-nutrition-group-minerals")).toBeNull();
+    expect(within(vitaminsGroup).getByTestId("details-nutrient-vitaminA")).toBeTruthy();
+    expect(within(vitaminsGroup).getByTestId("details-nutrient-vitaminK")).toBeTruthy();
+    expect(within(mineralsGroup).getByTestId("details-nutrient-potassium")).toBeTruthy();
     expect(
-      tree.getByText(/Approximate raw-food reference values per 100 g/),
+      tree.getByText(/Approximate values per 100 g from food composition references/),
     ).toBeTruthy();
     expect(tree.getByTestId("details-nutrient-energy").props.style).toEqual(
       expect.objectContaining({
@@ -552,6 +621,21 @@ describe("ProduceDetailsScreen", () => {
 
     expect(getByText("OCT - NOV")).toBeTruthy();
     expect(getByText("Best: NOV")).toBeTruthy();
+  });
+
+  it("shows a localized unavailable message when no nutrition data is available", async () => {
+    const turnipGreens = PRODUCE_DATA.find((produce) => produce.id === "117");
+    expect(turnipGreens).toBeDefined();
+    const route = { params: { item: turnipGreens! } } as any;
+
+    const tree = await renderDetailsScreen(route);
+
+    expect(tree.getByTestId("details-nutrition-card")).toBeTruthy();
+    expect(
+      tree.getByText(
+        "No verified quantitative reference is included for this product; no estimate has been added.",
+      ),
+    ).toBeTruthy();
   });
 
   it("calls onPickImage when image area pressed", async () => {

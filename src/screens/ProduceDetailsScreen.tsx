@@ -16,13 +16,18 @@ import Svg, { Defs, Ellipse, RadialGradient, Stop } from "react-native-svg";
 import { RouteProp, useIsFocused } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Produce, Recipe, RegionCode } from "../types";
+import type { NutritionBasis } from "../constants/nutrition";
 import { formatMonths } from "../utils/utils";
 import { NUTRIENT_INFO } from "../constants/nutrition";
 import type { NutrientKey } from "../constants/nutrition";
 import { useLanguage } from "../contexts/LanguageContext";
-import { i18n } from "../services/i18n";
+import {
+  getAvailableLanguages,
+  getAvailableRegionLanguages,
+  i18n,
+} from "../services/i18n";
 import { DEFAULT_REGION, getSeasonality } from "../services/produceSeasonality";
-import { themeColors } from "../constants/theme";
+import { FONTS, themeColors } from "../constants/theme";
 import { getRarityInfo } from "../constants/produce";
 import { CONTACT_URL } from "../constants/links";
 import {
@@ -57,29 +62,6 @@ const ICON_SIZE = 204;
 const ICON_FRAME_SIZE = 224;
 const ICON_AURA_SIZE = ICON_SIZE * 1.75;
 const PRODUCE_LOGO = require("../../assets/beet_mini.png");
-
-const splitFunFact = (
-  instructions: string,
-): { instructions: string; funFact?: string } => {
-  const match = instructions.match(
-    /(?:Czy wiesz, że|Did you know\?)\s*([\s\S]*?)\s*(?=Na surowo:|Raw:)/i,
-  );
-  if (!match || match.index === undefined) return { instructions };
-
-  const recipeInstructions = [
-    instructions.slice(0, match.index).trimEnd(),
-    instructions.slice(match.index + match[0].length).trimStart(),
-  ]
-    .filter(Boolean)
-    .join(" ");
-  const funFact = match[1].trim();
-  return {
-    instructions: recipeInstructions,
-    funFact: /^Czy wiesz, że/i.test(match[0])
-      ? funFact.replace(/\?$/, "")
-      : funFact,
-  };
-};
 
 const NUTRIENT_GROUPS: {
   id: "energy" | "macros" | "vitamins" | "minerals";
@@ -117,8 +99,17 @@ const NUTRIENT_GROUPS: {
   },
 ];
 
+const NUTRITION_SERVING_TRANSLATION_KEYS: Record<NutritionBasis, string> = {
+  raw: "details.nutritionServing",
+  rawEdiblePortion: "details.nutritionServingRawEdiblePortion",
+  freshEdiblePortion: "details.nutritionServingFreshEdiblePortion",
+  rawBeetLeaves: "details.nutritionServingRawBeetLeaves",
+  rawSorrel: "details.nutritionServingRawSorrel",
+  rawRoseHips: "details.nutritionServingRawRoseHips",
+};
+
 const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const {
     item,
     iconUri: initialIconUri,
@@ -126,14 +117,41 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
     onPickImage,
     onResetIcon,
   } = route.params;
+  const availableRegionLanguages = getAvailableRegionLanguages(region);
+  const availableAppLanguages = getAvailableLanguages().map(
+    ({ value }) => value,
+  );
+  const otherRegionLanguage = availableRegionLanguages
+    .filter((availableLanguage) => availableLanguage !== "en")
+    .sort()
+    .find((availableLanguage) =>
+      availableAppLanguages.includes(availableLanguage),
+    );
+  const translationLanguage =
+    language === "en"
+      ? otherRegionLanguage
+      : availableRegionLanguages.includes("en")
+        ? "en"
+        : undefined;
   const seasonality = getSeasonality(item, region);
   const nutritionItems = item.nutritionItems ?? [];
   const nutrientLanguage = language === "pl" ? "pl" : "en";
-  const nutritionSummary = i18n.tOptional(
-    `produce.${item.id}.nutritionalInfo`,
+  const nutritionServing = i18n.t(
+    NUTRITION_SERVING_TRANSLATION_KEYS[item.nutritionBasis ?? "raw"],
     language,
-    region,
   );
+  const nutritionUnavailable = i18n.t(
+    "details.nutritionUnavailable",
+    language,
+  );
+  const nutritionProductNote = item.nutritionNoteKey
+    ? i18n.t(
+        `details.nutritionProductNote.${item.nutritionNoteKey}`,
+        language,
+      )
+    : undefined;
+  const hasNutritionData = nutritionItems.length > 0;
+  const hasNutritionCard = hasNutritionData || item.nutritionItems !== undefined;
   const nutritionNote = i18n.t("details.nutritionNote", language);
   const selectionGuide = i18n.tOptional(
     `produce.${item.id}.selectionGuide`,
@@ -157,16 +175,23 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
         language,
         region,
       );
+      const raw = i18n.tOptional(
+        `produce.${item.id}.recipes.${recipeId}.raw`,
+        language,
+        region,
+      );
       return name && instructions
-        ? [{ id: recipeId, name, ...splitFunFact(instructions) }]
+        ? [{ id: recipeId, name, instructions, raw }]
         : [];
     },
   );
-  const funFact = defaultRecipeEntries
-    .map(({ funFact: fact }) => fact)
-    .find((fact): fact is string => fact !== undefined);
+  const funFact = i18n.tOptional(
+    `produce.${item.id}.funFact`,
+    language,
+    region,
+  );
   const defaultRecipes = defaultRecipeEntries.map(
-    ({ id, name, instructions }) => ({ id, name, instructions }),
+    ({ id, name, instructions, raw }) => ({ id, name, instructions, raw }),
   );
   const rarityInfo = getRarityInfo(item.rarity);
 
@@ -660,6 +685,20 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
             </TouchableOpacity>
           )}
 
+          {translationLanguage && (
+            <TouchableOpacity
+              accessibilityLabel={translationLanguage.toUpperCase()}
+              accessibilityRole="button"
+              testID="details-language-button"
+              style={styles.languageButton}
+              onPress={() => void setLanguage(translationLanguage)}
+            >
+              <Text style={styles.languageButtonText}>
+                {translationLanguage.slice(0, 2).toUpperCase()}
+              </Text>
+            </TouchableOpacity>
+          )}
+
           {!iconUri && onPickImage && (
             <TouchableOpacity
               testID="details-set-image"
@@ -726,16 +765,19 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
         </View>
       )}
 
-      {(nutritionSummary || nutritionItems.length > 0) && (
+      {hasNutritionCard && (
         <View testID="details-nutrition-card" style={styles.guideSection}>
           <Text style={styles.guideTitle}>
             {i18n.t("details.nutrition", language)}
           </Text>
-          {nutritionItems.length ? (
+          {hasNutritionData ? (
             <>
               <Text style={[styles.guideText, styles.nutritionServing]}>
-                {i18n.t("details.nutritionServing", language)}
+                {nutritionServing}
               </Text>
+              {nutritionProductNote && (
+                <Text style={styles.sourceText}>{nutritionProductNote}</Text>
+              )}
               {NUTRIENT_GROUPS.map(({ id, nutrients, color }) => {
                 const entries = nutrients.flatMap((nutrientKey) =>
                   nutritionItems.filter((entry) => entry.nutrient === nutrientKey),
@@ -784,7 +826,7 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
               })}
             </>
           ) : (
-            <Text style={styles.guideText}>{nutritionSummary}</Text>
+            <Text style={styles.guideText}>{nutritionUnavailable}</Text>
           )}
           {nutritionNote && (
             <Text style={styles.sourceText}>
@@ -858,6 +900,22 @@ const ProduceDetailsScreen: React.FC<Props> = ({ route, navigation }) => {
               <Text style={styles.guideText}>
                 {recipeInstructions}
               </Text>
+              {recipe.raw && (
+                <>
+                  <Text
+                    style={styles.recipeTitle}
+                    testID={`recipe-raw-title-${recipe.id}`}
+                  >
+                    {i18n.t("details.raw", language)}
+                  </Text>
+                  <Text
+                    style={styles.guideText}
+                    testID={`recipe-raw-${recipe.id}`}
+                  >
+                    {recipe.raw}
+                  </Text>
+                </>
+              )}
             </View>
           );
         })}
@@ -1271,8 +1329,8 @@ const styles = StyleSheet.create({
   },
   resetIconButton: {
     position: "absolute",
-    top: -8,
-    right: -8,
+    bottom: 3,
+    right: 3,
     width: 32,
     height: 32,
     borderRadius: 16,
@@ -1494,6 +1552,26 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: themeColors.neutral.lightGrey,
     zIndex: 20,
+  },
+  languageButton: {
+    position: "absolute",
+    top: 3,
+    right: 3,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: themeColors.neutral.white,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: themeColors.neutral.lightGrey,
+    zIndex: 20,
+  },
+  languageButtonText: {
+    color: themeColors.accent[2],
+    fontSize: 12,
+    fontFamily: FONTS.navigationBold,
+    fontWeight: "900",
   },
   funFactButton: {
     position: "absolute",

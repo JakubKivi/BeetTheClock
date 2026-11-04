@@ -8,7 +8,7 @@ import { DEFAULT_REGION } from "../constants/regions";
 
 export { DEFAULT_REGION };
 
-export const USE_DEVICE_DATE = false;
+export const USE_DEVICE_DATE = true;
 export const SEASON_REFERENCE_DATE = USE_DEVICE_DATE
   ? new Date()
   : new Date(2026, 8, 1);

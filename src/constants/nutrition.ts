@@ -25,6 +25,21 @@ export type NutritionEntry = {
   unit?: "kcal" | "g";
 };
 
+export type NutritionBasis =
+  | "raw"
+  | "rawEdiblePortion"
+  | "freshEdiblePortion"
+  | "rawBeetLeaves"
+  | "rawSorrel"
+  | "rawRoseHips";
+
+export type NutritionNoteKey =
+  | "beetLeaves"
+  | "sorrel"
+  | "whiteCurrants"
+  | "mirabellePlums"
+  | "roseHips";
+
 export const NUTRIENT_INFO: Record<
   NutrientKey,
   {

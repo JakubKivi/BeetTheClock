@@ -471,6 +471,10 @@ export async function sendTestNotification(
   settings: AppSettings,
   language: Language,
 ): Promise<boolean> {
+  if (!__DEV__) {
+    throw new Error("Test notifications are only available in development.");
+  }
+
   const operation = testNotificationQueue.then(async () => {
     const granted = await requestNotificationPermissions(language);
     if (!granted) return false;

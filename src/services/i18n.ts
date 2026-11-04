@@ -41,6 +41,10 @@ export const getAvailableLanguages = (): LanguageOption[] =>
     value,
   }));
 
+export const getAvailableRegionLanguages = (
+  region: RegionCode,
+): Language[] => Object.keys(resources.regions[region] ?? {});
+
 export const isLanguage = (value: unknown): value is Language =>
   typeof value === "string" &&
   Object.prototype.hasOwnProperty.call(resources.app, value);
