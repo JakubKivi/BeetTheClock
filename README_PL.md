@@ -29,21 +29,9 @@ obejmuje Polskę, a interfejs jest dostępny po polsku i angielsku.
 
 ## Sezonowość
 
-Miesiące sezonu szacują dostępność świeżych produktów w polskich sklepach,
-uwzględniając import, uprawy szklarniowe i krajowe zapasy. Aplikacja oznacza także
-szacowany szczyt krajowych zbiorów albo — dla produktów dostępnych wyłącznie
-z importu — przybliżony szczyt sezonu w regionach eksportujących. Szacunki nie
-gwarantują pochodzenia ani dostępności produktu w konkretnym sklepie.
-
-Oficjalne źródła to [dane rolnicze GUS](https://stat.gov.pl/obszary-tematyczne/rolnictwo-lesnictwo/)
-i [Rocznik Statystyczny Rolnictwa](https://stat.gov.pl/en/topics/statistical-yearbooks/statistical-yearbooks/statistical-yearbook-of-agriculture-2025,6,20.html);
-[Eurostat Comext](https://ec.europa.eu/eurostat/web/international-trade-in-goods/database)
-udostępnia miesięczne przepływy handlowe według produktu i kraju partnera.
-Źródła te opisują produkcję krajową i handel, a nie dostępność w sklepach.
-Klasyfikacje handlowe mogą łączyć różne produkty (np. świeżą marchew i rzepę),
-a szczyt importu nie dowodzi, że świeży produkt znajduje się na sklepowej półce.
-Kalendarz ma więc charakter orientacyjny i nie jest zweryfikowanym zestawieniem
-dostępności detalicznej dla każdego produktu i miesiąca.
+Szacunki sezonowości dla Polski opierają się na [danych rolniczych GUS](https://stat.gov.pl/obszary-tematyczne/rolnictwo-lesnictwo/),
+[Roczniku Statystycznym Rolnictwa](https://stat.gov.pl/en/topics/statistical-yearbooks/statistical-yearbooks/statistical-yearbook-of-agriculture-2025,6,20.html)
+i [statystykach handlu Eurostat Comext](https://ec.europa.eu/eurostat/web/international-trade-in-goods/database).
 
 Wartości odżywcze to przybliżone dane dla surowych produktów na 100 g,
 pochodzące z [USDA FoodData Central](https://fdc.nal.usda.gov/), gdy są

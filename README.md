@@ -30,21 +30,9 @@ the interface is available in English and Polish.
 
 ## Seasonality
 
-Seasonality months estimate fresh retail availability in Poland, including
-imports, greenhouse crops, and stored domestic produce. The app also indicates
-the estimated domestic fresh-harvest peak or, for import-only produce, a broad
-peak in exporter regions. These estimates do not guarantee product origin or
-availability in a particular shop.
-
-Relevant official sources are [Statistics Poland agriculture data](https://stat.gov.pl/en/topics/agriculture-forestry/agriculture/)
-and the [Statistical Yearbook of Agriculture](https://stat.gov.pl/en/topics/statistical-yearbooks/statistical-yearbooks/statistical-yearbook-of-agriculture-2025,6,20.html);
-[Eurostat Comext](https://ec.europa.eu/eurostat/web/international-trade-in-goods/database)
-provides monthly trade flows by product and partner country. These sources
-describe domestic production and trade, not retail availability. Trade
-classifications can also combine products (for example, fresh carrots and
-turnips), and an import peak does not prove that fresh produce is on a shop
-shelf. The calendar is therefore indicative, not a product-by-product verified
-retail inventory.
+Seasonality estimates for Poland draw on [Statistics Poland agricultural data](https://stat.gov.pl/en/topics/agriculture-forestry/agriculture/),
+the [Statistical Yearbook of Agriculture](https://stat.gov.pl/en/topics/statistical-yearbooks/statistical-yearbooks/statistical-yearbook-of-agriculture-2025,6,20.html),
+and [Eurostat Comext trade statistics](https://ec.europa.eu/eurostat/web/international-trade-in-goods/database).
 
 Nutrition values are approximate raw-food references per 100 g from [USDA
 FoodData Central](https://fdc.nal.usda.gov/) where available. Values vary by
